@@ -123,15 +123,11 @@ layout: default
 
 <div>
 
-<v-clicks>
-
 - **Good UX and a11y go hand in hand**
 - Confusing interfaces hurt **everyone** - not just people with disabilities
 - Accessible design is just **better design**
 - A11y issues are often **UX issues** in disguise
 - Fix the UX, and a11y improves too (and vice versa)
-
-</v-clicks>
 
 <v-click>
 
@@ -210,7 +206,7 @@ layout: default
 
 <div class="col-span-3">
 
-```html {all|2|3|5|10|11|12|all}
+```html
 <div class="header">
   <div class="headline">My App</div>
   <div class="nav">
@@ -337,7 +333,7 @@ transition: slide-up
 
 # The Fix: Semantic HTML
 
-```html {all|1|2|3-6|9|10|11-12|13|all}
+```html
 <header>
   <h1>My App</h1>
   <nav>
