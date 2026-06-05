@@ -192,6 +192,15 @@ For each one, I want you to think: "Can I spot the issue?"
 
 
 ---
+layout: image
+image: /soup_div.png
+---
+
+<!--
+Bildnotiz: Generiert mit ChatGPT
+-->
+
+---
 layout: default
 ---
 
@@ -427,7 +436,7 @@ layout: default
 
 <div class="col-span-3">
   <div class="w-95% ml-5 text-right">
-    <img src="/landmarks.png" alt="" class=""/>
+    <img src="/structure_landmark.png" alt="" class=""/>
   </div>
 </div>
 
