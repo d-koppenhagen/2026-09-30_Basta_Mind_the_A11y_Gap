@@ -139,9 +139,9 @@ layout: default
 
 </div>
 
-<div class="flex flex-col items-center">
-  <img src="/ux_fail.jpeg" alt="Confusing elevator panel in a hotel: between two elevators, the call buttons are mounted on the right side of the left elevator, making it unclear which elevator they actually call" class="max-h-96 rounded shadow" />
-  <div class="text-sm opacity-70 mt-2 text-center">
+<div class="absolute right-0 top-0 h-full">
+  <img src="/ux_fail.jpeg" alt="Confusing elevator panel in a hotel: between two elevators, the call buttons are mounted on the right side of the left elevator, making it unclear which elevator they actually call" class="h-full object-cover rounded-l shadow" />
+  <div class="absolute top-10 right-8 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
     Which elevator do these buttons call? 🤔
   </div>
 </div>
