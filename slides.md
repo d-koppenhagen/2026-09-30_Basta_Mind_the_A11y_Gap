@@ -14,8 +14,6 @@ transition: slide-left
 mdc: true
 duration: 45min
 css: unocss
-layout: image
-image: /bridging-a11y.png
 ---
 
 <style src="./style.css"></style>

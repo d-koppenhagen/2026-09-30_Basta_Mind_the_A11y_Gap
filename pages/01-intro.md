@@ -1,5 +1,11 @@
+---
+layout: cover
+class: text-center
+background: /bridging-a11y.png
+---
 
 # Mind the A11y Gap
+
 ## Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 
 <div class="abs-br m-6 flex gap-2">
