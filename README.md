@@ -10,7 +10,7 @@ Barrierefreiheit ist nicht nur ein nettes Extra – sie ist entscheidend, um dig
 
 Du kannst dir die Präsentationsfolien hier ansehen:
 
-**[https://d-koppenhagen.github.io/2026-02-11-Mind_the_A11y_Gap/](https://d-koppenhagen.github.io/2026-02-11-Mind_the_A11y_Gap/)**
+**[https://d-koppenhagen.github.io/2026-09-30-Basta_Mind_the_A11y_Gap/](https://d-koppenhagen.github.io/2026-09-30-Basta_Mind_the_A11y_Gap/)**
 
 ## 🔬 Interaktive Demos: Practica11y
 

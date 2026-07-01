@@ -11,7 +11,7 @@ const props = defineProps({
 
 const base = import.meta.env.DEV
   ? 'http://localhost:6006'
-  : '/2026-02-11-Mind_the_A11y_Gap/storybook';
+  : '/2026-09-30-Basta_Mind_the_A11y_Gap/storybook';
 
 const url = `${base}/?path=/story/${props.story}`;
 </script>
