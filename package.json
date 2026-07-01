@@ -1,14 +1,21 @@
 {
   "name": "mind-the-a11y-gap",
+  "type": "module",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "concurrently -n keycastr,slidev,storybook -c green,blue,magenta \"npm run start:keycastr\" \"npm run start:slidev\" \"npm run start:storybook\"",
-    "start:keycastr": "open -a KeyCastr",
-    "start:slidev": "cd slidev && npm run dev",
-    "start:storybook": "cd demos/fix-a11y && npm run storybook"
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "keycastr": "open -a KeyCastr",
+    "start": "concurrently -n keycastr,slidev -c green,blue \"npm run keycastr\" \"npm run dev\""
   },
-  "devDependencies": {
-    "concurrently": "^10.0.3"
+  "dependencies": {
+    "@slidev/cli": "^52.11.1",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "slidev-theme-the-unnamed": "^0.0.22",
+    "concurrently": "^10.0.3",
+    "vue": "^3.5.26"
   }
 }

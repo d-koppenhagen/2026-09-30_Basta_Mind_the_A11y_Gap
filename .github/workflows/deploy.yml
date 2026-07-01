@@ -24,15 +24,11 @@ jobs:
           node-version: 20
       - run: npm ci
         working-directory: slidev
-      - run: npm run build -- --base /2026-02-11-Mind_the_A11y_Gap/
-        working-directory: slidev
+      - run: npm run build -- --base /2026-09-30-Basta_Mind_the_A11y_Gap/
       - run: npm ci
-        working-directory: demos/fix-a11y
-      - run: npm run build-storybook -- --output-dir ../../slidev/dist/storybook
-        working-directory: demos/fix-a11y
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: slidev/dist
+          path: dist
 
   deploy:
     needs: build
