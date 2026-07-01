@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "license": "MIT",
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
@@ -11,11 +12,11 @@
     "start": "concurrently -n keycastr,slidev -c green,blue \"npm run keycastr\" \"npm run dev\""
   },
   "dependencies": {
-    "@slidev/cli": "^52.11.1",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
-    "slidev-theme-the-unnamed": "^0.0.22",
+    "@slidev/cli": "^52.16.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "slidev-theme-the-unnamed": "^0.0.24",
     "concurrently": "^10.0.3",
-    "vue": "^3.5.26"
+    "vue": "^3.5.39"
   }
 }

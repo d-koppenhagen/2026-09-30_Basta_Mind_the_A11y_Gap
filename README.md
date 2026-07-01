@@ -1,69 +1,25 @@
-# Mind the A11y Gap: Bridging Accessibility Pitfalls
+# Mind the A11y Gap: Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 
-A talk about web accessibility best practices and common pitfalls to avoid.
+Barrierefreiheit ist nicht nur ein nettes Extra – sie ist entscheidend, um digitale Erlebnisse zu schaffen, die für alle funktionieren. Aber zu wissen, wo man anfangen soll und was wirklich Priorität hat, kann schnell überwältigend wirken. In diesem Vortrag schauen wir uns die häufigsten Barrierefreiheits-Fallstricke in modernen Webanwendungen an und gehen der Frage nach, warum sie überhaupt auftreten – und wie man sie wirksam löst. Dabei geht es um praktische, frameworkunabhängige Best Practices, mit denen sich viele Probleme von Anfang an vermeiden lassen: Semantik, Tastaturnavigation, Fokusmanagement, Farbkontraste, Medienalternativen und eine sinnvolle Inhaltsstruktur. Anhand konkreter Beispiele zeige ich Muster, die oft unbemerkt Barrieren aufbauen – und wie man sie abbaut, ohne zusätzliche Komplexität in die Anwendung zu bringen.
 
-**By Danny Koppenhagen**
+**[Von Danny Koppenhagen](https://k9n.dev)**
 
-**Event:** [Leipzig.js Meetup - February 11, 2026](https://www.meetup.com/de-de/leipzig-js/events/312880071/)
+**Event:** [BASTA! Mainz - 30. September 2026](https://basta.net/user-interface/bridging-accessibility-pitfalls/)
 
-## 📊 View the Slides
+## 📊 Die Präsentation
 
-Access the presentation slides here:
+Du kannst dir die Präsentationsfolien hier ansehen:
+
 **[https://d-koppenhagen.github.io/2026-02-11-Mind_the_A11y_Gap/](https://d-koppenhagen.github.io/2026-02-11-Mind_the_A11y_Gap/)**
 
-## 🔬 Interactive Demos
+## 🔬 Interaktive Demos: Practica11y
 
-Explore the interactive accessibility demos in Storybook:
-**[https://d-koppenhagen.github.io/2026-02-11-Mind_the_A11y_Gap/storybook/](https://d-koppenhagen.github.io/2026-02-11-Mind_the_A11y_Gap/storybook/)**
+Erkunde eine Vielzahl interaktiver Demos und Challenges in Practica11y:
+**[https://practica11y.dev/](https://practica11y.dev)**
 
-## 🛠️ Local Development
-
-### Slides
+## 🛠️ Lokaler Start
 
 ```bash
-cd slidev
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
-
-### Storybook
-
-```bash
-cd demos/fix-a11y
-npm install
-npm run storybook
-```
-
-## 📦 Building for Production
-
-```bash
-# Build slides
-cd slidev
-npm run build -- --base /2026-02-11-Mind_the_A11y_Gap/
-
-# Build Storybook
-cd demos/fix-a11y
-npm run build-storybook
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
-
-To start the slide show:
-
-- `pnpm install`
-- `pnpm dev`
-- visit <http://localhost:3030>
-
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev at the [documentation](https://sli.dev/).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
