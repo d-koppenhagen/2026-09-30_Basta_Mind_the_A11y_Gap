@@ -1,12 +1,12 @@
 ---
 theme: the-unnamed
-title: Mind the A11y Gap - Bridging Accessibility Pitfalls
+title: Mind the A11y Gap - Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 info: |
-  ## Mind the A11y Gap: Bridging Accessibility Pitfalls
+  ## Mind the A11y Gap: Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 
-  Accessibility isn't just a nice-to-have—it's essential for creating digital experiences that work for everyone.
+  Barrierefreiheit ist kein Nice-to-have – sie ist essenziell für digitale Erlebnisse, die für alle funktionieren.
 
-  By Danny Koppenhagen
+  Von Danny Koppenhagen
 class: text-center
 drawings:
   persist: false
@@ -22,7 +22,7 @@ image: /bridging-a11y.png
 
 
 # Mind the A11y Gap
-## Bridging Accessibility Pitfalls
+## Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://k9n.dev" target="_blank" alt="Website" title="Website"
@@ -40,18 +40,18 @@ image: /bridging-a11y.png
 </div>
 
 <!--
-Welcome everyone to "Mind the A11y Gap"!
+Willkommen alle zu „Mind the A11y Gap"!
 
-Today we'll explore the most common accessibility pitfalls in modern web applications and learn how to avoid them.
+Heute erkunden wir die häufigsten Barrierefreiheits-Fallen in modernen Web-Applikationen und lernen, wie man sie vermeidet.
 
-This talk is about practical, framework-agnostic solutions that you can apply immediately.
+Dieser Talk behandelt praktische, Framework-agnostische Lösungen, die ihr sofort anwenden könnt.
 -->
 
 ---
 layout: center
 ---
 
-# About Me
+# Über mich
 
 <div class="flex items-center gap-8 m-t-12">
   <div class="flex flex-col gap-8 content-center items-center justify-center m-t--30 mr-6">
@@ -62,58 +62,57 @@ layout: center
     Danny Koppenhagen<br>
     Frontend Architect @ DB Systel GmbH<br>
     <br>
-    🚂 Building large-scale web apps for Deutsche Bahn<br>
-    ♿ Passionate about accessibility & inclusive design<br>
-    📚 Co-author of German Angular book<br>
+    ♿ Leidenschaftlich für Barrierefreiheit & inklusives Design<br>
+    📚 Co-Autor des deutschen Angular-Buchs<br>
     🌐 k9n.dev<br>
   </div>
 </div>
 
 <!--
-Quick intro about myself:
-- I'm Danny, Frontend Architect at DB Systel
-- I work on large-scale web applications for Deutsche Bahn
-- Passionate about making the web accessible for everyone
-- I believe good software should be robust, scalable, AND inclusive
+Kurze Vorstellung:
+- Ich bin Danny, Frontend Architect bei DB Systel
+- Ich arbeite an großen Web-Applikationen für die Deutsche Bahn
+- Leidenschaftlich dafür, das Web für alle zugänglich zu machen
+- Ich glaube gute Software sollte robust, skalierbar UND inklusiv sein
 -->
 
 ---
 layout: default
 ---
 
-# Why Accessibility Matters
+# Warum Barrierefreiheit wichtig ist
 
 <div class="text-xl pt-4">
 
-- 🌍 **15% of the world's population** has some form of disability
-- 📱 **Everyone benefits** - temporary injuries, situational limitations
-- ⚖️ **It's the law** - EAA, BFSG, WCAG compliance required (June 2025)
-- 💼 **Business value** - larger audience, better SEO, improved UX for all
+- 🌍 **15 % der Weltbevölkerung** haben eine Form von Beeinträchtigung
+- 📱 **Alle profitieren** – temporäre Verletzungen, situative Einschränkungen, etc.
+- ⚖️ **Es ist Gesetz** – EAA, BFSG & weitere: WCAG-Konformität erforderlich (Juni 2025)
+- 💼 **Business-Wert** – größere Zielgruppe, besseres SEO, bessere UX für alle
 
 </div>
 
 <v-click>
 
 <div class="text-xl mt-8 p-4 bg-blue-500 bg-opacity-10 rounded">
-💡 Accessibility isn't just a nice-to-have—it's essential
+💡 Barrierefreiheit ist kein Nice-to-have – sie ist essenziell
 </div>
 
 </v-click>
 
 <!--
-Why should we care about accessibility?
+Warum sollten wir uns um Barrierefreiheit kümmern?
 
-1. 15% of people worldwide have some form of disability - that's over 1 billion people
-2. But it's not just about permanent disabilities - think about:
-   - Broken arm (temporary)
-   - Holding a baby (situational)
-   - Bright sunlight on your screen (environmental)
-3. Legal requirements: European Accessibility Act, German BFSG - compliance is mandatory from June 2025
-4. Business case: Larger audience, better SEO, and honestly - accessible apps are just better for everyone
+1. 15 % der Menschen weltweit haben eine Form von Behinderung – das sind über 1 Milliarde Menschen
+2. Aber es geht nicht nur um dauerhafte Behinderungen – denkt an:
+   - Gebrochener Arm (temporär)
+   - Baby halten (situativ)
+   - Helle Sonne auf dem Bildschirm (umgebungsbedingt)
+3. Gesetzliche Anforderungen: European Accessibility Act, deutsches BFSG – Konformität ist Pflicht ab Juni 2025
+4. Business Case: Größere Zielgruppe, besseres SEO, und ehrlich gesagt – barrierefreie Apps sind einfach besser für alle
 
-Bottom line: Accessibility is essential, not optional.
+Fazit: Barrierefreiheit ist essenziell, nicht optional.
 
-Now let's look at what typically goes wrong...
+Schauen wir uns an, was typischerweise schiefgeht...
 -->
 
 ---
@@ -126,16 +125,16 @@ layout: default
 
 <div>
 
-- **Good UX and a11y go hand in hand**
-- Confusing interfaces hurt **everyone** - not just people with disabilities
-- Accessible design is just **better design**
-- A11y issues are often **UX issues** in disguise
-- Fix the UX, and a11y improves too (and vice versa)
+- **Gute UX und A11y gehen Hand in Hand**
+- Verwirrende Interfaces schaden **allen** – nicht nur Menschen mit Behinderungen
+- Barrierefreies Design ist einfach **besseres Design**
+- A11y-Probleme sind oft **UX-Probleme** in Verkleidung
+- UX fixen verbessert A11y (und umgekehrt)
 
 <v-click>
 
 <div class="mt-6 p-4 bg-pink-500 bg-opacity-10 rounded">
-💡 If users can't figure it out, it doesn't matter how it looks
+💡 Wenn Nutzer es nicht verstehen, ist es egal wie es aussieht
 </div>
 
 </v-click>
@@ -143,67 +142,57 @@ layout: default
 </div>
 
 <div class="absolute right-0 top-0 h-full">
-  <img src="/ux_fail.jpeg" alt="Confusing elevator panel in a hotel: between two elevators, the call buttons are mounted on the right side of the left elevator, making it unclear which elevator they actually call" class="h-full object-cover rounded-l shadow" />
+  <img src="/ux_fail.jpeg" alt="Verwirrendes Aufzugpanel in einem Hotel: Zwischen zwei Aufzügen sind die Ruftasten rechts am linken Aufzug montiert – unklar welchen Aufzug sie rufen" class="h-full object-cover rounded-l shadow" />
   <div class="absolute top-10 right-8 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
-    Which elevator do these buttons call? 🤔
+    Wo muss ich drücken? 🤔
   </div>
 </div>
 
 </div>
 
 <!--
-Before we dive into the technical pitfalls, let's pause for a moment.
+Bevor wir in die technischen Fallen eintauchen, kurz innehalten.
 
-UX and accessibility aren't separate concerns - they go hand in hand.
+UX und Barrierefreiheit sind keine getrennten Themen – sie gehen Hand in Hand.
 
-Look at this picture I took in a hotel:
-- There are TWO elevators side by side
-- The call buttons are mounted on the RIGHT side of the LEFT elevator
-- So which elevator do they actually call? The left one (next to the buttons) or the right one (which the buttons are pointing toward)?
+Schaut euch dieses Foto an, das ich in einem Hotel gemacht habe:
+- Es gibt ZWEI Aufzüge nebeneinander
+- Die Ruftasten sind RECHTS am LINKEN Aufzug montiert
+- Welchen Aufzug rufen sie also? Den linken (neben den Tasten) oder den rechten (in dessen Richtung die Tasten zeigen)?
 
-This is a classic UX failure - and it affects everyone:
-- Sighted users have to guess
-- People with cognitive disabilities are confused
-- People with low vision can't easily figure it out either
+Das ist ein klassisches UX-Versagen – und es betrifft alle:
+- Sehende müssen raten
+- Menschen mit kognitiven Einschränkungen sind verwirrt
+- Menschen mit Sehbehinderung können es auch nicht leicht herausfinden
 
-The lesson: When something is confusing or unintuitive, it's both a UX problem AND an accessibility problem.
+Die Lektion: Wenn etwas verwirrend oder unintuitiv ist, ist es SOWOHL ein UX-Problem ALS AUCH ein A11y-Problem.
 
-Good accessibility usually means good UX. And good UX usually means good accessibility.
+Gute Barrierefreiheit bedeutet meist gute UX. Und gute UX bedeutet meist gute Barrierefreiheit.
 
-So as we go through these pitfalls, remember: We're not just building for "users with disabilities" - we're building for everyone.
+Denkt also bei den folgenden Fallen daran: Wir bauen nicht nur für „Nutzer mit Behinderungen" – wir bauen für alle.
 -->
 
 ---
 layout: section
 ---
 
-# The Gap: Common Pitfalls
+# The Gap: Häufige Fallen
 
-What goes wrong and why?
-
-<!--
-Let's talk about "The Gap" - the space between what we intend to build and what we actually deliver in terms of accessibility.
-
-I'm going to show you some real-world examples of common mistakes.
-
-For each one, I want you to think: "Can I spot the issue?"
--->
-
-
----
-layout: image
-image: /soup_div.png
----
+Was schiefgeht und warum
 
 <!--
-Bildnotiz: Generiert mit ChatGPT
+Reden wir über „The Gap" – die Lücke zwischen dem, was wir bauen wollen, und dem, was wir tatsächlich in Sachen Barrierefreiheit liefern.
+
+Ich zeige euch einige Praxisbeispiele häufiger Fehler.
+
+Bei jedem will ich, dass ihr denkt: „Kann ich das Problem erkennen?"
 -->
 
 ---
 layout: default
 ---
 
-# Code Review: Spot the Issues
+# Code Review: Findet die Probleme
 
 <div class="grid grid-cols-5 gap-4">
 
@@ -229,7 +218,7 @@ layout: default
 <v-click>
 
 <div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded">
-❌ This code has at least 7 accessibility issues!
+❌ Dieser Code hat mindestens 7 Barrierefreiheits-Probleme!
 </div>
 
 </v-click>
@@ -247,22 +236,32 @@ layout: default
 
 
 <!--
-Let's do a code review together. This is actual code I've seen in production.
+Machen wir zusammen ein Code Review. Das ist echter Code, den ich in Produktion gesehen habe.
 
-[CLICK through highlights]
-- Line 2: "headline" as a div - no semantic heading
-- Line 3: "nav" - a div, not a nav element
-- Line 5: Clickable divs instead of buttons or links
-- Line 10: A form built entirely with divs
-- And more...
+[KLICK durch Highlights]
+- Zeile 2: "headline" als div – keine semantische Überschrift
+- Zeile 3: "nav" – ein div, kein nav-Element
+- Zeile 5: Klickbare divs statt Buttons oder Links
+- Zeile 10: Ein Formular komplett aus divs gebaut
+- Und mehr...
 
-[FINAL CLICK]
-This code has at least 7 major accessibility issues!
+[LETZTER KLICK]
+Dieser Code hat mindestens 7 schwerwiegende A11y-Probleme!
 
-Can anyone spot some of them?
-[PAUSE for audience interaction]
+Kann jemand einige davon erkennen?
+[PAUSE für Publikumsinteraktion]
 
-Let's break down what's wrong and how to fix it...
+Schauen wir uns an, was falsch ist und wie wir es fixen...
+-->
+
+
+---
+layout: image
+image: /soup_div.png
+---
+
+<!--
+Bildnotiz: Generiert mit ChatGPT
 -->
 
 ---
@@ -270,43 +269,43 @@ layout: default
 transition: slide-up
 ---
 
-# What's Wrong?
+# Was ist falsch?
 
 <v-clicks>
 
-1. ❌ No semantic HTML - everything is a `<div>`
-2. ❌ No landmarks (`<header>`, `<nav>`, `<main>`)
-3. ❌ Clickable divs instead of `<button>` or `<a>`
-4. ❌ No heading structure (`<h1>`, `<h2>`, etc.)
-5. ❌ Missing form labels
-6. ❌ Placeholder as label (bad practice!)
-7. ❌ No keyboard support (onclick on divs)
+1. ❌ Kein semantisches HTML – alles ist ein `<div>`
+2. ❌ Keine Landmarks (`<header>`, `<nav>`, `<main>`)
+3. ❌ Klickbare divs statt `<button>` oder `<a>`
+4. ❌ Keine Überschriften-Struktur (`<h1>`, `<h2>`, etc.)
+5. ❌ Fehlende Formular-Labels
+6. ❌ Placeholder als Label (schlechte Praxis!)
+7. ❌ Keine Tastatur-Unterstützung (onclick auf divs)
 
 </v-clicks>
 
 <v-click>
 
 <div class="mt-2 p-4 bg-yellow-500 bg-opacity-10 rounded">
-⚠️ Screen readers can't understand this structure<br>
-⚠️ Keyboard users can't navigate<br>
-⚠️ Search engines struggle to index it
+⚠️ Screen Reader können diese Struktur nicht verstehen<br>
+⚠️ Tastatur-Nutzer können nicht navigieren<br>
+⚠️ Suchmaschinen können sie nur schlecht indexieren
 </div>
 
 </v-click>
 
 <!--
-Here's what's wrong with that code:
+Hier ist, was an dem Code falsch ist:
 
-[GO THROUGH EACH POINT]
+[DURCH JEDEN PUNKT GEHEN]
 
-The result?
-- Screen readers just see a flat list of text - no structure, no navigation
-- Keyboard users can't tab through the page
-- Even search engines have trouble understanding what's important
+Das Ergebnis?
+- Screen Reader sehen nur eine flache Liste von Text – keine Struktur, keine Navigation
+- Tastatur-Nutzer können nicht durch die Seite tabben
+- Selbst Suchmaschinen haben Schwierigkeiten zu verstehen, was wichtig ist
 
-This is what I call "div soup" - and it's surprisingly common.
+Das nenne ich „div-Suppe" – und es kommt überraschend häufig vor.
 
-Now let's see how to fix it properly...
+Schauen wir uns an, wie man es richtig macht...
 -->
 
 
@@ -314,18 +313,18 @@ Now let's see how to fix it properly...
 layout: section
 ---
 
-# Semantic HTML: The Foundation
+# Semantisches HTML: Das Fundament
 
-Using the right elements for the job
+Die richtigen Elemente für den Job verwenden
 
 <!--
-The foundation of accessibility is semantic HTML.
+Das Fundament der Barrierefreiheit ist semantisches HTML.
 
-HTML5 gives us powerful elements that come with built-in accessibility features.
+HTML5 gibt uns mächtige Elemente mit eingebauten A11y-Features.
 
-We just need to use them!
+Wir müssen sie nur verwenden!
 
-Let's look at the same example, but done right...
+Schauen wir uns das gleiche Beispiel an, aber richtig umgesetzt...
 -->
 
 
@@ -334,7 +333,7 @@ layout: default
 transition: slide-up
 ---
 
-# The Fix: Semantic HTML
+# Die Lösung: Semantisches HTML
 
 ```html
 <header>
@@ -357,31 +356,31 @@ transition: slide-up
 <v-click>
 
 <div class="mt-2 p-4 bg-green-500 bg-opacity-10 rounded">
-✅ Semantic structure, keyboard accessible, screen reader friendly!
+✅ Semantische Struktur, tastatur-zugänglich, Screen-Reader-freundlich!
 </div>
 
 </v-click>
 
 <!--
-Here's the same functionality, but done right:
+Hier ist die gleiche Funktionalität, aber richtig umgesetzt:
 
-[CLICK through highlights]
-- Line 1: Proper header landmark
-- Line 2: H1 for the main heading
-- Lines 3-6: Nav landmark with actual links
-- Line 9: Main landmark for primary content
-- Line 10: H2 for section heading (proper hierarchy)
-- Lines 11-12: Label properly associated with input
-- Button is a real button
+[KLICK durch Highlights]
+- Zeile 1: Richtiges header-Landmark
+- Zeile 2: H1 für die Hauptüberschrift
+- Zeilen 3-6: nav-Landmark mit echten Links
+- Zeile 9: main-Landmark für den Hauptinhalt
+- Zeile 10: H2 für Abschnittsüberschrift (richtige Hierarchie)
+- Zeilen 11-12: Label korrekt mit Input verknüpft
+- Button ist ein echter Button
 
-[FINAL CLICK]
-Now we have:
-- Clear structure for screen readers
-- Full keyboard support (links and buttons are focusable)
-- Proper semantics for search engines
-- And we didn't need any ARIA attributes!
+[LETZTER KLICK]
+Jetzt haben wir:
+- Klare Struktur für Screen Reader
+- Volle Tastatur-Unterstützung (Links und Buttons sind fokussierbar)
+- Richtige Semantik für Suchmaschinen
+- Und wir brauchten keine ARIA-Attribute!
 
-Let's dive deeper into specific patterns...
+Gehen wir tiefer in spezifische Patterns...
 -->
 
 
@@ -389,17 +388,17 @@ Let's dive deeper into specific patterns...
 layout: default
 ---
 
-# Landmarks & Headings
+# Landmarks & Überschriften
 
 <div class="flex justify-center items-center">
-  <img src="/structure.png" alt="Visualization of a typical page structure with landmarks: header, nav, main, aside and footer" class="max-h-100" />
+  <img src="/structure.png" alt="Visualisierung einer typischen Seitenstruktur mit Landmarks: header, nav, main, aside und footer" class="max-h-100" />
 </div>
 
 ---
 layout: default
 ---
 
-# Landmarks & Headings
+# Landmarks & Überschriften
 
 <div class="grid grid-cols-8 gap-4">
 
@@ -420,7 +419,7 @@ layout: default
 
 <div class="col-span-2">
 
-## ✅ Solution
+## ✅ Lösung
 
 ```html
 <header>...</header>
@@ -444,29 +443,29 @@ layout: default
 <v-click>
 
 <div class="mt-4 p-4 bg-blue-500 bg-opacity-10 rounded">
-💡 Landmarks create a navigable structure. Screen reader users can jump between them!
+💡 Landmarks erzeugen eine navigierbare Struktur. Screen-Reader-Nutzer können zwischen ihnen springen!
 </div>
 
 </v-click>
 
 <!--
-Landmarks and headings create the navigable structure of your page.
+Landmarks und Überschriften erzeugen die navigierbare Struktur eurer Seite.
 
-LEFT - Problem:
-All divs with classes. Screen readers see no structure.
+LINKS – Problem:
+Alles divs mit Klassen. Screen Reader sehen keine Struktur.
 
-RIGHT - Solution:
-Proper landmarks: header, aside, main, footer
-Proper heading hierarchy: h1 for page title, h2 for sections
+RECHTS – Lösung:
+Richtige Landmarks: header, aside, main, footer
+Richtige Überschriften-Hierarchie: h1 für Seitentitel, h2 für Abschnitte
 
-[CLICK]
-Why this matters:
-Screen reader users can press a key to jump between landmarks or headings.
-It's like a table of contents for your page!
+[KLICK]
+Warum das wichtig ist:
+Screen-Reader-Nutzer können per Taste zwischen Landmarks oder Überschriften springen.
+Es ist wie ein Inhaltsverzeichnis für eure Seite!
 
-Without this, they have to listen to EVERYTHING linearly.
+Ohne das müssen sie ALLES linear durchhören.
 
-Important: Heading hierarchy must be correct - never skip levels!
+Wichtig: Die Überschriften-Hierarchie muss korrekt sein – niemals Ebenen überspringen!
 -->
 
 ---
@@ -482,12 +481,12 @@ layout: default
 ```html
 <body>
   <a href="#main" class="skip-link">
-    Skip to main content
+    Zum Hauptinhalt springen
   </a>
   <header>...</header>
   <nav>...</nav>
   <main id="main" tabindex="-1">
-    <!-- Main content -->
+    <!-- Hauptinhalt -->
   </main>
 </body>
 ```
@@ -515,32 +514,32 @@ layout: default
 
 <v-clicks>
 
-- **Complement to landmarks** - not a replacement (Screen readers already have landmark navigation)!
-- Useful for **keyboard users** to bypass long navigation
-- Consider when you have **many nav items** before main content
+- **Ergänzung zu Landmarks** – kein Ersatz (Screen Reader haben bereits Landmark-Navigation)!
+- Nützlich für **Tastatur-Nutzer** um lange Navigation zu überspringen
+- Sinnvoll wenn **viele Nav-Items** vor dem Hauptinhalt stehen
 
 </v-clicks>
 
 <v-click>
 
 <div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
-⚠️ Use with care: If you have proper landmarks, skip links are a UX enhancement, not a requirement.
+⚠️ Mit Bedacht einsetzen: Bei richtigen Landmarks sind Skip Links eine UX-Verbesserung, keine Pflicht.
 </div>
 
 </v-click>
 
 <!--
-Skip links allow keyboard users to jump directly to main content.
+Skip Links erlauben Tastatur-Nutzern, direkt zum Hauptinhalt zu springen.
 
-But here's the thing: If you have proper landmarks, screen reader users can already navigate with shortcuts.
+Aber: Wenn ihr richtige Landmarks habt, können Screen-Reader-Nutzer bereits mit Shortcuts navigieren.
 
-Skip links are primarily for sighted keyboard users who can't use landmark navigation.
+Skip Links sind primär für sehende Tastatur-Nutzer, die keine Landmark-Navigation verwenden können.
 
-Use them when:
-- You have a lot of navigation items
-- Your header is complex with many interactive elements
+Nutzt sie wenn:
+- Ihr viele Navigations-Items habt
+- Euer Header komplex ist mit vielen interaktiven Elementen
 
-Don't rely on skip links as a substitute for proper landmarks!
+Verlasst euch nicht auf Skip Links als Ersatz für richtige Landmarks!
 -->
 
 ---
@@ -567,10 +566,10 @@ layout: default
 
 <v-click>
 
-**Issues:**
-- Div not keyboard accessible
-- Button used for navigation
-- No semantic meaning
+**Probleme:**
+- Div nicht tastatur-zugänglich
+- Button für Navigation genutzt
+- Keine semantische Bedeutung
 
 </v-click>
 
@@ -580,7 +579,7 @@ layout: default
 
 <v-click>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```html
 <button onclick="save()">
@@ -592,9 +591,9 @@ layout: default
 </a>
 ```
 
-**Rule:**
-- `<button>` for actions
-- `<a>` for navigation
+**Regel:**
+- `<button>` für Aktionen
+- `<a>` für Navigation
 
 </v-click>
 
@@ -607,38 +606,38 @@ layout: default
 </div>
 
 <!--
-One of the most common mistakes: confusing buttons and links.
+Einer der häufigsten Fehler: Buttons und Links verwechseln.
 
-LEFT SIDE - The Problem:
-- Div with onclick: Not keyboard accessible, no semantic meaning
-- Button for navigation: Wrong element for the job
+LINKE SEITE – Das Problem:
+- Div mit onclick: Nicht tastatur-zugänglich, keine semantische Bedeutung
+- Button für Navigation: Falsches Element für den Job
 
-[CLICK]
-Issues: Screen readers don't know what these do, keyboard users can't reach the div
+[KLICK]
+Probleme: Screen Reader wissen nicht, was diese tun, Tastatur-Nutzer erreichen das div nicht
 
-RIGHT SIDE:
-[CLICK]
-The solution is simple:
-- Use button for actions (save, submit, toggle)
-- Use anchor for navigation (going to another page)
+RECHTE SEITE:
+[KLICK]
+Die Lösung ist einfach:
+- Button für Aktionen verwenden (speichern, absenden, umschalten)
+- Anchor für Navigation verwenden (zu einer anderen Seite gehen)
 
-This simple rule solves so many problems!
+Diese einfache Regel löst so viele Probleme!
 -->
 
 ---
 layout: section
 ---
 
-# Keyboard Navigation & Focus
+# Tastatur-Navigation & Focus
 
-Making your app usable without a mouse
+Die App ohne Maus benutzbar machen
 
 <!--
-Not everyone uses a mouse. Some people navigate entirely with keyboard.
+Nicht jeder benutzt eine Maus. Manche navigieren ausschließlich mit der Tastatur.
 
-This is where many modern web apps fall apart.
+Hier scheitern viele moderne Web-Apps.
 
-Let's look at the most common issues...
+Schauen wir uns die häufigsten Probleme an...
 -->
 
 
@@ -646,7 +645,7 @@ Let's look at the most common issues...
 layout: default
 ---
 
-# Focus Outlines: Never Remove Them!
+# Focus-Outlines: Niemals entfernen!
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -667,10 +666,10 @@ button:focus {
 
 <v-click>
 
-**Result:**
-- No visible focus indicator
-- Keyboard users are lost
-- "Where am I on the page?"
+**Ergebnis:**
+- Kein sichtbarer Focus-Indikator
+- Tastatur-Nutzer sind verloren
+- „Wo bin ich auf der Seite?"
 
 </v-click>
 
@@ -680,23 +679,23 @@ button:focus {
 
 <v-click>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```css
-button:focus-visible { /* customize */
+button:focus-visible { /* anpassen */
   outline: 2px solid blue;
   outline-offset: 2px;
 }
 
-button:focus-visible { /* alternative */
+button:focus-visible { /* Alternative */
   box-shadow: 0 0 0 3px rgba(0, 30, 50, 0.5);
 }
 ```
 
-**Benefits:**
-- Clear focus indication
-- Keyboard navigation possible
-- `:focus-visible` only for keyboard
+**Vorteile:**
+- Klare Focus-Anzeige
+- Tastatur-Navigation möglich
+- `:focus-visible` nur für Tastatur
 
 </v-click>
 
@@ -705,25 +704,25 @@ button:focus-visible { /* alternative */
 </div>
 
 <!--
-This is one of the worst things you can do for accessibility.
+Das ist eins der schlimmsten Dinge, die man für die Barrierefreiheit tun kann.
 
-LEFT - Problem:
-Removing outlines completely. I see this ALL THE TIME.
-Developers think it looks ugly, so they remove it.
+LINKS – Problem:
+Outlines komplett entfernen. Das sehe ich STÄNDIG.
+Entwickler finden es hässlich und entfernen es.
 
-[CLICK]
-Result: Keyboard users have no idea where they are on the page.
-Imagine tabbing through a form and not knowing which field you're in!
+[KLICK]
+Ergebnis: Tastatur-Nutzer haben keine Ahnung, wo sie auf der Seite sind.
+Stellt euch vor, ihr tabbt durch ein Formular und wisst nicht, in welchem Feld ihr seid!
 
-RIGHT:
-[CLICK]
-Solution:
-Keep the default outline, or style it to match your design.
-Use focus-visible to only show it for keyboard users, not mouse clicks.
+RECHTS:
+[KLICK]
+Lösung:
+Den Standard-Outline behalten, oder ihn passend zum Design stylen.
+focus-visible verwenden, um ihn nur für Tastatur-Nutzer zu zeigen, nicht bei Mausklicks.
 
-Pro tip: Modern CSS gives you box-shadow for more design flexibility.
+Profi-Tipp: Modernes CSS bietet box-shadow für mehr Design-Flexibilität.
 
-Never, ever remove focus indicators completely!
+Niemals, NIEMALS Focus-Indikatoren komplett entfernen!
 -->
 
 ---
@@ -739,16 +738,16 @@ class: text-center
 layout: default
 ---
 
-# Lost Focus: The User Experience
+# Verlorener Focus: Die User Experience
 
 <div class="flex justify-center mb--10">
-  <img src="/focus-router-wrong.drawio.png" class="w-80%" alt="Comparison of focus behavior in traditional multi-page apps vs SPAs" />
+  <img src="/focus-router-wrong.drawio.png" class="w-80%" alt="Vergleich des Focus-Verhaltens in klassischen Multi-Page-Apps vs SPAs" />
 </div>
 
-**Issues:**
-- Focus remains on navigation link: Lost focus after navigation
-- No announcement of page change, users don't know content updated
-- Expectation: Focus at page start or right after navigation
+**Probleme:**
+- Focus bleibt auf dem Navigations-Link: Verlorener Focus nach Navigation
+- Keine Ankündigung des Seitenwechsels, Nutzer wissen nicht, dass sich der Inhalt aktualisiert hat
+- Erwartung: Focus am Seitenanfang oder direkt nach der Navigation
 
 <!--
 -->
@@ -757,7 +756,7 @@ layout: default
 layout: default
 ---
 
-# SPA Problem: Lost Focus After Navigation
+# SPA-Problem: Verlorener Focus nach Navigation
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -766,20 +765,20 @@ layout: default
 ## ❌ Problem
 
 ```js
-// User clicks "Products" link
+// Nutzer klickt auf "Products"-Link
 router.navigate('/products');
-// Page content changes
-// But focus stays on the link!
-// Screen reader: "Products, link"
-// User: "Did anything happen?"
+// Seiteninhalt ändert sich
+// Aber Focus bleibt auf dem Link!
+// Screen Reader: "Products, link"
+// Nutzer: "Ist etwas passiert?"
 ```
 
 <v-click>
 
-**Issues:**
-- Lost / wrong focus
-- No announcement of page change
-- User doesn't know content updated
+**Probleme:**
+- Verlorener / falscher Focus
+- Keine Ankündigung des Seitenwechsels
+- Nutzer weiß nicht, dass sich Inhalt aktualisiert hat
 
 </v-click>
 
@@ -789,21 +788,21 @@ router.navigate('/products');
 
 <v-click>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```js
-router.navigate('/products'); // After nav
+router.navigate('/products'); // Nach Nav
 
-// Move focus to main content
+// Focus auf Hauptinhalt verschieben
 const main = document.querySelector('main');
 main.setAttribute('tabindex', '-1');
 main.focus();
 ```
 
-**Benefits:**
-- Focus moves to new content
-- Screen reader announces new page
-- Clear navigation feedback
+**Vorteile:**
+- Focus bewegt sich zum neuen Inhalt
+- Screen Reader kündigt neue Seite an
+- Klares Navigations-Feedback
 
 </v-click>
 
@@ -812,33 +811,33 @@ main.focus();
 </div>
 
 <!--
-This is a huge problem in Single Page Applications.
+Das ist ein riesiges Problem in Single Page Applications.
 
-LEFT - Problem:
-User clicks a link, content changes, but focus stays on the old link.
-Screen reader users hear nothing - they don't know the page changed!
+LINKS – Problem:
+Nutzer klickt einen Link, Inhalt ändert sich, aber Focus bleibt auf dem alten Link.
+Screen-Reader-Nutzer hören nichts – sie wissen nicht, dass sich die Seite geändert hat!
 
-[CLICK]
-This is confusing and breaks the expected behavior.
+[KLICK]
+Das ist verwirrend und bricht das erwartete Verhalten.
 
-RIGHT:
-[CLICK]
-Solution:
-After navigation, programmatically move focus to the main content area.
-Set tabindex="-1" to make it focusable, then call focus().
+RECHTS:
+[KLICK]
+Lösung:
+Nach der Navigation den Focus programmatisch auf den Hauptinhalt verschieben.
+tabindex="-1" setzen um es fokussierbar zu machen, dann focus() aufrufen.
 
-This gives screen reader users immediate feedback that the page changed.
+Das gibt Screen-Reader-Nutzern sofortiges Feedback, dass sich die Seite geändert hat.
 
-Alternative: Use a skip link pattern that's always available.
+Alternative: Ein Skip-Link-Pattern verwenden, das immer verfügbar ist.
 
-This is one of those SPA-specific issues that's easy to miss!
+Das ist eins dieser SPA-spezifischen Probleme, die man leicht übersieht!
 -->
 
 ---
 layout: default
 ---
 
-# Unique Page Titles
+# Eindeutige Seitentitel
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -847,7 +846,7 @@ layout: default
 ## ❌ Problem
 
 ```html
-<!-- Every page -->
+<!-- Jede Seite -->
 <title>
   My App
 </title>
@@ -855,11 +854,11 @@ layout: default
 
 <v-click>
 
-**Issues:**
-- No context about current page
-- Browser tabs all look the same
-- Screen readers can't distinguish pages
-- Poor SEO
+**Probleme:**
+- Kein Kontext zur aktuellen Seite
+- Browser-Tabs sehen alle gleich aus
+- Screen Reader können Seiten nicht unterscheiden
+- Schlechtes SEO
 
 </v-click>
 
@@ -869,7 +868,7 @@ layout: default
 
 <v-click>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```js
 function updateTitle(pageName) {
@@ -878,11 +877,11 @@ function updateTitle(pageName) {
 // "Products - My App", "Imprint - My App"
 ```
 
-**Benefits:**
-- Clear page context
-- Distinguishable browser tabs
-- Screen reader announces page
-- Better SEO
+**Vorteile:**
+- Klarer Seitenkontext
+- Unterscheidbare Browser-Tabs
+- Screen Reader kündigt Seite an
+- Besseres SEO
 
 </v-click>
 
@@ -891,49 +890,49 @@ function updateTitle(pageName) {
 </div>
 
 <!--
-Another common SPA issue: static page titles.
+Ein weiteres häufiges SPA-Problem: Statische Seitentitel.
 
-LEFT - Problem:
-Every page has the same title: "My App"
+LINKS – Problem:
+Jede Seite hat den gleichen Titel: "My App"
 
-[CLICK]
-Issues:
-- Users can't tell which tab is which
-- Screen readers announce the same title for every page
-- No context about where you are
-- Search engines can't differentiate your pages
+[KLICK]
+Probleme:
+- Nutzer können nicht erkennen, welcher Tab welcher ist
+- Screen Reader kündigen für jede Seite den gleichen Titel an
+- Kein Kontext wo man sich befindet
+- Suchmaschinen können eure Seiten nicht unterscheiden
 
-RIGHT:
-[CLICK]
-Solution:
-Update the document title on every route change.
-Pattern: "Page Name - App Name"
+RECHTS:
+[KLICK]
+Lösung:
+Den document.title bei jedem Routenwechsel aktualisieren.
+Muster: „Seitenname – App-Name"
 
-This is such a simple fix but makes a huge difference!
+Das ist so ein einfacher Fix, aber macht einen riesigen Unterschied!
 
-Screen readers announce the title when the page loads.
-Users can see which tab is which.
-SEO improves.
+Screen Reader kündigen den Titel an, wenn die Seite lädt.
+Nutzer können sehen, welcher Tab welcher ist.
+SEO verbessert sich.
 
 Win-win-win!
 
-Now let's talk about forms...
+Jetzt reden wir über Formulare...
 -->
 
 ---
 layout: section
 ---
 
-# Forms Done Right
+# Formulare richtig machen
 
-Handling errors and validation accessibly
+Fehlerbehandlung und Validierung barrierefrei umsetzen
 
 <!--
-Forms are where accessibility often breaks down completely.
+Formulare sind der Bereich, in dem Barrierefreiheit oft komplett zusammenbricht.
 
-Error handling is especially problematic.
+Fehlerbehandlung ist besonders problematisch.
 
-Let's look at the patterns you need to know...
+Schauen wir uns die Patterns an, die ihr kennen müsst...
 -->
 
 ---
@@ -942,7 +941,7 @@ dragPos:
   square: 691,32,167,_,-16
 ---
 
-# Form Labels
+# Formular-Labels
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -962,10 +961,10 @@ dragPos:
 
 <v-click>
 
-**Issues:**
-- Placeholder is not a label
-- Checkbox not associated
-- Screen reader: "Edit text, blank"
+**Probleme:**
+- Placeholder ist kein Label
+- Checkbox nicht verknüpft
+- Screen Reader: „Textfeld, leer"
 
 </v-click>
 
@@ -975,7 +974,7 @@ dragPos:
 
 <v-click>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```html
 <label for="email">Enter your email</label>
@@ -988,11 +987,11 @@ dragPos:
 </label>
 ```
 
-**Benefits:**
-- Proper association
-- Clickable label
-- Screen reader: "Enter your email, edit text"
-- `autocomplete` helps users with cognitive disabilities
+**Vorteile:**
+- Richtige Verknüpfung
+- Klickbares Label
+- Screen Reader: „Enter your email, Textfeld"
+- `autocomplete` hilft Nutzern mit kognitiven Einschränkungen
 
 </v-click>
 
@@ -1001,36 +1000,36 @@ dragPos:
 </div>
 
 <!--
-Form labels are critical but often forgotten.
+Formular-Labels sind kritisch, werden aber oft vergessen.
 
-LEFT - Problem:
-Using placeholder as label - very common mistake!
-Checkbox with nearby text but no association
+LINKS – Problem:
+Placeholder als Label verwenden – sehr häufiger Fehler!
+Checkbox mit Text daneben, aber keine Verknüpfung
 
-[CLICK]
-Issues:
-- Placeholders disappear when you type
-- Screen readers just say "edit text, blank" - no context!
-- You can't click the text to focus the input
+[KLICK]
+Probleme:
+- Placeholder verschwinden beim Tippen
+- Screen Reader sagen nur „Textfeld, leer" – kein Kontext!
+- Man kann den Text nicht klicken um das Eingabefeld zu fokussieren
 
-RIGHT:
-[CLICK]
-Solution:
-Use proper label elements with for/id association
-Or wrap the input in the label
+RECHTS:
+[KLICK]
+Lösung:
+Richtige label-Elemente mit for/id-Verknüpfung verwenden
+Oder den Input im Label umschließen
 
-Benefits:
-- Screen readers announce the label
-- You can click the label text to focus
-- Labels don't disappear
-- It's just better UX for everyone!
+Vorteile:
+- Screen Reader kündigen das Label an
+- Man kann den Label-Text klicken um zu fokussieren
+- Labels verschwinden nicht
+- Es ist einfach bessere UX für alle!
 -->
 
 ---
 layout: default
 ---
 
-# Marking Invalid Fields
+# Ungültige Felder markieren
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -1051,10 +1050,10 @@ layout: default
 
 <v-click>
 
-**Issues:**
-- Only visual indication (color)
-- Screen reader doesn't know it's invalid
-- Error message not associated
+**Probleme:**
+- Nur visuelle Anzeige (Farbe)
+- Screen Reader weiß nicht, dass es ungültig ist
+- Fehlermeldung nicht verknüpft
 
 </v-click>
 
@@ -1064,7 +1063,7 @@ layout: default
 
 <v-click>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```html
 <label for="email">Email</label>
@@ -1077,10 +1076,10 @@ layout: default
 </span>
 ```
 
-**Benefits:**
-- Screen reader announces "invalid"
-- Error message is read aloud
-- Programmatic association
+**Vorteile:**
+- Screen Reader kündigt „ungültig" an
+- Fehlermeldung wird vorgelesen
+- Programmatische Verknüpfung
 
 </v-click>
 
@@ -1091,67 +1090,67 @@ layout: default
 <v-click>
 
 <div class="mt-2 p-2 bg-yellow-500 bg-opacity-10 rounded text-sm">
-⚠️ Note: `aria-errormessage` has limited browser support. Use `aria-describedby` as fallback for broader compatibility.
+⚠️ Hinweis: `aria-errormessage` hat eingeschränkten Browser-Support. Nutzt `aria-describedby` als Fallback für breitere Kompatibilität.
 </div>
 
 </v-click>
 
 <!--
-Form validation is critical for accessibility.
+Formular-Validierung ist kritisch für Barrierefreiheit.
 
-LEFT - Problem:
-Only visual indication - red border.
-Screen reader users have no idea the field is invalid!
+LINKS – Problem:
+Nur visuelle Anzeige – roter Rahmen.
+Screen-Reader-Nutzer haben keine Ahnung, dass das Feld ungültig ist!
 
-[CLICK]
-The error message is just text nearby - not associated with the field.
+[KLICK]
+Die Fehlermeldung ist nur Text in der Nähe – nicht mit dem Feld verknüpft.
 
-RIGHT:
-[CLICK]
-Solution:
-Use aria-invalid="true" to mark the field as invalid.
-Use aria-errormessage (or aria-describedby as fallback) to associate the error message.
-Add role="alert" so the error is announced immediately.
+RECHTS:
+[KLICK]
+Lösung:
+aria-invalid="true" verwenden um das Feld als ungültig zu markieren.
+aria-errormessage (oder aria-describedby als Fallback) um die Fehlermeldung zu verknüpfen.
+role="alert" hinzufügen damit der Fehler sofort angekündigt wird.
 
-Now screen readers say:
-"Email, invalid, edit text. No valid email was entered"
+Jetzt sagen Screen Reader:
+„Email, ungültig, Textfeld. Es wurde keine gültige E-Mail eingegeben"
 
-Users know exactly what's wrong!
+Nutzer wissen genau, was falsch ist!
 
-But there's more...
+Aber es gibt noch mehr...
 -->
 
 ---
 layout: default
 ---
 
-# Form Submission
+# Formular-Absendung
 
-How can we handle when users want to submit invalid forms?
+Wie gehen wir damit um, wenn Nutzer ungültige Formulare absenden wollen?
 
 <v-clicks>
 
 <div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded">
 
-## ❌ Disabled Without Explanation
+## ❌ Deaktiviert ohne Erklärung
 
 ```html
 <button type="submit" disabled>Submit</button>
 ```
 
-**Problem:** Users don't know why the button doesn't work
+**Problem:** Nutzer wissen nicht, warum der Button nicht funktioniert
 </div>
 
 <div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
 
-## ⚠️ Disabled With Hint
+## ⚠️ Deaktiviert mit Hinweis
 
 ```html
 <button type="submit" disabled aria-describedby="submit-hint">Submit</button>
 <div id="submit-hint">Please fill all required fields</div>
 ```
 
-**Problems:** Button not focusable, generic hint, no info about specific errors
+**Probleme:** Button nicht fokussierbar, generischer Hinweis, keine Info über spezifische Fehler
 </div>
 
 </v-clicks>
@@ -1160,53 +1159,53 @@ How can we handle when users want to submit invalid forms?
 layout: default
 ---
 
-# Form Submission
+# Formular-Absendung
 
 <div class="mt-4 p-4 bg-green-500 bg-opacity-10 rounded">
 
-## ✅ Enabled With Field Validation
+## ✅ Aktiviert mit Feld-Validierung
 
 ```html
 <input aria-invalid="true" aria-errormessage="email-error" />
 <div id="email-error" role="alert">Please enter a valid email</div>
 ```
 ```js
-// On submit: Focus first invalid field
+// Bei Submit: Erstes ungültiges Feld fokussieren
 document.querySelector('[aria-invalid="true"]')?.focus();
 ```
 
-**Benefits:** Specific error messages, focus on problem, screen reader compatible
+**Vorteile:** Spezifische Fehlermeldungen, Focus auf Problem, Screen-Reader-kompatibel
 </div>
 
 <!--
-Let's compare three approaches to form validation:
+Vergleichen wir drei Ansätze zur Formular-Validierung:
 
-[CLICK 1]
-Disabled without explanation: Absolutely unacceptable
-The button is just gray and does nothing
-Users have no idea why
+[KLICK 1]
+Deaktiviert ohne Erklärung: Absolut inakzeptabel
+Der Button ist einfach grau und tut nichts
+Nutzer haben keine Ahnung warum
 
-[CLICK 2]
-Disabled with hint: Better, but still problematic
-- The button cannot be focused with keyboard
-- The hint is too generic
-- You don't know WHICH fields are the problem
-- Screen reader users must find the hint first
+[KLICK 2]
+Deaktiviert mit Hinweis: Besser, aber immer noch problematisch
+- Der Button kann nicht mit der Tastatur fokussiert werden
+- Der Hinweis ist zu generisch
+- Man weiß nicht, WELCHE Felder das Problem sind
+- Screen-Reader-Nutzer müssen den Hinweis erst finden
 
-[CLICK 3]
-The right solution:
-- aria-invalid marks the field as invalid
-- aria-errormessage links the specific error message
-- role="alert" makes the message immediately available to screen readers
-- After submit we set focus on the first invalid field
-- This way everyone knows immediately where the problem is and what to do
+[KLICK 3]
+Die richtige Lösung:
+- aria-invalid markiert das Feld als ungültig
+- aria-errormessage verknüpft die spezifische Fehlermeldung
+- role="alert" macht die Meldung sofort für Screen Reader verfügbar
+- Nach Submit setzen wir den Focus auf das erste ungültige Feld
+- So weiß jeder sofort, wo das Problem ist und was zu tun ist
 -->
 
 ---
 layout: default
 ---
 
-# Focus Management on Errors
+# Focus-Management bei Fehlern
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -1219,19 +1218,19 @@ function handleSubmit(e) {
   e.preventDefault();
   const errors = validate(formData);
   if (errors.length > 0) {
-    // Just show errors
+    // Fehler nur anzeigen
     setErrors(errors);
-    // Focus stays on submit button!
+    // Focus bleibt auf Submit-Button!
   }
 }
 ```
 
 <v-click>
 
-**Issues:**
-- User must find the error
-- No immediate feedback
-- Keyboard users are lost
+**Probleme:**
+- Nutzer muss den Fehler finden
+- Kein sofortiges Feedback
+- Tastatur-Nutzer sind verloren
 
 </v-click>
 
@@ -1241,7 +1240,7 @@ function handleSubmit(e) {
 
 <v-click>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```js
 function handleSubmit(e) {
@@ -1256,10 +1255,10 @@ function handleSubmit(e) {
 }
 ```
 
-**Benefits:**
-- Immediate focus on problem
-- Screen reader announces error
-- Clear next action
+**Vorteile:**
+- Sofortiger Focus auf das Problem
+- Screen Reader kündigt Fehler an
+- Klare nächste Aktion
 
 </v-click>
 
@@ -1268,29 +1267,29 @@ function handleSubmit(e) {
 </div>
 
 <!--
-Marking fields as invalid is good, but not enough.
+Felder als ungültig zu markieren ist gut, aber nicht genug.
 
-LEFT - Problem:
-Form validates, shows errors, but focus stays on the submit button.
-User has to hunt for the error!
+LINKS – Problem:
+Formular validiert, zeigt Fehler, aber Focus bleibt auf dem Submit-Button.
+Nutzer muss den Fehler suchen!
 
-[CLICK]
-Especially bad for screen reader users - they have to tab through the entire form again.
+[KLICK]
+Besonders schlimm für Screen-Reader-Nutzer – sie müssen wieder durch das gesamte Formular tabben.
 
-RIGHT:
-[CLICK]
-Solution:
-After validation, programmatically focus the first invalid field.
+RECHTS:
+[KLICK]
+Lösung:
+Nach der Validierung den Focus programmatisch auf das erste ungültige Feld setzen.
 
-Now the user is immediately at the problem.
-Screen reader announces the field and its error.
-Clear, immediate feedback!
+Jetzt ist der Nutzer sofort beim Problem.
+Screen Reader kündigt das Feld und seinen Fehler an.
+Klares, sofortiges Feedback!
 
-This is such a simple improvement but makes forms so much better.
+Das ist so eine einfache Verbesserung, macht Formulare aber so viel besser.
 
-Combine this with aria-invalid and aria-describedby, and you have a fully accessible form validation pattern.
+Kombiniert mit aria-invalid und aria-describedby habt ihr ein vollständig barrierefreies Formular-Validierungs-Pattern.
 
-Now let's talk about dynamic content...
+Jetzt reden wir über dynamische Inhalte...
 -->
 
 ---
@@ -1303,32 +1302,32 @@ class: text-center
 <StorybookLink story="11-form-demo" />
 
 <!--
-Let's see all of this in action - form labels, validation, error handling, and focus management combined in one demo.
+Schauen wir uns das alles in Aktion an – Formular-Labels, Validierung, Fehlerbehandlung und Focus-Management kombiniert in einer Demo.
 -->
 
 ---
 layout: section
 ---
 
-# Live Regions & Dynamic Content
+# Live Regions & Dynamische Inhalte
 
-Announcing changes to screen reader users
+Änderungen für Screen-Reader-Nutzer ankündigen
 
 <!--
-Modern apps are dynamic - content changes without page reloads.
+Moderne Apps sind dynamisch – Inhalte ändern sich ohne Seitenneuladen.
 
-But screen readers don't automatically announce these changes.
+Aber Screen Reader kündigen diese Änderungen nicht automatisch an.
 
-This is where ARIA live regions come in.
+Hier kommen ARIA Live Regions ins Spiel.
 
-And this is where things get tricky...
+Und hier wird es knifflig...
 -->
 
 ---
 layout: default
 ---
 
-# The Live Region Problem
+# Das Live-Region-Problem
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -1337,23 +1336,23 @@ layout: default
 ## ❌ Problem
 
 ```js
-// Add notification
+// Benachrichtigung hinzufügen
 function showNotification(msg) {
   const div = document.createElement('div');
   div.setAttribute('aria-live', 'polite');
   div.textContent = msg;
-  // Live region is added after
-  // initial page load
+  // Live Region wird NACH dem
+  // initialen Laden hinzugefügt
   document.body.appendChild(div);
 }
 ```
 
 <v-click>
 
-**Issues:**
-- Element created AFTER aria-live set
-- Screen readers miss it!
-- Silent failure - no announcement
+**Probleme:**
+- Element NACH aria-live erstellt
+- Screen Reader verpassen es!
+- Stiller Fehler – keine Ankündigung
 
 </v-click>
 
@@ -1363,26 +1362,26 @@ function showNotification(msg) {
 
 <v-click>
 
-## ✅ Solution: Global Live Region
+## ✅ Lösung: Globale Live Region
 
 ```html
-<!-- In your HTML, always present -->
+<!-- Im HTML, immer vorhanden -->
 <div class="sr-only" id="announcer"
   aria-live="polite" aria-atomic="true"
 ></div>
 ```
 
 ```js
-function announce(msg) { // Update content
+function announce(msg) { // Inhalt aktualisieren
   document.getElementById('announcer')
     .textContent = msg;
 }
 ```
 
-**Benefits:**
-- Live region exists before update
-- Reliable announcements
-- Works across all screen readers
+**Vorteile:**
+- Live Region existiert vor dem Update
+- Zuverlässige Ankündigungen
+- Funktioniert in allen Screen Readern
 
 </v-click>
 
@@ -1391,78 +1390,78 @@ function announce(msg) { // Update content
 </div>
 
 <!--
-This is one of the trickiest accessibility issues in SPAs.
+Das ist eins der kniffligsten A11y-Probleme in SPAs.
 
-LEFT - Problem:
-Creating an element and setting aria-live at the same time.
-Looks like it should work, right?
+LINKS – Problem:
+Ein Element erstellen und gleichzeitig aria-live setzen.
+Sieht aus als sollte es funktionieren, oder?
 
-[CLICK]
-Wrong! Screen readers need the aria-live element to exist BEFORE content changes.
-If you create it dynamically, they miss it. Silent failure.
+[KLICK]
+Falsch! Screen Reader brauchen das aria-live-Element BEVOR sich der Inhalt ändert.
+Wenn man es dynamisch erstellt, verpassen sie es. Stiller Fehler.
 
-RIGHT:
-[CLICK]
-Solution: Global live region pattern.
-Create a persistent, empty live region in your HTML.
-When you need to announce something, just update its content.
+RECHTS:
+[KLICK]
+Lösung: Globales Live-Region-Pattern.
+Eine persistente, leere Live Region im HTML erstellen.
+Wenn ihr etwas ankündigen müsst, einfach den Inhalt aktualisieren.
 
-This is the reliable pattern that works across all screen readers.
+Das ist das zuverlässige Pattern, das in allen Screen Readern funktioniert.
 
-But there's another approach...
+Aber es gibt noch einen anderen Ansatz...
 -->
 
 ---
 layout: default
 ---
 
-# Global vs Local Live Regions
+# Globale vs Lokale Live Regions
 
 <div class="grid grid-cols-2 gap-4">
 
 <div>
 
-## Global Pattern
+## Globales Pattern
 
 ```html
-<!-- Global single announcer -->
+<!-- Globaler einzelner Announcer -->
 <div id="announcer" class="sr-only"
   aria-live="polite">
 </div>
 ```
 
 ```js
-announce("Item added to cart");
-announce("Form saved");
-announce("3 new messages");
+announce("Artikel zum Warenkorb hinzugefügt");
+announce("Formular gespeichert");
+announce("3 neue Nachrichten");
 ```
 
-**Use when:**
-- Toast notifications
-- Status messages
-- Global announcements
+**Verwenden wenn:**
+- Toast-Benachrichtigungen
+- Status-Meldungen
+- Globale Ankündigungen
 
 </div>
 
 <div>
 
-## Local Pattern
+## Lokales Pattern
 
 ```html
-<!-- Live region in component -->
+<!-- Live Region in Komponente -->
 <div class="chat">
   <div aria-live="polite" aria-atomic="false">
-    <div>First message from Jane</div>
-    <!-- New Messages added here -->
-    <div>New message from John</div>
+    <div>Erste Nachricht von Jane</div>
+    <!-- Neue Nachrichten hier -->
+    <div>Neue Nachricht von John</div>
   </div>
 </div>
 ```
 
-**Use when:**
-- Chat messages
-- Live feeds
-- Component-specific updates
+**Verwenden wenn:**
+- Chat-Nachrichten
+- Live-Feeds
+- Komponentenspezifische Updates
 
 </div>
 
@@ -1471,98 +1470,98 @@ announce("3 new messages");
 <v-click>
 
 <div class="mt-2 p-4 bg-blue-500 bg-opacity-10 rounded">
-💡 Key: Live region must exist BEFORE content changes!
+💡 Schlüssel: Live Region muss BEVOR sich Inhalte ändern existieren!
 </div>
 
 </v-click>
 
 <!--
-Two patterns for live regions:
+Zwei Patterns für Live Regions:
 
-LEFT - Global Pattern:
-Single announcer for the whole app.
-Perfect for toast notifications, status messages, global announcements.
-Simple to implement and maintain.
+LINKS – Globales Pattern:
+Ein einzelner Announcer für die gesamte App.
+Perfekt für Toast-Benachrichtigungen, Status-Meldungen, globale Ankündigungen.
+Einfach zu implementieren und zu pflegen.
 
-RIGHT - Local Pattern:
-Live region within a specific component.
-Perfect for chat messages, live feeds, component-specific updates.
-The live region is part of the component structure.
+RECHTS – Lokales Pattern:
+Live Region innerhalb einer bestimmten Komponente.
+Perfekt für Chat-Nachrichten, Live-Feeds, komponentenspezifische Updates.
+Die Live Region ist Teil der Komponentenstruktur.
 
-[CLICK]
-The critical rule for both: The live region must exist in the DOM BEFORE you update its content.
+[KLICK]
+Die entscheidende Regel für beide: Die Live Region muss im DOM existieren, BEVOR ihr ihren Inhalt aktualisiert.
 
-That's the secret to reliable screen reader announcements.
+Das ist das Geheimnis für zuverlässige Screen-Reader-Ankündigungen.
 -->
 
 ---
 layout: default
 ---
 
-# ARIA Live Attributes
+# ARIA Live Attribute
 
 ```html
 <div aria-live="polite" aria-atomic="true" aria-relevant="additions text">
-  Content updates here
+  Inhalt wird hier aktualisiert
 </div>
 ```
 
 <v-clicks>
 
-- **aria-live="polite"** - Announce when user is idle (most common)
-- **aria-live="assertive"** - Announce immediately (use sparingly!)
-- **aria-atomic="true"** - Read entire region (vs just changes)
-- **aria-atomic="false"** - Read only changes (good for lists)
-- **aria-relevant** - What changes to announce (additions, removals, text, all)
+- **aria-live="polite"** – Ankündigen wenn Nutzer untätig ist (häufigster Fall)
+- **aria-live="assertive"** – Sofort ankündigen (sparsam verwenden!)
+- **aria-atomic="true"** – Gesamte Region vorlesen (vs nur Änderungen)
+- **aria-atomic="false"** – Nur Änderungen vorlesen (gut für Listen)
+- **aria-relevant** – Welche Änderungen ankündigen (additions, removals, text, all)
 
 </v-clicks>
 
 <v-click>
 
 <div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
-⚠️ Use assertive sparingly - it interrupts the user!
+⚠️ Assertive sparsam verwenden – es unterbricht den Nutzer!
 </div>
 
 </v-click>
 
 <!--
-Quick reference for ARIA live attributes:
+Kurzreferenz für ARIA Live Attribute:
 
-[GO THROUGH EACH CLICK]
+[DURCH JEDEN KLICK GEHEN]
 
-aria-live="polite": Wait for user to finish, then announce. Use this 99% of the time.
+aria-live="polite": Warten bis Nutzer fertig ist, dann ankündigen. Das verwenden in 99% der Fälle.
 
-aria-live="assertive": Interrupt immediately. Only for critical alerts like "Your session is expiring!"
+aria-live="assertive": Sofort unterbrechen. Nur für kritische Alerts wie „Eure Sitzung läuft ab!"
 
-aria-atomic="true": Read the entire region. Good for status messages.
+aria-atomic="true": Die gesamte Region vorlesen. Gut für Status-Meldungen.
 
-aria-atomic="false": Only read what changed. Good for chat messages or lists.
+aria-atomic="false": Nur vorlesen was sich geändert hat. Gut für Chat-Nachrichten oder Listen.
 
-aria-relevant: Control what triggers announcements.
+aria-relevant: Steuern, was Ankündigungen auslöst.
 
-[FINAL CLICK]
-Warning: Don't overuse assertive! It's like someone shouting while you're trying to read.
-Very annoying and disorienting.
+[LETZTER KLICK]
+Warnung: Assertive nicht übermäßig verwenden! Es ist als würde jemand schreien, während man versucht zu lesen.
+Sehr nervig und desorientierend.
 
-Polite is almost always the right choice.
+Polite ist fast immer die richtige Wahl.
 
-Now let's quickly cover visual accessibility...
+Jetzt decken wir schnell visuelle Barrierefreiheit ab...
 -->
 
 ---
 layout: section
 ---
 
-# Visual Accessibility
+# Visuelle Barrierefreiheit
 
-Color contrast and media alternatives
+Farbkontrast und Medien-Alternativen
 
 <!--
-We've focused a lot on screen readers and keyboard users.
+Wir haben uns viel auf Screen Reader und Tastatur-Nutzer konzentriert.
 
-But visual accessibility matters too!
+Aber visuelle Barrierefreiheit ist auch wichtig!
 
-Let's cover the essentials quickly...
+Decken wir die Grundlagen schnell ab...
 -->
 
 
@@ -1570,7 +1569,7 @@ Let's cover the essentials quickly...
 layout: default
 ---
 
-# Color Contrast
+# Farbkontrast
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -1579,35 +1578,35 @@ layout: default
 ## ❌ Problem
 
 ```css
-/* Light gray on white */
+/* Hellgrau auf Weiß */
 .text {
   color: #999999;
   background: #FFFFFF;
 }
-/* Contrast ratio: 2.85:1 */
+/* Kontrastverhältnis: 2.85:1 */
 ```
 
 <div class="mt-4 p-4" style="color: #999999; background: #FFFFFF; border: 1px solid #ccc;">
-This text is hard to read
+Dieser Text ist schwer lesbar
 </div>
 
 </div>
 
 <div>
 
-## ✅ Solution
+## ✅ Lösung
 
 ```css
-/* Dark gray on white */
+/* Dunkelgrau auf Weiß */
 .text {
   color: #595959;
   background: #FFFFFF;
 }
-/* Contrast ratio: 7:1 */
+/* Kontrastverhältnis: 7:1 */
 ```
 
 <div class="mt-4 p-4" style="color: #595959; background: #FFFFFF; border: 1px solid #ccc;">
-This text is easy to read
+Dieser Text ist gut lesbar
 </div>
 
 </div>
@@ -1616,44 +1615,44 @@ This text is easy to read
 
 <v-clicks>
 
-**WCAG Requirements:**
-- **Level AA:** 4.5:1 for normal text, 3:1 for large text
-- **Level AAA:** 7:1 for normal text, 4.5:1 for large text
+**WCAG-Anforderungen:**
+- **Level AA:** 4,5:1 für normalen Text, 3:1 für großen Text
+- **Level AAA:** 7:1 für normalen Text, 4,5:1 für großen Text
 
 **Tools:** Chrome DevTools, WebAIM Contrast Checker, Stark
 
 </v-clicks>
 
 <!--
-Color contrast is critical for users with low vision or color blindness.
+Farbkontrast ist kritisch für Nutzer mit Sehbehinderung oder Farbenblindheit.
 
-LEFT - Problem:
-Light gray on white. Looks modern and minimal, but...
-Contrast ratio is only 2.85:1 - fails WCAG!
+LINKS – Problem:
+Hellgrau auf Weiß. Sieht modern und minimalistisch aus, aber...
+Kontrastverhältnis ist nur 2,85:1 – fällt bei WCAG durch!
 
-RIGHT - Solution:
-Darker gray on white. Still looks good, but readable.
-Contrast ratio is 7:1 - passes AAA!
+RECHTS – Lösung:
+Dunkleres Grau auf Weiß. Sieht immer noch gut aus, aber lesbar.
+Kontrastverhältnis ist 7:1 – besteht AAA!
 
-[CLICKS]
-WCAG requirements:
-- Level AA (minimum): 4.5:1 for normal text
-- Level AAA (enhanced): 7:1 for normal text
-- Large text has lower requirements
+[KLICKS]
+WCAG-Anforderungen:
+- Level AA (Minimum): 4,5:1 für normalen Text
+- Level AAA (erweitert): 7:1 für normalen Text
+- Großer Text hat niedrigere Anforderungen
 
-Tools to check:
-- Chrome DevTools has a built-in contrast checker
-- WebAIM has an online tool
-- Stark plugin for Figma/Sketch
+Tools zum Prüfen:
+- Chrome DevTools hat einen eingebauten Kontrast-Checker
+- WebAIM hat ein Online-Tool
+- Stark-Plugin für Figma/Sketch
 
-Pro tip: Check your design system colors early!
+Profi-Tipp: Prüft eure Design-System-Farben früh!
 -->
 
 ---
 layout: default
 ---
 
-# Media Alternatives
+# Medien-Alternativen
 
 <div class="flex gap-4">
 
@@ -1661,21 +1660,21 @@ layout: default
 
 <v-click>
 
-## Images
+## Bilder
 
 ```html
-<!-- Informative image -->
+<!-- Informatives Bild -->
 <img src="angular-buch.png"
      alt="Book Cover of the German book 'Das moderne Praxisbuch zu Angular: Von den Grundlagen bis zur professionellen Entwicklung mit Signals', written by Ferdinand Malcher, Danny Koppenhagen and Johannes Hoppe" />
 
-<!-- Decorative image -->
+<!-- Dekoratives Bild -->
 <img src="decoration.png" alt="" />
 
-<!-- Complex image -->
-<img src="diagram.png" alt="System architecture"
+<!-- Komplexes Bild -->
+<img src="diagram.png" alt="Systemarchitektur"
      aria-describedby="diagram-desc" />
 <div id="diagram-desc">
-  Detailed description of the architecture...
+  Detaillierte Beschreibung der Architektur...
 </div>
 ```
 
@@ -1695,7 +1694,7 @@ layout: default
   </template>
   <template #2>
 
-## ✅ Correct
+## ✅ Korrekt
 
 <img src="/book-cover-v1m.png" alt="Book Cover of the German book 'Das moderne Praxisbuch zu Angular: Von den Grundlagen bis zur professionellen Entwicklung mit Signals', written by Ferdinand Malcher, Danny Koppenhagen and Johannes Hoppe" class="max-h-70 rounded shadow" />
 
@@ -1707,24 +1706,24 @@ layout: default
 </div>
 
 <!--
-Media alternatives are essential for users who can't see or hear content.
+Medien-Alternativen sind essenziell für Nutzer, die Inhalte nicht sehen oder hören können.
 
-Images:
-- Informative images: Describe what the image conveys
-- Decorative images: Empty alt text (alt="") so screen readers skip it
-- Complex images: Use aria-describedby for longer descriptions
+Bilder:
+- Informative Bilder: Beschreiben was das Bild vermittelt
+- Dekorative Bilder: Leerer Alt-Text (alt="") damit Screen Reader es überspringen
+- Komplexe Bilder: aria-describedby für längere Beschreibungen verwenden
 
-[CLICK] Here we see an image with an invalid URL - the browser shows a broken image icon.
-[CLICK] After fixing the URL, the book cover loads correctly.
+[KLICK] Hier sehen wir ein Bild mit einer ungültigen URL – der Browser zeigt ein Broken-Image-Icon.
+[KLICK] Nach dem Korrigieren der URL lädt das Buchcover korrekt.
 
-Quick rule: If removing the image/video would lose information, you need an alternative.
+Faustregel: Wenn das Entfernen des Bildes/Videos Informationen verlieren würde, braucht ihr eine Alternative.
 -->
 
 ---
 layout: default
 ---
 
-# Media Alternatives
+# Medien-Alternativen
 
 ## Videos
 
@@ -1737,24 +1736,24 @@ layout: default
 ```
 
 <!--
-Media alternatives are essential for users who can't see or hear content.
+Medien-Alternativen sind essenziell für Nutzer, die Inhalte nicht sehen oder hören können.
 
-[CLICK]
+[KLICK]
 Videos:
-- Always provide captions for deaf users
-- Consider audio descriptions for blind users
-- Use the track element with WebVTT files
+- Immer Untertitel für gehörlose Nutzer bereitstellen
+- Audiobeschreibungen für blinde Nutzer in Betracht ziehen
+- Das track-Element mit WebVTT-Dateien verwenden
 
-Quick rule: If removing the image/video would lose information, you need an alternative.
+Faustregel: Wenn das Entfernen des Bildes/Videos Informationen verlieren würde, braucht ihr eine Alternative.
 
-Now let's talk about reduced motion and visual preferences...
+Jetzt reden wir über reduzierte Bewegung und visuelle Präferenzen...
 -->
 
 ---
 layout: default
 ---
 
-# Reduced Motion
+# Reduzierte Bewegung
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -1776,9 +1775,9 @@ layout: default
 
 <v-clicks>
 
-- Some users experience **motion sickness** from animations
-- Respect the OS-level preference via media query
-- Easy to implement, big impact
+- Manche Nutzer erleben **Bewegungskrankheit** durch Animationen
+- Die OS-Präferenz per Media Query respektieren
+- Einfach umzusetzen, große Wirkung
 
 </v-clicks>
 
@@ -1787,13 +1786,13 @@ layout: default
 </div>
 
 <!--
-Reduced motion is often overlooked but important.
+Reduzierte Bewegung wird oft übersehen, ist aber wichtig.
 
-Some users get dizzy or nauseous from animations and transitions.
-Modern operating systems let users set a "reduce motion" preference.
-We can respect that with a simple media query.
+Manche Nutzer werden schwindelig oder übel von Animationen und Transitions.
+Moderne Betriebssysteme lassen Nutzer eine „Bewegung reduzieren"-Präferenz setzen.
+Wir können das mit einer einfachen Media Query respektieren.
 
-This is one of the easiest accessibility wins you can get!
+Das ist einer der einfachsten A11y-Gewinne, die ihr erzielen könnt!
 -->
 
 ---
@@ -1801,69 +1800,69 @@ layout: image
 image: /testing.jpg
 ---
 
-# Testing & Tools
+# Testen & Tools
 
-How to verify accessibility
+Barrierefreiheit verifizieren
 
 <!--
-You can't improve what you don't measure.
+Was man nicht misst, kann man nicht verbessern.
 
-Let's look at the essential tools for testing accessibility.
+Schauen wir uns die wichtigsten Tools zum Testen von Barrierefreiheit an.
 
-I'll keep this brief since we're running short on time...
+Ich halte es kurz, da wir knapp an Zeit sind...
 -->
 
 ---
 layout: default
 ---
 
-# Essential Testing Tools
+# Wichtige Test-Tools
 
 <v-clicks>
 
-## Automated Testing
-- **axe DevTools** (Chrome/Firefox extension) - catches ~30-40% of issues
-- **Lighthouse** (built into Chrome) - accessibility audit
-- **WAVE** (WebAIM) - visual feedback overlay
+## Automatisiertes Testen
+- **axe DevTools** (Chrome/Firefox-Erweiterung) – findet ~30–40 % der Probleme
+- **Lighthouse** (in Chrome eingebaut) – Accessibility-Audit
+- **WAVE** (WebAIM) – visuelles Feedback-Overlay
 
-## Manual Testing
-- **Keyboard only** - unplug your mouse, try to use your app!
-- **Screen reader** - VoiceOver (Mac), NVDA (Windows, free), JAWS (Windows)
-- **Zoom to 200%** - does your layout still work?
+## Manuelles Testen
+- **Nur Tastatur** – Maus abstöpseln, versucht eure App zu benutzen!
+- **Screen Reader** – VoiceOver (Mac), NVDA (Windows, kostenlos), JAWS (Windows)
+- **Auf 200 % zoomen** – funktioniert euer Layout noch?
 
 ## Browser DevTools
-- **Accessibility Tree** - see what assistive tech sees
-- **Contrast Checker** - verify color ratios
-- **Lighthouse** - automated audit
+- **Accessibility Tree** – sehen was assistive Technologien sehen
+- **Contrast Checker** – Farbverhältnisse prüfen
+- **Lighthouse** – automatisiertes Audit
 
 </v-clicks>
 
 <!--
-Testing accessibility requires both automated tools and manual testing.
+Barrierefreiheit testen erfordert sowohl automatisierte Tools als auch manuelles Testen.
 
-[CLICK]
-Automated tools:
-- axe DevTools: Best browser extension, catches many issues
-- Lighthouse: Built into Chrome, gives you a score
-- WAVE: Visual overlay showing issues
+[KLICK]
+Automatisierte Tools:
+- axe DevTools: Beste Browser-Erweiterung, findet viele Probleme
+- Lighthouse: In Chrome eingebaut, gibt euch einen Score
+- WAVE: Visuelles Overlay das Probleme zeigt
 
-But automated tools only catch 30-40% of issues!
+Aber automatisierte Tools finden nur 30–40 % der Probleme!
 
-[CLICK]
-Manual testing is essential:
-- Keyboard only: Unplug your mouse and try to use your app
-- Screen reader: Actually test with VoiceOver or NVDA
-- Zoom: Make sure your layout works at 200% zoom
+[KLICK]
+Manuelles Testen ist essenziell:
+- Nur Tastatur: Maus abstöpseln und versuchen, die App zu benutzen
+- Screen Reader: Wirklich mit VoiceOver oder NVDA testen
+- Zoom: Sicherstellen, dass das Layout bei 200 % Zoom funktioniert
 
-[CLICK]
+[KLICK]
 Browser DevTools:
-- Accessibility Tree shows what screen readers see
-- Contrast checker built into Chrome
-- Lighthouse for quick audits
+- Accessibility Tree zeigt was Screen Reader sehen
+- Contrast Checker eingebaut in Chrome
+- Lighthouse für schnelle Audits
 
-Start with automated tools, but don't stop there!
+Mit automatisierten Tools anfangen, aber nicht dabei aufhören!
 
-Let's wrap up...
+Fassen wir zusammen...
 -->
 
 ---
@@ -1871,18 +1870,18 @@ layout: center
 class: text-center
 ---
 
-# Key Takeaways
+# Wichtigste Erkenntnisse
 
 <div class="mt-4 p-4">
 <v-clicks>
 
-1. 🏗️ **Use semantic HTML** - it's 80% of the solution
-2. ⌨️ **Test with keyboard** - if you can't use it, it's broken
-3. 🎯 **Focus management** - especially in SPAs
-4. 📝 **Forms need labels** - and proper error handling
-5. 📢 **Live regions** - must exist before updates
-6. 🎨 **Contrast matters** - check your colors
-7. 🧪 **Test, test, test** - automated + manual
+1. 🏗️ **Semantisches HTML verwenden** – das ist 80 % der Lösung
+2. ⌨️ **Mit Tastatur testen** – wenn man es nicht benutzen kann, ist es kaputt
+3. 🎯 **Focus-Management** – besonders in SPAs
+4. 📝 **Formulare brauchen Labels** – und richtige Fehlerbehandlung
+5. 📢 **Live Regions** – müssen vor Updates existieren
+6. 🎨 **Kontrast ist wichtig** – Farben prüfen
+7. 🧪 **Testen, testen, testen** – automatisiert + manuell
 
 </v-clicks>
 </div>
@@ -1890,43 +1889,43 @@ class: text-center
 <v-click>
 
 <div class="mt-8 p-4 bg-green-500 bg-opacity-10 rounded">
-💚 Accessibility is not a feature - it's a fundamental requirement
+💚 Barrierefreiheit ist kein Feature – sie ist eine grundlegende Anforderung
 </div>
 
 </v-click>
 
 <!--
-Let's wrap up with the key takeaways:
+Fassen wir mit den wichtigsten Erkenntnissen zusammen:
 
-[GO THROUGH EACH CLICK]
+[DURCH JEDEN KLICK GEHEN]
 
-1. Semantic HTML solves most problems - use the right elements!
-2. Keyboard testing is essential - unplug your mouse
-3. Focus management in SPAs - move focus after navigation
-4. Forms need proper labels and error handling
-5. Live regions must exist before you update them
-6. Check your color contrast - it's easy to fix
-7. Test with both automated tools and manual testing
+1. Semantisches HTML löst die meisten Probleme – die richtigen Elemente verwenden!
+2. Tastatur-Testen ist essenziell – Maus abstöpseln
+3. Focus-Management in SPAs – Focus nach Navigation verschieben
+4. Formulare brauchen richtige Labels und Fehlerbehandlung
+5. Live Regions müssen existieren bevor man sie aktualisiert
+6. Farbkontrast prüfen – leicht zu fixen
+7. Mit automatisierten Tools UND manuell testen
 
-[FINAL CLICK]
-Remember: Accessibility is not a feature you add at the end.
-It's a fundamental requirement for building software that works for everyone.
+[LETZTER KLICK]
+Denkt daran: Barrierefreiheit ist kein Feature, das man am Ende hinzufügt.
+Es ist eine grundlegende Anforderung für Software, die für alle funktioniert.
 
-Start small, but start today!
+Klein anfangen, aber heute anfangen!
 -->
 
 ---
 layout: default
 ---
 
-# Resources
+# Ressourcen
 
 <div class="grid grid-cols-2 gap-8">
 
 <div>
 
-## Learn More
-- [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+## Weiterlernen
+- [WCAG-Richtlinien](https://www.w3.org/WAI/WCAG21/quickref/)
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 - [WebAIM](https://webaim.org/)
 - [A11y Project](https://www.a11yproject.com/)
@@ -1940,51 +1939,51 @@ layout: default
 
 <div>
 
-## My Content
+## Meine Inhalte
 
 - 📝 [Blog: k9n.dev](https://k9n.dev)
 - 🐦 [BlueSky: @k9n.dev](https://bsky.app/profile/k9n.dev)
 - 💼 [LinkedIn](https://linkedin.com/in/d-koppenhagen)
 
-## This Talk
+## Dieser Talk
 
 - 📊 Slides: [github.com/d-koppenhagen/...](https://github.com/d-koppenhagen)
-- 💬 Questions? Let's chat!
+- 💬 Fragen? Sprecht mich an!
 
 </div>
 
 </div>
 
 <!--
-Here are resources to continue your accessibility journey:
+Hier sind Ressourcen um eure Barrierefreiheits-Reise fortzusetzen:
 
-LEFT SIDE:
-- WCAG Guidelines: The official spec
-- MDN: Great practical guides
-- WebAIM: Excellent articles and tools
-- A11y Project: Community-driven resources
+LINKE SEITE:
+- WCAG-Richtlinien: Die offizielle Spezifikation
+- MDN: Tolle praxisnahe Anleitungen
+- WebAIM: Exzellente Artikel und Tools
+- A11y Project: Community-getriebene Ressourcen
 
-Tools we discussed today
+Tools die wir heute besprochen haben
 
-RIGHT SIDE:
-My content if you want to follow along or reach out
-And these slides will be available on GitHub
+RECHTE SEITE:
+Meine Inhalte falls ihr folgen oder mich erreichen wollt
+Und diese Slides werden auf GitHub verfügbar sein
 
-Questions?
+Fragen?
 -->
 
 ---
 layout: end
 ---
 
-# Thank You! 🙏
+# Danke! 🙏
 
-## Questions?
+## Fragen?
 
 <div class="mt-8 flex items-center justify-center gap-8">
   <div>
     <a href="https://github.com/d-koppenhagen/2026-02-11-Mind_the_A11y_Gap" target="_blank">
-      <img src="/qr-github.png" alt="QR Code to GitHub Repository" class="w-48 h-48" />
+      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-48 h-48" />
     </a>
     <p class="text-sm mt-2">Slides & Code</p>
   </div>
@@ -1995,13 +1994,13 @@ layout: end
 </div>
 
 <!--
-Thank you all for your attention!
+Vielen Dank für eure Aufmerksamkeit!
 
-I hope this gives you a good starting point for improving accessibility in your projects.
+Ich hoffe, das gibt euch einen guten Startpunkt um Barrierefreiheit in euren Projekten zu verbessern.
 
-Remember: Start small, but start today.
+Denkt daran: Klein anfangen, aber heute anfangen.
 
-Every improvement makes the web more inclusive.
+Jede Verbesserung macht das Web inklusiver.
 
-Questions?
+Fragen?
 -->
