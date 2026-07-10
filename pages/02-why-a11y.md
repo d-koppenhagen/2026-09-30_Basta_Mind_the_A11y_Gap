@@ -51,10 +51,6 @@ layout: default
 
 <v-click>
 
-<div class="mt-6 p-4 bg-pink-500 bg-opacity-10 rounded">
-💡 Wenn Nutzer es nicht verstehen, ist es egal wie es aussieht
-</div>
-
 </v-click>
 
 </div>

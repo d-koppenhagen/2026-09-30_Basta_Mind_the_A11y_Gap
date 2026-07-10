@@ -20,9 +20,9 @@ dragPos:
 
 # Formular-Labels
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-12 gap-4">
 
-<div>
+<div class="col-span-5">
 
 ## ❌ Problem
 
@@ -43,7 +43,7 @@ dragPos:
 
 </div>
 
-<div>
+<div class="col-span-7">
 
 <v-click>
 
@@ -51,8 +51,7 @@ dragPos:
 
 ```html
 <label for="email">Enter your email</label>
-<input type="email" id="email"
-  autocomplete="email" />
+<input type="email" id="email" autocomplete="email" />
 
 <label>
   <input type="checkbox" />

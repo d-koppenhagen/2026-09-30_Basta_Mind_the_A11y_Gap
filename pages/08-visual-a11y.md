@@ -67,7 +67,7 @@ Dieser Text ist gut lesbar
 - **Level AA:** 4,5:1 für normalen Text, 3:1 für großen Text
 - **Level AAA:** 7:1 für normalen Text, 4,5:1 für großen Text
 
-**Tools:** Chrome DevTools, WebAIM Contrast Checker, Stark
+**Tools:** Chrome DevTools, WebAIM Contrast Checker
 
 </v-clicks>
 
@@ -78,7 +78,7 @@ Dieser Text ist gut lesbar
 - [KLICK] WCAG-Anforderungen:
   - AA (Minimum): 4,5:1 normaler Text, 3:1 großer Text
   - AAA (erweitert): 7:1 normaler Text
-- Tools: Chrome DevTools, WebAIM, Stark-Plugin
+- Tools: Chrome DevTools, WebAIM
 - Tipp: Design-System-Farben früh prüfen!
 - → Überleitung: Medien-Alternativen
 -->
