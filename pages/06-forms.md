@@ -36,14 +36,10 @@ dragPos:
 <span>Accept terms</span>
 ```
 
-<v-click>
-
 **Probleme:**
 - Placeholder ist kein Label
 - Checkbox nicht verknüpft
 - Screen Reader: „Textfeld, leer"
-
-</v-click>
 
 </div>
 
@@ -111,14 +107,10 @@ layout: default
 </span>
 ```
 
-<v-click>
-
 **Probleme:**
 - Nur visuelle Anzeige (Farbe)
 - Screen Reader weiß nicht, dass es ungültig ist
 - Fehlermeldung nicht verknüpft
-
-</v-click>
 
 </div>
 
@@ -270,14 +262,10 @@ function handleSubmit(e) {
 }
 ```
 
-<v-click>
-
 **Probleme:**
 - Nutzer muss den Fehler finden
 - Kein sofortiges Feedback
 - Tastatur-Nutzer sind verloren
-
-</v-click>
 
 </div>
 

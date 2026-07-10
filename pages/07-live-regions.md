@@ -38,14 +38,10 @@ function showNotification(msg) {
 }
 ```
 
-<v-click>
-
 **Probleme:**
 - Element NACH aria-live erstellt
 - Screen Reader verpassen es!
 - Stiller Fehler – keine Ankündigung
-
-</v-click>
 
 </div>
 

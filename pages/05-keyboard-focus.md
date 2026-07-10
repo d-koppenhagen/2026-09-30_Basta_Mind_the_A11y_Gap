@@ -18,7 +18,7 @@ Die App ohne Maus benutzbar machen
 layout: default
 ---
 
-# Focus-Outlines: Niemals entfernen!
+# Focus Outlines: Niemals entfernen!
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -37,14 +37,10 @@ button:focus {
 }
 ```
 
-<v-click>
-
 **Ergebnis:**
 - Kein sichtbarer Focus-Indikator
 - Tastatur-Nutzer sind verloren
-- „Wo bin ich auf der Seite?"
-
-</v-click>
+- Wo bin ich auf der Seite?
 
 </div>
 
@@ -150,14 +146,10 @@ router.navigate('/products');
 // Nutzer: "Ist etwas passiert?"
 ```
 
-<v-click>
-
 **Probleme:**
 - Verlorener / falscher Focus
 - Keine Ankündigung des Seitenwechsels
 - Nutzer weiß nicht, dass sich Inhalt aktualisiert hat
-
-</v-click>
 
 </div>
 
@@ -218,15 +210,11 @@ layout: default
 </title>
 ```
 
-<v-click>
-
 **Probleme:**
 - Kein Kontext zur aktuellen Seite
 - Browser-Tabs sehen alle gleich aus
 - Screen Reader können Seiten nicht unterscheiden
 - Schlechtes SEO
-
-</v-click>
 
 </div>
 

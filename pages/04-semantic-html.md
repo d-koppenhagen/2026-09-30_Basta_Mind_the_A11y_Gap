@@ -299,20 +299,14 @@ layout: default
 </button>
 ```
 
-<v-click>
-
 **Probleme:**
 - Div nicht tastatur-zugänglich
 - Button für Navigation genutzt
 - Keine semantische Bedeutung
 
-</v-click>
-
 </div>
 
 <div>
-
-<v-click>
 
 ## ✅ Lösung
 
@@ -329,8 +323,6 @@ layout: default
 **Regel:**
 - `<button>` für Aktionen
 - `<a>` für Navigation
-
-</v-click>
 
 </div>
 
