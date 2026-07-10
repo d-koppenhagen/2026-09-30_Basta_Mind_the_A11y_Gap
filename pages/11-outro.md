@@ -97,19 +97,19 @@ layout: default
 layout: end
 ---
 
-# Game Over – Danke! 🙏
+# Danke für die Aufmerksamkeit! 🙏
 
-## Fragen? Insert Coin...
+## Fragen?
 
 <div class="mt-8 flex items-center justify-center gap-8">
   <div>
     <a href="https://github.com/d-koppenhagen/2026-02-11-Mind_the_A11y_Gap" target="_blank">
-      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-48 h-48 border-2 border-[#00ff88] shadow-[0_0_20px_rgba(0,255,136,0.3)]" />
+      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-48 h-48 border-2 shadow-[0_0_20px_rgba(0,255,136,0.3)]" />
     </a>
     <p class="text-sm mt-2 text-[#00d4ff]">Slides & Code</p>
   </div>
   <div>
-    <span class="text-[#ffd700]">Player 1:</span> Danny Koppenhagen<br>
+    Danny Koppenhagen<br>
     <a href="https://k9n.dev">k9n.dev</a>
   </div>
 </div>
