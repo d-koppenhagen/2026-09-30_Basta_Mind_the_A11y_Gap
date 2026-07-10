@@ -163,6 +163,7 @@ announce("3 neue Nachrichten");
 
 ---
 layout: default
+hide: true
 ---
 
 # ARIA Live Attribute
