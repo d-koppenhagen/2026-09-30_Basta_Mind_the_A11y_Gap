@@ -19,24 +19,31 @@ layout: default
 
 # Wichtige Test-Tools
 
-<v-clicks>
-
-## Automatisiertes Testen
-- **axe DevTools** (Chrome/Firefox-Erweiterung) – findet ~30–40 % der Probleme
-- **Lighthouse** (in Chrome eingebaut) – Accessibility-Audit
-- **WAVE** (WebAIM) – visuelles Feedback-Overlay
-
-## Manuelles Testen
-- **Nur Tastatur** – Maus abstöpseln, versucht eure App zu benutzen!
-- **Screen Reader** – VoiceOver (Mac), NVDA (Windows, kostenlos), JAWS (Windows)
-- **Auf 200 % zoomen** – funktioniert euer Layout noch?
+<v-click>
 
 ## Browser DevTools
 - **Accessibility Tree** – sehen was assistive Technologien sehen
 - **Contrast Checker** – Farbverhältnisse prüfen
 - **Lighthouse** – automatisiertes Audit
 
-</v-clicks>
+</v-click>
+
+<v-click>
+
+## Automatisiertes Testen
+- **axe DevTools** (Chrome/Firefox-Erweiterung) – findet ~30–40 % der Probleme
+- **Lighthouse** (in Chrome eingebaut) – Accessibility-Audit
+- **WAVE** (WebAIM) – visuelles Feedback-Overlay
+
+</v-click>
+<v-click>
+
+## Manuelles Testen
+- **Nur Tastatur** – Maus abstöpseln, versucht eure App zu benutzen!
+- **Screen Reader** – VoiceOver (Mac), NVDA (Windows, kostenlos), JAWS (Windows)
+- **Auf 200 % zoomen** – funktioniert euer Layout noch?
+
+</v-click>
 
 <!--
 - [KLICK] Automatisierte Tools:
