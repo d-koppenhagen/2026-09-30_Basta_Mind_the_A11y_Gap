@@ -24,8 +24,7 @@ jobs:
           node-version: 20
       - uses: pnpm/action-setup@v4
       - run: pnpm install --frozen-lockfile
-        working-directory: slidev
-      - run: pnpm run build -- --base /2026-09-30-Basta_Mind_the_A11y_Gap/
+      - run: pnpm run build -- --base /2026-09-30_Basta_Mind_the_A11y_Gap/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
