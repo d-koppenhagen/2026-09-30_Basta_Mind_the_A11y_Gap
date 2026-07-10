@@ -157,20 +157,53 @@ layout: default
 
 # Medien-Alternativen
 
-## Videos
+<div class="grid grid-cols-2 gap-4">
+
+<div>
+
+## Video
 
 ```html
 <video controls>
   <source src="tutorial.mp4" type="video/mp4" />
-  <track kind="captions" src="captions.vtt" srclang="en" label="English" />
-  <track kind="descriptions" src="descriptions.vtt" srclang="en" />
+  <track kind="captions" src="captions.vtt"
+         srclang="en" label="English" />
+  <track kind="descriptions" src="desc.vtt"
+         srclang="en" />
 </video>
 ```
 
+</div>
+
+<div>
+
+## Audio
+
+```html
+<audio controls>
+  <source src="podcast.mp3" type="audio/mpeg" />
+  <a href="transcript.html">Transkript</a>
+</audio>
+```
+
+</div>
+
+</div>
+
+<v-clicks>
+
+- **Captions** – Untertitel inkl. Geräusche / Musik für gehörlose Nutzer
+- **Audio-Descriptions** – visuelle Inhalte für blinde Nutzer beschreiben
+- **Transkripte** – für reine Audio-Inhalte (Podcasts) oft ausreichend
+
+</v-clicks>
+
 <!--
-- Videos: Immer Untertitel für gehörlose Nutzer
-- Audiobeschreibungen für blinde Nutzer erwägen
-- track-Element mit WebVTT-Dateien verwenden
+- Video: track-Element mit WebVTT für Captions und Descriptions
+- Audio: Transkript verlinken – reicht für reine Audio-Inhalte
+- [KLICK] Captions: Untertitel inkl. Geräusche, Musik-Hinweise
+- [KLICK] Audio-Descriptions: Beschreibung visueller Inhalte im Video
+- [KLICK] Transkripte: Text-Version, durchsuchbar und flexibel
 - → Überleitung: Reduzierte Bewegung
 -->
 
@@ -178,7 +211,7 @@ layout: default
 layout: default
 ---
 
-# Reduzierte Bewegung
+# Präferenzen Respektieren
 
 <div class="grid grid-cols-2 gap-4">
 
@@ -186,11 +219,19 @@ layout: default
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+  * { animation-duration: 0.01ms !important; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1a1a2e; --text: #eee; }
+}
+
+@media (prefers-contrast: more) {
+  :root { --border: 2px solid #000; }
+}
+
+@media (forced-colors: active) {
+  .card { border: 1px solid CanvasText; }
 }
 ```
 
@@ -200,9 +241,10 @@ layout: default
 
 <v-clicks>
 
-- Manche Nutzer erleben **Bewegungskrankheit** durch Animationen
-- Die OS-Präferenz per Media Query respektieren
-- Einfach umzusetzen, große Wirkung
+- **Reduced Motion**: Animationen können vestibuläre Beschwerden oder epileptische Anfälle auslösen
+- **Dark / Light Mode**: Nutzer wählen Farbschema je nach Umgebung und Sehfähigkeit
+- **Prefers Contrast**: Nutzer fordert mehr (oder weniger) Kontrast – Borders, Schriftgewicht, Farben anpassen
+- **Forced Colors** (Windows High Contrast): System überschreibt alle Farben – Borders statt Hintergrund nutzen
 
 </v-clicks>
 
@@ -211,10 +253,13 @@ layout: default
 </div>
 
 <!--
-- Manche Nutzer werden schwindelig/übel von Animationen
-- Betriebssysteme bieten „Bewegung reduzieren"-Präferenz
-- Einfache Media Query respektiert die Einstellung
-- Einer der einfachsten A11y-Gewinne!
+- Vier wichtige User-Präferenzen die wir per CSS Media Query respektieren können
+- Reduced Motion: Schwindel, Übelkeit, Epilepsie → Animationen deaktivieren
+- Color Scheme: Manche brauchen dunklen Hintergrund (Lichtempfindlichkeit), andere hellen
+- Prefers Contrast: Nutzer will mehr Kontrast → dickere Borders, stärkere Farben, klarere Trennung
+- Forced Colors: Windows High Contrast – alle Farben werden überschrieben, Hintergründe verschwinden
+- Unterschied prefers-contrast vs. forced-colors: prefers-contrast ist ein Wunsch, forced-colors ein Zwang
+- Tipp: DevTools → Rendering → Emulationen zum Testen
 - → Überleitung: Challenges zum Ausprobieren
 -->
 
