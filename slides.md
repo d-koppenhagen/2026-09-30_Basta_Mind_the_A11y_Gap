@@ -14,7 +14,6 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
-routerMode: hash
 duration: 45min
 css: unocss
 ---
