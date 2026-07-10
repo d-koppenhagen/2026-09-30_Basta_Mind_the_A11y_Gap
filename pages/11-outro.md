@@ -8,7 +8,7 @@ class: text-center
 <div class="mt-4 p-4">
 <v-clicks>
 
-1. 🏗️ **Semantisches HTML verwenden** – das ist 80 % der Lösung
+1. 🏗️ **Semantisches HTML verwenden** – löst den Großteil aller Probleme
 2. ⌨️ **Mit Tastatur testen** – wenn man es nicht benutzen kann, ist es kaputt
 3. 🎯 **Focus-Management** – besonders in SPAs
 4. 📝 **Formulare brauchen Labels** – und richtige Fehlerbehandlung
@@ -30,7 +30,7 @@ class: text-center
 
 <!--
 - Zusammenfassung – wichtigste Erkenntnisse:
-- [KLICK] Semantisches HTML = 80 % der Lösung
+- [KLICK] Semantisches HTML = Großteil der Lösung (WebAIM: 96 % aller Fehler in 6 Kategorien, 5 davon HTML)
 - [KLICK] Tastatur-Test: Nicht benutzbar = kaputt
 - [KLICK] Focus-Management in SPAs nicht vergessen
 - [KLICK] Formulare: Labels + richtige Fehlerbehandlung
@@ -56,7 +56,7 @@ layout: default
 - [WCAG-Richtlinien](https://www.w3.org/WAI/WCAG21/quickref/)
 - [APG Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-- [WebAIM](https://webaim.org/)
+- [WebAIM Million](https://webaim.org/projects/million/) – Jährliche A11y-Analyse der Top 1 Mio. Websites
 - [A11y Project](https://www.a11yproject.com/)
 - [🎮 Practica11y](https://practica11y.dev) – Interaktive A11y-Challenges
 
