@@ -378,7 +378,9 @@ class: text-center
 
 # Demo
 
-<StorybookLink story="11-form-demo" />
+<a href="https://practica11y.dev/challenges/invalid-form-error" target="_blank" class="text-2xl pt-10">🎮 Challenge: Silent Treatment</a>
+<br>
+<a href="https://practica11y.dev/challenges/missing-label" target="_blank" class="text-2xl pt-4">🎮 Challenge: Name That Field</a>
 
 <!--
 Schauen wir uns das alles in Aktion an – Formular-Labels, Validierung, Fehlerbehandlung und Focus-Management kombiniert in einer Demo.

@@ -312,3 +312,23 @@ Die Lösung ist einfach:
 
 Diese einfache Regel löst so viele Probleme!
 -->
+
+---
+layout: center
+class: text-center
+---
+
+# Ausprobieren
+
+<a href="https://practica11y.dev/challenges/button-vs-link" target="_blank" class="text-2xl pt-10">🎮 Challenge: Button vs Link</a>
+<br>
+<a href="https://practica11y.dev/challenges/no-skip-link" target="_blank" class="text-2xl pt-4">🎮 Challenge: No Skip Link</a>
+<br>
+<a href="https://practica11y.dev/challenges/heading-chaos" target="_blank" class="text-2xl pt-4">🎮 Challenge: Heading Chaos</a>
+
+<!--
+- Hier einige passende Challenges auf practica11y.dev zum Ausprobieren
+- Button vs Link: Das gerade besprochene Pattern üben
+- No Skip Link: Skip Links selbst implementieren
+- Heading Chaos: Überschriften-Hierarchie reparieren
+-->

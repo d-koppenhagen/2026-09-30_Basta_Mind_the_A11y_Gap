@@ -106,7 +106,9 @@ class: text-center
 
 # Demo
 
-<StorybookLink story="01-semantic-html" />
+<a href="https://practica11y.dev/challenges/clickable-div" target="_blank" class="text-2xl pt-10">🎮 Challenge: Div and Conquer</a>
+<br>
+<a href="https://practica11y.dev/challenges/missing-landmarks" target="_blank" class="text-2xl pt-4">🎮 Challenge: Lost Without a Map</a>
 
 ---
 layout: default

@@ -244,3 +244,23 @@ Wir können das mit einer einfachen Media Query respektieren.
 
 Das ist einer der einfachsten A11y-Gewinne, die ihr erzielen könnt!
 -->
+
+---
+layout: center
+class: text-center
+---
+
+# Ausprobieren
+
+<a href="https://practica11y.dev/challenges/color-contrast-fail" target="_blank" class="text-2xl pt-10">🎮 Challenge: Color Contrast Fail</a>
+<br>
+<a href="https://practica11y.dev/challenges/missing-alt-text" target="_blank" class="text-2xl pt-4">🎮 Challenge: Missing Alt Text</a>
+<br>
+<a href="https://practica11y.dev/challenges/reduced-motion" target="_blank" class="text-2xl pt-4">🎮 Challenge: Reduced Motion</a>
+
+<!--
+- Passende Challenges zum Kapitel visuelle Barrierefreiheit
+- Color Contrast: Kontrastverhältnisse reparieren
+- Missing Alt Text: Alt-Texte für Bilder ergänzen
+- Reduced Motion: prefers-reduced-motion korrekt umsetzen
+-->

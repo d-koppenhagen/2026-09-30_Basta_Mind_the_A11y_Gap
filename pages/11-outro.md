@@ -64,6 +64,7 @@ layout: default
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 - [WebAIM](https://webaim.org/)
 - [A11y Project](https://www.a11yproject.com/)
+- [🎮 Practica11y](https://practica11y.dev) – Interaktive A11y-Challenges
 
 ## Tools
 - [axe DevTools](https://www.deque.com/axe/devtools/)

@@ -26,3 +26,31 @@ Kurze Vorstellung:
 - Leidenschaftlich dafür, das Web für alle zugänglich zu machen
 - Ich glaube gute Software sollte robust, skalierbar UND inklusiv sein
 -->
+
+---
+layout: center
+---
+
+# Practica11y
+
+<div class="flex flex-col items-center gap-6 mt-8">
+
+<div class="text-xl opacity-80 text-center max-w-xl">
+Eine gamifizierte Lernplattform für Web-Barrierefreiheit – interaktive Challenges direkt im Browser lösen.
+</div>
+
+<a href="https://practica11y.dev" target="_blank" class="text-2xl">
+🎮 practica11y.dev
+</a>
+
+</div>
+
+<!--
+- Kurz zu einem Projekt das ich gebaut habe: Practica11y
+- Eine gamifizierte Lernplattform für Web-Barrierefreiheit
+- Entwickler lösen interaktive Challenges direkt im Browser
+- Ziel: WCAG-Richtlinien praktisch verstehen lernen statt nur Theorie
+- Komplett clientseitig, kein Backend nötig
+- Einige der Challenges werden wir heute in den Demos sehen
+- → Überleitung: Aber zuerst – warum ist Barrierefreiheit überhaupt wichtig?
+-->

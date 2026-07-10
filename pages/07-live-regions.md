@@ -240,3 +240,18 @@ Polite ist fast immer die richtige Wahl.
 
 Jetzt decken wir schnell visuelle Barrierefreiheit ab...
 -->
+
+---
+layout: center
+class: text-center
+---
+
+# Ausprobieren
+
+<a href="https://practica11y.dev/challenges/live-region-dynamic" target="_blank" class="text-2xl pt-10">🎮 Challenge: Live Region Dynamic</a>
+
+<!--
+- Hier die passende Challenge auf practica11y.dev zum Selbstausprobieren
+- Dynamische Live Region korrekt implementieren
+- → Überleitung: Jetzt zu visueller Barrierefreiheit
+-->
