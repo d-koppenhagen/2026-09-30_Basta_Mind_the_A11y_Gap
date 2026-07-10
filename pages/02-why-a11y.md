@@ -22,19 +22,15 @@ layout: default
 </v-click>
 
 <!--
-Warum sollten wir uns um Barrierefreiheit kümmern?
-
-1. 15 % der Menschen weltweit haben eine Form von Behinderung – das sind über 1 Milliarde Menschen
-2. Aber es geht nicht nur um dauerhafte Behinderungen – denkt an:
-   - Gebrochener Arm (temporär)
-   - Baby halten (situativ)
-   - Helle Sonne auf dem Bildschirm (umgebungsbedingt)
-3. Gesetzliche Anforderungen: European Accessibility Act, deutsches BFSG – Konformität ist Pflicht ab Juni 2025
-4. Business Case: Größere Zielgruppe, besseres SEO, und ehrlich gesagt – barrierefreie Apps sind einfach besser für alle
-
-Fazit: Barrierefreiheit ist essenziell, nicht optional.
-
-Schauen wir uns an, was typischerweise schiefgeht...
+- 15 % der Weltbevölkerung hat eine Form von Behinderung – über 1 Milliarde Menschen
+- Nicht nur dauerhafte Behinderungen:
+  - Gebrochener Arm (temporär)
+  - Baby halten (situativ)
+  - Sonne auf Bildschirm (umgebungsbedingt)
+- Gesetzliche Pflicht: European Accessibility Act + BFSG seit Juni 2025
+- Business Case: Größere Zielgruppe, besseres SEO, bessere UX für alle
+- Fazit: Barrierefreiheit ist essenziell, nicht optional
+- → Überleitung: Schauen wir uns an, was typischerweise schiefgeht
 -->
 
 ---
@@ -73,23 +69,16 @@ layout: default
 </div>
 
 <!--
-Bevor wir in die technischen Fallen eintauchen, kurz innehalten.
-
-UX und Barrierefreiheit sind keine getrennten Themen – sie gehen Hand in Hand.
-
-Schaut euch dieses Foto an, das ich in einem Hotel gemacht habe:
-- Es gibt ZWEI Aufzüge nebeneinander
-- Die Ruftasten sind RECHTS am LINKEN Aufzug montiert
-- Welchen Aufzug rufen sie also? Den linken (neben den Tasten) oder den rechten (in dessen Richtung die Tasten zeigen)?
-
-Das ist ein klassisches UX-Versagen – und es betrifft alle:
-- Sehende müssen raten
-- Menschen mit kognitiven Einschränkungen sind verwirrt
-- Menschen mit Sehbehinderung können es auch nicht leicht herausfinden
-
-Die Lektion: Wenn etwas verwirrend oder unintuitiv ist, ist es SOWOHL ein UX-Problem ALS AUCH ein A11y-Problem.
-
-Gute Barrierefreiheit bedeutet meist gute UX. Und gute UX bedeutet meist gute Barrierefreiheit.
-
-Denkt also bei den folgenden Fallen daran: Wir bauen nicht nur für „Nutzer mit Behinderungen" – wir bauen für alle.
+- UX und Barrierefreiheit sind keine getrennten Themen – sie gehen Hand in Hand
+- Foto aus einem Hotel:
+  - Zwei Aufzüge nebeneinander
+  - Ruftasten rechts am linken Aufzug montiert
+  - Unklar welchen Aufzug sie rufen
+- Klassisches UX-Versagen – betrifft alle:
+  - Sehende müssen raten
+  - Menschen mit kognitiven Einschränkungen sind verwirrt
+  - Blinde können es auch nicht herausfinden
+- Lektion: Verwirrend = UX-Problem UND A11y-Problem
+- Gute A11y = gute UX (und umgekehrt)
+- → Überleitung: Mit diesem Mindset schauen wir uns häufige Fallen an
 -->

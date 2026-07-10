@@ -8,11 +8,9 @@ image: /testing.jpg
 Barrierefreiheit verifizieren
 
 <!--
-Was man nicht misst, kann man nicht verbessern.
-
-Schauen wir uns die wichtigsten Tools zum Testen von Barrierefreiheit an.
-
-Ich halte es kurz, da wir knapp an Zeit sind...
+- Was man nicht misst, kann man nicht verbessern
+- Die wichtigsten Tools zum Testen von Barrierefreiheit
+- → Überleitung: Automatisiert vs Manuell
 -->
 
 ---
@@ -41,29 +39,19 @@ layout: default
 </v-clicks>
 
 <!--
-Barrierefreiheit testen erfordert sowohl automatisierte Tools als auch manuelles Testen.
-
-[KLICK]
-Automatisierte Tools:
-- axe DevTools: Beste Browser-Erweiterung, findet viele Probleme
-- Lighthouse: In Chrome eingebaut, gibt euch einen Score
-- WAVE: Visuelles Overlay das Probleme zeigt
-
-Aber automatisierte Tools finden nur 30–40 % der Probleme!
-
-[KLICK]
-Manuelles Testen ist essenziell:
-- Nur Tastatur: Maus abstöpseln und versuchen, die App zu benutzen
-- Screen Reader: Wirklich mit VoiceOver oder NVDA testen
-- Zoom: Sicherstellen, dass das Layout bei 200 % Zoom funktioniert
-
-[KLICK]
-Browser DevTools:
-- Accessibility Tree zeigt was Screen Reader sehen
-- Contrast Checker eingebaut in Chrome
-- Lighthouse für schnelle Audits
-
-Mit automatisierten Tools anfangen, aber nicht dabei aufhören!
-
-Fassen wir zusammen...
+- [KLICK] Automatisierte Tools:
+  - axe DevTools: Beste Browser-Erweiterung
+  - Lighthouse: In Chrome eingebaut, gibt Score
+  - WAVE: Visuelles Overlay
+  - Aber: Finden nur 30–40 % der Probleme!
+- [KLICK] Manuelles Testen essenziell:
+  - Maus abstöpseln, App nur mit Tastatur bedienen
+  - Screen Reader testen (VoiceOver / NVDA)
+  - 200 % Zoom prüfen
+- [KLICK] Browser DevTools:
+  - Accessibility Tree zeigt was Screen Reader sehen
+  - Contrast Checker eingebaut
+  - Lighthouse für schnelle Audits
+- Automatisiert anfangen, aber nicht dabei aufhören!
+- → Überleitung: AI Agents und Barrierefreiheit
 -->

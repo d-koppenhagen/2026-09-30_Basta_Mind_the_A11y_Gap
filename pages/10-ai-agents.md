@@ -7,8 +7,9 @@ layout: section
 <p class="text-[#8892b0] text-xl mt-4">Warum A11y auch für Maschinen zählt</p>
 
 <!--
-- KI-gesteuerte Assistenten – interagieren zunehmend mit Websites.
-- Sie nutzen denselben Accessibility Tree, den auch Screen Reader verwenden!
+- KI-gesteuerte Assistenten interagieren zunehmend mit Websites
+- Sie nutzen denselben Accessibility Tree wie Screen Reader
+- → Überleitung: Was das für uns bedeutet
 -->
 
 ---
@@ -53,13 +54,13 @@ layout: default
 </v-click>
 
 <!--
-AI Agents verwenden den Accessibility Tree als primäres Datenmodell, wenn sie mit einer Website interagieren.
-
-Das bedeutet: Alles was wir heute über semantisches HTML, Labels, und ARIA gelernt haben, hilft nicht nur Menschen mit Behinderungen – es hilft auch KI-Agenten, eure Seite zu verstehen und damit zu interagieren.
-
-Schlecht zugängliche Seiten sind also auch schlecht für AI Agents.
-
-Das ist ein weiterer Business-Case für Barrierefreiheit!
+- AI Agents nutzen den Accessibility Tree als primäres Datenmodell
+- Alles was wir über semantisches HTML, Labels, ARIA gelernt haben:
+  - Hilft Menschen mit Behinderungen
+  - Hilft auch KI-Agenten die Seite zu verstehen
+- Schlecht zugänglich = schlecht für AI Agents
+- Weiterer Business-Case für Barrierefreiheit!
+- → Überleitung: Chrome DevTools für Agents
 -->
 
 ---
@@ -99,15 +100,10 @@ npx chrome-devtools-mcp@latest
 </div>
 
 <!--
-Chrome DevTools for Agents ist ein MCP-Server, der KI-Coding-Agents ermöglicht, direkt mit dem Browser zu interagieren.
-
-Euer Agent kann:
-- Zu einer URL navigieren
-- Lighthouse Audits auslösen
-- Den Accessibility Tree inspizieren
-- Fehler debuggen
-
-Das ist perfekt für automatisiertes A11y-Testing im Entwicklungs-Workflow.
+- Chrome DevTools for Agents: MCP-Server für KI-Coding-Agents
+- Agent kann: Navigieren, Lighthouse Audits, Accessibility Tree inspizieren, Debuggen
+- Perfekt für automatisiertes A11y-Testing im Entwicklungs-Workflow
+- → Überleitung: Modern Web Guidance
 -->
 
 
@@ -156,16 +152,9 @@ npx modern-web-guidance@latest install
 </v-click>
 
 <!--
-Modern Web Guidance ist eine Sammlung von Skills, die ihr direkt in eure Coding-Agents einbetten könnt.
-
-Es bringt Best Practices für modernes Web-Development direkt in den Agent-Context:
-- Barrierefreiheit
-- Performance
-- Security
-- Moderne APIs
-
-Die Idee: Ihr gebt eurem Coding-Agent nicht nur Code-Zugang, sondern auch Web-Expertise.
-
-In Kombination mit Chrome DevTools for Agents entsteht ein vollständiger A11y-Workflow:
-Agent schreibt Code → prüft automatisch → fixed Probleme → verifiziert erneut.
+- Modern Web Guidance: Skills für Coding-Agents mit Web-Expertise
+- Best Practices direkt im Agent-Context: A11y, Performance, Security, moderne APIs
+- Kombination mit Chrome DevTools = vollständiger A11y-Workflow:
+  - Agent schreibt Code → prüft automatisch → fixed Probleme → verifiziert
+- → Überleitung: Zusammenfassung
 -->

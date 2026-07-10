@@ -29,23 +29,17 @@ class: text-center
 </v-click>
 
 <!--
-Fassen wir mit den wichtigsten Erkenntnissen zusammen:
-
-[DURCH JEDEN KLICK GEHEN]
-
-1. Semantisches HTML löst die meisten Probleme – die richtigen Elemente verwenden!
-2. Tastatur-Testen ist essenziell – Maus abstöpseln
-3. Focus-Management in SPAs – Focus nach Navigation verschieben
-4. Formulare brauchen richtige Labels und Fehlerbehandlung
-5. Live Regions müssen existieren bevor man sie aktualisiert
-6. Farbkontrast prüfen – leicht zu fixen
-7. Mit automatisierten Tools UND manuell testen
-
-[LETZTER KLICK]
-Denkt daran: Barrierefreiheit ist kein Feature, das man am Ende hinzufügt.
-Es ist eine grundlegende Anforderung für Software, die für alle funktioniert.
-
-Klein anfangen, aber heute anfangen!
+- Zusammenfassung – wichtigste Erkenntnisse:
+- [KLICK] Semantisches HTML = 80 % der Lösung
+- [KLICK] Tastatur-Test: Nicht benutzbar = kaputt
+- [KLICK] Focus-Management in SPAs nicht vergessen
+- [KLICK] Formulare: Labels + richtige Fehlerbehandlung
+- [KLICK] Live Regions: Müssen VOR Updates existieren
+- [KLICK] Kontrast prüfen – leicht zu fixen
+- [KLICK] Automatisiert UND manuell testen
+- [KLICK] A11y = Agent-Ready
+- [LETZTER KLICK] Barrierefreiheit ist kein Feature, sondern eine Grundanforderung
+- Klein anfangen, aber heute anfangen!
 -->
 
 ---
@@ -93,21 +87,10 @@ layout: default
 </div>
 
 <!--
-Hier sind Ressourcen um eure Barrierefreiheits-Reise fortzusetzen:
-
-LINKE SEITE:
-- WCAG-Richtlinien: Die offizielle Spezifikation
-- MDN: Tolle praxisnahe Anleitungen
-- WebAIM: Exzellente Artikel und Tools
-- A11y Project: Community-getriebene Ressourcen
-
-Tools die wir heute besprochen haben
-
-RECHTE SEITE:
-Meine Inhalte falls ihr folgen oder mich erreichen wollt
-Und diese Slides werden auf GitHub verfügbar sein
-
-Fragen?
+- Ressourcen für die Barrierefreiheits-Reise:
+- LINKS: WCAG, MDN, WebAIM, A11y Project + Tools
+- RECHTS: Meine Kontaktdaten und Slides auf GitHub
+- Fragen?
 -->
 
 ---
@@ -132,13 +115,8 @@ layout: end
 </div>
 
 <!--
-Vielen Dank für eure Aufmerksamkeit!
-
-Ich hoffe, das gibt euch einen guten Startpunkt um Barrierefreiheit in euren Projekten zu verbessern.
-
-Denkt daran: Klein anfangen, aber heute anfangen.
-
-Jede Verbesserung macht das Web inklusiver.
-
-Fragen?
+- Danke für die Aufmerksamkeit!
+- Klein anfangen, aber heute anfangen
+- Jede Verbesserung macht das Web inklusiver
+- Fragen? Gerne ansprechen!
 -->

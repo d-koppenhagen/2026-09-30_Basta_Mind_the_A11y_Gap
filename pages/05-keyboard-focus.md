@@ -7,11 +7,10 @@ layout: section
 Die App ohne Maus benutzbar machen
 
 <!--
-Nicht jeder benutzt eine Maus. Manche navigieren ausschließlich mit der Tastatur.
-
-Hier scheitern viele moderne Web-Apps.
-
-Schauen wir uns die häufigsten Probleme an...
+- Nicht jeder benutzt eine Maus
+- Manche navigieren ausschließlich mit der Tastatur
+- Hier scheitern viele moderne Web-Apps
+- → Überleitung: Häufigste Probleme bei Tastatur-Navigation
 -->
 
 
@@ -78,25 +77,15 @@ button:focus-visible { /* Alternative */
 </div>
 
 <!--
-Das ist eins der schlimmsten Dinge, die man für die Barrierefreiheit tun kann.
-
-LINKS – Problem:
-Outlines komplett entfernen. Das sehe ich STÄNDIG.
-Entwickler finden es hässlich und entfernen es.
-
-[KLICK]
-Ergebnis: Tastatur-Nutzer haben keine Ahnung, wo sie auf der Seite sind.
-Stellt euch vor, ihr tabbt durch ein Formular und wisst nicht, in welchem Feld ihr seid!
-
-RECHTS:
-[KLICK]
-Lösung:
-Den Standard-Outline behalten, oder ihn passend zum Design stylen.
-focus-visible verwenden, um ihn nur für Tastatur-Nutzer zu zeigen, nicht bei Mausklicks.
-
-Profi-Tipp: Modernes CSS bietet box-shadow für mehr Design-Flexibilität.
-
-Niemals, NIEMALS Focus-Indikatoren komplett entfernen!
+- Eins der schlimmsten Dinge für A11y: Focus-Outlines entfernen
+- LINKS: outline:none überall – sieht man leider ständig
+- [KLICK] Tastatur-Nutzer wissen nicht, wo sie auf der Seite sind
+- RECHTS:
+  - [KLICK] Outline behalten oder passend zum Design stylen
+  - :focus-visible → nur für Tastatur-Nutzer, nicht bei Mausklick
+  - box-shadow als Alternative für mehr Design-Flexibilität
+- Niemals Focus-Indikatoren komplett entfernen!
+- → Überleitung: Demo
 -->
 
 ---
@@ -109,6 +98,12 @@ class: text-center
 <a href="https://practica11y.dev/challenges/clickable-div" target="_blank" class="text-2xl pt-10">🎮 Challenge: Div and Conquer</a>
 <br>
 <a href="https://practica11y.dev/challenges/missing-landmarks" target="_blank" class="text-2xl pt-4">🎮 Challenge: Lost Without a Map</a>
+
+<!--
+- Div and Conquer: Klickbare Divs durch richtige Buttons ersetzen
+- Lost Without a Map: Fehlende Landmarks ergänzen
+- → Überleitung: Verlorener Focus in SPAs
+-->
 
 ---
 layout: default
@@ -126,6 +121,12 @@ layout: default
 - Erwartung: Focus am Seitenanfang oder direkt nach der Navigation
 
 <!--
+- Vergleich: Multi-Page-App vs SPA beim Navigieren
+- Klassisch: Browser setzt Focus beim Laden auf Seitenanfang
+- SPA: Inhalt ändert sich, aber Focus bleibt wo er war
+- Nutzer merkt nicht, dass sich etwas geändert hat
+- Screen Reader kündigt keinen Seitenwechsel an
+- → Überleitung: Wie löst man das in SPAs?
 -->
 
 ---
@@ -187,26 +188,15 @@ main.focus();
 </div>
 
 <!--
-Das ist ein riesiges Problem in Single Page Applications.
-
-LINKS – Problem:
-Nutzer klickt einen Link, Inhalt ändert sich, aber Focus bleibt auf dem alten Link.
-Screen-Reader-Nutzer hören nichts – sie wissen nicht, dass sich die Seite geändert hat!
-
-[KLICK]
-Das ist verwirrend und bricht das erwartete Verhalten.
-
-RECHTS:
-[KLICK]
-Lösung:
-Nach der Navigation den Focus programmatisch auf den Hauptinhalt verschieben.
-tabindex="-1" setzen um es fokussierbar zu machen, dann focus() aufrufen.
-
-Das gibt Screen-Reader-Nutzern sofortiges Feedback, dass sich die Seite geändert hat.
-
-Alternative: Ein Skip-Link-Pattern verwenden, das immer verfügbar ist.
-
-Das ist eins dieser SPA-spezifischen Probleme, die man leicht übersieht!
+- Riesiges Problem in Single Page Applications
+- LINKS: Nutzer klickt Link, Inhalt ändert sich, Focus bleibt auf altem Link
+  - [KLICK] Screen-Reader-Nutzer hören nichts, müssen gesamtes Formular erneut durchtabben
+- RECHTS:
+  - [KLICK] Nach Navigation Focus auf main-Element setzen
+  - tabindex="-1" macht es fokussierbar, dann focus() aufrufen
+  - Screen Reader kündigt neuen Inhalt sofort an
+- SPA-spezifisches Problem – leicht zu übersehen!
+- → Überleitung: Seitentitel
 -->
 
 ---
@@ -266,31 +256,12 @@ function updateTitle(pageName) {
 </div>
 
 <!--
-Ein weiteres häufiges SPA-Problem: Statische Seitentitel.
-
-LINKS – Problem:
-Jede Seite hat den gleichen Titel: "My App"
-
-[KLICK]
-Probleme:
-- Nutzer können nicht erkennen, welcher Tab welcher ist
-- Screen Reader kündigen für jede Seite den gleichen Titel an
-- Kein Kontext wo man sich befindet
-- Suchmaschinen können eure Seiten nicht unterscheiden
-
-RECHTS:
-[KLICK]
-Lösung:
-Den document.title bei jedem Routenwechsel aktualisieren.
-Muster: „Seitenname – App-Name"
-
-Das ist so ein einfacher Fix, aber macht einen riesigen Unterschied!
-
-Screen Reader kündigen den Titel an, wenn die Seite lädt.
-Nutzer können sehen, welcher Tab welcher ist.
-SEO verbessert sich.
-
-Win-win-win!
-
-Jetzt reden wir über Formulare...
+- Weiteres häufiges SPA-Problem: Statische Seitentitel
+- LINKS: Jede Seite heißt "My App"
+  - [KLICK] Tabs nicht unterscheidbar, Screen Reader kündigt immer gleichen Titel an
+- RECHTS:
+  - [KLICK] document.title bei jedem Routenwechsel aktualisieren
+  - Muster: „Seitenname – App-Name"
+- Einfacher Fix, große Wirkung: Screen Reader, Tabs, SEO
+- → Überleitung: Formulare
 -->

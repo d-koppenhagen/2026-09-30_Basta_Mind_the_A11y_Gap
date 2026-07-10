@@ -7,11 +7,9 @@ layout: section
 Farbkontrast und Medien-Alternativen
 
 <!--
-Wir haben uns viel auf Screen Reader und Tastatur-Nutzer konzentriert.
-
-Aber visuelle Barrierefreiheit ist auch wichtig!
-
-Decken wir die Grundlagen schnell ab...
+- Bisher Fokus auf Screen Reader und Tastatur
+- Visuelle Barrierefreiheit ist ebenso wichtig
+- → Überleitung: Farbkontrast
 -->
 
 
@@ -74,28 +72,15 @@ Dieser Text ist gut lesbar
 </v-clicks>
 
 <!--
-Farbkontrast ist kritisch für Nutzer mit Sehbehinderung oder Farbenblindheit.
-
-LINKS – Problem:
-Hellgrau auf Weiß. Sieht modern und minimalistisch aus, aber...
-Kontrastverhältnis ist nur 2,85:1 – fällt bei WCAG durch!
-
-RECHTS – Lösung:
-Dunkleres Grau auf Weiß. Sieht immer noch gut aus, aber lesbar.
-Kontrastverhältnis ist 7:1 – besteht AAA!
-
-[KLICKS]
-WCAG-Anforderungen:
-- Level AA (Minimum): 4,5:1 für normalen Text
-- Level AAA (erweitert): 7:1 für normalen Text
-- Großer Text hat niedrigere Anforderungen
-
-Tools zum Prüfen:
-- Chrome DevTools hat einen eingebauten Kontrast-Checker
-- WebAIM hat ein Online-Tool
-- Stark-Plugin für Figma/Sketch
-
-Profi-Tipp: Prüft eure Design-System-Farben früh!
+- Farbkontrast kritisch für Sehbehinderung und Farbenblindheit
+- LINKS: Hellgrau auf Weiß – sieht modern aus, aber nur 2,85:1 Kontrast
+- RECHTS: Dunkleres Grau – immer noch gut aussehend, 7:1 Kontrast (AAA!)
+- [KLICK] WCAG-Anforderungen:
+  - AA (Minimum): 4,5:1 normaler Text, 3:1 großer Text
+  - AAA (erweitert): 7:1 normaler Text
+- Tools: Chrome DevTools, WebAIM, Stark-Plugin
+- Tipp: Design-System-Farben früh prüfen!
+- → Überleitung: Medien-Alternativen
 -->
 
 ---
@@ -156,17 +141,14 @@ layout: default
 </div>
 
 <!--
-Medien-Alternativen sind essenziell für Nutzer, die Inhalte nicht sehen oder hören können.
-
-Bilder:
-- Informative Bilder: Beschreiben was das Bild vermittelt
-- Dekorative Bilder: Leerer Alt-Text (alt="") damit Screen Reader es überspringen
-- Komplexe Bilder: aria-describedby für längere Beschreibungen verwenden
-
-[KLICK] Hier sehen wir ein Bild mit einer ungültigen URL – der Browser zeigt ein Broken-Image-Icon.
-[KLICK] Nach dem Korrigieren der URL lädt das Buchcover korrekt.
-
-Faustregel: Wenn das Entfernen des Bildes/Videos Informationen verlieren würde, braucht ihr eine Alternative.
+- Medien-Alternativen essenziell für Nutzer die nicht sehen/hören können
+- [KLICK] Bilder:
+  - Informativ: Beschreiben was das Bild vermittelt
+  - Dekorativ: Leerer Alt-Text (alt="") → Screen Reader überspringt
+  - Komplex: aria-describedby für längere Beschreibungen
+- [KLICK] Broken Image ohne URL → nach Korrektur lädt das Bild korrekt
+- Faustregel: Wenn Entfernen Informationsverlust bedeutet → Alternative nötig
+- → Überleitung: Videos
 -->
 
 ---
@@ -186,17 +168,10 @@ layout: default
 ```
 
 <!--
-Medien-Alternativen sind essenziell für Nutzer, die Inhalte nicht sehen oder hören können.
-
-[KLICK]
-Videos:
-- Immer Untertitel für gehörlose Nutzer bereitstellen
-- Audiobeschreibungen für blinde Nutzer in Betracht ziehen
-- Das track-Element mit WebVTT-Dateien verwenden
-
-Faustregel: Wenn das Entfernen des Bildes/Videos Informationen verlieren würde, braucht ihr eine Alternative.
-
-Jetzt reden wir über reduzierte Bewegung und visuelle Präferenzen...
+- Videos: Immer Untertitel für gehörlose Nutzer
+- Audiobeschreibungen für blinde Nutzer erwägen
+- track-Element mit WebVTT-Dateien verwenden
+- → Überleitung: Reduzierte Bewegung
 -->
 
 ---
@@ -236,13 +211,11 @@ layout: default
 </div>
 
 <!--
-Reduzierte Bewegung wird oft übersehen, ist aber wichtig.
-
-Manche Nutzer werden schwindelig oder übel von Animationen und Transitions.
-Moderne Betriebssysteme lassen Nutzer eine „Bewegung reduzieren"-Präferenz setzen.
-Wir können das mit einer einfachen Media Query respektieren.
-
-Das ist einer der einfachsten A11y-Gewinne, die ihr erzielen könnt!
+- Manche Nutzer werden schwindelig/übel von Animationen
+- Betriebssysteme bieten „Bewegung reduzieren"-Präferenz
+- Einfache Media Query respektiert die Einstellung
+- Einer der einfachsten A11y-Gewinne!
+- → Überleitung: Challenges zum Ausprobieren
 -->
 
 ---
@@ -259,8 +232,9 @@ class: text-center
 <a href="https://practica11y.dev/challenges/reduced-motion" target="_blank" class="text-2xl pt-4">🎮 Challenge: Reduced Motion</a>
 
 <!--
-- Passende Challenges zum Kapitel visuelle Barrierefreiheit
+- Challenges zum Kapitel visuelle Barrierefreiheit
 - Color Contrast: Kontrastverhältnisse reparieren
-- Missing Alt Text: Alt-Texte für Bilder ergänzen
-- Reduced Motion: prefers-reduced-motion korrekt umsetzen
+- Missing Alt Text: Alt-Texte ergänzen
+- Reduced Motion: prefers-reduced-motion umsetzen
+- → Überleitung: Testen und Tools
 -->

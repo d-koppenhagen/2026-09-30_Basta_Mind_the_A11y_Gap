@@ -7,11 +7,10 @@ layout: section
 Was schiefgeht und warum
 
 <!--
-Reden wir über „The Gap" – die Lücke zwischen dem, was wir bauen wollen, und dem, was wir tatsächlich in Sachen Barrierefreiheit liefern.
-
-Ich zeige euch einige Praxisbeispiele häufiger Fehler.
-
-Bei jedem will ich, dass ihr denkt: „Kann ich das Problem erkennen?"
+- „The Gap" – die Lücke zwischen Intention und tatsächlicher Barrierefreiheit
+- Praxisbeispiele häufiger Fehler
+- Bei jedem Beispiel: „Kann ich das Problem erkennen?"
+- → Überleitung: Machen wir ein Code Review
 -->
 
 ---
@@ -62,22 +61,15 @@ layout: default
 
 
 <!--
-Machen wir zusammen ein Code Review. Das ist echter Code, den ich in Produktion gesehen habe.
-
-[KLICK durch Highlights]
-- Zeile 2: "headline" als div – keine semantische Überschrift
-- Zeile 3: "nav" – ein div, kein nav-Element
-- Zeile 5: Klickbare divs statt Buttons oder Links
-- Zeile 10: Ein Formular komplett aus divs gebaut
-- Und mehr...
-
-[LETZTER KLICK]
-Dieser Code hat mindestens 7 schwerwiegende A11y-Probleme!
-
-Kann jemand einige davon erkennen?
-[PAUSE für Publikumsinteraktion]
-
-Schauen wir uns an, was falsch ist und wie wir es fixen...
+- Echter Code aus der Produktion – Code Review zusammen
+- Probleme erkennen lassen:
+  - „headline" als div – keine semantische Überschrift
+  - „nav" ist ein div, kein nav-Element
+  - Klickbare divs statt Buttons oder Links
+  - Formular komplett aus divs
+- [KLICK] Mindestens 7 schwerwiegende A11y-Probleme!
+- Publikum fragen: Welche Probleme fallen euch auf?
+- → Überleitung: Schauen wir im Detail, was falsch ist
 -->
 
 
@@ -87,7 +79,9 @@ image: /soup_div.png
 ---
 
 <!--
-Bildnotiz: Generiert mit ChatGPT
+- „Div-Suppe" – ein Klassiker
+- Bild generiert mit ChatGPT
+- → Überleitung: Die konkreten Probleme im Detail
 -->
 
 ---
@@ -120,16 +114,12 @@ transition: slide-up
 </v-click>
 
 <!--
-Hier ist, was an dem Code falsch ist:
-
-[DURCH JEDEN PUNKT GEHEN]
-
-Das Ergebnis?
-- Screen Reader sehen nur eine flache Liste von Text – keine Struktur, keine Navigation
-- Tastatur-Nutzer können nicht durch die Seite tabben
-- Selbst Suchmaschinen haben Schwierigkeiten zu verstehen, was wichtig ist
-
-Das nenne ich „div-Suppe" – und es kommt überraschend häufig vor.
-
-Schauen wir uns an, wie man es richtig macht...
+- [DURCH JEDEN PUNKT KLICKEN]
+- Kein semantisches HTML, keine Landmarks, klickbare Divs, etc.
+- Ergebnis:
+  - Screen Reader: Flache Textliste, keine Struktur
+  - Tastatur-Nutzer: Können nicht durch die Seite tabben
+  - Suchmaschinen: Können Wichtigkeit nicht erkennen
+- Das ist „div-Suppe" – überraschend häufig in Produktion
+- → Überleitung: Wie macht man es richtig?
 -->

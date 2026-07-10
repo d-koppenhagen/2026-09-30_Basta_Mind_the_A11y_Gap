@@ -20,11 +20,11 @@ layout: center
 </div>
 
 <!--
-Kurze Vorstellung:
-- Ich bin Danny, Frontend Architect bei DB Systel
-- Ich arbeite an großen Web-Applikationen für die Deutsche Bahn
+- Kurze Vorstellung: Danny, Frontend Architect bei DB Systel
+- Arbeite an großen Web-Apps für die Deutsche Bahn
 - Leidenschaftlich dafür, das Web für alle zugänglich zu machen
-- Ich glaube gute Software sollte robust, skalierbar UND inklusiv sein
+- Gute Software = robust, skalierbar UND inklusiv
+- → Überleitung: Erst kurz ein Projekt von mir vorstellen
 -->
 
 ---
@@ -46,11 +46,10 @@ Eine gamifizierte Lernplattform für Web-Barrierefreiheit – interaktive Challe
 </div>
 
 <!--
-- Kurz zu einem Projekt das ich gebaut habe: Practica11y
-- Eine gamifizierte Lernplattform für Web-Barrierefreiheit
-- Entwickler lösen interaktive Challenges direkt im Browser
-- Ziel: WCAG-Richtlinien praktisch verstehen lernen statt nur Theorie
+- Practica11y: Gamifizierte Lernplattform für Web-Barrierefreiheit
+- Interaktive Challenges direkt im Browser lösen
+- Ziel: WCAG praktisch verstehen statt nur Theorie lesen
 - Komplett clientseitig, kein Backend nötig
-- Einige der Challenges werden wir heute in den Demos sehen
-- → Überleitung: Aber zuerst – warum ist Barrierefreiheit überhaupt wichtig?
+- Einige Challenges davon werden wir heute in den Demos sehen
+- → Überleitung: Aber warum ist Barrierefreiheit überhaupt wichtig?
 -->

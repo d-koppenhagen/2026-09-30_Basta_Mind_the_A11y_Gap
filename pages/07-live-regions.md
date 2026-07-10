@@ -7,13 +7,11 @@ layout: section
 Änderungen für Screen-Reader-Nutzer ankündigen
 
 <!--
-Moderne Apps sind dynamisch – Inhalte ändern sich ohne Seitenneuladen.
-
-Aber Screen Reader kündigen diese Änderungen nicht automatisch an.
-
-Hier kommen ARIA Live Regions ins Spiel.
-
-Und hier wird es knifflig...
+- Moderne Apps: Inhalte ändern sich ohne Seitenneuladen
+- Screen Reader kündigen Änderungen nicht automatisch an
+- ARIA Live Regions lösen das Problem
+- Aber: Hier wird es knifflig...
+- → Überleitung: Das Live-Region-Problem
 -->
 
 ---
@@ -83,25 +81,16 @@ function announce(msg) { // Inhalt aktualisieren
 </div>
 
 <!--
-Das ist eins der kniffligsten A11y-Probleme in SPAs.
-
-LINKS – Problem:
-Ein Element erstellen und gleichzeitig aria-live setzen.
-Sieht aus als sollte es funktionieren, oder?
-
-[KLICK]
-Falsch! Screen Reader brauchen das aria-live-Element BEVOR sich der Inhalt ändert.
-Wenn man es dynamisch erstellt, verpassen sie es. Stiller Fehler.
-
-RECHTS:
-[KLICK]
-Lösung: Globales Live-Region-Pattern.
-Eine persistente, leere Live Region im HTML erstellen.
-Wenn ihr etwas ankündigen müsst, einfach den Inhalt aktualisieren.
-
-Das ist das zuverlässige Pattern, das in allen Screen Readern funktioniert.
-
-Aber es gibt noch einen anderen Ansatz...
+- Kniffligstes A11y-Problem in SPAs
+- LINKS: Element erstellen UND gleichzeitig aria-live setzen
+  - Sieht korrekt aus, funktioniert aber nicht!
+  - [KLICK] Screen Reader brauchen aria-live BEVOR sich Inhalt ändert
+  - Stiller Fehler – keine Ankündigung
+- RECHTS:
+  - [KLICK] Globales Live-Region-Pattern: Persistente leere Region im HTML
+  - Zum Ankündigen nur textContent aktualisieren
+  - Zuverlässig in allen Screen Readern
+- → Überleitung: Globale vs lokale Patterns
 -->
 
 ---
@@ -169,22 +158,11 @@ announce("3 neue Nachrichten");
 </v-click>
 
 <!--
-Zwei Patterns für Live Regions:
-
-LINKS – Globales Pattern:
-Ein einzelner Announcer für die gesamte App.
-Perfekt für Toast-Benachrichtigungen, Status-Meldungen, globale Ankündigungen.
-Einfach zu implementieren und zu pflegen.
-
-RECHTS – Lokales Pattern:
-Live Region innerhalb einer bestimmten Komponente.
-Perfekt für Chat-Nachrichten, Live-Feeds, komponentenspezifische Updates.
-Die Live Region ist Teil der Komponentenstruktur.
-
-[KLICK]
-Die entscheidende Regel für beide: Die Live Region muss im DOM existieren, BEVOR ihr ihren Inhalt aktualisiert.
-
-Das ist das Geheimnis für zuverlässige Screen-Reader-Ankündigungen.
+- Zwei Patterns:
+  - LINKS – Global: Ein Announcer für die gesamte App (Toasts, Status-Meldungen)
+  - RECHTS – Lokal: Live Region in Komponente (Chat, Live-Feeds)
+- [KLICK] Entscheidende Regel: Live Region muss im DOM existieren BEVOR Inhalt aktualisiert wird
+- → Überleitung: Attribute im Detail
 -->
 
 ---
@@ -218,27 +196,14 @@ layout: default
 </v-click>
 
 <!--
-Kurzreferenz für ARIA Live Attribute:
-
-[DURCH JEDEN KLICK GEHEN]
-
-aria-live="polite": Warten bis Nutzer fertig ist, dann ankündigen. Das verwenden in 99% der Fälle.
-
-aria-live="assertive": Sofort unterbrechen. Nur für kritische Alerts wie „Eure Sitzung läuft ab!"
-
-aria-atomic="true": Die gesamte Region vorlesen. Gut für Status-Meldungen.
-
-aria-atomic="false": Nur vorlesen was sich geändert hat. Gut für Chat-Nachrichten oder Listen.
-
-aria-relevant: Steuern, was Ankündigungen auslöst.
-
-[LETZTER KLICK]
-Warnung: Assertive nicht übermäßig verwenden! Es ist als würde jemand schreien, während man versucht zu lesen.
-Sehr nervig und desorientierend.
-
-Polite ist fast immer die richtige Wahl.
-
-Jetzt decken wir schnell visuelle Barrierefreiheit ab...
+- Kurzreferenz ARIA Live Attribute:
+- [KLICK] polite: Warten bis Nutzer fertig ist → 99% der Fälle
+- [KLICK] assertive: Sofort unterbrechen → nur kritische Alerts!
+- [KLICK] atomic="true": Gesamte Region vorlesen (Status-Meldungen)
+- [KLICK] atomic="false": Nur Änderungen vorlesen (Chat, Listen)
+- [KLICK] aria-relevant: Steuert was Ankündigungen auslöst
+- [KLICK] Warnung: assertive sparsam verwenden! Sehr störend.
+- → Überleitung: Visuelle Barrierefreiheit
 -->
 
 ---
@@ -251,7 +216,6 @@ class: text-center
 <a href="https://practica11y.dev/challenges/live-region-dynamic" target="_blank" class="text-2xl pt-10">🎮 Challenge: Live Region Dynamic</a>
 
 <!--
-- Hier die passende Challenge auf practica11y.dev zum Selbstausprobieren
-- Dynamische Live Region korrekt implementieren
-- → Überleitung: Jetzt zu visueller Barrierefreiheit
+- Challenge: Dynamische Live Region korrekt implementieren
+- → Überleitung: Visuelle Barrierefreiheit
 -->

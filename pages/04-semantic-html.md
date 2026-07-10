@@ -7,13 +7,9 @@ layout: section
 Die richtigen Elemente für den Job verwenden
 
 <!--
-Das Fundament der Barrierefreiheit ist semantisches HTML.
-
-HTML5 gibt uns mächtige Elemente mit eingebauten A11y-Features.
-
-Wir müssen sie nur verwenden!
-
-Schauen wir uns das gleiche Beispiel an, aber richtig umgesetzt...
+- HTML5 gibt uns mächtige Elemente mit eingebauten A11y-Features
+- Wir müssen sie nur verwenden!
+- → Überleitung: Gleiches Beispiel, aber richtig umgesetzt
 -->
 
 
@@ -51,25 +47,18 @@ transition: slide-up
 </v-click>
 
 <!--
-Hier ist die gleiche Funktionalität, aber richtig umgesetzt:
-
-[KLICK durch Highlights]
-- Zeile 1: Richtiges header-Landmark
-- Zeile 2: H1 für die Hauptüberschrift
-- Zeilen 3-6: nav-Landmark mit echten Links
-- Zeile 9: main-Landmark für den Hauptinhalt
-- Zeile 10: H2 für Abschnittsüberschrift (richtige Hierarchie)
-- Zeilen 11-12: Label korrekt mit Input verknüpft
-- Button ist ein echter Button
-
-[LETZTER KLICK]
-Jetzt haben wir:
-- Klare Struktur für Screen Reader
-- Volle Tastatur-Unterstützung (Links und Buttons sind fokussierbar)
-- Richtige Semantik für Suchmaschinen
-- Und wir brauchten keine ARIA-Attribute!
-
-Gehen wir tiefer in spezifische Patterns...
+- Gleiche Funktionalität, richtig umgesetzt:
+  - header-Landmark, h1 für Hauptüberschrift
+  - nav-Landmark mit echten Links
+  - main-Landmark, h2 für Abschnittsüberschrift
+  - Label korrekt mit Input verknüpft
+  - Echter Button statt div
+- [KLICK] Ergebnis:
+  - Klare Struktur für Screen Reader
+  - Volle Tastatur-Unterstützung
+  - Richtige Semantik für Suchmaschinen
+  - Keine ARIA-Attribute nötig!
+- → Überleitung: Tiefer in spezifische Patterns
 -->
 
 
@@ -82,6 +71,12 @@ layout: default
 <div class="flex justify-center items-center">
   <img src="/structure.png" alt="Visualisierung einer typischen Seitenstruktur mit Landmarks: header, nav, main, aside und footer" class="max-h-100" />
 </div>
+
+<!--
+- Typische Seitenstruktur mit Landmarks: header, nav, main, aside, footer
+- Screen-Reader-Nutzer springen per Shortcut zwischen Landmarks
+- Wie ein Inhaltsverzeichnis für die Seite
+-->
 
 ---
 layout: default
@@ -138,23 +133,12 @@ layout: default
 </v-click>
 
 <!--
-Landmarks und Überschriften erzeugen die navigierbare Struktur eurer Seite.
-
-LINKS – Problem:
-Alles divs mit Klassen. Screen Reader sehen keine Struktur.
-
-RECHTS – Lösung:
-Richtige Landmarks: header, aside, main, footer
-Richtige Überschriften-Hierarchie: h1 für Seitentitel, h2 für Abschnitte
-
-[KLICK]
-Warum das wichtig ist:
-Screen-Reader-Nutzer können per Taste zwischen Landmarks oder Überschriften springen.
-Es ist wie ein Inhaltsverzeichnis für eure Seite!
-
-Ohne das müssen sie ALLES linear durchhören.
-
-Wichtig: Die Überschriften-Hierarchie muss korrekt sein – niemals Ebenen überspringen!
+- LINKS: Alles divs mit Klassen – Screen Reader sehen keine Struktur
+- RECHTS: Richtige Landmarks (header, aside, main, footer) + Überschriften-Hierarchie
+- [KLICK] Screen-Reader-Nutzer springen per Taste zwischen Landmarks/Überschriften
+- Ohne Landmarks: Alles linear durchhören
+- Wichtig: Überschriften-Hierarchie nie überspringen!
+- → Überleitung: Skip Links als Ergänzung
 -->
 
 ---
@@ -218,17 +202,12 @@ layout: default
 </v-click>
 
 <!--
-Skip Links erlauben Tastatur-Nutzern, direkt zum Hauptinhalt zu springen.
-
-Aber: Wenn ihr richtige Landmarks habt, können Screen-Reader-Nutzer bereits mit Shortcuts navigieren.
-
-Skip Links sind primär für sehende Tastatur-Nutzer, die keine Landmark-Navigation verwenden können.
-
-Nutzt sie wenn:
-- Ihr viele Navigations-Items habt
-- Euer Header komplex ist mit vielen interaktiven Elementen
-
-Verlasst euch nicht auf Skip Links als Ersatz für richtige Landmarks!
+- Skip Links: Tastatur-Nutzer springen direkt zum Hauptinhalt
+- Ergänzung zu Landmarks, kein Ersatz!
+- Screen-Reader-Nutzer haben bereits Landmark-Navigation
+- Primär für sehende Tastatur-Nutzer
+- Sinnvoll bei vielen Nav-Items oder komplexem Header
+- → Überleitung: Buttons vs Links
 -->
 
 ---
@@ -295,22 +274,15 @@ layout: default
 </div>
 
 <!--
-Einer der häufigsten Fehler: Buttons und Links verwechseln.
-
-LINKE SEITE – Das Problem:
-- Div mit onclick: Nicht tastatur-zugänglich, keine semantische Bedeutung
-- Button für Navigation: Falsches Element für den Job
-
-[KLICK]
-Probleme: Screen Reader wissen nicht, was diese tun, Tastatur-Nutzer erreichen das div nicht
-
-RECHTE SEITE:
-[KLICK]
-Die Lösung ist einfach:
-- Button für Aktionen verwenden (speichern, absenden, umschalten)
-- Anchor für Navigation verwenden (zu einer anderen Seite gehen)
-
-Diese einfache Regel löst so viele Probleme!
+- Häufigster Fehler: Buttons und Links verwechseln
+- LINKS:
+  - Div mit onclick: Nicht tastatur-zugänglich, keine Semantik
+  - Button für Navigation: Falsches Element
+- [KLICK] Screen Reader wissen nicht was die Elemente tun
+- RECHTS:
+  - [KLICK] Einfache Regel: Button = Aktion, Anchor = Navigation
+  - Löst viele Probleme auf einmal!
+- → Überleitung: Ausprobieren auf practica11y.dev
 -->
 
 ---
@@ -327,8 +299,9 @@ class: text-center
 <a href="https://practica11y.dev/challenges/heading-chaos" target="_blank" class="text-2xl pt-4">🎮 Challenge: Heading Chaos</a>
 
 <!--
-- Hier einige passende Challenges auf practica11y.dev zum Ausprobieren
-- Button vs Link: Das gerade besprochene Pattern üben
+- Passende Challenges auf practica11y.dev zum Ausprobieren
+- Button vs Link: Richtiges Element für den Job wählen
 - No Skip Link: Skip Links selbst implementieren
 - Heading Chaos: Überschriften-Hierarchie reparieren
+- → Überleitung: Tastatur-Navigation und Focus
 -->
