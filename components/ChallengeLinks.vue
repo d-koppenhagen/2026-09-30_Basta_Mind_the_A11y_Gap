@@ -62,6 +62,7 @@ function getUrl(slug) {
   border-color: rgba(59, 130, 246, 0.5);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  text-decoration: none;
 }
 
 .challenge-icon {
