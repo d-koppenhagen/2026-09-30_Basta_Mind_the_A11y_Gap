@@ -1,5 +1,5 @@
 ---
-theme: the-unnamed
+theme: ./slidev-theme-k9n
 title: Mind the A11y Gap - Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 info: |
   ## Mind the A11y Gap: Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
@@ -24,21 +24,21 @@ css: unocss
 
 ## Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 
-<div class="abs-bl m-6 text-sm opacity-70 font-mono">
+<div class="abs-bl m-6 text-sm font-mono text-white/90">
   ▶ PRESS START ◀
 </div>
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://k9n.dev" target="_blank" alt="Website" title="Website"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    class="text-xl slidev-icon-btn text-white/90 !border-none hover:text-white">
     <carbon-earth />
   </a>
   <a href="https://github.com/d-koppenhagen" target="_blank" alt="GitHub" title="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    class="text-xl slidev-icon-btn text-white/90 !border-none hover:text-white">
     <carbon-logo-github />
   </a>
   <a href="https://bsky.app/profile/k9n.dev" target="_blank" alt="BlueSky" title="BlueSky"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    class="text-xl slidev-icon-btn text-white/90 !border-none hover:text-white">
     <carbon-logo-bluesky />
   </a>
 </div>

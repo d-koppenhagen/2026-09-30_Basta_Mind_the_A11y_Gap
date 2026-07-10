@@ -1,2 +1,5 @@
+packages:
+  - 'slidev-theme-k9n'
+
 allowBuilds:
   esbuild: true

@@ -211,21 +211,21 @@ clicks: 7
 
 | # | Property | Effekt |
 |---|----------|--------|
-| <span :class="{ 'text-green-400 font-bold': $clicks >= 1 }">1</span> | `white-space: nowrap` | <span :class="{ 'text-green-400': $clicks >= 1 }">Text einzeilig</span> |
-| <span :class="{ 'text-green-400 font-bold': $clicks >= 2 }">2</span> | `padding: 0` | <span :class="{ 'text-green-400': $clicks >= 2 }">Innenabstand weg</span> |
-| <span :class="{ 'text-green-400 font-bold': $clicks >= 3 }">3</span> | `border: 0` | <span :class="{ 'text-green-400': $clicks >= 3 }">Rahmen weg</span> |
-| <span :class="{ 'text-green-400 font-bold': $clicks >= 4 }">4</span> | `overflow: hidden` | <span :class="{ 'text-green-400': $clicks >= 4 }">Überlauf abschneiden</span> |
-| <span :class="{ 'text-green-400 font-bold': $clicks >= 5 }">5</span> | `width: 1px` | <span :class="{ 'text-green-400': $clicks >= 5 }">Breite minimieren</span> |
-| <span :class="{ 'text-green-400 font-bold': $clicks >= 6 }">6</span> | `height: 1px` | <span :class="{ 'text-green-400': $clicks >= 6 }">Höhe minimieren</span> |
-| <span :class="{ 'text-green-400 font-bold': $clicks >= 7 }">7</span> | `clip-path` + `margin` | <span :class="{ 'text-green-400': $clicks >= 7 }">Final unsichtbar</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 1 }">1</span> | `white-space: nowrap` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 1 }">Text einzeilig</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 2 }">2</span> | `padding: 0` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 2 }">Innenabstand weg</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 3 }">3</span> | `border: 0` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 3 }">Rahmen weg</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 4 }">4</span> | `overflow: hidden` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 4 }">Überlauf abschneiden</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 5 }">5</span> | `width: 1px` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 5 }">Breite minimieren</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 6 }">6</span> | `height: 1px` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 6 }">Höhe minimieren</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 7 }">7</span> | `clip-path` + `margin` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 7 }">Final unsichtbar</span> |
 
 </div>
 
 <div class="flex items-center justify-center">
-  <div class="relative bg-gray-800 rounded-lg p-4 w-full h-60 flex items-center justify-center">
+  <div class="relative rounded-lg p-4 w-full h-60 flex items-center justify-center bg-gray-200 dark:bg-gray-800">
     <a
       href="#main"
-      class="skip-link-demo text-white font-bold text-center rounded no-underline inline-block"
+      class="skip-link-demo font-bold text-center rounded no-underline inline-block !text-[#1a1a2e] dark:!text-white"
       :style="{
         whiteSpace: $clicks >= 1 ? 'nowrap' : 'normal',
         padding: $clicks >= 2 ? '0' : '2.5rem 3rem',

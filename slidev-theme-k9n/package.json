@@ -1,0 +1,22 @@
+{
+  "name": "slidev-theme-k9n",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "slidev": ">=0.49.0"
+  },
+  "slidev": {
+    "colorSchema": "both",
+    "highlighter": "shiki",
+    "defaults": {
+      "fonts": {
+        "sans": "Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif",
+        "mono": "Fira Code, monospace"
+      }
+    }
+  }
+}
