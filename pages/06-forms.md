@@ -145,7 +145,7 @@ layout: default
 <v-click>
 
 <div class="mt-2 p-2 bg-yellow-500 bg-opacity-10 rounded text-sm">
-⚠️ Hinweis: `aria-errormessage` hat eingeschränkten Browser-Support. Nutzt `aria-describedby` als Fallback für breitere Kompatibilität.
+⚠️ Hinweis: <code>aria-errormessage</code> hat eingeschränkten Browser-Support. Nutzt <code>aria-describedby</code> als Fallback für breitere Kompatibilität.
 </div>
 
 </v-click>

@@ -46,7 +46,7 @@ layout: default
 - **Gute UX und A11y gehen Hand in Hand**
 - Verwirrende Interfaces schaden **allen** – nicht nur Menschen mit Behinderungen
 - Barrierefreies Design ist einfach **besseres Design**
-- A11y-Probleme sind oft **UX-Probleme** in Verkleidung
+- A11y-Probleme sind oft **UX-Probleme**
 - UX fixen verbessert A11y (und umgekehrt)
 
 <v-click>

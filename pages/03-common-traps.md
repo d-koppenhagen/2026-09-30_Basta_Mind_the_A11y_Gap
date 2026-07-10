@@ -43,7 +43,7 @@ layout: default
 <v-click>
 
 <div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded">
-❌ Dieser Code hat mindestens 7 Barrierefreiheits-Probleme!
+❌ Dieser Code hat mindestens 6 Barrierefreiheits-Probleme!
 </div>
 
 </v-click>
@@ -91,17 +91,12 @@ transition: slide-up
 
 # Was ist falsch?
 
-<v-clicks>
-
 1. ❌ Kein semantisches HTML – alles ist ein `<div>`
 2. ❌ Keine Landmarks (`<header>`, `<nav>`, `<main>`)
-3. ❌ Klickbare divs statt `<button>` oder `<a>`
+3. ❌ Klickbare divs statt `<button>` oder `<a>` (Fehlende Tastaturunterstützung)
 4. ❌ Keine Überschriften-Struktur (`<h1>`, `<h2>`, etc.)
 5. ❌ Fehlende Formular-Labels
 6. ❌ Placeholder als Label (schlechte Praxis!)
-7. ❌ Keine Tastatur-Unterstützung (onclick auf divs)
-
-</v-clicks>
 
 <v-click>
 

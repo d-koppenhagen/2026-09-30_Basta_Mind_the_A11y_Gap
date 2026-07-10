@@ -38,13 +38,9 @@ transition: slide-up
 </main>
 ```
 
-<v-click>
-
 <div class="mt-2 p-4 bg-green-500 bg-opacity-10 rounded">
 ✅ Semantische Struktur, tastatur-zugänglich, Screen-Reader-freundlich!
 </div>
-
-</v-click>
 
 <!--
 - Gleiche Funktionalität, richtig umgesetzt:
@@ -116,21 +112,17 @@ layout: default
 
 </div>
 
-<div class="col-span-3">
+<div class="col-span-3 row-span-2 self-start">
   <div class="w-95% ml-5 text-right">
     <img src="/structure_landmark.png" alt="" class=""/>
   </div>
 </div>
 
-</div>
-
-<v-click>
-
-<div class="mt-4 p-4 bg-blue-500 bg-opacity-10 rounded">
+<div class="col-span-5 p-4 bg-blue-500 bg-opacity-10 rounded self-start">
 💡 Landmarks erzeugen eine navigierbare Struktur. Screen-Reader-Nutzer können zwischen ihnen springen!
 </div>
 
-</v-click>
+</div>
 
 <!--
 - LINKS: Alles divs mit Klassen – Screen Reader sehen keine Struktur
@@ -185,13 +177,9 @@ layout: default
 
 </div>
 
-<v-clicks>
-
 - **Ergänzung zu Landmarks** – kein Ersatz (Screen Reader haben bereits Landmark-Navigation)!
 - Nützlich für **Tastatur-Nutzer** um lange Navigation zu überspringen
 - Sinnvoll wenn **viele Nav-Items** vor dem Hauptinhalt stehen
-
-</v-clicks>
 
 <v-click>
 
@@ -215,7 +203,7 @@ layout: default
 clicks: 7
 ---
 
-# Skip Link: Visuell versteckt – Schritt für Schritt
+# Visuell versteckte Inhalte – Schritt für Schritt
 
 <div class="grid grid-cols-2 gap-8 mt-2">
 
