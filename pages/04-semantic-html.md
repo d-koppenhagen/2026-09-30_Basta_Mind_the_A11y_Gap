@@ -358,5 +358,15 @@ class: text-center
 - Button vs Link: Richtiges Element für den Job wählen
 - No Skip Link: Skip Links selbst implementieren
 - Heading Chaos: Überschriften-Hierarchie reparieren
-- → Überleitung: Tastatur-Navigation und Focus
+-->
+
+---
+layout: challenge
+slug: button-vs-link
+title: "Challenge: Button vs Link"
+---
+
+<!--
+- Live-Demo: Richtiges Element für den Job wählen
+- Button = Aktion, Link = Navigation
 -->

@@ -81,7 +81,7 @@ button:focus-visible { /* Alternative */
   - :focus-visible → nur für Tastatur-Nutzer, nicht bei Mausklick
   - box-shadow als Alternative für mehr Design-Flexibilität
 - Niemals Focus-Indikatoren komplett entfernen!
-- → Überleitung: Demo
+- → Überleitung: Ausprobieren
 -->
 
 ---
@@ -89,7 +89,7 @@ layout: center
 class: text-center
 ---
 
-# Demo
+# Ausprobieren
 
 <ChallengeLinks :challenges="[
   { slug: 'clickable-div', title: 'Div and Conquer' },

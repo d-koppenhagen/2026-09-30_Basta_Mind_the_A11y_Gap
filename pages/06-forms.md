@@ -257,7 +257,7 @@ layout: center
 class: text-center
 ---
 
-# Demo
+# Ausprobieren
 
 <ChallengeLinks :challenges="[
   { slug: 'invalid-form-error', title: 'Silent Treatment' },
