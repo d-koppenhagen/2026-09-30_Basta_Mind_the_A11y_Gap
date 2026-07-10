@@ -1,6 +1,7 @@
 ---
 layout: image
 image: /testing.jpg
+style: "color: white;"
 ---
 
 # Testen & Tools

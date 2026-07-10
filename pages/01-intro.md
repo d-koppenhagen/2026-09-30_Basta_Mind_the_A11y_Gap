@@ -7,15 +7,28 @@ layout: center
 <div class="flex items-center gap-8 m-t-12">
   <div class="flex flex-col gap-8 content-center items-center justify-center m-t--30 mr-6">
     <img src="/danny.jpeg" class="w-48 h-48 rounded-full" alt="Danny Koppenhagen" />
-    <img src="/book-cover-v1m.png" alt="Book Cover of the German book 'Das moderne Praxisbuch zu Angular: Von den Grundlagen bis zur professionellen Entwicklung mit Signals', written by Ferdinand Malcher, Danny Koppenhagen and Johannes Hoppe" class="max-h-30 rounded shadow" />
+    <div class="flex flex-col gap-2 mt-4">
+      <a href="https://k9n.dev" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-earth /> k9n.dev
+      </a>
+      <a href="https://github.com/d-koppenhagen" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-logo-github /> d-koppenhagen
+      </a>
+      <a href="https://bsky.app/profile/k9n.dev" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-logo-bluesky /> @k9n.dev
+      </a>
+      <a href="https://linkedin.com/in/d-koppenhagen" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-logo-linkedin /> d-koppenhagen
+      </a>
+    </div>
   </div>
   <div class="leading-8 opacity-80">
-    Danny Koppenhagen<br>
+    <b>Danny Koppenhagen</b><br>
     Frontend Architect @ DB Systel GmbH<br>
     <br>
     ♿ Leidenschaftlich für Barrierefreiheit & inklusives Design<br>
+    🌐 Open-Source-Enthusiast & Creator von practica11y.dev<br>
     📚 Co-Autor des deutschen Angular-Buchs<br>
-    🌐 k9n.dev<br>
   </div>
 </div>
 
