@@ -7,7 +7,9 @@ info: |
   Barrierefreiheit ist kein Nice-to-have – sie ist essenziell für digitale Erlebnisse, die für alle funktionieren.
 
   Von Danny Koppenhagen
+layout: cover
 class: text-center
+background: /bridging-a11y.png
 drawings:
   persist: false
 transition: slide-left
@@ -17,6 +19,37 @@ css: unocss
 ---
 
 <style src="./style.css"></style>
+
+# Mind the A11y Gap
+
+## Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
+
+<div class="abs-bl m-6 text-sm opacity-70 font-mono">
+  ▶ PRESS START ◀
+</div>
+
+<div class="abs-br m-6 flex gap-2">
+  <a href="https://k9n.dev" target="_blank" alt="Website" title="Website"
+    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-earth />
+  </a>
+  <a href="https://github.com/d-koppenhagen" target="_blank" alt="GitHub" title="GitHub"
+    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-github />
+  </a>
+  <a href="https://bsky.app/profile/k9n.dev" target="_blank" alt="BlueSky" title="BlueSky"
+    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-bluesky />
+  </a>
+</div>
+
+<!--
+Willkommen alle zu „Mind the A11y Gap"!
+
+Heute erkunden wir die häufigsten Barrierefreiheits-Fallen in modernen Web-Applikationen und lernen, wie man sie vermeidet.
+
+Dieser Talk behandelt praktische, Framework-agnostische Lösungen, die ihr sofort anwenden könnt.
+-->
 
 ---
 src: ./pages/01-intro.md
@@ -55,5 +88,9 @@ src: ./pages/09-testing.md
 ---
 
 ---
-src: ./pages/10-outro.md
+src: ./pages/10-ai-agents.md
+---
+
+---
+src: ./pages/11-outro.md
 ---

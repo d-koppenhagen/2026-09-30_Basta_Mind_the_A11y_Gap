@@ -15,6 +15,7 @@ class: text-center
 5. 📢 **Live Regions** – müssen vor Updates existieren
 6. 🎨 **Kontrast ist wichtig** – Farben prüfen
 7. 🧪 **Testen, testen, testen** – automatisiert + manuell
+8. 🤖 **A11y = Agent-Ready** – gute Barrierefreiheit macht euch fit für AI Agents
 
 </v-clicks>
 </div>
@@ -59,6 +60,7 @@ layout: default
 
 ## Weiterlernen
 - [WCAG-Richtlinien](https://www.w3.org/WAI/WCAG21/quickref/)
+- [APG Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 - [WebAIM](https://webaim.org/)
 - [A11y Project](https://www.a11yproject.com/)
@@ -67,6 +69,8 @@ layout: default
 - [axe DevTools](https://www.deque.com/axe/devtools/)
 - [WAVE](https://wave.webaim.org/)
 - [Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [Chrome DevTools for Agents](https://developer.chrome.com/docs/devtools/agents)
+- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance)
 
 </div>
 
@@ -109,19 +113,19 @@ Fragen?
 layout: end
 ---
 
-# Danke! 🙏
+# Game Over – Danke! 🙏
 
-## Fragen?
+## Fragen? Insert Coin...
 
 <div class="mt-8 flex items-center justify-center gap-8">
   <div>
     <a href="https://github.com/d-koppenhagen/2026-02-11-Mind_the_A11y_Gap" target="_blank">
-      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-48 h-48" />
+      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-48 h-48 border-2 border-[#00ff88] shadow-[0_0_20px_rgba(0,255,136,0.3)]" />
     </a>
-    <p class="text-sm mt-2">Slides & Code</p>
+    <p class="text-sm mt-2 text-[#00d4ff]">Slides & Code</p>
   </div>
   <div>
-    Danny Koppenhagen<br>
+    <span class="text-[#ffd700]">Player 1:</span> Danny Koppenhagen<br>
     <a href="https://k9n.dev">k9n.dev</a>
   </div>
 </div>
