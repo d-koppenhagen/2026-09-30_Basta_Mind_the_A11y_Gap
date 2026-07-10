@@ -169,7 +169,7 @@ layout: default
 <div>
 
 ```css
-.skip-link:not(:focus, :focus-within) {
+.skip-link:not(:focus):not(:active):not(:focus-within) {
   width: 1px;
   height: 1px;
   padding: 0;
@@ -207,6 +207,73 @@ layout: default
 - Screen-Reader-Nutzer haben bereits Landmark-Navigation
 - Primär für sehende Tastatur-Nutzer
 - Sinnvoll bei vielen Nav-Items oder komplexem Header
+- → Überleitung: Wie funktioniert das visuelle Verstecken?
+-->
+
+---
+layout: default
+clicks: 7
+---
+
+# Skip Link: Visuell versteckt – Schritt für Schritt
+
+<div class="grid grid-cols-2 gap-8 mt-2">
+
+<div class="text-sm">
+
+| # | Property | Effekt |
+|---|----------|--------|
+| <span :class="{ 'text-green-400 font-bold': $clicks >= 1 }">1</span> | `white-space: nowrap` | <span :class="{ 'text-green-400': $clicks >= 1 }">Text einzeilig</span> |
+| <span :class="{ 'text-green-400 font-bold': $clicks >= 2 }">2</span> | `padding: 0` | <span :class="{ 'text-green-400': $clicks >= 2 }">Innenabstand weg</span> |
+| <span :class="{ 'text-green-400 font-bold': $clicks >= 3 }">3</span> | `border: 0` | <span :class="{ 'text-green-400': $clicks >= 3 }">Rahmen weg</span> |
+| <span :class="{ 'text-green-400 font-bold': $clicks >= 4 }">4</span> | `overflow: hidden` | <span :class="{ 'text-green-400': $clicks >= 4 }">Überlauf abschneiden</span> |
+| <span :class="{ 'text-green-400 font-bold': $clicks >= 5 }">5</span> | `width: 1px` | <span :class="{ 'text-green-400': $clicks >= 5 }">Breite minimieren</span> |
+| <span :class="{ 'text-green-400 font-bold': $clicks >= 6 }">6</span> | `height: 1px` | <span :class="{ 'text-green-400': $clicks >= 6 }">Höhe minimieren</span> |
+| <span :class="{ 'text-green-400 font-bold': $clicks >= 7 }">7</span> | `clip-path` + `margin` | <span :class="{ 'text-green-400': $clicks >= 7 }">Final unsichtbar</span> |
+
+</div>
+
+<div class="flex items-center justify-center">
+  <div class="relative bg-gray-800 rounded-lg p-4 w-full h-60 flex items-center justify-center">
+    <a
+      href="#main"
+      class="skip-link-demo text-white font-bold text-center rounded no-underline inline-block"
+      :style="{
+        whiteSpace: $clicks >= 1 ? 'nowrap' : 'normal',
+        padding: $clicks >= 2 ? '0' : '2.5rem 3rem',
+        border: $clicks >= 3 ? 'none' : '8px solid #f59e0b',
+        overflow: $clicks >= 4 ? 'hidden' : 'visible',
+        width: $clicks >= 5 ? '1px' : '200px',
+        height: $clicks >= 6 ? '1px' : '80px',
+        clipPath: $clicks >= 7 ? 'inset(50%)' : 'none',
+        margin: $clicks >= 7 ? '-1px' : '0',
+        transition: 'all 0.5s ease',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '1.7rem',
+        backgroundColor: '#10b981',
+      }"
+    >Zum Hauptinhalt springen</a>
+  </div>
+</div>
+
+</div>
+
+<div v-if="$clicks >= 7" class="mt-2 p-3 bg-green-500 bg-opacity-10 rounded text-sm">
+✅ Visuell unsichtbar — aber im DOM & für Screen Reader vorhanden. Bei <code>:focus</code> werden alle Properties zurückgesetzt!
+</div>
+
+<!--
+- Animation zeigt Schritt für Schritt wie der Skip Link visuell versteckt wird
+- Reihenfolge gewählt damit jeder Schritt sichtbare Veränderung zeigt
+- white-space: nowrap — Text wird einzeilig
+- padding: 0 — Box schrumpft sichtbar
+- border: 0 — Rahmen verschwindet
+- overflow: hidden — Vorbereitung: Überlauf wird abgeschnitten
+- width/height: 1px — Element wird winzig, Text wird geclippt
+- clip-path + margin: Letzter Rest verschwindet
+- WICHTIG: display:none oder visibility:hidden würden es AUCH für Screen Reader verstecken!
 - → Überleitung: Buttons vs Links
 -->
 
