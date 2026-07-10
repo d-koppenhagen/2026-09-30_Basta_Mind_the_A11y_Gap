@@ -327,9 +327,13 @@ layout: default
 </div>
 
 <div class="w-95% ml-5 text-right">
-  <img src="https://i.imgflip.com/ahxldt.jpg" attributionsrc="https://i.imgflip.com/ahxldt.jpg" title="made at imgflip.com" class="mt--10"/>
+  <img src="https://i.imgflip.com/ahxldt.jpg" attributionsrc="https://i.imgflip.com/ahxldt.jpg" title="made at imgflip.com" class="mt--18"/>
 </div>
 
+</div>
+
+<div v-click class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
+💡 <strong>Die <em>primäre Aktion</em> entscheidet!</strong> Formular absenden, dann Redirect → <code>&lt;button&gt;</code>
 </div>
 
 <!--
@@ -341,6 +345,10 @@ layout: default
 - RECHTS:
   - [KLICK] Einfache Regel: Button = Aktion, Anchor = Navigation
   - Löst viele Probleme auf einmal!
+- Grauzone: Was ist mit "Speichern" das danach navigiert?
+  - Die PRIMÄRE Aktion entscheidet → Speichern = Aktion = Button
+  - Navigation danach ist nur Nebeneffekt (programmatischer Redirect)
+  - Andersrum: "Zurück zur Übersicht" = primär Navigation = Link
 - → Überleitung: Ausprobieren auf practica11y.dev
 -->
 
