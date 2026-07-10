@@ -166,7 +166,7 @@ layout: default
 layout: default
 ---
 
-# Formular-Absendung
+# Formular-Absendung: Deaktivierter Button
 
 Wie gehen wir damit um, wenn Nutzer ungültige Formulare absenden wollen?
 
@@ -210,104 +210,46 @@ Wie gehen wir damit um, wenn Nutzer ungültige Formulare absenden wollen?
 layout: default
 ---
 
-# Formular-Absendung
+# Formular-Absendung: Die Lösung
 
 <div class="mt-4 p-4 bg-green-500 bg-opacity-10 rounded">
 
-## ✅ Aktiviert mit Feld-Validierung
+## ✅ Aktiviert mit Feld-Validierung & Focus-Management
 
 ```html
 <input aria-invalid="true" aria-errormessage="email-error" />
 <div id="email-error" role="alert">Please enter a valid email</div>
 ```
 ```js
-// Bei Submit: Erstes ungültiges Feld fokussieren
-document.querySelector('[aria-invalid="true"]')?.focus();
-```
-
-**Vorteile:** Spezifische Fehlermeldungen, Focus auf Problem, Screen-Reader-kompatibel
-</div>
-
-<!--
-- Die richtige Lösung: Button NICHT deaktivieren
-- aria-invalid markiert ungültige Felder
-- aria-errormessage verknüpft spezifische Fehlermeldung
-- role="alert" kündigt Fehler sofort an
-- Nach Submit: Focus auf erstes ungültiges Feld setzen
-- So weiß jeder sofort, wo das Problem ist und was zu tun ist
-- → Überleitung: Focus-Management bei Fehlern im Detail
--->
-
----
-layout: default
----
-
-# Focus-Management bei Fehlern
-
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-## ❌ Problem
-
-```js
-function handleSubmit(e) {
-  e.preventDefault();
-  const errors = validate(formData);
-  if (errors.length > 0) {
-    // Fehler nur anzeigen
-    setErrors(errors);
-    // Focus bleibt auf Submit-Button!
-  }
-}
-```
-
-**Probleme:**
-- Nutzer muss den Fehler finden
-- Kein sofortiges Feedback
-- Tastatur-Nutzer sind verloren
-
-</div>
-
-<div>
-
-<v-click>
-
-## ✅ Lösung
-
-```js
 function handleSubmit(e) {
   e.preventDefault();
   const errors = validate(formData);
   if (errors.length > 0) {
     setErrors(errors);
-    const firstError = document
-      .querySelector('[aria-invalid="true"]');
+    const firstError = document.querySelector('[aria-invalid="true"]');
     firstError?.focus();
   }
 }
 ```
 
-**Vorteile:**
-- Sofortiger Focus auf das Problem
-- Screen Reader kündigt Fehler an
-- Klare nächste Aktion
+</div>
+
+<v-click>
+
+<div class="mt-4 p-4 bg-blue-500 bg-opacity-10 rounded">
+💡 <strong>Regel:</strong> Submit-Button nie deaktivieren — stattdessen bei Submit validieren, Focus auf erstes ungültiges Feld setzen, <code>aria-invalid</code> + <code>role="alert"</code> nutzen.
+</div>
 
 </v-click>
 
-</div>
-
-</div>
-
 <!--
-- LINKS: Fehler anzeigen, aber Focus bleibt auf Submit-Button
-  - [KLICK] Nutzer muss Fehler suchen, besonders schlimm für Screen-Reader-Nutzer
-- RECHTS:
-  - [KLICK] Nach Validierung Focus auf erstes ungültiges Feld setzen
-  - Screen Reader kündigt Feld und Fehler an
-  - Sofortiges, klares Feedback
-- Einfache Verbesserung, riesiger Effekt
-- Kombiniert mit aria-invalid + aria-describedby = vollständig barrierefreies Formular
+- Die richtige Lösung: Button NICHT deaktivieren, immer aktiviert lassen
+- aria-invalid markiert ungültige Felder
+- aria-errormessage verknüpft spezifische Fehlermeldung
+- role="alert" kündigt Fehler sofort an
+- Nach Submit: Focus auf erstes ungültiges Feld setzen
+- [KLICK] Kernregel zusammengefasst
+- Einfache Verbesserung, riesiger Effekt für alle Nutzer
 - → Überleitung: Dynamische Inhalte und Live Regions
 -->
 
@@ -318,9 +260,10 @@ class: text-center
 
 # Demo
 
-<a href="https://practica11y.dev/challenges/invalid-form-error" target="_blank" class="text-2xl pt-10">🎮 Challenge: Silent Treatment</a>
-<br>
-<a href="https://practica11y.dev/challenges/missing-label" target="_blank" class="text-2xl pt-4">🎮 Challenge: Name That Field</a>
+<ChallengeLinks :challenges="[
+  { slug: 'invalid-form-error', title: 'Silent Treatment' },
+  { slug: 'missing-label', title: 'Name That Field' },
+]" />
 
 <!--
 - Demo: Alles zusammen in Aktion – Labels, Validierung, Fehlerbehandlung, Focus-Management

@@ -347,11 +347,11 @@ class: text-center
 
 # Ausprobieren
 
-<a href="https://practica11y.dev/challenges/button-vs-link" target="_blank" class="text-2xl pt-10">🎮 Challenge: Button vs Link</a>
-<br>
-<a href="https://practica11y.dev/challenges/no-skip-link" target="_blank" class="text-2xl pt-4">🎮 Challenge: No Skip Link</a>
-<br>
-<a href="https://practica11y.dev/challenges/heading-chaos" target="_blank" class="text-2xl pt-4">🎮 Challenge: Heading Chaos</a>
+<ChallengeLinks :challenges="[
+  { slug: 'button-vs-link', title: 'Button vs Link' },
+  { slug: 'no-skip-link', title: 'No Skip Link' },
+  { slug: 'heading-chaos', title: 'Heading Chaos' },
+]" />
 
 <!--
 - Passende Challenges auf practica11y.dev zum Ausprobieren

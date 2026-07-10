@@ -225,11 +225,11 @@ class: text-center
 
 # Ausprobieren
 
-<a href="https://practica11y.dev/challenges/color-contrast-fail" target="_blank" class="text-2xl pt-10">🎮 Challenge: Color Contrast Fail</a>
-<br>
-<a href="https://practica11y.dev/challenges/missing-alt-text" target="_blank" class="text-2xl pt-4">🎮 Challenge: Missing Alt Text</a>
-<br>
-<a href="https://practica11y.dev/challenges/reduced-motion" target="_blank" class="text-2xl pt-4">🎮 Challenge: Reduced Motion</a>
+<ChallengeLinks :challenges="[
+  { slug: 'color-contrast-fail', title: 'Color Contrast Fail' },
+  { slug: 'missing-alt-text', title: 'Missing Alt Text' },
+  { slug: 'reduced-motion', title: 'Reduced Motion' },
+]" />
 
 <!--
 - Challenges zum Kapitel visuelle Barrierefreiheit

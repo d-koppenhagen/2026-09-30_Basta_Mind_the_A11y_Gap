@@ -91,9 +91,10 @@ class: text-center
 
 # Demo
 
-<a href="https://practica11y.dev/challenges/clickable-div" target="_blank" class="text-2xl pt-10">🎮 Challenge: Div and Conquer</a>
-<br>
-<a href="https://practica11y.dev/challenges/missing-landmarks" target="_blank" class="text-2xl pt-4">🎮 Challenge: Lost Without a Map</a>
+<ChallengeLinks :challenges="[
+  { slug: 'clickable-div', title: 'Div and Conquer' },
+  { slug: 'missing-landmarks', title: 'Lost Without a Map' },
+]" />
 
 <!--
 - Div and Conquer: Klickbare Divs durch richtige Buttons ersetzen

@@ -209,7 +209,9 @@ class: text-center
 
 # Ausprobieren
 
-<a href="https://practica11y.dev/challenges/live-region-dynamic" target="_blank" class="text-2xl pt-10">🎮 Challenge: Live Region Dynamic</a>
+<ChallengeLinks :challenges="[
+  { slug: 'live-region-dynamic', title: 'Live Region Dynamic' },
+]" />
 
 <!--
 - Challenge: Dynamische Live Region korrekt implementieren
