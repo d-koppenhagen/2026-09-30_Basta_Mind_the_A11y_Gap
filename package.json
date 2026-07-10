@@ -13,7 +13,7 @@
     "start": "concurrently -n keycastr,slidev,demo:inaccessible100 -c green,blue,yellow \"npm run keycastr\" \"npm run dev\" \"npm run demo:inaccessible100\""
   },
   "dependencies": {
-    "@slidev/cli": "^52.16.0",
+    "@slidev/cli": "^52.17.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
     "slidev-theme-k9n": "workspace:*",
