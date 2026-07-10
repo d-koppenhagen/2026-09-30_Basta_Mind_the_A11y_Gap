@@ -64,8 +64,8 @@ layout: default
 
 # Landmarks & Überschriften
 
-<div class="flex justify-center items-center">
-  <img src="/structure.png" alt="Visualisierung einer typischen Seitenstruktur mit Landmarks: header, nav, main, aside und footer" class="max-h-100" />
+<div class="flex justify-center items-center mt--10">
+  <img src="/structure.png" alt="Visualisierung einer typischen Seitenstruktur mit Landmarks: header, nav, main, aside und footer" class="max-h-110" />
 </div>
 
 <!--
@@ -209,19 +209,19 @@ clicks: 7
 
 <div class="text-sm">
 
-| # | Property | Effekt |
-|---|----------|--------|
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 1 }">1</span> | `white-space: nowrap` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 1 }">Text einzeilig</span> |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 2 }">2</span> | `padding: 0` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 2 }">Innenabstand weg</span> |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 3 }">3</span> | `border: 0` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 3 }">Rahmen weg</span> |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 4 }">4</span> | `overflow: hidden` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 4 }">Überlauf abschneiden</span> |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 5 }">5</span> | `width: 1px` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 5 }">Breite minimieren</span> |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 6 }">6</span> | `height: 1px` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 6 }">Höhe minimieren</span> |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 7 }">7</span> | `clip-path` + `margin` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 7 }">Final unsichtbar</span> |
+| #                                                                                        | Property               | Effekt                                                                                            |
+| ---------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------- |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 1 }">1</span> | `white-space: nowrap`  | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 1 }">Text einzeilig</span>       |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 2 }">2</span> | `padding: 0`           | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 2 }">Innenabstand weg</span>     |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 3 }">3</span> | `border: 0`            | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 3 }">Rahmen weg</span>           |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 4 }">4</span> | `overflow: hidden`     | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 4 }">Überlauf abschneiden</span> |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 5 }">5</span> | `width: 1px`           | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 5 }">Breite minimieren</span>    |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 6 }">6</span> | `height: 1px`          | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 6 }">Höhe minimieren</span>      |
+| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 7 }">7</span> | `clip-path` + `margin` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 7 }">Final unsichtbar</span>     |
 
 </div>
 
-<div class="flex items-center justify-center">
+<div class="mt-10">
   <div class="relative rounded-lg p-4 w-full h-60 flex items-center justify-center bg-gray-200 dark:bg-gray-800">
     <a
       href="#main"
@@ -244,13 +244,15 @@ clicks: 7
       }"
     >Zum Hauptinhalt springen</a>
   </div>
-</div>
 
-</div>
 
-<div v-if="$clicks >= 7" class="mt-2 p-3 bg-green-500 bg-opacity-10 rounded text-sm">
+<div v-if="$clicks >= 7" class="mt-4 p-3 bg-green-500 bg-opacity-10 rounded text-sm">
 ✅ Visuell unsichtbar — aber im DOM & für Screen Reader vorhanden. Bei <code>:focus</code> werden alle Properties zurückgesetzt!
 </div>
+</div>
+
+</div>
+
 
 <!--
 - Animation zeigt Schritt für Schritt wie der Skip Link visuell versteckt wird
