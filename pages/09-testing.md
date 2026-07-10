@@ -77,15 +77,9 @@ Trotzdem ist sie **nicht barrierefrei**.
 
 </div>
 
-<a href="http://localhost:3200" target="_blank" class="text-2xl px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 no-underline">
+<a href="http://localhost:3200" target="_blank" class="text-2xl px-6 py-3 bg-blue-600 !text-white rounded-lg hover:bg-blue-700 no-underline">
   → Live-Demo öffnen
 </a>
-
-<div class="mt-8 text-sm opacity-70">
-
-Prüft: Tastatur-Navigation · Screen Reader · Überschriften-Hierarchie · Landmarks
-
-</div>
 
 <!--
 - Demo öffnen: http://localhost:3200

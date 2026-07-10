@@ -43,23 +43,38 @@ class: text-center
 -->
 
 ---
-layout: end
+layout: center
+class: text-center
 ---
 
 # Danke für die Aufmerksamkeit! 🙏
 
 ## Fragen?
 
-<div class="mt-8 flex items-center justify-center gap-8">
+<div class="mt-8 flex items-start justify-center gap-16">
   <div>
     <a href="https://github.com/d-koppenhagen/2026-02-11-Mind_the_A11y_Gap" target="_blank">
-      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-48 h-48 border-2 shadow-[0_0_20px_rgba(0,255,136,0.3)]" />
+      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-56 h-56 border-4" />
     </a>
-    <p class="text-sm mt-2 text-[#00d4ff]">Slides & Code</p>
+    <p class="text-sm mt-2">Slides & Code</p>
   </div>
-  <div>
-    Danny Koppenhagen<br>
-    <a href="https://k9n.dev">k9n.dev</a>
+  <div class="text-left">
+    <p class="text-lg font-bold">Danny Koppenhagen</p>
+    <p class="opacity-80">Frontend Architect @ DB Systel GmbH</p>
+    <div class="flex flex-col gap-2 mt-4">
+      <a href="https://k9n.dev" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-earth /> k9n.dev
+      </a>
+      <a href="https://github.com/d-koppenhagen" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-logo-github /> d-koppenhagen
+      </a>
+      <a href="https://bsky.app/profile/k9n.dev" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-logo-bluesky /> @k9n.dev
+      </a>
+      <a href="https://linkedin.com/in/d-koppenhagen" target="_blank" class="flex items-center gap-2 !border-none no-underline">
+        <carbon-logo-linkedin /> d-koppenhagen
+      </a>
+    </div>
   </div>
 </div>
 
@@ -76,38 +91,40 @@ layout: default
 
 # Ressourcen
 
-<div class="grid grid-cols-2 gap-8">
+<div class="grid grid-cols-2 gap-10">
 
 <div>
 
 ## Weiterlernen
+
 - [WCAG-Richtlinien](https://www.w3.org/WAI/WCAG21/quickref/), [APG Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 - [WebAIM Million](https://webaim.org/projects/million/) – Jährliche A11y-Analyse der Top 1 Mio. Websites
 - [A11y Project](https://www.a11yproject.com/)
 - [🎮 Practica11y](https://practica11y.dev) – Interaktive A11y-Challenges
 
+## Dieser Talk
+
+- 📊 Slides: [github.com/d-koppenhagen/...](https://github.com/d-koppenhagen)
+- 💬 Fragen? Sprecht mich an!
+
+</div>
+
+<div>
+
 ## Tools
+
 - [axe DevTools](https://www.deque.com/axe/devtools/)
 - [WAVE](https://wave.webaim.org/)
 - [Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [Chrome DevTools for Agents](https://developer.chrome.com/docs/devtools/agents)
 - [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance)
 
-</div>
-
-<div>
-
 ## Meine Inhalte
 
 - 📝 [Blog: k9n.dev](https://k9n.dev)
 - 🐦 [BlueSky: @k9n.dev](https://bsky.app/profile/k9n.dev)
 - 💼 [LinkedIn](https://linkedin.com/in/d-koppenhagen)
-
-## Dieser Talk
-
-- 📊 Slides: [github.com/d-koppenhagen/...](https://github.com/d-koppenhagen)
-- 💬 Fragen? Sprecht mich an!
 
 </div>
 
