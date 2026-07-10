@@ -7,9 +7,10 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
+    "demo:inaccessible100": "npx http-server demos/inaccessible-but-highscore -p 3200",
     "export": "slidev export",
     "keycastr": "open -a KeyCastr",
-    "start": "concurrently -n keycastr,slidev -c green,blue \"npm run keycastr\" \"npm run dev\""
+    "start": "concurrently -n keycastr,slidev,demo:inaccessible100 -c green,blue,yellow \"npm run keycastr\" \"npm run dev\" \"npm run demo:inaccessible100\""
   },
   "dependencies": {
     "@slidev/cli": "^52.16.0",
@@ -18,5 +19,8 @@
     "slidev-theme-the-unnamed": "^0.0.24",
     "concurrently": "^10.0.3",
     "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }

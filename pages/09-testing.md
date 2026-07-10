@@ -53,5 +53,38 @@ layout: default
   - Contrast Checker eingebaut
   - Lighthouse für schnelle Audits
 - Automatisiert anfangen, aber nicht dabei aufhören!
+- → Überleitung: Demo – 100 % Score, 0 % Barrierefreiheit
+-->
+
+---
+layout: center
+---
+
+# 🎯 Demo: 100 % Score – 0 % Barrierefreiheit
+
+<div class="text-xl mt-4 mb-8">
+
+Automatisierte Tools wie **Lighthouse** und **axe** geben dieser Seite einen **perfekten Score**.
+
+Trotzdem ist sie **nicht barrierefrei**.
+
+</div>
+
+<a href="http://localhost:3200" target="_blank" class="text-2xl px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 no-underline">
+  → Live-Demo öffnen
+</a>
+
+<div class="mt-8 text-sm opacity-70">
+
+Prüft: Tastatur-Navigation · Screen Reader · Überschriften-Hierarchie · Landmarks
+
+</div>
+
+<!--
+- Demo öffnen: http://localhost:3200
+- Seite sieht gut aus, Lighthouse gibt 100 %
+- Aber: Keine echten Überschriften, keine Landmarks, div statt button, keine echten Links
+- Screen Reader sieht quasi nichts Sinnvolles
+- Lektion: Automatisierte Tests sind notwendig, aber nicht hinreichend!
 - → Überleitung: AI Agents und Barrierefreiheit
 -->
