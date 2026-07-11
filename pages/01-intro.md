@@ -6,7 +6,7 @@ layout: center
 
 <div class="flex items-center gap-8 m-t-12">
   <div class="flex flex-col gap-8 content-center items-center justify-center m-t--30 mr-6">
-    <img src="/danny.jpeg" class="w-48 h-48 rounded-full" alt="Danny Koppenhagen" />
+    <img src="/danny.jpeg" class="w-50 h-50 rounded-full" alt="Danny Koppenhagen" />
     <div class="flex flex-col gap-2 mt-4">
       <a href="https://k9n.dev" target="_blank" class="flex items-center gap-2 !border-none no-underline">
         <carbon-earth /> k9n.dev

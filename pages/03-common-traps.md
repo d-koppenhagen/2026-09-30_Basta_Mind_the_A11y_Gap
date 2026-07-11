@@ -86,7 +86,6 @@ image: /soup_div.png
 
 ---
 layout: default
-transition: slide-up
 ---
 
 # Was ist falsch?

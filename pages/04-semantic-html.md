@@ -15,7 +15,6 @@ Die richtigen Elemente für den Job verwenden
 
 ---
 layout: default
-transition: slide-up
 ---
 
 # Die Lösung: Semantisches HTML

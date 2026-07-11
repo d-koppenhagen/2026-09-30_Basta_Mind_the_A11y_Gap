@@ -133,7 +133,6 @@ html:not(.dark) .bg-main {
 
     &:hover {
       color: var(--k9n-accent-hover);
-      text-decoration: underline;
     }
 
     &:focus-visible {

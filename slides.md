@@ -12,7 +12,6 @@ class: text-center
 background: /bridging-a11y.png
 drawings:
   persist: false
-transition: slide-left
 mdc: true
 duration: 45min
 css: unocss
