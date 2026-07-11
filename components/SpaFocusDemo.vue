@@ -75,7 +75,7 @@
     <div class="explanation">
       <div v-if="currentStep === 0" class="explanation-step">
         <div class="step-badge">Ausgangslage</div>
-        <p>User ist auf der <strong>Startseite</strong>.</p>
+        <p>Wir sind auf der <strong>Startseite</strong>.</p>
         <p>Nach der Navigation hat der Router den Focus auf den <code>&lt;main&gt;</code>-Bereich gesetzt.</p>
         <p class="hint">→ Weiter</p>
       </div>
@@ -83,14 +83,14 @@
       <div v-else-if="currentStep === 1" class="explanation-step">
         <div class="step-badge">Focus auf &lt;main&gt;</div>
         <p>Focus liegt auf dem <strong>&lt;main&gt;</strong>-Bereich (gesamter Router-View).</p>
-        <p>User navigiert per <kbd>Tab</kbd> zum „Kontakt"-Button.</p>
+        <p>Per <kbd>Tab</kbd> wird zum „Kontakt"-Button navigiert.</p>
         <p class="hint">→ Weiter</p>
       </div>
 
       <div v-else-if="currentStep === 2" class="explanation-step">
         <div class="step-badge">Focus auf Button</div>
         <p>Focus liegt auf <strong>„Kontakt"</strong>.</p>
-        <p>User drückt <kbd>Enter</kbd> → SPA-Router navigiert zu <code>/contact</code>.</p>
+        <p><kbd>Enter</kbd> wird gedrückt → SPA-Router navigiert zu <code>/contact</code>.</p>
         <p class="hint">→ Weiter</p>
       </div>
 
@@ -102,7 +102,7 @@
           <li>Nicht am Beginn von <code>&lt;main&gt;</code></li>
           <li>Screen Reader kündigt keinen Seitenwechsel an</li>
         </ul>
-        <p class="takeaway">Der Nutzer weiß nicht, wo er ist!</p>
+        <p class="takeaway">Unklar, wo man sich befindet!</p>
       </div>
     </div>
   </div>

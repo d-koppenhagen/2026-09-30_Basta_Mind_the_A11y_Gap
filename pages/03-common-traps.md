@@ -101,7 +101,7 @@ layout: default
 
 <div class="mt-2 p-4 bg-yellow-500 bg-opacity-10 rounded">
 ⚠️ Screen Reader können diese Struktur nicht verstehen<br>
-⚠️ Tastatur-Nutzer können nicht navigieren<br>
+⚠️ Tastatur-Nutzende können nicht navigieren<br>
 ⚠️ Suchmaschinen & AI Agents können sie nur schlecht den Inhalt entnehmen
 </div>
 
@@ -112,7 +112,7 @@ layout: default
 - Kein semantisches HTML, keine Landmarks, klickbare Divs, etc.
 - Ergebnis:
   - Screen Reader: Flache Textliste, keine Struktur
-  - Tastatur-Nutzer: Können nicht durch die Seite tabben
+  - Tastatur-Nutzende: Können nicht durch die Seite tabben
   - Suchmaschinen & AI Agents: Können Wichtigkeit nicht erkennen
 - Das ist „div-Suppe" – überraschend häufig in Produktion
 - → Überleitung: Wie macht man es richtig?

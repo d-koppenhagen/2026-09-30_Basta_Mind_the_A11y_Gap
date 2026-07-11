@@ -141,7 +141,7 @@ layout: default
 </div>
 
 <!--
-- Medien-Alternativen essenziell für Nutzer die nicht sehen/hören können
+- Medien-Alternativen essenziell für Menschen die nicht sehen/hören können
 - [KLICK] Bilder:
   - Informativ: Beschreiben was das Bild vermittelt
   - Dekorativ: Leerer Alt-Text (alt="") → Screen Reader überspringt
@@ -192,8 +192,8 @@ layout: default
 
 <v-clicks>
 
-- **Captions** – Untertitel inkl. Geräusche / Musik für gehörlose Nutzer
-- **Audio-Descriptions** – visuelle Inhalte für blinde Nutzer beschreiben
+- **Captions** – Untertitel inkl. Geräusche / Musik für gehörlose Menschen
+- **Audio-Descriptions** – visuelle Inhalte für blinde Menschen beschreiben
 - **Transkripte** – für reine Audio-Inhalte (Podcasts) oft ausreichend
 
 </v-clicks>
@@ -242,8 +242,8 @@ layout: default
 <v-clicks>
 
 - **Reduced Motion**: Animationen können vestibuläre Beschwerden oder epileptische Anfälle auslösen
-- **Dark / Light Mode**: Nutzer wählen Farbschema je nach Umgebung und Sehfähigkeit
-- **Prefers Contrast**: Nutzer fordert mehr (oder weniger) Kontrast – Borders, Schriftgewicht, Farben anpassen
+- **Dark / Light Mode**: Farbschema je nach Umgebung und Sehfähigkeit wählbar
+- **Prefers Contrast**: Mehr (oder weniger) Kontrast gewünscht – Borders, Schriftgewicht, Farben anpassen
 - **Forced Colors** (Windows High Contrast): System überschreibt alle Farben – Borders statt Hintergrund nutzen
 
 </v-clicks>
@@ -256,7 +256,7 @@ layout: default
 - Vier wichtige User-Präferenzen die wir per CSS Media Query respektieren können
 - Reduced Motion: Schwindel, Übelkeit, Epilepsie → Animationen deaktivieren
 - Color Scheme: Manche brauchen dunklen Hintergrund (Lichtempfindlichkeit), andere hellen
-- Prefers Contrast: Nutzer will mehr Kontrast → dickere Borders, stärkere Farben, klarere Trennung
+- Prefers Contrast: Mehr Kontrast gewünscht → dickere Borders, stärkere Farben, klarere Trennung
 - Forced Colors: Windows High Contrast – alle Farben werden überschrieben, Hintergründe verschwinden
 - Unterschied prefers-contrast vs. forced-colors: prefers-contrast ist ein Wunsch, forced-colors ein Zwang
 - Tipp: DevTools → Rendering → Emulationen zum Testen

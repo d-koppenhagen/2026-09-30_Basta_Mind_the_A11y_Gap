@@ -7,7 +7,7 @@ layout: section
 Die App ohne Maus benutzbar machen
 
 <!--
-- Nicht jeder benutzt eine Maus
+- Nicht alle benutzen eine Maus
 - Manche navigieren ausschließlich mit der Tastatur
 - Hier scheitern viele moderne Web-Apps
 - → Überleitung: Häufigste Probleme bei Tastatur-Navigation
@@ -39,7 +39,7 @@ button:focus {
 
 **Ergebnis:**
 - Kein sichtbarer Focus-Indikator
-- Tastatur-Nutzer sind verloren
+- Tastatur-Nutzende sind verloren
 - Wo bin ich auf der Seite?
 
 </div>
@@ -64,7 +64,7 @@ button:focus-visible { /* Alternative */
 **Vorteile:**
 - Klare Focus-Anzeige
 - Tastatur-Navigation möglich
-- `:focus-visible` nur für Tastatur
+- `:focus-visible` nur bei Tastatur-Nutzung
 
 </v-click>
 
@@ -75,10 +75,10 @@ button:focus-visible { /* Alternative */
 <!--
 - Eins der schlimmsten Dinge für A11y: Focus-Outlines entfernen
 - LINKS: outline:none überall – sieht man leider ständig
-- [KLICK] Tastatur-Nutzer wissen nicht, wo sie auf der Seite sind
+- [KLICK] Tastatur-Nutzende wissen nicht, wo sie auf der Seite sind
 - RECHTS:
   - [KLICK] Outline behalten oder passend zum Design stylen
-  - :focus-visible → nur für Tastatur-Nutzer, nicht bei Mausklick
+  - :focus-visible → nur für Tastatur-Nutzende, nicht bei Mausklick
   - box-shadow als Alternative für mehr Design-Flexibilität
 - Niemals Focus-Indikatoren komplett entfernen!
 - → Überleitung: Ausprobieren
@@ -112,9 +112,9 @@ clicks: 3
 <SpaFocusDemo />
 
 <!--
-- Initial: User ist auf der Startseite
+- Initial: Startseite wird angezeigt
 - [KLICK 1] Focus liegt auf dem gesamten <main>-Bereich (Router-View) – dargestellt durch orange Umrandung
-- [KLICK 2] User tabbt zum „Kontakt"-Button, Focus springt dahin, Enter wird gedrückt
+- [KLICK 2] Per Tab zum „Kontakt"-Button navigiert, Focus springt dahin, Enter wird gedrückt
 - [KLICK 3] SPA-Router navigiert zu /contact – Focus landet im 2. Formularfeld (E-Mail) statt am Seitenanfang!
 - Das ist das typische SPA-Problem: kein Focus-Management nach Navigation
 - → Überleitung: Wie löst man das?
@@ -133,18 +133,18 @@ layout: default
 ## ❌ Problem
 
 ```js
-// Nutzer klickt auf "Products"-Link
+// Klick auf "Products"-Link
 router.navigate('/products');
 // Seiteninhalt ändert sich
 // Aber Focus bleibt auf dem Link!
 // Screen Reader: "Products, link"
-// Nutzer: "Ist etwas passiert?"
+// "Ist etwas passiert?"
 ```
 
 **Probleme:**
 - Verlorener / falscher Focus
 - Keine Ankündigung des Seitenwechsels
-- Nutzer weiß nicht, dass sich Inhalt aktualisiert hat
+- Unklar, dass sich Inhalt aktualisiert hat
 
 </div>
 
@@ -176,8 +176,8 @@ main.focus();
 
 <!--
 - Riesiges Problem in Single Page Applications
-- LINKS: Nutzer klickt Link, Inhalt ändert sich, Focus bleibt auf altem Link
-  - [KLICK] Screen-Reader-Nutzer hören nichts, müssen gesamtes Formular erneut durchtabben
+- LINKS: Klick auf Link, Inhalt ändert sich, Focus bleibt auf altem Link
+  - [KLICK] Screen-Reader-Nutzende hören nichts, müssen gesamtes Formular erneut durchtabben
 - RECHTS:
   - [KLICK] Nach Navigation Focus auf main-Element setzen
   - tabindex="-1" macht es fokussierbar, dann focus() aufrufen
@@ -208,7 +208,7 @@ layout: default
 **Probleme:**
 - Kein Kontext zur aktuellen Seite
 - Browser-Tabs sehen alle gleich aus
-- Screen Reader können Seiten nicht unterscheiden
+- Screen-Reader-Nutzende können Seiten nicht unterscheiden
 - Schlechtes SEO
 
 </div>

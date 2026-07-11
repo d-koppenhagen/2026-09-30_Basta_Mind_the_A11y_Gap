@@ -63,7 +63,7 @@ dragPos:
 - Richtige Verknüpfung
 - Klickbares Label
 - Screen Reader: „Enter your email, Textfeld"
-- `autocomplete` hilft Nutzern mit kognitiven Einschränkungen
+- `autocomplete` hilft Nutzenden mit kognitiven Einschränkungen
 
 </v-click>
 
@@ -72,14 +72,14 @@ dragPos:
 </div>
 
 <!--
-- LINKS: Placeholder als Label – sehr häufiger Fehler!
+- LINKS: Nutzen Placeholder als Label – sehr häufiger Fehler!
   - Checkbox mit Text daneben ohne Verknüpfung
   - [KLICK] Placeholder verschwindet beim Tippen, Screen Reader sagt nur „Textfeld, leer"
 - RECHTS:
   - [KLICK] label mit for/id-Verknüpfung oder Input im Label umschließen
   - Screen Reader kündigt Label an
   - Klick auf Label fokussiert das Feld
-  - autocomplete hilft bei kognitiven Einschränkungen
+  - `autocomplete` hilft bei kognitiven Einschränkungen
 - → Überleitung: Ungültige Felder markieren
 -->
 
@@ -167,7 +167,7 @@ layout: default
 
 # Formular-Absendung: Deaktivierter Button
 
-Wie gehen wir damit um, wenn Nutzer ungültige Formulare absenden wollen?
+Wie gehen wir damit um, wenn Nutzende ungültige Formulare absenden wollen?
 
 <v-clicks>
 
@@ -179,7 +179,7 @@ Wie gehen wir damit um, wenn Nutzer ungültige Formulare absenden wollen?
 <button type="submit" disabled>Submit</button>
 ```
 
-**Problem:** Nutzer wissen nicht, warum der Button nicht funktioniert
+**Problem:** Nutzende wissen nicht, warum der Button nicht funktioniert
 </div>
 
 <div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
@@ -203,7 +203,6 @@ Wie gehen wir damit um, wenn Nutzer ungültige Formulare absenden wollen?
   - Button nicht per Tastatur fokussierbar
   - Hinweis zu generisch, nennt nicht die konkreten Fehler
 - → Überleitung: Die richtige Lösung
--->
 
 ---
 layout: default
@@ -248,7 +247,7 @@ function handleSubmit(e) {
 - role="alert" kündigt Fehler sofort an
 - Nach Submit: Focus auf erstes ungültiges Feld setzen
 - [KLICK] Kernregel zusammengefasst
-- Einfache Verbesserung, riesiger Effekt für alle Nutzer
+- Einfache Verbesserung, riesiger Effekt für alle Nutzenden
 - → Überleitung: Dynamische Inhalte und Live Regions
 -->
 

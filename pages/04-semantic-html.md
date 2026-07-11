@@ -69,7 +69,7 @@ layout: default
 
 <!--
 - Typische Seitenstruktur mit Landmarks: header, nav, main, aside, footer
-- Screen-Reader-Nutzer springen per Shortcut zwischen Landmarks
+- Screen-Reader-Nutzende springen per Shortcut zwischen Landmarks
 - Wie ein Inhaltsverzeichnis für die Seite
 -->
 
@@ -118,7 +118,7 @@ layout: default
 </div>
 
 <div class="col-span-5 p-4 bg-blue-500 bg-opacity-10 rounded self-start">
-💡 Landmarks erzeugen eine navigierbare Struktur. Screen-Reader-Nutzer können zwischen ihnen springen!
+💡 Landmarks erzeugen eine navigierbare Struktur. Screen-Reader-Nutzende können zwischen ihnen springen!
 </div>
 
 </div>
@@ -126,7 +126,7 @@ layout: default
 <!--
 - LINKS: Alles divs mit Klassen – Screen Reader sehen keine Struktur
 - RECHTS: Richtige Landmarks (header, aside, main, footer) + Überschriften-Hierarchie
-- [KLICK] Screen-Reader-Nutzer springen per Taste zwischen Landmarks/Überschriften
+- [KLICK] Screen-Reader-Nutzende springen per Taste zwischen Landmarks/Überschriften
 - Ohne Landmarks: Alles linear durchhören
 - Wichtig: Überschriften-Hierarchie nie überspringen!
 - → Überleitung: Skip Links als Ergänzung
@@ -177,7 +177,7 @@ layout: default
 </div>
 
 - **Ergänzung zu Landmarks** – kein Ersatz (Screen Reader haben bereits Landmark-Navigation)!
-- Nützlich für **Tastatur-Nutzer** um lange Navigation zu überspringen
+- Nützlich für **Tastatur-Nutzende** um lange Navigation zu überspringen
 - Sinnvoll wenn **viele Nav-Items** vor dem Hauptinhalt stehen
 
 <v-click>
@@ -189,10 +189,10 @@ layout: default
 </v-click>
 
 <!--
-- Skip Links: Tastatur-Nutzer springen direkt zum Hauptinhalt
+- Skip Links: Tastatur-Nutzende springen direkt zum Hauptinhalt
 - Ergänzung zu Landmarks, kein Ersatz!
-- Screen-Reader-Nutzer haben bereits Landmark-Navigation
-- Primär für sehende Tastatur-Nutzer
+- Screen-Reader-Nutzende haben bereits Landmark-Navigation
+- Primär für sehende Tastatur-Nutzende
 - Sinnvoll bei vielen Nav-Items oder komplexem Header
 - → Überleitung: Wie funktioniert das visuelle Verstecken?
 -->
@@ -255,7 +255,7 @@ clicks: 7
 
 <!--
 - Animation zeigt Schritt für Schritt wie der Skip Link visuell versteckt wird
-- Reihenfolge gewählt damit jeder Schritt sichtbare Veränderung zeigt
+- Reihenfolge so gewählt, dass jeder Schritt sichtbare Veränderung zeigt
 - white-space: nowrap — Text wird einzeilig
 - padding: 0 — Box schrumpft sichtbar
 - border: 0 — Rahmen verschwindet

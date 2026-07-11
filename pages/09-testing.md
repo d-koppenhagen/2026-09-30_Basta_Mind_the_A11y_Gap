@@ -89,7 +89,6 @@ Trotzdem ist sie **nicht barrierefrei**.
 - Aber: Keine echten Überschriften, keine Landmarks, div statt button, keine echten Links
 - Screen Reader sieht quasi nichts Sinnvolles
 - Lektion: Automatisierte Tests sind notwendig, aber nicht hinreichend!
-- → Überleitung: Code-Beispiel auf der nächsten Folie
 -->
 
 ---
@@ -136,7 +135,7 @@ layout: default
 - Vereinfachtes Beispiel: Lighthouse & axe melden 0 Fehler
 - Aber: span statt a, div statt h1, div statt button, div statt label
 - aria-label befriedigt axe – aber kein echtes Label-Element vorhanden
-- Tastatur-User kann Navigation und Button nicht erreichen
+- Tastatur-Nutzende können Navigation und Button nicht erreichen
 - Screen Reader sieht keine Überschrift, keine Landmarks
 - → Überleitung: AI Agents und Barrierefreiheit
 -->

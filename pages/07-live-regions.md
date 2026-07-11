@@ -4,12 +4,12 @@ layout: section
 
 # Live Regions & Dynamische Inhalte
 
-Änderungen für Screen-Reader-Nutzer ankündigen
+Änderungen für Screen-Reader-Nutzende ankündigen
 
 <!--
 - Moderne Apps: Inhalte ändern sich ohne Seitenneuladen
 - Screen Reader kündigen Änderungen nicht automatisch an
-- ARIA Live Regions lösen das Problem
+- ARIA Live Regions lösen dieses Problem
 - Aber: Hier wird es knifflig...
 - → Überleitung: Das Live-Region-Problem
 -->
@@ -176,7 +176,7 @@ hide: true
 
 <v-clicks>
 
-- **aria-live="polite"** – Ankündigen wenn Nutzer untätig ist (häufigster Fall)
+- **aria-live="polite"** – Ankündigen wenn Nutzende untätig sind (häufigster Fall)
 - **aria-live="assertive"** – Sofort ankündigen (sparsam verwenden!)
 - **aria-atomic="true"** – Gesamte Region vorlesen (vs nur Änderungen)
 - **aria-atomic="false"** – Nur Änderungen vorlesen (gut für Listen)
@@ -187,14 +187,14 @@ hide: true
 <v-click>
 
 <div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
-⚠️ Assertive sparsam verwenden – es unterbricht den Nutzer!
+⚠️ Assertive sparsam verwenden – es unterbricht die Nutzenden!
 </div>
 
 </v-click>
 
 <!--
 - Kurzreferenz ARIA Live Attribute:
-- [KLICK] polite: Warten bis Nutzer fertig ist → 99% der Fälle
+- [KLICK] polite: Warten bis Nutzende fertig sind → 99% der Fälle
 - [KLICK] assertive: Sofort unterbrechen → nur kritische Alerts!
 - [KLICK] atomic="true": Gesamte Region vorlesen (Status-Meldungen)
 - [KLICK] atomic="false": Nur Änderungen vorlesen (Chat, Listen)
