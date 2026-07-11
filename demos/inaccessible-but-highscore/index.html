@@ -3,166 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo: 100% Score – 0% Barrierefreiheit</title>
+  <title>Vereinfacht: 100% Score – 0% Barrierefreiheit</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: system-ui, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
-
-    .header {
-      background: #2563eb;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .header .logo { font-size: 1.5rem; font-weight: bold; }
-    .header .nav-links { display: flex; gap: 1.5rem; }
-    .header .nav-links span {
-      color: #fff;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-    .header .nav-links span:hover { opacity: 0.8; }
-
-    .main-content { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-
-    .page-title { font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem; }
-    .page-intro { margin-bottom: 1.5rem; color: #374151; }
-
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .card-title { font-size: 1.25rem; font-weight: bold; margin-bottom: 0.75rem; }
-    .card-text { margin-bottom: 1rem; color: #374151; }
-
-    .form-group { margin-bottom: 1rem; }
-    .form-group .label { font-weight: 600; margin-bottom: 0.25rem; }
-    .form-group input {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .btn:hover { background: #1d4ed8; }
-
-    .status { margin-top: 1rem; padding: 0.75rem; background: #d1fae5; border-radius: 4px; }
-
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      color: #6b7280;
-      font-size: 0.875rem;
-    }
-
-    .activity-item { padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb; }
-    .activity-item:last-child { border-bottom: none; }
-
-    .info-banner {
-      background: #fef3c7;
-      border: 1px solid #f59e0b;
-      border-radius: 8px;
-      padding: 1.25rem;
-      margin-bottom: 1.5rem;
-      color: #92400e;
-    }
-    .info-banner .info-title { font-weight: bold; margin-bottom: 0.5rem; }
+    body { font-family: system-ui, sans-serif; color: #1a1a1a; background: #fff; margin: 2rem; }
+    .title { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; }
+    .nav span { cursor: pointer; text-decoration: underline; margin-right: 1rem; }
+    .btn { display: inline-block; background: #2563eb; color: #fff; padding: 0.5rem 1rem;
+           border-radius: 4px; cursor: pointer; border: none; }
+    .label { font-weight: 600; margin-bottom: 0.25rem; }
+    input { padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; width: 100%; margin-bottom: 0.75rem; }
   </style>
 </head>
 <body>
-
-  <!-- ❌ Kein <header> Landmark, kein <nav>, keine echten Links – nur Spans mit onclick -->
-  <div class="header">
-    <div class="logo">TaskFlow</div>
-    <div class="nav-links">
-      <span onclick="location.href='#dashboard'">Dashboard</span>
-      <span onclick="location.href='#projects'">Projekte</span>
-      <span onclick="location.href='#settings'">Einstellungen</span>
+  <main>
+    <div class="nav">
+      <span onclick="location.href='#'">Startseite</span>
+      <span onclick="location.href='#'">Kontakt</span>
     </div>
-  </div>
-
-  <!-- ❌ main ist da (Lighthouse happy), aber keine echte Überschriften-Hierarchie -->
-  <main class="main-content">
-
-    <!-- ❌ Kein <h1> – nur ein gestyltes Div, Screen Reader sieht keine Überschrift -->
-    <div class="page-title">TaskFlow – Projektmanagement</div>
-
-    <div class="page-intro">
-      Diese Seite erzielt mit Axe DevTools und Lighthouse einen Accessibility-Score von 100%.
-      Trotzdem ist sie alles andere als barrierefrei. Automatisierte Tools erkennen nur
-      30–50% aller Barrieren – der Rest erfordert manuelles Testen mit Screenreadern,
-      Tastatur-Navigation und echtem Nutzer-Feedback.
+    <div class="title">Willkommen!</div>
+    <div class="label">Ihr Name</div>
+    <input
+      type="text"
+      aria-label="Your Name"
+      placeholder="Max Mustermann">
+    <div class="btn" onclick="alert('Gesendet!')">
+      Absenden
     </div>
-
-    <div class="info-banner">
-      <div class="info-title">⚠️ Was automatisierte Tests NICHT finden:</div>
-      <div>Fehlende Landmarks, falsche Überschriften-Hierarchie, nicht-tastaturzugängliche
-      Elemente mit ARIA-Rollen, fehlende Live-Regions, Links ohne href und
-      visuell zugeordnete Labels ohne programmatische Verknüpfung.</div>
-    </div>
-
-    <!-- ❌ Kein <section>, kein <h2> – keine Struktur für assistive Technologien -->
-    <div class="card">
-      <div class="card-title">Neues Projekt anlegen</div>
-      <div class="card-text">
-        Erstelle ein neues Projekt und lade dein Team ein. Alle Felder sind Pflichtfelder.
-      </div>
-
-      <!-- ❌ Kein <form>, kein <label for="..."> – aria-label befriedigt axe, aber
-           visuelles Label und Input sind programmatisch nicht verknüpft -->
-      <div class="form-group">
-        <div class="label">Projektname</div>
-        <input type="text" aria-label="Projektname" placeholder="z.B. Website Relaunch">
-      </div>
-      <div class="form-group">
-        <div class="label">Beschreibung</div>
-        <input type="text" aria-label="Beschreibung" placeholder="Kurze Projektbeschreibung">
-      </div>
-      <div class="form-group">
-        <div class="label">Team-Lead (E-Mail)</div>
-        <input type="email" aria-label="Team-Lead E-Mail" placeholder="lead@example.com">
-      </div>
-
-      <!-- ❌ Kein <button> – div mit onclick ist nicht tastaturzugänglich -->
-      <div class="btn" onclick="document.getElementById('status').style.display='block'">
-        Projekt erstellen
-      </div>
-
-      <!-- ❌ Kein aria-live – Status-Update wird von Screen Readern nicht angekündigt -->
-      <div class="status" id="status" style="display:none;">
-        ✓ Projekt erfolgreich angelegt!
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Aktuelle Projekte</div>
-      <!-- ❌ Keine <ul>/<li> – Liste hat keine Semantik für Screen Reader -->
-      <div class="activity-item">� Website Relaunch – 3 offene Tasks</div>
-      <div class="activity-item">� Mobile App v2 – Sprint Review morgen</div>
-      <div class="activity-item">� Design System – 12 neue Komponenten</div>
-    </div>
-
   </main>
-
-  <!-- ❌ Kein <footer> Landmark -->
-  <div class="footer">
-    © 2026 TaskFlow Demo – Mind the A11y Gap (BASTA! 2026)
-  </div>
-
 </body>
 </html>

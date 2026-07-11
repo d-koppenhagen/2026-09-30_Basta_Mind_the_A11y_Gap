@@ -66,6 +66,7 @@ layout: default
 
 ---
 layout: center
+hide: true
 ---
 
 # 🎯 Demo: 100 % Score – 0 % Barrierefreiheit
@@ -88,5 +89,54 @@ Trotzdem ist sie **nicht barrierefrei**.
 - Aber: Keine echten Überschriften, keine Landmarks, div statt button, keine echten Links
 - Screen Reader sieht quasi nichts Sinnvolles
 - Lektion: Automatisierte Tests sind notwendig, aber nicht hinreichend!
+- → Überleitung: Code-Beispiel auf der nächsten Folie
+-->
+
+---
+layout: default
+---
+
+# 🔍 Warum 100 % Score?
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- ... -->
+  <title>MyApp</title>
+</head>
+<body>
+  <main>
+    <div class="nav">
+      <span onclick="location.href='#'">Startseite</span>
+      <span onclick="location.href='#'">Kontakt</span>
+    </div>
+    <div class="title">Willkommen!</div>
+    <div class="label">Ihr Name</div>
+    <input type="text"
+      aria-label="Your Name"
+      placeholder="Max Mustermann">
+    <div class="btn" onclick="alert('Gesendet!')">Absenden</div>
+  </main>
+</body>
+</html>
+```
+
+<div class="absolute right-97 top-33 w-[30%] z-10">
+  <img src="/demo-100.png" alt="Vorschau des Quellcodes" class="rounded shadow-lg" />
+</div>
+
+<div class="absolute right-7 top-10 w-[32%] flex flex-col gap-10 z-10">
+  <img src="/axe-100.png" alt="axe DevTools: 0 Violations" class="rounded shadow-lg" />
+  <img src="/lighthouse-100.png" alt="Lighthouse Score: 100" class="rounded shadow-lg" />
+</div>
+
+
+<!--
+- Vereinfachtes Beispiel: Lighthouse & axe melden 0 Fehler
+- Aber: span statt a, div statt h1, div statt button, div statt label
+- aria-label befriedigt axe – aber kein echtes Label-Element vorhanden
+- Tastatur-User kann Navigation und Button nicht erreichen
+- Screen Reader sieht keine Überschrift, keine Landmarks
 - → Überleitung: AI Agents und Barrierefreiheit
 -->
