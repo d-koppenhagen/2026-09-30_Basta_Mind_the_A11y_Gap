@@ -1,10 +1,10 @@
 ---
 layout: image
 image: /testing.jpg
-style: "color: white;"
+class: text-white
 ---
 
-# Testen & Tools
+# Testen & Tools {.!text-white}
 
 Barrierefreiheit verifizieren
 
