@@ -9,7 +9,10 @@
             <span class="dot yellow"></span>
             <span class="dot green"></span>
           </div>
-          <div class="browser-url">{{ displayUrl }}</div>
+          <div class="browser-url" :class="{ 'url-highlight': currentStep === 4 }">
+            {{ displayUrl }}
+            <span v-if="currentStep === 4" class="history-badge">↻ history.pushState()</span>
+          </div>
         </div>
 
         <div class="spa-layout">
@@ -129,6 +132,7 @@
         <div class="step-badge swap-badge">⟳ SPA-Router</div>
         <p>Nur der <strong>Router-View</strong> wird ausgetauscht.</p>
         <p>Navigation bleibt <strong>unverändert</strong> — kein Full-Page-Reload!</p>
+        <p class="history-hint">URL wird per <code>history.pushState()</code> auf <code>/contact</code> geändert.</p>
         <p>Der Browser setzt den Focus <strong>nicht</strong> automatisch zurück.</p>
       </div>
 
@@ -235,6 +239,31 @@ const displayUrl = computed(() => {
   font-size: 0.7rem;
   flex: 1;
   font-family: monospace;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.browser-url.url-highlight {
+  background: rgba(234, 179, 8, 0.15);
+  border: 1px solid #eab308;
+  color: #fde047;
+  box-shadow: 0 0 8px rgba(234, 179, 8, 0.3);
+}
+
+.history-badge {
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: #eab308;
+  background: rgba(234, 179, 8, 0.15);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  animation: fade-in 0.3s ease;
+  margin-left: auto;
 }
 
 /* SPA Layout */
@@ -625,6 +654,11 @@ const displayUrl = computed(() => {
   font-weight: 600;
   color: #ef4444 !important;
   margin-top: 10px !important;
+}
+
+.history-hint {
+  color: #eab308 !important;
+  font-weight: 500;
 }
 
 @keyframes fade-in {
