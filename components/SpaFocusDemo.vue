@@ -23,13 +23,31 @@
           </nav>
 
           <!-- Router View -->
-          <main class="router-view" :class="{ 'main-focused': currentStep === 1 }">
-            <!-- Focus outline around main -->
-            <span v-if="currentStep === 1" class="focus-outline-main"></span>
+          <main class="router-view" :class="{ 'main-focused': currentStep === 2, 'router-swapping': currentStep === 0 || currentStep === 4 }">
+            <!-- Router swap indicator (step 0: initial load) -->
+            <span v-if="currentStep === 0" class="router-swap-border"></span>
+            <span v-if="currentStep === 0" class="router-swap-label">⟳ Router-View: /home</span>
+
+            <!-- Focus outline around main (step 2) -->
+            <span v-if="currentStep === 2" class="focus-outline-main"></span>
+
+            <!-- Router swap indicator (step 4: contact load) -->
+            <span v-if="currentStep === 4" class="router-swap-border"></span>
+            <span v-if="currentStep === 4" class="router-swap-label">⟳ Router-View: /contact</span>
 
             <Transition name="fade" mode="out-in">
-              <!-- Home page -->
-              <div v-if="currentStep < 3" key="home" class="route-content home-page">
+              <!-- Router swap animation (step 0: initial home load) -->
+              <div v-if="currentStep === 0" key="swapping-home" class="route-content swap-view">
+                <div class="swap-skeleton">
+                  <div class="skeleton-line-dim w-70"></div>
+                  <div class="skeleton-line-dim w-50"></div>
+                  <div class="skeleton-line-dim w-60"></div>
+                  <div class="skeleton-line-dim w-40"></div>
+                </div>
+              </div>
+
+              <!-- Home page (steps 1–3) -->
+              <div v-else-if="currentStep <= 3" key="home" class="route-content home-page">
                 <h2>Home</h2>
                 <div class="skeleton-line w-90"></div>
                 <div class="skeleton-line w-70"></div>
@@ -37,15 +55,25 @@
                 <div class="skeleton-line w-50"></div>
                 <div class="skeleton-line w-60"></div>
                 <div class="cta-area">
-                  <button class="cta-button" :class="{ 'btn-focused': currentStep === 2, clicking: currentStep === 2 }">
+                  <button class="cta-button" :class="{ clicking: currentStep === 3 }">
                     📧 Kontakt
-                    <span v-if="currentStep === 2" class="focus-outline-btn"></span>
-                    <span v-if="currentStep === 2" class="click-ripple"></span>
+                    <span v-if="currentStep === 3" class="focus-outline-btn"></span>
+                    <span v-if="currentStep === 3" class="click-ripple"></span>
                   </button>
                 </div>
               </div>
 
-              <!-- Contact page with misplaced focus -->
+              <!-- Router swap animation (step 4) -->
+              <div v-else-if="currentStep === 4" key="swapping" class="route-content swap-view">
+                <div class="swap-skeleton">
+                  <div class="skeleton-line-dim w-70"></div>
+                  <div class="skeleton-line-dim w-50"></div>
+                  <div class="skeleton-line-dim w-60"></div>
+                  <div class="skeleton-line-dim w-40"></div>
+                </div>
+              </div>
+
+              <!-- Contact page with misplaced focus (step 5) -->
               <div v-else key="contact" class="route-content contact-page">
                 <h2>Contact</h2>
                 <div class="form-group">
@@ -73,30 +101,40 @@
 
     <!-- Right: Explanation -->
     <div class="explanation">
-      <div v-if="currentStep === 0" class="explanation-step">
-        <div class="step-badge">Ausgangslage</div>
-        <p>Wir sind auf der <strong>Startseite</strong>.</p>
-        <p>Nach der Navigation hat der Router den Focus auf den <code>&lt;main&gt;</code>-Bereich gesetzt.</p>
-        <p class="hint">→ Weiter</p>
+      <div v-if="currentStep === 0" class="explanation-step swap-step">
+        <div class="step-badge swap-badge">⟳ SPA-Router</div>
+        <p>Der SPA-Router lädt den <strong>Home-View</strong> in den Router-Outlet.</p>
+        <p>Nur der <code>&lt;main&gt;</code>-Bereich wird befüllt — der Rest der Seite steht bereits.</p>
       </div>
 
       <div v-else-if="currentStep === 1" class="explanation-step">
-        <div class="step-badge">Focus auf &lt;main&gt;</div>
-        <p>Focus liegt auf dem <strong>&lt;main&gt;</strong>-Bereich (gesamter Router-View).</p>
-        <p>Per <kbd>Tab</kbd> wird zum „Kontakt"-Button navigiert.</p>
-        <p class="hint">→ Weiter</p>
+        <div class="step-badge">Startseite geladen</div>
+        <p>Home-View ist geladen.</p>
+        <p>Der Router hat den Focus auf <code>&lt;main&gt;</code> gesetzt.</p>
       </div>
 
       <div v-else-if="currentStep === 2" class="explanation-step">
+        <div class="step-badge">Focus auf &lt;main&gt;</div>
+        <p>Focus liegt auf dem <strong>&lt;main&gt;</strong>-Bereich (Router-View).</p>
+        <p>Per <kbd>Tab</kbd> navigiert der User zum „Kontakt"-Button.</p>
+      </div>
+
+      <div v-else-if="currentStep === 3" class="explanation-step">
         <div class="step-badge">Focus auf Button</div>
         <p>Focus liegt auf <strong>„Kontakt"</strong>.</p>
-        <p><kbd>Enter</kbd> wird gedrückt → SPA-Router navigiert zu <code>/contact</code>.</p>
-        <p class="hint">→ Weiter</p>
+        <p>User drückt <kbd>Enter</kbd> → SPA-Router navigiert zu <code>/contact</code>.</p>
+      </div>
+
+      <div v-else-if="currentStep === 4" class="explanation-step swap-step">
+        <div class="step-badge swap-badge">⟳ SPA-Router</div>
+        <p>Nur der <strong>Router-View</strong> wird ausgetauscht.</p>
+        <p>Navigation bleibt <strong>unverändert</strong> — kein Full-Page-Reload!</p>
+        <p>Der Browser setzt den Focus <strong>nicht</strong> automatisch zurück.</p>
       </div>
 
       <div v-else class="explanation-step warning">
         <div class="step-badge danger">⚠️ Problem</div>
-        <p>Route wechselt auf <code>/contact</code> — aber der <strong>Focus landet im 2. Formularfeld</strong> (E-Mail).</p>
+        <p>Neuer Inhalt geladen — aber <strong>Focus landet im 2. Formularfeld</strong> (E-Mail).</p>
         <ul>
           <li>Nicht am Seitenanfang</li>
           <li>Nicht am Beginn von <code>&lt;main&gt;</code></li>
@@ -120,23 +158,27 @@ const navLinks = [
   { path: '/contact', label: 'Contact' },
 ];
 
-// Step 0: Initial (Home page, no focus shown)
-// Step 1: Focus outline around <main> (click >= 1)
-// Step 2: Focus jumps to "Kontakt" button (click >= 2)
-// Step 3: Route changes, focus lands in wrong field (click >= 3)
+// Step 0: Router loads Home-View (swap border visible)
+// Step 1: Home loaded, view ready
+// Step 2: Focus outline around <main>
+// Step 3: Focus on "Kontakt" button + click
+// Step 4: Router-View swap to /contact
+// Step 5: Contact page, focus in wrong field
 const currentStep = computed(() => {
   const c = $clicks.value;
+  if (c >= 5) return 5;
+  if (c >= 4) return 4;
   if (c >= 3) return 3;
   if (c >= 2) return 2;
   if (c >= 1) return 1;
   return 0;
 });
 
-const activeNav = computed(() => (currentStep.value < 3 ? '/' : '/contact'));
+const activeNav = computed(() => (currentStep.value >= 4 ? '/contact' : '/'));
 
 const displayUrl = computed(() => {
-  if (currentStep.value < 3) return 'https://example.org/';
-  return 'https://example.org/contact';
+  if (currentStep.value >= 4) return 'https://example.org/contact';
+  return 'https://example.org/';
 });
 </script>
 
@@ -198,7 +240,7 @@ const displayUrl = computed(() => {
 /* SPA Layout */
 .spa-layout {
   background: #1e1e2e;
-  height: 320px;
+  height: 330px;
   display: flex;
   flex-direction: column;
 }
@@ -229,10 +271,11 @@ const displayUrl = computed(() => {
   position: relative;
   padding: 14px 18px;
   flex: 1;
+  transition: background 0.3s;
 }
 
-.router-view.main-focused {
-  /* subtle background to indicate focus area */
+.router-view.router-swapping {
+  background: rgba(168, 85, 247, 0.04);
 }
 
 /* Focus outline around entire main */
@@ -244,6 +287,36 @@ const displayUrl = computed(() => {
   animation: pulse-outline 1.5s ease-in-out infinite;
   pointer-events: none;
   z-index: 10;
+}
+
+/* Router swap border */
+.router-swap-border {
+  position: absolute;
+  inset: 4px;
+  border: 2px solid #a855f7;
+  border-radius: 6px;
+  animation: swap-pulse 0.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.router-swap-label {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+  z-index: 11;
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes swap-pulse {
+  0%, 100% { border-color: #a855f7; opacity: 1; }
+  50% { border-color: #c084fc; opacity: 0.6; }
 }
 
 /* Home Page */
@@ -272,10 +345,39 @@ const displayUrl = computed(() => {
 .w-70 { width: 70%; }
 .w-60 { width: 60%; }
 .w-50 { width: 50%; }
+.w-40 { width: 40%; }
 
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+/* Swap skeleton (dimmed) */
+.swap-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.swap-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  opacity: 0.4;
+  animation: swap-fade 1s ease-in-out infinite alternate;
+}
+
+.skeleton-line-dim {
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(168, 85, 247, 0.25);
+}
+
+@keyframes swap-fade {
+  from { opacity: 0.2; }
+  to { opacity: 0.5; }
 }
 
 .cta-area {
@@ -426,7 +528,10 @@ const displayUrl = computed(() => {
   opacity: 0;
 }
 
-/* Right-side explanation */
+/* =============================================
+   Right-side explanation
+   Uses theme CSS vars for proper dark/light contrast
+   ============================================= */
 .explanation {
   flex: 0.7;
   min-width: 0;
@@ -445,10 +550,15 @@ const displayUrl = computed(() => {
   border-color: rgba(239, 68, 68, 0.25);
 }
 
+.explanation-step.swap-step {
+  background: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
 .explanation-step p {
   margin: 6px 0;
   font-size: 0.78rem;
-  color: #1e293b;
+  color: var(--k9n-text-primary, #1e293b);
   line-height: 1.5;
 }
 
@@ -456,26 +566,30 @@ const displayUrl = computed(() => {
   margin: 6px 0;
   padding-left: 16px;
   font-size: 0.75rem;
-  color: #334155;
+  color: var(--k9n-text-secondary, #334155);
   line-height: 1.6;
 }
 
+.explanation-step strong {
+  color: var(--k9n-text-primary, #1e293b);
+}
+
 .explanation-step code {
-  background: rgba(100, 116, 139, 0.12);
+  background: rgba(100, 116, 139, 0.15);
   padding: 1px 5px;
   border-radius: 3px;
   font-size: 0.7rem;
-  color: #1e293b;
+  color: var(--k9n-text-primary, #1e293b);
 }
 
 .explanation-step kbd {
-  background: rgba(100, 116, 139, 0.12);
-  border: 1px solid rgba(100, 116, 139, 0.25);
+  background: rgba(100, 116, 139, 0.15);
+  border: 1px solid rgba(100, 116, 139, 0.3);
   padding: 1px 5px;
   border-radius: 3px;
   font-size: 0.68rem;
   font-family: system-ui;
-  color: #1e293b;
+  color: var(--k9n-text-primary, #1e293b);
 }
 
 .step-badge {
@@ -487,13 +601,18 @@ const displayUrl = computed(() => {
   padding: 2px 8px;
   border-radius: 4px;
   background: rgba(59, 130, 246, 0.15);
-  color: #1d4ed8;
+  color: #3b82f6;
   margin-bottom: 8px;
 }
 
 .step-badge.danger {
   background: rgba(239, 68, 68, 0.15);
-  color: #b91c1c;
+  color: #ef4444;
+}
+
+.step-badge.swap-badge {
+  background: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
 }
 
 .hint {
@@ -504,40 +623,8 @@ const displayUrl = computed(() => {
 
 .takeaway {
   font-weight: 600;
-  color: #b91c1c !important;
+  color: #ef4444 !important;
   margin-top: 10px !important;
-}
-
-/* Dark mode overrides */
-:global(.dark) .explanation-step p {
-  color: #cbd5e1;
-}
-
-:global(.dark) .explanation-step ul {
-  color: #94a3b8;
-}
-
-:global(.dark) .explanation-step code {
-  background: rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-}
-
-:global(.dark) .explanation-step kbd {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
-  color: #e2e8f0;
-}
-
-:global(.dark) .step-badge {
-  color: #93c5fd;
-}
-
-:global(.dark) .step-badge.danger {
-  color: #fca5a5;
-}
-
-:global(.dark) .takeaway {
-  color: #fca5a5 !important;
 }
 
 @keyframes fade-in {

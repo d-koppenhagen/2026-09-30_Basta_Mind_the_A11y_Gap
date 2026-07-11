@@ -104,7 +104,7 @@ class: text-center
 
 ---
 layout: default
-clicks: 3
+clicks: 5
 ---
 
 # Verlorener Focus: Die User Experience
@@ -112,11 +112,12 @@ clicks: 3
 <SpaFocusDemo />
 
 <!--
-- Initial: Startseite wird angezeigt
-- [KLICK 1] Focus liegt auf dem gesamten <main>-Bereich (Router-View) – dargestellt durch orange Umrandung
-- [KLICK 2] Per Tab zum „Kontakt"-Button navigiert, Focus springt dahin, Enter wird gedrückt
-- [KLICK 3] SPA-Router navigiert zu /contact – Focus landet im 2. Formularfeld (E-Mail) statt am Seitenanfang!
-- Das ist das typische SPA-Problem: kein Focus-Management nach Navigation
+- [Initial] SPA-Router lädt den Home-View (lila Rahmen um Router-Outlet)
+- [KLICK 1] Home-View fertig geladen
+- [KLICK 2] Focus liegt auf <main> – orange Umrandung
+- [KLICK 3] Per Tab zum „Kontakt"-Button, Enter
+- [KLICK 4] SPA-Router tauscht NUR den Router-View aus – kein Full Reload
+- [KLICK 5] Neuer Inhalt da – Focus landet im 2. Formularfeld statt am Seitenanfang!
 - → Überleitung: Wie löst man das?
 -->
 
