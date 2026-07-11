@@ -104,26 +104,20 @@ class: text-center
 
 ---
 layout: default
+clicks: 3
 ---
 
 # Verlorener Focus: Die User Experience
 
-<div class="flex justify-center mb--10">
-  <img src="/focus-router-wrong.drawio.png" class="w-80%" alt="Vergleich des Focus-Verhaltens in klassischen Multi-Page-Apps vs SPAs" />
-</div>
-
-**Probleme:**
-- Focus bleibt auf dem Navigations-Link: Verlorener Focus nach Navigation
-- Keine Ankündigung des Seitenwechsels, Nutzer wissen nicht, dass sich der Inhalt aktualisiert hat
-- Erwartung: Focus am Seitenanfang oder direkt nach der Navigation
+<SpaFocusDemo />
 
 <!--
-- Vergleich: Multi-Page-App vs SPA beim Navigieren
-- Klassisch: Browser setzt Focus beim Laden auf Seitenanfang
-- SPA: Inhalt ändert sich, aber Focus bleibt wo er war
-- Nutzer merkt nicht, dass sich etwas geändert hat
-- Screen Reader kündigt keinen Seitenwechsel an
-- → Überleitung: Wie löst man das in SPAs?
+- Initial: User ist auf der Startseite
+- [KLICK 1] Focus liegt auf dem gesamten <main>-Bereich (Router-View) – dargestellt durch orange Umrandung
+- [KLICK 2] User tabbt zum „Kontakt"-Button, Focus springt dahin, Enter wird gedrückt
+- [KLICK 3] SPA-Router navigiert zu /contact – Focus landet im 2. Formularfeld (E-Mail) statt am Seitenanfang!
+- Das ist das typische SPA-Problem: kein Focus-Management nach Navigation
+- → Überleitung: Wie löst man das?
 -->
 
 ---
