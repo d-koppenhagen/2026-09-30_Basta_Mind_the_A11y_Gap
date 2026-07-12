@@ -131,7 +131,7 @@ layout: default
 
 ## ✅ Korrekt
 
-<img src="/book-cover-v1m.png" alt="Book Cover of the German book 'Das moderne Praxisbuch zu Angular: Von den Grundlagen bis zur professionellen Entwicklung mit Signals', written by Ferdinand Malcher, Danny Koppenhagen and Johannes Hoppe" class="max-h-70 rounded shadow" />
+<img src="/book-cover-v1m.png" alt="Book Cover of the German book 'Das moderne Praxisbuch zu Angular: Von den Grundlagen bis zur professionellen Entwicklung mit Signals', written by Ferdinand Malcher, Danny Koppenhagen and Johannes Hoppe" class="max-h-70" />
 
    </template>
 </v-switch>
