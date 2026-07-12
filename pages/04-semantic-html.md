@@ -138,7 +138,7 @@ layout: default
 
 # Skip Links
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-[2fr_3fr] gap-4">
 
 <div>
 
