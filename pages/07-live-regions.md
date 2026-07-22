@@ -207,7 +207,7 @@ class: text-center
 # Ausprobieren
 
 <ChallengeLinks :challenges="[
-  { slug: 'live-region-dynamic', title: 'Live Region Dynamic' },
+  { slug: 'live-region-dynamic', title: 'Breaking News' },
 ]" />
 
 <!--

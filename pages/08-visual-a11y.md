@@ -387,9 +387,9 @@ class: text-center
 # Ausprobieren
 
 <ChallengeLinks :challenges="[
-  { slug: 'color-contrast-fail', title: 'Color Contrast Fail' },
-  { slug: 'missing-alt-text', title: 'Missing Alt Text' },
-  { slug: 'reduced-motion', title: 'Reduced Motion' },
+  { slug: 'color-contrast-fail', title: 'Fifty Shades of Gray' },
+  { slug: 'missing-alt-text', title: 'A Picture Says Nothing' },
+  { slug: 'reduced-motion', title: 'Chill Out' },
 ]" />
 
 <!--

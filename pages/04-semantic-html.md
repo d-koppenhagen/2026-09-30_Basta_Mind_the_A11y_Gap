@@ -349,9 +349,9 @@ class: text-center
 # Ausprobieren
 
 <ChallengeLinks :challenges="[
-  { slug: 'button-vs-link', title: 'Button vs Link' },
-  { slug: 'no-skip-link', title: 'No Skip Link' },
-  { slug: 'heading-chaos', title: 'Heading Chaos' },
+  { slug: 'button-vs-link', title: 'Click Bait', highlighted: true },
+  { slug: 'no-skip-link', title: 'No Shortcut Home' },
+  { slug: 'heading-chaos', title: 'Head Over Levels' },
 ]" />
 
 <!--
