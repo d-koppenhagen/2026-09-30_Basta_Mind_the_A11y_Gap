@@ -52,7 +52,7 @@ layout: default
 
 <div class="col-span-2">
   <div class="w-95% ml-5 text-right">
-    <img src="/a11y_dept_everywhere.jpg" attributionsrc="https://i.imgflip.com/ahxlzv.jpg" title="made at imgflip.com" class="mt-7"/>
+    <img src="/a11y_dept_everywhere.jpg" alt="Meme: Buzz Lightyear zeigt Woody das Universum – A11y-Probleme, A11y-Probleme überall" attributionsrc="https://i.imgflip.com/ahxlzv.jpg" title="made at imgflip.com" class="mt-7"/>
   </div>
 </div>
 

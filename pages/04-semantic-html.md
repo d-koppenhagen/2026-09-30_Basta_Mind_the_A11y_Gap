@@ -113,7 +113,7 @@ layout: default
 
 <div class="col-span-3 row-span-2 self-start">
   <div class="w-95% ml-5 text-right">
-    <img src="/structure_landmark.png" alt="" class=""/>
+    <img src="/structure_landmark.png" alt="Seitenstruktur mit HTML-Landmarks markiert: header, aside, main mit h2, footer" class=""/>
   </div>
 </div>
 

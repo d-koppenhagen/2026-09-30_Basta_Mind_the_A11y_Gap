@@ -4,7 +4,7 @@ layout: section
 
 # 🤖 AI Agents & A11y
 
-<p class="text-[#8892b0] text-xl mt-4">Dein nächster User ist eine Maschine</p>
+<p class="text-[#64748b] text-xl mt-4">Dein nächster User ist eine Maschine</p>
 
 <!--
 - Provokante These: Der nächste „User" eurer App ist vielleicht gar kein Mensch
