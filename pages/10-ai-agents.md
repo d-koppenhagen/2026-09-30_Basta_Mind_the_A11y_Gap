@@ -2,105 +2,70 @@
 layout: section
 ---
 
-# 🤖 AI Agents & Barrierefreiheit
+# 🤖 AI Agents & A11y
 
-<p class="text-[#8892b0] text-xl mt-4">Warum A11y auch für Maschinen zählt</p>
+<p class="text-[#8892b0] text-xl mt-4">Dein nächster User ist eine Maschine</p>
 
 <!--
-- KI-Assistenten browsen das Web – nutzen denselben Accessibility Tree wie Screen Reader
-- → Was das für uns bedeutet
+- Provokante These: Der nächste „User" eurer App ist vielleicht gar kein Mensch
+- AI Agents (ChatGPT, Gemini, Claude, Kiro, ...) browsen aktiv das Web
+- Was das für unsere Arbeit bedeutet → nächster Slide
 -->
 
 ---
 layout: default
 ---
 
-# AI Agents = Screen Reader
+# AI Agents lesen den Accessibility Tree
 
-<div class="grid grid-cols-2 gap-8">
+<div class="grid grid-cols-[1fr_1fr] gap-6 mt-2">
 
-<div>
+<div class="p-5 rounded-xl bg-indigo-500/10 border border-indigo-500/30">
+  <h3 class="!text-indigo-400 !text-lg !mb-3 flex items-center gap-2"><carbon-bot /> Wie Agents „sehen"</h3>
 
-- AI Agents **browsen das Web** (ChatGPT, Gemini, Claude, Kiro, ...)
-- Nutzen den **Accessibility Tree** als Datenmodell
-- Schlechte A11y → schlechte Agent-Interaktion
+  <div class="space-y-2 text-sm">
+    <div class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">▸</span> Kein Rendering — nur <strong>Accessibility Tree</strong></div>
+    <div class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">▸</span> Gleiche Datenquelle wie <strong>Screen Reader</strong></div>
+    <div class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">▸</span> Schlechte A11y = Agent kann App <strong>nicht bedienen</strong></div>
+  </div>
 
+  <div class="mt-4 px-3 py-2 rounded bg-indigo-500/20 text-xs font-mono">
+    ChatGPT · Gemini · Claude · Kiro · Copilot · …
+  </div>
 </div>
 
-<div>
+<div class="p-5 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+  <h3 class="!text-emerald-400 !text-lg !mb-3 flex items-center gap-2"><carbon-tools-alt /> AI-Tools im Dev-Workflow</h3>
 
-- **Semantisches HTML** & programmatische Namen
-- **Labels / ARIA** für Formulare
-- **Stabile Layouts** (kein CLS)
+  <div class="space-y-2 text-sm">
+    <div class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">▸</span> <strong>Chrome DevTools MCP</strong> — Agents steuern Chrome fern</div>
+    <div class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">▸</span> Lighthouse-Audits <strong>automatisch</strong> ausführen & fixen</div>
+    <div class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">▸</span> <strong>Modern Web Guidance</strong> — Best Practices im Agent-Kontext</div>
+  </div>
 
-</div>
-
-</div>
-
-<v-click>
-
-<div class="mt-4 p-4 bg-blue-500 bg-opacity-10 rounded">
-💡 Gute A11y = gute Agent-Readiness. Für Menschen bauen → automatisch für Maschinen bauen.
-</div>
-
-</v-click>
-
-<!--
-- AI Agents nutzen Accessibility Tree als primäres Datenmodell
-- Alles was für Screen Reader hilft, hilft auch KI-Agenten
-- Weiterer Business-Case für A11y!
-- → Überleitung: Chrome DevTools für Agents
--->
-
----
-layout: default
----
-
-# Chrome Built-in AI Tools
-
-<div class="grid grid-cols-2 gap-8">
-
-<div>
-
-## Chrome DevTools MCP
-
-- KI-Agents **steuern Chrome fern**
-- Lighthouse-Audits automatisch ausführen
-- A11y + SEO + Agentic Browsing prüfen
-
-```bash
-npx chrome-devtools-mcp@latest
-```
-
-</div>
-
-<div>
-
-## Modern Web Guidance
-
-- Best Practices direkt im Agent-Kontext
-- Webplattform-Expertise & A11y-Patterns
-- Legacy-Modernisierung & Performance
-
-```bash
-npx modern-web-guidance@latest install
-```
-
+  <div class="mt-4 px-3 py-2 rounded bg-emerald-500/20 text-xs font-mono">
+    Code schreiben → prüfen → fixen → verifizieren 🔄
+  </div>
 </div>
 
 </div>
 
 <v-click>
-
-<div class="mt-4 p-4 bg-green-500 bg-opacity-10 rounded">
-✅ DevTools MCP + Web Guidance = AI-gestützter A11y-Workflow
+<div class="mt-5 p-4 rounded-lg bg-gradient-to-r from-indigo-500/15 to-emerald-500/15 border border-white/10 text-center text-lg">
+  🎯 <strong>Gute A11y = gute Agent-Readiness.</strong> Für Menschen bauen → automatisch für Maschinen bauen.
 </div>
-
 </v-click>
 
 <!--
-- Chrome DevTools MCP: Agent kann navigieren, Lighthouse laufen lassen, A11y Tree inspizieren
-- Modern Web Guidance: Skills mit Web-Expertise für Agents
-- Kombination = vollständiger A11y-Workflow: Code schreiben → prüfen → fixen → verifizieren
-- → Überleitung: Zusammenfassung
+- LINKS: AI Agents nutzen den Accessibility Tree als primäres Datenmodell
+  - Kein visuelles Rendering, nur programmatische Struktur
+  - Exakt gleiche Basis wie Screen Reader → gleiche Probleme
+  - Wenn ein Screen Reader eure App nicht bedienen kann, kann es ein Agent auch nicht
+- RECHTS: Wir können AI auch FÜR uns nutzen
+  - Chrome DevTools MCP: Agent navigiert, auditiert, fixt
+  - Modern Web Guidance: Aktuelle Best Practices direkt im Agent
+  - Vollständiger Kreislauf: schreiben → prüfen → fixen → verifizieren
+- [KLICK] Die Pointe: Wer für Menschen baut, baut automatisch für Maschinen
+  - Noch ein Business-Case für A11y!
+- → Überleitung: Zusammenfassung der wichtigsten Erkenntnisse
 -->
