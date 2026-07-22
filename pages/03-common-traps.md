@@ -67,7 +67,7 @@ layout: default
   - „nav" ist ein div, kein nav-Element
   - Klickbare divs statt Buttons oder Links
   - Formular komplett aus divs
-- [KLICK] Mindestens 7 schwerwiegende A11y-Probleme!
+- [KLICK] Mindestens 6 schwerwiegende A11y-Probleme!
 - Publikum fragen: Welche Probleme fallen euch auf?
 - → Überleitung: Schauen wir im Detail, was falsch ist
 -->

@@ -15,6 +15,7 @@ drawings:
 mdc: true
 duration: 45min
 css: unocss
+lang: de
 ---
 
 <style src="./style.css"></style>

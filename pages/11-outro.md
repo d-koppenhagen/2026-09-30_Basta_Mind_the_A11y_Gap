@@ -53,7 +53,7 @@ class: text-center
 
 <div class="mt-8 flex items-start justify-center gap-16">
   <div>
-    <a href="https://github.com/d-koppenhagen/2026-02-11-Mind_the_A11y_Gap" target="_blank">
+    <a href="https://github.com/d-koppenhagen/2026-09-30_Basta_Mind_the_A11y_Gap" target="_blank">
       <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-56 h-56 border-4" />
     </a>
     <p class="text-sm mt-2">Slides & Code</p>

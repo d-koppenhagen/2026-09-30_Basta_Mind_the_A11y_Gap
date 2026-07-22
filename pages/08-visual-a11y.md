@@ -47,7 +47,7 @@ Dieser Text ist schwer lesbar
 ```css
 /* Dunkelgrau auf Weiß */
 .text {
-  color: #595959;
+  color: #000000;
   background: #FFFFFF;
 }
 /* Kontrastverhältnis: 7:1 */

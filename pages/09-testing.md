@@ -25,7 +25,7 @@ layout: default
 <v-click>
 <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/40 hover:bg-blue-500/20 transition-all dark:border-blue-500/30">
   <div class="text-3xl mb-2">🔍</div>
-  <h3 class="!text-blue-700 dark:!text-blue-400 !text-lg !mb-2">Browser DevTools</h3>
+  <h3 class="!text-blue-900 dark:!text-blue-400 !text-lg !mb-2">Browser DevTools</h3>
   <ul class="!text-sm !list-none !pl-0 space-y-1">
     <li><carbon-tree-view class="inline text-blue-600 dark:text-blue-300" /> Accessibility Tree</li>
     <li><carbon-color-palette class="inline text-blue-600 dark:text-blue-300" /> Contrast Checker</li>
@@ -37,13 +37,13 @@ layout: default
 <v-click>
 <div class="p-4 rounded-xl bg-green-500/10 border border-green-500/40 hover:bg-green-500/20 transition-all dark:border-green-500/30">
   <div class="text-3xl mb-2">🤖</div>
-  <h3 class="!text-green-700 dark:!text-green-400 !text-lg !mb-2">Automatisiert</h3>
+  <h3 class="!text-green-900 dark:!text-green-400 !text-lg !mb-2">Automatisiert</h3>
   <ul class="!text-sm !list-none !pl-0 space-y-1">
     <li><carbon-bot class="inline text-green-600 dark:text-green-300" /> axe DevTools</li>
     <li><carbon-meter class="inline text-green-600 dark:text-green-300" /> Lighthouse</li>
     <li><carbon-view class="inline text-green-600 dark:text-green-300" /> WAVE (WebAIM)</li>
   </ul>
-  <div class="mt-3 px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-500/20 text-yellow-800 dark:text-yellow-300 text-xs text-center font-medium">
+  <div class="mt-3 px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-500/20 text-yellow-900 dark:text-yellow-300 text-xs text-center font-medium">
     ⚠️ Findet nur 30–40 % der Probleme!
   </div>
 </div>
@@ -52,13 +52,13 @@ layout: default
 <v-click>
 <div class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/40 hover:bg-purple-500/20 transition-all dark:border-purple-500/30">
   <div class="text-3xl mb-2">🧑</div>
-  <h3 class="!text-purple-700 dark:!text-purple-400 !text-lg !mb-2">Manuell</h3>
+  <h3 class="!text-purple-900 dark:!text-purple-400 !text-lg !mb-2">Manuell</h3>
   <ul class="!text-sm !list-none !pl-0 space-y-1">
     <li><carbon-keyboard class="inline text-purple-600 dark:text-purple-300" /> Nur Tastatur</li>
     <li><carbon-headphones class="inline text-purple-600 dark:text-purple-300" /> Screen Reader</li>
     <li><carbon-zoom-in class="inline text-purple-600 dark:text-purple-300" /> 200 % Zoom</li>
   </ul>
-  <div class="mt-3 px-2 py-1 rounded bg-red-100 dark:bg-red-500/20 text-red-800 dark:text-red-300 text-xs text-center font-medium">
+  <div class="mt-3 px-2 py-1 rounded bg-red-100 dark:bg-red-500/20 text-red-900 dark:text-red-300 text-xs text-center font-medium">
     🎯 Unverzichtbar!
   </div>
 </div>
@@ -132,7 +132,7 @@ layout: default
     <div class="title">Willkommen!</div>
     <div class="label">Ihr Name</div>
     <input type="text"
-      aria-label="Your Name"
+      aria-label="Ihr Name"
       placeholder="Max Mustermann">
     <div class="btn" onclick="alert('Gesendet!')">Absenden</div>
   </main>

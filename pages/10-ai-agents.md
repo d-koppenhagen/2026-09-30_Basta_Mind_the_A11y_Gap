@@ -21,7 +21,7 @@ layout: default
 <div class="grid grid-cols-[1fr_1fr] gap-6 mt-2">
 
 <div class="p-5 rounded-xl bg-indigo-500/10 border border-indigo-500/30">
-  <h3 class="!text-indigo-400 !text-lg !mb-3 flex items-center gap-2"><carbon-bot /> Wie Agents „sehen"</h3>
+  <h3 class="!text-indigo-800 dark:!text-indigo-400 !text-lg !mb-3 flex items-center gap-2"><carbon-bot /> Wie Agents „sehen"</h3>
 
   <div class="space-y-2 text-sm">
     <div class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">▸</span> Kein Rendering — nur <strong>Accessibility Tree</strong></div>
@@ -35,7 +35,7 @@ layout: default
 </div>
 
 <div class="p-5 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
-  <h3 class="!text-emerald-400 !text-lg !mb-3 flex items-center gap-2"><carbon-tools-alt /> AI-Tools im Dev-Workflow</h3>
+  <h3 class="!text-emerald-800 dark:!text-emerald-400 !text-lg !mb-3 flex items-center gap-2"><carbon-tools-alt /> AI-Tools im Dev-Workflow</h3>
 
   <div class="space-y-2 text-sm">
     <div class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">▸</span> <strong>Chrome DevTools MCP</strong> — Agents steuern Chrome fern</div>

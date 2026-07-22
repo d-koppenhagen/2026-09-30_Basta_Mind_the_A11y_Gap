@@ -9,9 +9,9 @@ layout: default
 <v-click>
 
 <div class="p-5 rounded-lg bg-gradient-to-br from-green-500/15 to-green-500/5 border border-green-500/20">
-  <div class="text-4xl font-bold text-green-400">1,3 Mrd.</div>
+  <div class="text-4xl font-bold text-green-700 dark:text-green-400">1,3 Mrd.</div>
   <div class="text-lg mt-1 opacity-90">Menschen weltweit mit Beeinträchtigung</div>
-  <div class="text-sm mt-2 opacity-60">~ 16 % der Weltbevölkerung</div>
+  <div class="text-sm mt-2 opacity-70">~ 16 % der Weltbevölkerung</div>
 </div>
 
 </v-click>
@@ -19,9 +19,9 @@ layout: default
 <v-click>
 
 <div class="p-5 rounded-lg bg-gradient-to-br from-blue-500/15 to-blue-500/5 border border-blue-500/20">
-  <div class="text-4xl font-bold text-blue-400">100 %</div>
+  <div class="text-4xl font-bold text-blue-700 dark:text-blue-400">100 %</div>
   <div class="text-lg mt-1 opacity-90">profitieren von guter A11y</div>
-  <div class="text-sm mt-2 opacity-60">Gebrochener Arm · Baby auf dem Arm · Sonne auf Display</div>
+  <div class="text-sm mt-2 opacity-70">Gebrochener Arm · Baby auf dem Arm · Sonne auf Display</div>
 </div>
 
 </v-click>
@@ -29,9 +29,9 @@ layout: default
 <v-click>
 
 <div class="p-5 rounded-lg bg-gradient-to-br from-amber-500/15 to-amber-500/5 border border-amber-500/20">
-  <div class="text-4xl font-bold text-amber-400">Gesetz</div>
+  <div class="text-4xl font-bold text-amber-700 dark:text-amber-400">Gesetz</div>
   <div class="text-lg mt-1 opacity-90">EAA & BFSG seit Juni 2025</div>
-  <div class="text-sm mt-2 opacity-60">WCAG-Konformität verpflichtend</div>
+  <div class="text-sm mt-2 opacity-70">WCAG-Konformität verpflichtend</div>
 </div>
 
 </v-click>
@@ -39,9 +39,9 @@ layout: default
 <v-click>
 
 <div class="p-5 rounded-lg bg-gradient-to-br from-purple-500/15 to-purple-500/5 border border-purple-500/20">
-  <div class="text-4xl font-bold text-purple-400">ROI</div>
+  <div class="text-4xl font-bold text-purple-700 dark:text-purple-400">ROI</div>
   <div class="text-lg mt-1 opacity-90">Mehr Reichweite, besseres SEO</div>
-  <div class="text-sm mt-2 opacity-60">Bessere UX für alle = Business Value</div>
+  <div class="text-sm mt-2 opacity-70">Bessere UX für alle = Business Value</div>
 </div>
 
 </v-click>
