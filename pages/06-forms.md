@@ -155,95 +155,59 @@ layout: default
 
 ---
 layout: default
+clicks: 2
 ---
 
-# Formular-Absendung: Deaktivierter Button
+# ❌ Deaktivierter Button ohne Erklärung
 
-Wie gehen wir damit um, wenn Nutzende ungültige Formulare absenden wollen?
-
-<v-clicks>
-
-<div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded">
-
-## ❌ Deaktiviert ohne Erklärung
-
-```html
-<button type="submit" disabled>Submit</button>
-```
-
-**Problem:** Nutzende wissen nicht, warum der Button nicht funktioniert
-</div>
-
-<div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
-
-## ⚠️ Deaktiviert mit Hinweis
-
-```html
-<button type="submit" disabled aria-describedby="submit-hint">Submit</button>
-<div id="submit-hint">Please fill all required fields</div>
-```
-
-**Probleme:** Button nicht fokussierbar, generischer Hinweis, keine Info über spezifische Fehler
-</div>
-
-</v-clicks>
+<FormSubmitDisabledDemo />
 
 <!--
-- Wie mit ungültigen Formularen umgehen?
-- [KLICK 1] Deaktiviert ohne Erklärung: Absolut inakzeptabel – keine Information warum
-- [KLICK 2] Deaktiviert mit Hinweis: Besser, aber immer noch problematisch
-  - Button nicht per Tastatur fokussierbar
-  - Hinweis zu generisch, nennt nicht die konkreten Fehler
+- Wie mit ungültigen Formularen umgehen? Häufiges Pattern: Button deaktivieren
+- [Initial] Formular nicht komplett ausgefüllt, Button ist disabled
+- [KLICK 1] User versucht zu klicken – nichts passiert, kein Hinweis warum
+- [KLICK 2] Per Tab nicht fokussierbar – disabled entfernt aus Tab-Reihenfolge
+- Absolut inakzeptabel: Keinerlei Feedback!
+- → Überleitung: Besser mit Hinweistext?
+-->
+
+---
+layout: default
+clicks: 2
+---
+
+# ⚠️ Deaktivierter Button mit Hinweis
+
+<FormSubmitHintDemo />
+
+<!--
+- Nächster Versuch: Hinweistext per aria-describedby
+- [Initial] Disabled Button, noch kein Hinweis
+- [KLICK 1] Hinweis erscheint – „Bitte alle Pflichtfelder ausfüllen"
+- [KLICK 2] Aber: Button nicht fokussierbar, aria-describedby wird nicht vorgelesen bei disabled
+  - Hinweis zu generisch – welche Felder fehlen genau?
+  - Nutzende müssen selbst raten
+- Besser als vorher – aber immer noch keine gute UX
 - → Überleitung: Die richtige Lösung
 -->
 
 ---
 layout: default
+clicks: 2
 ---
 
-# Formular-Absendung: Die Lösung
+# ✅ Submit frei: Validierung & Focus-Management
 
-<div class="p-4 bg-green-500 bg-opacity-10 rounded">
-
-## ✅ Aktiviert mit Feld-Validierung & Focus-Management
-
-```html
-<input aria-invalid="true" aria-describedby="email-error" />
-<div id="email-error" role="alert">Please enter a valid email</div>
-```
-
-<div class="mt-3"></div>
-
-
-```js
-function handleSubmit(e) {
-  e.preventDefault();
-  const errors = validate(formData);
-  if (errors.length > 0) {
-    setErrors(errors);
-    const firstError = document.querySelector('[aria-invalid="true"]');
-    firstError?.focus();
-  }
-}
-```
-
-</div>
-
-<v-click>
-
-<div class="mt-4 p-4 bg-blue-500 bg-opacity-10 rounded">
-💡 <strong>Regel:</strong> Submit-Button nie deaktivieren — stattdessen bei Submit validieren, Focus auf erstes ungültiges Feld setzen, <code>aria-invalid</code> + <code>role="alert"</code> nutzen.
-</div>
-
-</v-click>
+<FormSubmitValidationDemo />
 
 <!--
-- Die richtige Lösung: Button NICHT deaktivieren, immer aktiviert lassen
-- aria-invalid markiert ungültige Felder
-- aria-errormessage/aria-describedby verknüpft spezifische Fehlermeldung
-- role="alert" kündigt Fehler sofort an
-- Nach Submit: Focus auf erstes ungültiges Feld setzen
-- [KLICK] Kernregel zusammengefasst
+- Die richtige Lösung: Button NICHT deaktivieren!
+- [Initial] Button ist immer aktiv und fokussierbar
+- [KLICK 1] User klickt auf Submit – Validierung startet
+- [KLICK 2] Erstes ungültiges Feld wird fokussiert + rot markiert
+  - aria-invalid="true" kennzeichnet das Feld
+  - Fehlermeldung per aria-describedby verknüpft
+  - role="alert" → Screen Reader liest Fehler sofort vor
 - Einfache Verbesserung, riesiger Effekt für alle Nutzenden
 - → Überleitung: Dynamische Inhalte und Live Regions
 -->
