@@ -123,7 +123,7 @@ layout: default
 <label for="email">Email</label>
 <input type="email" id="email" class="error"
   aria-invalid="true"
-  aria-errormessage="email-error"
+  aria-describedby="email-error"
 />
 <span id="email-error" role="alert">
   No valid email was entered
@@ -141,20 +141,12 @@ layout: default
 
 </div>
 
-<v-click>
-
-<div class="mt-2 p-2 bg-yellow-500 bg-opacity-10 rounded text-sm">
-⚠️ Hinweis: <code>aria-errormessage</code> hat eingeschränkten Browser-Support. Nutzt <code>aria-describedby</code> als Fallback für breitere Kompatibilität.
-</div>
-
-</v-click>
-
 <!--
 - LINKS: Nur visueller Hinweis (roter Rahmen) – Screen Reader merken nichts!
   - [KLICK] Fehlermeldung ist nur Text in der Nähe, nicht verknüpft
 - RECHTS:
   - [KLICK] aria-invalid="true" markiert Feld als ungültig
-  - aria-errormessage verknüpft die Fehlermeldung
+  - aria-errormessage/aria-describedby verknüpft die Fehlermeldung
   - role="alert" → sofortige Ankündigung
   - Screen Reader sagt: „Email, ungültig. Es wurde keine gültige E-Mail eingegeben"
 - [KLICK] Hinweis: aria-errormessage hat eingeschränkten Support → aria-describedby als Fallback
@@ -216,7 +208,7 @@ layout: default
 ## ✅ Aktiviert mit Feld-Validierung & Focus-Management
 
 ```html
-<input aria-invalid="true" aria-errormessage="email-error" />
+<input aria-invalid="true" aria-describedby="email-error" />
 <div id="email-error" role="alert">Please enter a valid email</div>
 ```
 
@@ -248,7 +240,7 @@ function handleSubmit(e) {
 <!--
 - Die richtige Lösung: Button NICHT deaktivieren, immer aktiviert lassen
 - aria-invalid markiert ungültige Felder
-- aria-errormessage verknüpft spezifische Fehlermeldung
+- aria-errormessage/aria-describedby verknüpft spezifische Fehlermeldung
 - role="alert" kündigt Fehler sofort an
 - Nach Submit: Focus auf erstes ungültiges Feld setzen
 - [KLICK] Kernregel zusammengefasst

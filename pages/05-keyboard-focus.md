@@ -189,63 +189,19 @@ main.focus();
 
 ---
 layout: default
+clicks: 1
 ---
 
 # Eindeutige Seitentitel
 
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-## ❌ Problem
-
-```html
-<!-- Jede Seite -->
-<title>
-  My App
-</title>
-```
-
-**Probleme:**
-- Kein Kontext zur aktuellen Seite
-- Browser-Tabs sehen alle gleich aus
-- Screen-Reader-Nutzende können Seiten nicht unterscheiden
-- Schlechtes SEO
-
-</div>
-
-<div>
-
-<v-click>
-
-## ✅ Lösung
-
-```js
-function updateTitle(pageName) {
-  document.title = `${pageName} - My App`;
-}
-// "Products - My App", "Imprint - My App"
-```
-
-**Vorteile:**
-- Klarer Seitenkontext
-- Unterscheidbare Browser-Tabs
-- Screen Reader kündigt Seite an
-- Besseres SEO
-
-</v-click>
-
-</div>
-
-</div>
+<PageTitleDemo />
 
 <!--
 - Weiteres häufiges SPA-Problem: Statische Seitentitel
-- LINKS: Jede Seite heißt "My App"
-  - [KLICK] Tabs nicht unterscheidbar, Screen Reader kündigt immer gleichen Titel an
-- RECHTS:
-  - [KLICK] document.title bei jedem Routenwechsel aktualisieren
-  - Muster: „Seitenname – App-Name"
+- LINKS: Jede Seite heißt nur "My App" — Tabs nicht unterscheidbar
+- Screen Reader kündigt bei jedem Seitenwechsel denselben Titel an
+- [KLICK] RECHTS: Eindeutige Titel → sofort erkennbar in Tabs
+- Muster: „Seitenname – App-Name" per document.title setzen
 - Einfacher Fix, große Wirkung: Screen Reader, Tabs, SEO
 - → Überleitung: Formulare
 -->

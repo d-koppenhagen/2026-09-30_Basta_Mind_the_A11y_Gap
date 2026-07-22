@@ -1,106 +1,97 @@
 <template>
   <div class="spa-demo-wrapper">
     <!-- Left: Browser Demo -->
-    <div class="spa-demo">
-      <div class="browser-chrome">
-        <div class="browser-bar">
-          <div class="browser-dots">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="browser-url" :class="{ 'url-highlight': currentStep === 4 }">
-            {{ displayUrl }}
-            <span v-if="currentStep === 4" class="history-badge">↻ history.pushState()</span>
-          </div>
-        </div>
+    <BrowserWindow :url="displayUrl" :url-class="{ 'url-highlight': currentStep === 4 }" body-height="330px">
+      <template #url>
+        {{ displayUrl }}
+        <span v-if="currentStep === 4" class="history-badge">↻ history.pushState()</span>
+      </template>
 
-        <div class="spa-layout">
-          <!-- Navigation -->
-          <nav class="spa-nav">
-            <span
-              v-for="link in navLinks"
-              :key="link.path"
-              :class="['nav-link', { active: link.path === activeNav }]"
-            >{{ link.label }}</span>
-          </nav>
+      <div class="spa-layout">
+        <!-- Navigation -->
+        <nav class="spa-nav">
+          <span
+            v-for="link in navLinks"
+            :key="link.path"
+            :class="['nav-link', { active: link.path === activeNav }]"
+          >{{ link.label }}</span>
+        </nav>
 
-          <!-- Router View -->
-          <main class="router-view" :class="{ 'main-focused': currentStep === 2, 'router-swapping': currentStep === 0 || currentStep === 4 }">
-            <!-- Router swap indicator (step 0: initial load) -->
-            <span v-if="currentStep === 0" class="router-swap-border"></span>
-            <span v-if="currentStep === 0" class="router-swap-label">⟳ Router-View: /home</span>
+        <!-- Router View -->
+        <main class="router-view" :class="{ 'main-focused': currentStep === 2, 'router-swapping': currentStep === 0 || currentStep === 4 }">
+          <!-- Router swap indicator (step 0: initial load) -->
+          <span v-if="currentStep === 0" class="router-swap-border"></span>
+          <span v-if="currentStep === 0" class="router-swap-label">⟳ Router-View: /home</span>
 
-            <!-- Focus outline around main (step 2) -->
-            <span v-if="currentStep === 2" class="focus-outline-main"></span>
+          <!-- Focus outline around main (step 2) -->
+          <span v-if="currentStep === 2" class="focus-outline-main"></span>
 
-            <!-- Router swap indicator (step 4: contact load) -->
-            <span v-if="currentStep === 4" class="router-swap-border"></span>
-            <span v-if="currentStep === 4" class="router-swap-label">⟳ Router-View: /contact</span>
+          <!-- Router swap indicator (step 4: contact load) -->
+          <span v-if="currentStep === 4" class="router-swap-border"></span>
+          <span v-if="currentStep === 4" class="router-swap-label">⟳ Router-View: /contact</span>
 
-            <Transition name="fade" mode="out-in">
-              <!-- Router swap animation (step 0: initial home load) -->
-              <div v-if="currentStep === 0" key="swapping-home" class="route-content swap-view">
-                <div class="swap-skeleton">
-                  <div class="skeleton-line-dim w-70"></div>
-                  <div class="skeleton-line-dim w-50"></div>
-                  <div class="skeleton-line-dim w-60"></div>
-                  <div class="skeleton-line-dim w-40"></div>
+          <Transition name="fade" mode="out-in">
+            <!-- Router swap animation (step 0: initial home load) -->
+            <div v-if="currentStep === 0" key="swapping-home" class="route-content swap-view">
+              <div class="swap-skeleton">
+                <div class="skeleton-line-dim w-70"></div>
+                <div class="skeleton-line-dim w-50"></div>
+                <div class="skeleton-line-dim w-60"></div>
+                <div class="skeleton-line-dim w-40"></div>
+              </div>
+            </div>
+
+            <!-- Home page (steps 1–3) -->
+            <div v-else-if="currentStep <= 3" key="home" class="route-content home-page">
+              <h2>Home</h2>
+              <div class="skeleton-line w-90"></div>
+              <div class="skeleton-line w-70"></div>
+              <div class="skeleton-line w-80"></div>
+              <div class="skeleton-line w-50"></div>
+              <div class="skeleton-line w-60"></div>
+              <div class="cta-area">
+                <button class="cta-button" :class="{ clicking: currentStep === 3 }">
+                  📧 Kontakt
+                  <span v-if="currentStep === 3" class="focus-outline-btn"></span>
+                  <span v-if="currentStep === 3" class="click-ripple"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Router swap animation (step 4) -->
+            <div v-else-if="currentStep === 4" key="swapping" class="route-content swap-view">
+              <div class="swap-skeleton">
+                <div class="skeleton-line-dim w-70"></div>
+                <div class="skeleton-line-dim w-50"></div>
+                <div class="skeleton-line-dim w-60"></div>
+                <div class="skeleton-line-dim w-40"></div>
+              </div>
+            </div>
+
+            <!-- Contact page with misplaced focus (step 5) -->
+            <div v-else key="contact" class="route-content contact-page">
+              <h2>Contact</h2>
+              <div class="form-group">
+                <label>Name</label>
+                <div class="fake-input">Max Mustermann</div>
+              </div>
+              <div class="form-group">
+                <label>E-Mail</label>
+                <div class="fake-input has-focus">
+                  <span class="cursor-blink"></span>
+                  <span class="focus-outline-field"></span>
                 </div>
               </div>
-
-              <!-- Home page (steps 1–3) -->
-              <div v-else-if="currentStep <= 3" key="home" class="route-content home-page">
-                <h2>Home</h2>
-                <div class="skeleton-line w-90"></div>
-                <div class="skeleton-line w-70"></div>
-                <div class="skeleton-line w-80"></div>
-                <div class="skeleton-line w-50"></div>
-                <div class="skeleton-line w-60"></div>
-                <div class="cta-area">
-                  <button class="cta-button" :class="{ clicking: currentStep === 3 }">
-                    📧 Kontakt
-                    <span v-if="currentStep === 3" class="focus-outline-btn"></span>
-                    <span v-if="currentStep === 3" class="click-ripple"></span>
-                  </button>
-                </div>
+              <div class="form-group">
+                <label>Nachricht</label>
+                <div class="fake-textarea"></div>
               </div>
-
-              <!-- Router swap animation (step 4) -->
-              <div v-else-if="currentStep === 4" key="swapping" class="route-content swap-view">
-                <div class="swap-skeleton">
-                  <div class="skeleton-line-dim w-70"></div>
-                  <div class="skeleton-line-dim w-50"></div>
-                  <div class="skeleton-line-dim w-60"></div>
-                  <div class="skeleton-line-dim w-40"></div>
-                </div>
-              </div>
-
-              <!-- Contact page with misplaced focus (step 5) -->
-              <div v-else key="contact" class="route-content contact-page">
-                <h2>Contact</h2>
-                <div class="form-group">
-                  <label>Name</label>
-                  <div class="fake-input">Max Mustermann</div>
-                </div>
-                <div class="form-group">
-                  <label>E-Mail</label>
-                  <div class="fake-input has-focus">
-                    <span class="cursor-blink"></span>
-                    <span class="focus-outline-field"></span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label>Nachricht</label>
-                  <div class="fake-textarea"></div>
-                </div>
-                <button class="submit-btn">Absenden</button>
-              </div>
-            </Transition>
-          </main>
-        </div>
+              <button class="submit-btn">Absenden</button>
+            </div>
+          </Transition>
+        </main>
       </div>
-    </div>
+    </BrowserWindow>
 
     <!-- Right: Explanation -->
     <div class="explanation">
@@ -153,6 +144,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useSlideContext } from '@slidev/client';
+import BrowserWindow from './BrowserWindow.vue';
 
 const { $clicks } = useSlideContext();
 
@@ -194,63 +186,17 @@ const displayUrl = computed(() => {
   max-width: 100%;
 }
 
-.spa-demo {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.82rem;
+.spa-demo-wrapper > :first-child {
   flex: 1.3;
   min-width: 0;
 }
 
-/* Browser Chrome */
-.browser-chrome {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.browser-bar {
-  background: #2d2d2d;
-  padding: 7px 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.browser-dots {
-  display: flex;
-  gap: 5px;
-}
-
-.dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-}
-.dot.red { background: #ff5f57; }
-.dot.yellow { background: #febc2e; }
-.dot.green { background: #28c840; }
-
-.browser-url {
-  background: #1a1a1a;
-  padding: 4px 12px;
-  border-radius: 4px;
-  color: #aaa;
-  font-size: 0.7rem;
-  flex: 1;
-  font-family: monospace;
-  position: relative;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.browser-url.url-highlight {
-  background: rgba(234, 179, 8, 0.15);
-  border: 1px solid #eab308;
-  color: #fde047;
-  box-shadow: 0 0 8px rgba(234, 179, 8, 0.3);
+/* URL bar highlight override */
+:deep(.browser-url.url-highlight) {
+  background: rgba(234, 179, 8, 0.15) !important;
+  border: 1px solid #eab308 !important;
+  color: #fde047 !important;
+  box-shadow: 0 0 8px rgba(234, 179, 8, 0.3) !important;
 }
 
 .history-badge {
@@ -268,8 +214,7 @@ const displayUrl = computed(() => {
 
 /* SPA Layout */
 .spa-layout {
-  background: #1e1e2e;
-  height: 330px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -559,7 +504,6 @@ const displayUrl = computed(() => {
 
 /* =============================================
    Right-side explanation
-   Uses theme CSS vars for proper dark/light contrast
    ============================================= */
 .explanation {
   flex: 0.7;
@@ -642,12 +586,6 @@ const displayUrl = computed(() => {
 .step-badge.swap-badge {
   background: rgba(168, 85, 247, 0.15);
   color: #a855f7;
-}
-
-.hint {
-  opacity: 0.6;
-  font-style: italic;
-  font-size: 0.72rem !important;
 }
 
 .takeaway {
