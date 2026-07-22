@@ -23,11 +23,11 @@ layout: default
 <div class="p-5 rounded-xl bg-indigo-500/10 border border-indigo-500/30">
   <h3 class="!text-indigo-800 dark:!text-indigo-400 !text-lg !mb-3 flex items-center gap-2"><carbon-bot /> Wie Agents „sehen"</h3>
 
-  <div class="space-y-2 text-sm">
-    <div class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">▸</span> Kein Rendering — nur <strong>Accessibility Tree</strong></div>
-    <div class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">▸</span> Gleiche Datenquelle wie <strong>Screen Reader</strong></div>
-    <div class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">▸</span> Schlechte A11y = Agent kann App <strong>nicht bedienen</strong></div>
-  </div>
+  <ul class="space-y-2 text-sm !list-none !pl-0 !my-0">
+    <li class="!list-none !ml-0 !pl-0"><span class="text-indigo-400">▸</span> Kein Rendering — nur <strong>Accessibility Tree</strong></li>
+    <li class="!list-none !ml-0 !pl-0"><span class="text-indigo-400">▸</span> Gleiche Datenquelle wie <strong>Screen Reader</strong></li>
+    <li class="!list-none !ml-0 !pl-0"><span class="text-indigo-400">▸</span> Schlechte A11y = Agent kann App <strong>nicht bedienen</strong></li>
+  </ul>
 
   <div class="mt-4 px-3 py-2 rounded bg-indigo-500/20 text-xs font-mono">
     ChatGPT · Gemini · Claude · Kiro · Copilot · …
@@ -37,11 +37,11 @@ layout: default
 <div class="p-5 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
   <h3 class="!text-emerald-800 dark:!text-emerald-400 !text-lg !mb-3 flex items-center gap-2"><carbon-tools-alt /> AI-Tools im Dev-Workflow</h3>
 
-  <div class="space-y-2 text-sm">
-    <div class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">▸</span> <strong>Chrome DevTools MCP</strong> — Agents steuern Chrome fern</div>
-    <div class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">▸</span> Lighthouse-Audits <strong>automatisch</strong> ausführen & fixen</div>
-    <div class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">▸</span> <strong>Modern Web Guidance</strong> — Best Practices im Agent-Kontext</div>
-  </div>
+  <ul class="space-y-2 text-sm !list-none !pl-0 !my-0">
+    <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> <strong>Chrome DevTools MCP</strong> — Agents steuern Chrome fern</li>
+    <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> Lighthouse-Audits <strong>automatisch</strong> ausführen & fixen</li>
+    <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> <strong>Modern Web Guidance</strong> — Best Practices im Agent-Kontext</li>
+  </ul>
 
   <div class="mt-4 px-3 py-2 rounded bg-emerald-500/20 text-xs font-mono">
     Code schreiben → prüfen → fixen → verifizieren 🔄
