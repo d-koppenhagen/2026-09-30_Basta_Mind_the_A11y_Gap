@@ -20,47 +20,66 @@ layout: default
 
 # Wichtige Test-Tools
 
+<div class="grid grid-cols-3 gap-6 mt-4">
+
 <v-click>
-
-## Browser DevTools
-- **Accessibility Tree** – sehen was assistive Technologien sehen
-- **Contrast Checker** – Farbverhältnisse prüfen
-- **Lighthouse** – automatisiertes Audit
-
+<div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/40 hover:bg-blue-500/20 transition-all dark:border-blue-500/30">
+  <div class="text-3xl mb-2">🔍</div>
+  <h3 class="!text-blue-700 dark:!text-blue-400 !text-lg !mb-2">Browser DevTools</h3>
+  <ul class="!text-sm !list-none !pl-0 space-y-1">
+    <li><carbon-tree-view class="inline text-blue-600 dark:text-blue-300" /> Accessibility Tree</li>
+    <li><carbon-color-palette class="inline text-blue-600 dark:text-blue-300" /> Contrast Checker</li>
+    <li><carbon-meter class="inline text-blue-600 dark:text-blue-300" /> Lighthouse Audit</li>
+  </ul>
+</div>
 </v-click>
 
 <v-click>
-
-## Automatisiertes Testen
-- **axe DevTools** (Chrome/Firefox-Erweiterung) – findet ~30–40 % der Probleme
-- **Lighthouse** (in Chrome eingebaut) – Accessibility-Audit
-- **WAVE** (WebAIM) – visuelles Feedback-Overlay
-
+<div class="p-4 rounded-xl bg-green-500/10 border border-green-500/40 hover:bg-green-500/20 transition-all dark:border-green-500/30">
+  <div class="text-3xl mb-2">🤖</div>
+  <h3 class="!text-green-700 dark:!text-green-400 !text-lg !mb-2">Automatisiert</h3>
+  <ul class="!text-sm !list-none !pl-0 space-y-1">
+    <li><carbon-bot class="inline text-green-600 dark:text-green-300" /> axe DevTools</li>
+    <li><carbon-meter class="inline text-green-600 dark:text-green-300" /> Lighthouse</li>
+    <li><carbon-view class="inline text-green-600 dark:text-green-300" /> WAVE (WebAIM)</li>
+  </ul>
+  <div class="mt-3 px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-500/20 text-yellow-800 dark:text-yellow-300 text-xs text-center font-medium">
+    ⚠️ Findet nur 30–40 % der Probleme!
+  </div>
+</div>
 </v-click>
+
 <v-click>
-
-## Manuelles Testen
-- **Nur Tastatur** – Maus abstöpseln, versucht eure App zu benutzen!
-- **Screen Reader** – VoiceOver (Mac), NVDA (Windows, kostenlos), JAWS (Windows)
-- **Auf 200 % zoomen** – funktioniert euer Layout noch?
-
+<div class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/40 hover:bg-purple-500/20 transition-all dark:border-purple-500/30">
+  <div class="text-3xl mb-2">🧑</div>
+  <h3 class="!text-purple-700 dark:!text-purple-400 !text-lg !mb-2">Manuell</h3>
+  <ul class="!text-sm !list-none !pl-0 space-y-1">
+    <li><carbon-keyboard class="inline text-purple-600 dark:text-purple-300" /> Nur Tastatur</li>
+    <li><carbon-headphones class="inline text-purple-600 dark:text-purple-300" /> Screen Reader</li>
+    <li><carbon-zoom-in class="inline text-purple-600 dark:text-purple-300" /> 200 % Zoom</li>
+  </ul>
+  <div class="mt-3 px-2 py-1 rounded bg-red-100 dark:bg-red-500/20 text-red-800 dark:text-red-300 text-xs text-center font-medium">
+    🎯 Unverzichtbar!
+  </div>
+</div>
 </v-click>
+
+</div>
 
 <!--
-- [KLICK] Automatisierte Tools:
+- [KLICK] Browser DevTools: Eingebaut und sofort nutzbar
+  - Accessibility Tree: Was Screen Reader tatsächlich sehen
+  - Contrast Checker, Lighthouse für schnelle Audits
+- [KLICK] Automatisierte Tools: Guter Einstieg, aber begrenzt
   - axe DevTools: Beste Browser-Erweiterung
-  - Lighthouse: In Chrome eingebaut, gibt Score
-  - WAVE: Visuelles Overlay
-  - Aber: Finden nur 30–40 % der Probleme!
-- [KLICK] Manuelles Testen essenziell:
+  - Lighthouse: Score als Orientierung
+  - WAVE: Visuelles Overlay direkt auf der Seite
+  - Wichtig: Finden nur 30–40 % der echten Probleme!
+- [KLICK] Manuelles Testen: Hier wird's ernst
   - Maus abstöpseln, App nur mit Tastatur bedienen
-  - Screen Reader testen (VoiceOver / NVDA)
-  - 200 % Zoom prüfen
-- [KLICK] Browser DevTools:
-  - Accessibility Tree zeigt was Screen Reader sehen
-  - Contrast Checker eingebaut
-  - Lighthouse für schnelle Audits
-- Automatisiert anfangen, aber nicht dabei aufhören!
+  - Screen Reader ausprobieren (VoiceOver / NVDA)
+  - 200 % Zoom – bricht euer Layout?
+- Fazit: Automatisiert anfangen, manuell vertiefen
 - → Überleitung: Demo – 100 % Score, 0 % Barrierefreiheit
 -->
 
