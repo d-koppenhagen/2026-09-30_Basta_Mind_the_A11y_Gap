@@ -211,7 +211,7 @@ layout: default
 
 # Formular-Absendung: Die Lösung
 
-<div class="mt-4 p-4 bg-green-500 bg-opacity-10 rounded">
+<div class="p-4 bg-green-500 bg-opacity-10 rounded">
 
 ## ✅ Aktiviert mit Feld-Validierung & Focus-Management
 
@@ -219,6 +219,10 @@ layout: default
 <input aria-invalid="true" aria-errormessage="email-error" />
 <div id="email-error" role="alert">Please enter a valid email</div>
 ```
+
+<div class="mt-3"></div>
+
+
 ```js
 function handleSubmit(e) {
   e.preventDefault();

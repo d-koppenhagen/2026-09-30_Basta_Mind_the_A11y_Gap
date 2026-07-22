@@ -174,15 +174,11 @@ hide: true
 </div>
 ```
 
-<v-clicks>
-
 - **aria-live="polite"** – Ankündigen wenn Nutzende untätig sind (häufigster Fall)
 - **aria-live="assertive"** – Sofort ankündigen (sparsam verwenden!)
 - **aria-atomic="true"** – Gesamte Region vorlesen (vs nur Änderungen)
 - **aria-atomic="false"** – Nur Änderungen vorlesen (gut für Listen)
 - **aria-relevant** – Welche Änderungen ankündigen (additions, removals, text, all)
-
-</v-clicks>
 
 <v-click>
 

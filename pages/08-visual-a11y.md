@@ -61,15 +61,11 @@ Dieser Text ist gut lesbar
 
 </div>
 
-<v-clicks>
-
 **WCAG-Anforderungen:**
 - **Level AA:** 4,5:1 für normalen Text, 3:1 für großen Text
 - **Level AAA:** 7:1 für normalen Text, 4,5:1 für großen Text
 
 **Tools:** Chrome DevTools, WebAIM Contrast Checker
-
-</v-clicks>
 
 <!--
 - Farbkontrast kritisch für Sehbehinderung und Farbenblindheit
@@ -318,13 +314,9 @@ layout: default
 
 </div>
 
-<v-clicks>
-
 - **Captions** – Untertitel inkl. Geräusche / Musik für gehörlose Menschen
 - **Audio-Descriptions** – visuelle Inhalte für blinde Menschen beschreiben
 - **Transkripte** – für reine Audio-Inhalte (Podcasts) oft ausreichend
-
-</v-clicks>
 
 <!--
 - Video: track-Element mit WebVTT für Captions und Descriptions
@@ -367,14 +359,10 @@ layout: default
 
 <div>
 
-<v-clicks>
-
 - **Reduced Motion**: Animationen können vestibuläre Beschwerden oder epileptische Anfälle auslösen
 - **Dark / Light Mode**: Farbschema je nach Umgebung und Sehfähigkeit wählbar
 - **Prefers Contrast**: Mehr (oder weniger) Kontrast gewünscht – Borders, Schriftgewicht, Farben anpassen
 - **Forced Colors** (Windows High Contrast): System überschreibt alle Farben – Borders statt Hintergrund nutzen
-
-</v-clicks>
 
 </div>
 
