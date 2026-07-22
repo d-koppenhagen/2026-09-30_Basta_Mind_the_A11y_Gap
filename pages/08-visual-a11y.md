@@ -53,7 +53,7 @@ Dieser Text ist schwer lesbar
 /* Kontrastverhältnis: 7:1 */
 ```
 
-<div class="mt-4 p-4" style="color: #595959; background: #FFFFFF; border: 1px solid #ccc;">
+<div class="mt-4 p-4" style="color: #000000; background: #FFFFFF; border: 1px solid #ccc;">
 Dieser Text ist gut lesbar
 </div>
 
