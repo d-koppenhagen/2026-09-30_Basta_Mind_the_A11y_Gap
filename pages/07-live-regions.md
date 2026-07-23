@@ -95,69 +95,17 @@ layout: default
 
 # Globale vs Lokale Live Regions
 
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-## Globales Pattern
-
-```html
-<!-- Globaler einzelner Announcer -->
-<div id="announcer" class="sr-only"
-  aria-live="polite">
-</div>
-```
-
-```js
-announce("Artikel zum Warenkorb hinzugefügt");
-announce("Formular gespeichert");
-announce("3 neue Nachrichten");
-```
-
-**Verwenden wenn:**
-- Toast-Benachrichtigungen
-- Status-Meldungen
-- Globale Ankündigungen
-
-</div>
-
-<div>
-
-## Lokales Pattern
-
-```html
-<!-- Live Region in Komponente -->
-<div class="chat">
-  <div aria-live="polite" aria-atomic="false">
-    <div>Erste Nachricht von Jane</div>
-    <!-- Neue Nachrichten hier -->
-    <div>Neue Nachricht von John</div>
-  </div>
-</div>
-```
-
-**Verwenden wenn:**
-- Chat-Nachrichten
-- Live-Feeds
-- Komponentenspezifische Updates
-
-</div>
-
-</div>
-
-<v-click>
-
-<div class="mt-2 p-4 bg-blue-500 bg-opacity-10 rounded">
-💡 Schlüssel: Live Region muss BEVOR sich Inhalte ändern existieren!
-</div>
-
-</v-click>
+<LiveRegionDemo />
 
 <!--
-- Zwei Patterns:
-  - LINKS – Global: Ein Announcer für die gesamte App (Toasts, Status-Meldungen)
-  - RECHTS – Lokal: Live Region in Komponente (Chat, Live-Feeds)
-- [KLICK] Entscheidende Regel: Live Region muss im DOM existieren BEVOR Inhalt aktualisiert wird
+- Zwei Patterns nebeneinander als Demo:
+  - LINKS – Global: Notification-Banner oben in der Seite (Toasts, Status-Meldungen)
+    - Augen schauen nach oben wenn Notification erscheint
+    - Ein einzelner Announcer für die gesamte App
+  - RECHTS – Lokal: Chat-Widget unten rechts (Live-Feeds, Chat-Nachrichten)
+    - Chat öffnet sich, Nachrichten kommen rein, Chat schließt sich
+    - Augen schauen zum Chat wenn neue Nachrichten kommen
+- Entscheidende Regel: Live Region muss im DOM existieren BEVOR Inhalt aktualisiert wird
 - → Überleitung: Attribute im Detail
 -->
 

@@ -220,14 +220,14 @@ const currentStep = computed(() => {
 .aria-hint {
   margin-top: 4px;
   padding: 4px 10px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   font-size: 0.68rem;
   animation: fade-in 0.3s ease;
 }
 
 .aria-hint code {
-  color: #a5d6ff;
+  color: #93c5fd;
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
 }
 
