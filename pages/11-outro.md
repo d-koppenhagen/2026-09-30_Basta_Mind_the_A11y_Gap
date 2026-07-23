@@ -13,7 +13,7 @@ class: text-center
 3. 🎯 **Focus-Management** – besonders in SPAs
 4. 📝 **Formulare brauchen Labels** – und richtige Fehlerbehandlung
 5. 📢 **Live Regions** – müssen vor Updates existieren
-6. 🎨 **Kontrast ist wichtig** – Farben prüfen
+6. 🎨 **Visuelle A11y** – Kontrast, Alt-Texte & Präferenzen respektieren
 7. 🧪 **Testen, testen, testen** – automatisiert + manuell
 8. 🤖 **A11y = Agent-Ready** – gute Barrierefreiheit macht euch fit für AI Agents
 
@@ -35,7 +35,7 @@ class: text-center
 - [KLICK] Focus-Management in SPAs nicht vergessen
 - [KLICK] Formulare: Labels + richtige Fehlerbehandlung
 - [KLICK] Live Regions: Müssen VOR Updates existieren
-- [KLICK] Kontrast prüfen – leicht zu fixen
+- [KLICK] Visuelle A11y: Kontrast, Alt-Texte, prefers-reduced-motion
 - [KLICK] Automatisiert UND manuell testen
 - [KLICK] A11y = Agent-Ready
 - [LETZTER KLICK] Barrierefreiheit ist kein Feature, sondern eine Grundanforderung
