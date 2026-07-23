@@ -53,6 +53,11 @@ layout: default
   - Volle Tastatur-Unterstützung
   - Richtige Semantik für Suchmaschinen
   - Keine ARIA-Attribute nötig!
+- Blazor-Bezug: In Blazor-Komponenten exakt genauso!
+  - <button @onclick="Submit"> statt <div @onclick="Submit">
+  - Blazor rendert am Ende HTML – der Browser kennt kein „Blazor-Element"
+  - Wer aus WPF/MAUI kommt: Dort haben Controls eingebaute Semantik
+  - Im Web seid IHR verantwortlich, die richtigen HTML-Elemente zu wählen
 - → Überleitung: Tiefer in spezifische Patterns
 -->
 
@@ -338,6 +343,9 @@ layout: default
   - Die PRIMÄRE Aktion entscheidet → Speichern = Aktion = Button
   - Navigation danach ist nur Nebeneffekt (programmatischer Redirect)
   - Andersrum: "Zurück zur Übersicht" = primär Navigation = Link
+- Blazor-Bezug: NavigationManager.NavigateTo() → trotzdem <a> verwenden mit href!
+  - <NavLink> Komponente von Blazor rendert korrekt ein <a>-Element
+  - Für Aktionen: <button @onclick="..."> – nie ein <a> ohne href
 - → Überleitung: Ausprobieren auf practica11y.dev
 -->
 

@@ -79,6 +79,11 @@ layout: default
   - Maus abstöpseln, App nur mit Tastatur bedienen
   - Screen Reader ausprobieren (VoiceOver / NVDA)
   - 200 % Zoom – bricht euer Layout?
+- .NET-Bezug: Testing-Tools für euren Stack
+  - Playwright for .NET (Microsoft.Playwright) – axe-core Integration in C#-Tests möglich
+  - bUnit für Blazor-Komponenten: aria-Attribute im gerenderten Markup prüfen
+  - Deque.AxeCore.Playwright NuGet-Paket für automatisierte A11y-Tests in der CI/CD-Pipeline
+  - Auch ASP.NET Integration Tests können gerenderten HTML auf A11y prüfen
 - Fazit: Automatisiert anfangen, manuell vertiefen
 - → Überleitung: Demo – 100 % Score, 0 % Barrierefreiheit
 -->

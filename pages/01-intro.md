@@ -37,6 +37,9 @@ layout: center
 - Arbeite an großen Web-Apps für die Deutsche Bahn
 - Leidenschaftlich dafür, das Web für alle zugänglich zu machen
 - Gute Software = robust, skalierbar UND inklusiv
+- Hinweis: Alles heute ist framework-agnostisch – HTML/CSS/JS
+- Aber: Wer Blazor, Razor Pages oder ASP.NET nutzt → alles 1:1 relevant
+- Werde an passenden Stellen Blazor/.NET-Bezüge herstellen
 - → Überleitung: Erst kurz ein Projekt von mir vorstellen
 -->
 

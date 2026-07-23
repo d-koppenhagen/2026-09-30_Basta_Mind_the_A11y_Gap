@@ -65,6 +65,11 @@ layout: default
   - Chrome DevTools MCP: Agent navigiert, auditiert, fixt
   - Modern Web Guidance: Aktuelle Best Practices direkt im Agent
   - Vollständiger Kreislauf: schreiben → prüfen → fixen → verifizieren
+- .NET-Bezug: GitHub Copilot in Visual Studio / VS Code
+  - Copilot generiert oft NICHT barrierefreien Code (divs statt buttons, fehlende Labels)
+  - Aktiv nachfragen: „Make this accessible" oder A11y-Regeln in .github/copilot-instructions.md
+  - Copilot Chat kann axe-Violations erklären und Fixes vorschlagen
+  - Auch in Rider / VS verfügbar – direkt beim Schreiben von Blazor-Komponenten nutzbar
 - [KLICK] Die Pointe: Wer für Menschen baut, baut automatisch für Maschinen
   - Noch ein Business-Case für A11y!
 - → Überleitung: Zusammenfassung der wichtigsten Erkenntnisse

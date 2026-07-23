@@ -184,6 +184,11 @@ main.focus();
   - tabindex="-1" macht es fokussierbar, dann focus() aufrufen
   - Screen Reader kündigt neuen Inhalt sofort an
 - SPA-spezifisches Problem – leicht zu übersehen!
+- Blazor-Bezug: Betrifft Blazor Server UND WebAssembly genauso!
+  - Blazor Router tauscht DOM aus, kümmert sich aber NICHT um Focus
+  - Lösung: NavigationManager.LocationChanged-Event + JSInterop für Focus
+  - Oder: FocusOnNavigate-Komponente von Blazor (seit .NET 7) nutzen!
+  - Ohne eigenes Zutun bleibt Focus verloren nach NavigationManager.NavigateTo()
 - → Überleitung: Seitentitel
 -->
 
@@ -203,5 +208,8 @@ clicks: 1
 - [KLICK] RECHTS: Eindeutige Titel → sofort erkennbar in Tabs
 - Muster: „Seitenname – App-Name" per document.title setzen
 - Einfacher Fix, große Wirkung: Screen Reader, Tabs, SEO
+- Blazor-Bezug: <PageTitle>Seitenname – App</PageTitle> Komponente (seit .NET 6)
+  - Einfach in jeder Seiten-Komponente setzen – kein JS nötig
+  - Trotzdem vergessen es viele → statischer Titel aus index.html bleibt
 - → Überleitung: Formulare
 -->

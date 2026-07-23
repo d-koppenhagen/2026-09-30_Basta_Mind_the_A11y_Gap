@@ -80,6 +80,9 @@ dragPos:
   - Screen Reader kündigt Label an
   - Klick auf Label fokussiert das Feld
   - `autocomplete` hilft bei kognitiven Einschränkungen
+- Blazor-Bezug: EditForm + InputText rendern korrekt <input>, aber Label müsst ihr SELBST setzen!
+  - Blazor generiert KEIN <label>-Element automatisch
+  - Auch FluentUI/MudBlazor-Komponenten: Prüfen ob Label korrekt verknüpft wird
 - → Überleitung: Ungültige Felder markieren
 -->
 
@@ -150,6 +153,11 @@ layout: default
   - role="alert" → sofortige Ankündigung
   - Screen Reader sagt: „Email, ungültig. Es wurde keine gültige E-Mail eingegeben"
 - [KLICK] Hinweis: aria-errormessage hat eingeschränkten Support → aria-describedby als Fallback
+- Blazor-Bezug: DataAnnotations + <ValidationMessage> reichen NICHT!
+  - ValidationMessage rendert nur einen <div class="validation-message">
+  - Kein aria-invalid, kein aria-describedby, kein role="alert"
+  - Ihr müsst zusätzliche Attribute selbst setzen oder Custom-Komponenten bauen
+  - Tipp: AdditionalAttributes-Dictionary in InputBase nutzen für aria-*
 - → Überleitung: Was passiert beim Absenden?
 -->
 

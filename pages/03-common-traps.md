@@ -68,6 +68,9 @@ layout: default
   - Klickbare divs statt Buttons oder Links
   - Formular komplett aus divs
 - [KLICK] Mindestens 6 schwerwiegende A11y-Probleme!
+- Blazor-Bezug: <div @onclick="Submit"> ist genauso kaputt wie vanilla JS!
+  - Blazor schützt euch NICHT vor Div-Suppe
+  - Razor-Syntax verführt sogar dazu: @onclick auf beliebige Elemente setzen
 - Publikum fragen: Welche Probleme fallen euch auf?
 - → Überleitung: Schauen wir im Detail, was falsch ist
 -->
@@ -115,5 +118,8 @@ layout: default
   - Tastatur-Nutzende: Können nicht durch die Seite tabben
   - Suchmaschinen & AI Agents: Können Wichtigkeit nicht erkennen
 - Das ist „div-Suppe" – überraschend häufig in Produktion
+- .NET-Bezug: Wer aus WPF/WinForms kommt, kennt semantische Controls (Button ist Button)
+  - Im Web (Blazor/Razor) gibt es diesen Schutz nicht – ihr seid selbst verantwortlich
+  - <div @onclick="..."> kompiliert fehlerfrei, ist aber nicht tastatur-zugänglich
 - → Überleitung: Wie macht man es richtig?
 -->
