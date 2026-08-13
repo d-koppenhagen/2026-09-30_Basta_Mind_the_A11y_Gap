@@ -12,7 +12,6 @@ Die richtigen Elemente für den Job verwenden
 - → Überleitung: Gleiches Beispiel, aber richtig umgesetzt
 -->
 
-
 ---
 layout: default
 ---
