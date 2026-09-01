@@ -1,6 +1,8 @@
 node_modules
 .DS_Store
 dist
+# Assets mirrored from the locally linked DB theme (internal only, see vite.config.ts)
+public/db
 *.local
 .vite-inspect
 .remote-assets

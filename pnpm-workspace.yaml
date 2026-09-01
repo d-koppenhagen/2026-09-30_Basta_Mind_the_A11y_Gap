@@ -3,6 +3,7 @@ packages:
 
 allowBuilds:
   esbuild: true
+  playwright-chromium: true
 
 minimumReleaseAgeExclude:
   - '@slidev/cli@52.17.0'

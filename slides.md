@@ -1,14 +1,20 @@
 ---
 theme: ./slidev-theme-k9n
 title: Mind the A11y Gap - Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
+titleTemplate: '%s | DB Systel GmbH'
+colorSchema: both
 info: |
   ## Mind the A11y Gap: Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 
   Barrierefreiheit ist kein Nice-to-have – sie ist essenziell für digitale Erlebnisse, die für alle funktionieren.
 
   Von Danny Koppenhagen
+configs:
+  title: Mind the A11y Gap
+  author: Danny Koppenhagen
+  company: DB Systel GmbH
+  date: 30.09.2026
 layout: cover
-class: text-center
 background: /bridging-a11y.png
 drawings:
   persist: false
@@ -23,10 +29,6 @@ lang: de
 # Mind the A11y Gap
 
 ## Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
-
-<div class="abs-bl m-6 text-sm font-mono text-white/90">
-  ▶ PRESS START ◀
-</div>
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://k9n.dev" target="_blank" alt="Website" title="Website"

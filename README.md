@@ -23,3 +23,22 @@ Erkunde eine Vielzahl interaktiver Demos und Challenges in Practica11y:
 pnpm install
 pnpm run dev
 ```
+
+## 🎨 Themes
+
+Die Präsentation nutzt standardmäßig das lokale Theme `slidev-theme-k9n`. Dieses
+ist immer verfügbar und wird auch beim Build für GitHub Pages sowie beim
+Veröffentlichen verwendet.
+
+Für doe DB branded slides kann das Theme `@db-tt-web/slidev-theme-dbsystel`
+genutzt werden. Es ist als `optionalDependency` eingebunden.
+
+Um mit dem DB-Theme zu arbeiten, gibt es eigene Scripts (Suffix `:db`), die das
+Theme per `--theme`-Flag überschreiben:
+
+```bash
+pnpm run dev:db      # Dev-Server mit DB-Theme
+pnpm run build:db    # Build mit DB-Theme
+pnpm run export:db   # PDF-Export mit DB-Theme
+pnpm run start:db    # Dev-Server + Demos + KeyCastr mit DB-Theme
+```

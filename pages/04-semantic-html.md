@@ -67,8 +67,8 @@ layout: default
 
 # Landmarks & Überschriften
 
-<div class="flex justify-center items-center mt--10">
-  <img src="/structure.png" alt="Visualisierung einer typischen Seitenstruktur mit Landmarks: header, nav, main, aside und footer" class="max-h-110" />
+<div class="flex justify-center items-center">
+  <img src="/structure.png" alt="Visualisierung einer typischen Seitenstruktur mit Landmarks: header, nav, main, aside und footer" class="max-h-100" />
 </div>
 
 <!--

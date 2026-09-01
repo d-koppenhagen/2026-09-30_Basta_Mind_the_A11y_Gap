@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@slidev/cli':
         specifier: ^52.17.0
-        version: 52.17.0(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@22.20.0)(@vue/compiler-sfc@3.5.39)(esbuild@0.25.12)(lightningcss@1.32.0)(markdown-it@14.2.0)(postcss@8.5.16)(rolldown@1.1.5)(rollup@4.62.2)(terser@5.49.0)(tsx@4.22.4)(workbox-build@7.4.1)(workbox-window@7.4.1)
+        version: 52.17.0(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@22.20.0)(@vue/compiler-sfc@3.5.39)(esbuild@0.25.12)(lightningcss@1.32.0)(markdown-it@14.2.0)(playwright-chromium@1.62.1)(postcss@8.5.16)(rolldown@1.1.5)(rollup@4.62.2)(terser@5.49.0)(tsx@4.22.4)(workbox-build@7.4.1)(workbox-window@7.4.1)
       '@slidev/theme-default':
         specifier: ^0.25.0
         version: 0.25.0
@@ -33,6 +33,13 @@ importers:
       http-server:
         specifier: ^14.1.1
         version: 14.1.1(debug@4.4.3)
+      playwright-chromium:
+        specifier: ^1.62.1
+        version: 1.62.1
+    optionalDependencies:
+      '@db-tt-web/slidev-theme-dbsystel':
+        specifier: link:../../tt-web/slidev-theme-db-systel
+        version: link:../../tt-web/slidev-theme-db-systel
 
   slidev-theme-k9n: {}
 
@@ -4425,6 +4432,16 @@ packages:
   plantuml-encoder@1.4.0:
     resolution: {integrity: sha512-sxMwpDw/ySY1WB2CE3+IdMuEcWibJ72DDOsXLkSmEaSzwEUaYBT6DWgOfBiHGCux4q433X6+OEFWjlVqp7gL6g==}
 
+  playwright-chromium@1.62.1:
+    resolution: {integrity: sha512-yRMzeViD44qD1ZVMNupp82NJQNjumZ02W5r7+DmtD5+7aP9+v66a0PsAk63ewpVDH1GxMf/J/mO+TS1sTaK29w==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+  playwright-core@1.62.1:
+    resolution: {integrity: sha512-wPYSwEBJY9GHraISXqyqtx0na0LpO3XEX7jNDhntbex7tzUS7kLnZsOlFruFJB4Hi/rhDMjXGqHewDZ68nYZVw==}
+    engines: {node: '>=20'}
+    hasBin: true
+
   points-on-curve@0.2.0:
     resolution: {integrity: sha512-0mYKnYYe9ZcqMCWhUjItv/oHjvgEsfKvnUTg8sAtnHr3GVy7rGkXCb6d5cSyqrWqL4k81b9CPg3urd+T7aop3A==}
 
@@ -7033,7 +7050,7 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.9
       estree-walker: 2.0.2
-      picomatch: 4.0.4
+      picomatch: 4.0.5
     optionalDependencies:
       rollup: 4.62.2
 
@@ -7238,7 +7255,7 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@slidev/cli@52.17.0(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@22.20.0)(@vue/compiler-sfc@3.5.39)(esbuild@0.25.12)(lightningcss@1.32.0)(markdown-it@14.2.0)(postcss@8.5.16)(rolldown@1.1.5)(rollup@4.62.2)(terser@5.49.0)(tsx@4.22.4)(workbox-build@7.4.1)(workbox-window@7.4.1)':
+  '@slidev/cli@52.17.0(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@22.20.0)(@vue/compiler-sfc@3.5.39)(esbuild@0.25.12)(lightningcss@1.32.0)(markdown-it@14.2.0)(playwright-chromium@1.62.1)(postcss@8.5.16)(rolldown@1.1.5)(rollup@4.62.2)(terser@5.49.0)(tsx@4.22.4)(workbox-build@7.4.1)(workbox-window@7.4.1)':
     dependencies:
       '@antfu/ni': 30.2.0
       '@antfu/utils': 9.3.0
@@ -7314,6 +7331,8 @@ snapshots:
       yaml: 2.9.0
       yargs: 18.0.0
       zod: 3.25.76
+    optionalDependencies:
+      playwright-chromium: 1.62.1
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - '@farmfe/core'
@@ -9324,9 +9343,9 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  fdir@6.5.0(picomatch@4.0.4):
+  fdir@6.5.0(picomatch@4.0.5):
     optionalDependencies:
-      picomatch: 4.0.4
+      picomatch: 4.0.5
 
   file-saver@2.0.5: {}
 
@@ -10716,6 +10735,12 @@ snapshots:
 
   plantuml-encoder@1.4.0: {}
 
+  playwright-chromium@1.62.1:
+    dependencies:
+      playwright-core: 1.62.1
+
+  playwright-core@1.62.1: {}
+
   points-on-curve@0.2.0: {}
 
   points-on-path@0.2.1:
@@ -11345,8 +11370,8 @@ snapshots:
 
   tinyglobby@0.2.17:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.4)
-      picomatch: 4.0.4
+      fdir: 6.5.0(picomatch@4.0.5)
+      picomatch: 4.0.5
 
   to-regex-range@5.0.1:
     dependencies:
@@ -11686,7 +11711,7 @@ snapshots:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       acorn: 8.17.0
-      picomatch: 4.0.4
+      picomatch: 4.0.5
       webpack-virtual-modules: 0.6.2
 
   unplugin@3.3.0(esbuild@0.25.12)(rolldown@1.1.5)(rollup@4.62.2)(vite@8.1.4(@types/node@22.20.0)(esbuild@0.25.12)(jiti@2.7.0)(terser@5.49.0)(tsx@4.22.4)(yaml@2.9.0)):
