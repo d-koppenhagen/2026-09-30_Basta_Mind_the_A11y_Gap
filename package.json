@@ -6,22 +6,30 @@
   "packageManager": "pnpm@11.9.0",
   "scripts": {
     "build": "slidev build",
+    "build:db": "slidev build --theme @db-tt-web/slidev-theme-dbsystel",
     "dev": "slidev --open",
+    "dev:db": "slidev --theme @db-tt-web/slidev-theme-dbsystel --open",
     "demo:inaccessible100": "npx http-server demos/inaccessible-but-highscore -p 3200",
-    "export": "slidev export",
+    "export": "slidev export --dark",
+    "export:db": "slidev export --dark --theme @db-tt-web/slidev-theme-dbsystel",
     "keycastr": "open -a KeyCastr",
-    "start": "concurrently -n keycastr,slidev,demo:inaccessible100 -c green,blue,yellow \"npm run keycastr\" \"npm run dev\" \"npm run demo:inaccessible100\""
+    "start": "concurrently -n keycastr,slidev,demo:inaccessible100 -c green,blue,yellow \"npm run keycastr\" \"npm run dev\" \"npm run demo:inaccessible100\"",
+    "start:db": "concurrently -n keycastr,slidev,demo:inaccessible100 -c green,blue,yellow \"npm run keycastr\" \"npm run dev:db\" \"npm run demo:inaccessible100\""
   },
   "dependencies": {
     "@slidev/cli": "^52.17.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
+    "concurrently": "^10.0.3",
     "slidev-theme-k9n": "workspace:*",
     "slidev-theme-the-unnamed": "^0.0.24",
-    "concurrently": "^10.0.3",
     "vue": "^3.5.39"
   },
+  "optionalDependencies": {
+    "@db-tt-web/slidev-theme-dbsystel": "link:../../tt-web/slidev-theme-db-systel"
+  },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "playwright-chromium": "^1.62.1"
   }
 }

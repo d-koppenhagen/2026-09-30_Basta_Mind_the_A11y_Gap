@@ -163,3 +163,53 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Cover / Startseite — Lesbarkeit auf dem Pixel-Art-Hintergrund       */
+/*   Titel & Untertitel in eine halbtransparente Box legen,            */
+/*   damit der Text auf dem hellen Bild gut erkennbar bleibt.          */
+/* ------------------------------------------------------------------ */
+.slidev-layout.cover .cover-content {
+  background: rgba(9, 15, 27, 0.62);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-left: 6px solid var(--db-red);
+  border-radius: 10px;
+  padding: 1.6rem 1.9rem;
+  /* Box schmiegt sich an den Textinhalt an statt die ganze Höhe zu füllen */
+  top: auto;
+  height: auto;
+  bottom: 14%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Titel & Untertitel auf dem Cover immer hell für maximalen Kontrast */
+.slidev-layout.cover .cover-content h1,
+.slidev-layout.cover .cover-content h2,
+.slidev-layout.cover .cover-content p {
+  color: var(--db-white);
+}
+
+/* Icon-Links unten rechts auf dem Cover lesbar halten */
+.slidev-layout.cover .abs-br a {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/*
+ * Das Cover nutzt ein eigenes Vollbild-Pixel-Art als Hintergrund.
+ * Die DB-Deko-Elemente (heller Curtain, dunkle Wortmarke) sind für
+ * einfarbige DB-Hintergründe gedacht und stören auf dem Foto –
+ * besonders im Light-Mode. Deshalb hier modus-unabhängig anpassen:
+ *   - Curtain (weiße Streifen rechts) ausblenden
+ *   - Wortmarke immer in der hellen "on-dark"-Variante zeigen
+ */
+.slidev-layout.cover .db-curtain {
+  display: none;
+}
+
+.slidev-layout.cover .cover-wordmark {
+  background-image: url('/db/db-systel-wordmark-on-dark.svg') !important;
+  /* leichter Schatten, damit die weiße Wortmarke auf hellen Bildbereichen sichtbar bleibt */
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+}
