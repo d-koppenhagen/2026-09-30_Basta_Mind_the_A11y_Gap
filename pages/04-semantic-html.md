@@ -320,7 +320,7 @@ layout: default
 </div>
 
 <div class="w-95% ml-5 text-right">
-  <img src="https://i.imgflip.com/ahxldt.jpg" alt="Meme: Button oder Link? – Die ewige Frage der Webentwicklung" attributionsrc="https://i.imgflip.com/ahxldt.jpg" title="made at imgflip.com" class="mt--18"/>
+  <img src="https://i.imgflip.com/ahxldt.jpg" alt="Meme: Button oder Link? – Die ewige Frage der Webentwicklung" attributionsrc="https://i.imgflip.com/ahxldt.jpg" title="made at imgflip.com" class="mt-4 max-h-85"/>
 </div>
 
 </div>

@@ -18,12 +18,21 @@ layout: default
 
 # AI Agents lesen den Accessibility Tree
 
+<style>
+/* Theme fügt "—" via .slidev-layout ul > li::before hinzu.
+   Diese Boxen nutzen eigene ▸-Marker → Theme-Dash entfernen,
+   sonst überlagern sich beide Marker. */
+.agent-tree-list > li::before {
+  content: none !important;
+}
+</style>
+
 <div class="grid grid-cols-[1fr_1fr] gap-6 mt-2">
 
 <div class="p-5 rounded-xl bg-indigo-500/10 border border-indigo-500/30">
   <h3 class="!text-indigo-800 dark:!text-indigo-400 !text-lg !mb-3 flex items-center gap-2"><carbon-bot /> Wie Agents „sehen"</h3>
 
-  <ul class="space-y-2 text-sm !list-none !pl-0 !my-0">
+  <ul class="agent-tree-list space-y-2 text-sm !list-none !pl-0 !my-0">
     <li class="!list-none !ml-0 !pl-0"><span class="text-indigo-400">▸</span> Kein Rendering — nur <strong>Accessibility Tree</strong></li>
     <li class="!list-none !ml-0 !pl-0"><span class="text-indigo-400">▸</span> Gleiche Datenquelle wie <strong>Screen Reader</strong></li>
     <li class="!list-none !ml-0 !pl-0"><span class="text-indigo-400">▸</span> Schlechte A11y = Agent kann App <strong>nicht bedienen</strong></li>
@@ -37,7 +46,7 @@ layout: default
 <div class="p-5 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
   <h3 class="!text-emerald-800 dark:!text-emerald-400 !text-lg !mb-3 flex items-center gap-2"><carbon-tools-alt /> AI-Tools im Dev-Workflow</h3>
 
-  <ul class="space-y-2 text-sm !list-none !pl-0 !my-0">
+  <ul class="agent-tree-list space-y-2 text-sm !list-none !pl-0 !my-0">
     <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> <strong>Chrome DevTools MCP</strong> — Agents steuern Chrome fern</li>
     <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> Lighthouse-Audits <strong>automatisch</strong> ausführen & fixen</li>
     <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> <strong>Modern Web Guidance</strong> — Best Practices im Agent-Kontext</li>

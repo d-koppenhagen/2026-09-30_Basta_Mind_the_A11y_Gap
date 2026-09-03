@@ -132,6 +132,17 @@ h1.page-headline {
   margin: 0;
   padding-left: 18px;
   line-height: 1.7;
+  list-style: none;
+}
+
+/* Theme fügt "—" via li::before hinzu — hier nicht gewünscht,
+   da die ::marker-Icons (✗/✓) bereits als Bullet dienen */
+.info-list li {
+  padding-left: 0;
+}
+
+.info-list li::before {
+  content: none;
 }
 
 .bad-list {

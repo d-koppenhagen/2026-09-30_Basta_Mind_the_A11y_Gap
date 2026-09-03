@@ -10,6 +10,28 @@
   font-size: 16px;
 }
 
+/*
+ * Kompatibilitäts-Mapping für aus practica11y/k9n übernommene Demo-
+ * Komponenten (AriaEcosystemDemo, .at-*, .demo-* usw.). Diese nutzen
+ * `--k9n-*`-Variablen mit hellen Fallback-Werten (für dunkle Themes).
+ * Ohne Definition greifen die weißen Fallbacks → im Light-Mode
+ * weiß-auf-weiß. Hier werden sie an die mode-abhängigen DB-Systel-Tokens
+ * gekoppelt, sodass sie in Light UND Dark korrekt kontrastieren.
+ */
+:root {
+  --k9n-text-primary: var(--db-fg);
+  --k9n-text-secondary: var(--db-fg-muted);
+  --k9n-text-muted: var(--db-fg-muted);
+  --k9n-text-on-accent: var(--db-white);
+  --k9n-heading-section: var(--db-fg);
+  --k9n-accent: var(--db-accent);
+  --k9n-accent-subtle: color-mix(in srgb, var(--db-accent) 12%, transparent);
+  --k9n-border: var(--db-border);
+  --k9n-surface: var(--db-bg);
+  --k9n-surface-elevated: var(--db-bg-elevated);
+  --k9n-code-bg: var(--db-code-bg);
+}
+
 .slidev-layout.default h1 {
   font-size: 2rem;
   line-height: 2rem;
@@ -166,15 +188,15 @@
 
 /* ------------------------------------------------------------------ */
 /* Cover / Startseite — Lesbarkeit auf dem Pixel-Art-Hintergrund       */
-/*   Titel & Untertitel in eine halbtransparente Box legen,            */
-/*   damit der Text auf dem hellen Bild gut erkennbar bleibt.          */
+/*   Titel & Untertitel in eine halbtransparente Box legen, damit der  */
+/*   Text auf dem hellen Bild gut erkennbar bleibt.                    */
+/*   DB 2026: eckige Box, KEINE abgerundeten Kanten, kein roter Balken. */
 /* ------------------------------------------------------------------ */
 .slidev-layout.cover .cover-content {
   background: rgba(9, 15, 27, 0.62);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  border-left: 6px solid var(--db-red);
-  border-radius: 10px;
+  border-radius: 0;
   padding: 1.6rem 1.9rem;
   /* Box schmiegt sich an den Textinhalt an statt die ganze Höhe zu füllen */
   top: auto;
@@ -209,7 +231,10 @@
 }
 
 .slidev-layout.cover .cover-wordmark {
-  background-image: url('/db/db-systel-wordmark-on-dark.svg') !important;
+  /* Immer die helle "on-dark"-Wortmarke erzwingen (Foto-Cover). Über die
+     Theme-Variable statt hartkodiertem Pfad, damit die URL base-korrekt
+     ist und auch beim Deploy unter einem Unterpfad lädt. */
+  background-image: var(--db-wordmark-on-dark) !important;
   /* leichter Schatten, damit die weiße Wortmarke auf hellen Bildbereichen sichtbar bleibt */
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
 }

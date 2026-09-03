@@ -145,11 +145,11 @@ layout: default
 </html>
 ```
 
-<div class="absolute right-97 top-33 w-[30%] z-10">
+<div class="absolute right-97 top-28 w-[30%] z-10">
   <img src="/demo-100.png" alt="Vorschau des Quellcodes" class="rounded shadow-lg" />
 </div>
 
-<div class="absolute right-7 top-10 w-[32%] flex flex-col gap-10 z-10">
+<div class="absolute right-7 top-20 w-[32%] flex flex-col gap-10 z-10">
   <img src="/axe-100.png" alt="axe DevTools: 0 Violations" class="rounded shadow-lg" />
   <img src="/lighthouse-100.png" alt="Lighthouse Score: 100" class="rounded shadow-lg" />
 </div>

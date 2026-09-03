@@ -299,7 +299,7 @@ const currentStep = computed(() => {
 
 .explanation-step ul {
   margin: 6px 0;
-  padding-left: 16px;
+  padding-left: 0;
   font-size: 0.75rem;
   color: var(--k9n-text-primary, #e2e8f0);
   line-height: 1.7;

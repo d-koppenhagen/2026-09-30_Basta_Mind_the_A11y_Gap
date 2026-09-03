@@ -42,3 +42,41 @@ pnpm run build:db    # Build mit DB-Theme
 pnpm run export:db   # PDF-Export mit DB-Theme
 pnpm run start:db    # Dev-Server + Demos + KeyCastr mit DB-Theme
 ```
+
+### DB-Theme (lokaler Link)
+
+> **Hinweis:** Dieser Abschnitt ist nur relevant, wenn du das DB-Theme lokal
+> vorliegen hast. Externe Nutzer können ihn ignorieren – für sie wird das Theme
+> beim `pnpm install` automatisch übersprungen (es ist eine `optionalDependency`).
+
+Das Theme `@db-tt-web/slidev-theme-dbsystel` wird **nicht** ins Repo eingecheckt
+und **nicht** aus einer Registry installiert. Stattdessen wird es per lokalem
+`link:` aus einem benachbarten Verzeichnis eingebunden:
+
+```json
+"optionalDependencies": {
+  "@db-tt-web/slidev-theme-dbsystel": "link:../../tt-web/slidev-theme-db-systel"
+}
+```
+
+So gelangt weder eine interne Registry-URL noch interner Theme-Code ins
+(öffentliche) Repo. Das Lockfile enthält lediglich die `link:`-Referenz.
+
+**Voraussetzung:** Der Theme-Ordner muss relativ zu diesem Repo unter
+`../../tt-web/slidev-theme-db-systel` liegen. Ist das der Fall, reicht ein
+normaler Install:
+
+```bash
+pnpm install
+pnpm run dev:db
+```
+
+Liegt der Ordner nicht dort, wird das Theme beim Install übersprungen und die
+`:db`-Scripts funktionieren nicht – die Standard-Scripts (mit `slidev-theme-k9n`)
+laufen aber weiterhin.
+
+> **Falls `pnpm install` mit einem Supply-Chain-Policy-Fehler abbricht**
+> (kann nach einem Wechsel der Theme-Quelle passieren, weil ein veralteter
+> Lockfile-Eintrag gegen die Registry geprüft wird): das Lockfile einmalig mit
+> `pnpm install --config.trustLockfile=true` neu erzeugen. Danach läuft
+> `pnpm install` wieder ohne Flag durch.
