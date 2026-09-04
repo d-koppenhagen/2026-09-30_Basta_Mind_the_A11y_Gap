@@ -57,16 +57,12 @@ layout: default
 </v-click>
 
 <!--
-- 1,3 Milliarden Menschen weltweit haben eine Beeinträchtigung – WHO-Zahl
-- Nicht nur dauerhafte Behinderungen:
-  - Gebrochener Arm (temporär)
-  - Baby halten (situativ)
-  - Sonne auf Bildschirm (umgebungsbedingt)
-- Also: 100 % profitieren, nicht nur 16 %
-- Gesetzliche Pflicht: European Accessibility Act + BFSG seit Juni 2025
-- Business Case: Größere Zielgruppe, besseres SEO, bessere UX für alle
-- Fazit: A11y ist die Baseline, kein optionales Feature
-- → Überleitung: Gute A11y ist übrigens auch gute UX – und umgekehrt
+- 1,3 Mrd. = WHO-Zahl
+- Behinderung nicht nur dauerhaft, auch temporär/situativ/umgebungsbedingt
+- EAA = European Accessibility Act
+- BFSG = Barrierefreiheitsstärkungsgesetz (dt. Umsetzung des EAA)
+- SEO = Search Engine Optimization, ROI = Return on Investment
+- → Überleitung: gute A11y ist auch gute UX – und umgekehrt
 -->
 
 ---
@@ -101,18 +97,11 @@ layout: default
 </div>
 
 <!--
-- UX und Barrierefreiheit sind keine getrennten Themen – sie gehen Hand in Hand
-- Foto aus einem Hotel:
-  - Zwei Aufzüge nebeneinander
-  - Ruftasten rechts am linken Aufzug montiert
-  - Unklar welchen Aufzug sie rufen
-- Klassisches UX-Versagen – betrifft alle:
-  - Sehende müssen raten
-  - Menschen mit kognitiven Einschränkungen sind verwirrt
-  - Blinde können es auch nicht herausfinden
-- Lektion: Verwirrend = UX-Problem UND A11y-Problem
-- Gute A11y = gute UX (und umgekehrt)
-- → Überleitung: Wenn alle profitieren – wer nutzt eigentlich welche Tools?
+- UX = User Experience
+- Foto-Kontext: Ruftaste sitzt am falschen Aufzug → niemand weiß, welchen sie ruft
+- Betrifft alle: Sehende raten, kognitiv Eingeschränkte verwirrt, Blinde chancenlos
+- Kernaussage: verwirrend = UX-Problem UND A11y-Problem
+- → Überleitung: Wer nutzt eigentlich welche Tools?
 -->
 
 ---
@@ -213,16 +202,14 @@ layout: default
 </style>
 
 <!--
-- Kurzer Überblick: Was sind eigentlich alles "Assistive Technologies"?
-- Screen Reader: die bekanntesten – VoiceOver (macOS/iOS), NVDA/JAWS (Windows), TalkBack (Android)
-- Braillezeilen: taktile Ausgabe für Blinde – zeigen den Text als Braille-Punkte
-- Sprachsteuerung: Dragon NaturallySpeaking, macOS Voice Control, Android Voice Access – nutzen accessible names zum Ansteuern
-- Switch-Control: für Menschen mit stark eingeschränkter Motorik – ein oder zwei Taster zum Navigieren
-- Bildschirmlupen: nicht nur Zoom! ZoomText liest auch vor, folgt dem Fokus
-- Eye-Tracking: Augensteuerung für Menschen die keine Hände/Finger nutzen können
-- Kernpunkt: ALLE diese Tools greifen auf denselben Accessibility Tree zu!
-- Aber auch der Browser selbst nutzt die Semantik (Fokus-Reihenfolge, Formulare, etc.)
-- → Überleitung: Wie kommt unser Code eigentlich in diesen Tree? Schauen wir uns den Weg an.
+- AT = Assistive Technologies (Hilfsmittel)
+- SR = Screen Reader: VoiceOver (Apple), NVDA/JAWS (Windows), TalkBack (Android)
+- NVDA = NonVisual Desktop Access, JAWS = Job Access With Speech
+- Sprachsteuerung nutzt Accessible Names zum Ansteuern
+- Switch-Control: 1–2 Taster, für starke motorische Einschränkung
+- Bildschirmlupe (z. B. ZoomText) liest auch vor & folgt dem Fokus
+- Kernpunkt: alle nutzen denselben Accessibility Tree – auch der Browser selbst
+- → Überleitung: Wie kommt unser Code in diesen Tree?
 -->
 
 ---
@@ -235,31 +222,14 @@ clicks: 4
 <AriaEcosystemDemo />
 
 <!--
-- Oben: Drei-Schichten-Modell als Orientierung:
-  - DOM + Semantik = was wir schreiben
-  - Accessibility Tree = die gemeinsame Schnittstelle
-  - Präsentation = was Nutzende erleben (Browser UND AT!)
-- [KLICK 0] Start: Unser Code im DOM
-  - WAI-ARIA als generischer Standard – nicht nur für HTML (auch SVG, ePub)
-  - ARIA definiert Rollen, States und Properties
-- [KLICK 1] Browser baut den Accessibility Tree
-  - button bekommt automatisch role="button" – implizit, muss nicht gesetzt werden
-  - aria-pressed macht daraus einen Toggle-Button ("Schalter")
-  - Die Spec definiert welche Rollen auf welchen Elementen erlaubt/verboten sind
-- [KLICK 2] Core-AAM mappt auf Plattform-APIs
-  - Windows: MSAA / UIA (UI Automation)
-  - macOS/iOS: AX API (NSAccessibility)
-  - Linux: ATK / AT-SPI
-  - Erklärt warum Verhalten je nach OS/Browser leicht abweichen kann
-- [KLICK 3] Präsentation: Browser
-  - Der Browser rendert visuell – nutzt dafür den DOM + CSS
-  - Aber: der A11y Tree ist die parallele, nicht-visuelle Repräsentation
-  - Der Browser ist nur EINE von vielen Präsentationsformen!
-- [KLICK 4] Präsentation: Assistive Technologies
-  - Screen Reader: "Speichern, Schalter, nicht gedrückt"
-  - Braillezeile: Taktile Ausgabe desselben Texts
-  - Sprachsteuerung: Nutzt accessible name → "Klick Speichern"
-  - Switch/Eye-Tracking: Navigiert über fokussierbare Elemente im Tree
-- Kernbotschaft: Wenn die Semantik im DOM stimmt, funktioniert ALLES – Browser UND alle AT
-- → Überleitung: Jetzt wissen wir, wie der Weg aussieht. Aber was passiert, wenn wir Fehler machen?
+- 3 Schichten: DOM+Semantik (schreiben wir) → A11y Tree (Schnittstelle) → Präsentation (Browser & AT)
+- DOM = Document Object Model
+- WAI-ARIA = Web Accessibility Initiative – Accessible Rich Internet Applications; generisch, nicht nur HTML (auch SVG, ePub)
+- ARIA definiert Rollen, States, Properties; `button` hat implizit role="button"
+- aria-pressed macht daraus einen Toggle/Schalter
+- Core-AAM = Accessibility API Mappings: mappt auf Plattform-APIs
+- Windows: MSAA / UIA, Apple: AX API, Linux: ATK / AT-SPI
+- → erklärt leichte Abweichungen je OS/Browser
+- Kernbotschaft: stimmt die DOM-Semantik, funktioniert Browser UND alle AT
+- → Überleitung: Was passiert, wenn wir Fehler machen?
 -->

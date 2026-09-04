@@ -29,17 +29,10 @@ class: text-center
 </v-click>
 
 <!--
-- Zusammenfassung – wichtigste Erkenntnisse:
-- [KLICK] Semantisches HTML = Großteil der Lösung (WebAIM: 96 % aller Fehler in 6 Kategorien, 5 davon HTML)
-- [KLICK] Tastatur-Test: Nicht benutzbar = kaputt
-- [KLICK] Focus-Management in SPAs nicht vergessen
-- [KLICK] Formulare: Labels + richtige Fehlerbehandlung
-- [KLICK] Live Regions: Müssen VOR Updates existieren
-- [KLICK] Visuelle A11y: Kontrast, Alt-Texte, prefers-reduced-motion
-- [KLICK] Automatisiert UND manuell testen
-- [KLICK] A11y = Agent-Ready
-- [LETZTER KLICK] Barrierefreiheit ist kein Feature, sondern eine Grundanforderung
-- Klein anfangen, aber heute anfangen!
+- Beleg für Punkt 1: WebAIM Million – 96 % aller Fehler in 6 Kategorien, 5 davon HTML
+- WebAIM = Web Accessibility In Mind
+- Merksatz: nicht benutzbar = kaputt
+- Abschluss: klein anfangen, aber HEUTE anfangen
 -->
 
 ---
@@ -79,10 +72,8 @@ class: text-center
 </div>
 
 <!--
-- Danke für die Aufmerksamkeit!
-- Klein anfangen, aber heute anfangen
-- Jede Verbesserung macht das Web inklusiver
-- Fragen? Gerne ansprechen!
+- Danke – jede Verbesserung macht das Web inklusiver
+- Fragen? Gerne ansprechen
 -->
 
 ---
@@ -131,8 +122,6 @@ layout: default
 </div>
 
 <!--
-- Ressourcen für die Barrierefreiheits-Reise:
-- LINKS: WCAG, MDN, WebAIM, A11y Project + Tools
-- RECHTS: Meine Kontaktdaten und Slides auf GitHub
-- Fragen?
+- APG = ARIA Authoring Practices Guide, MDN = Mozilla Developer Network
+- Slides landen auf GitHub
 -->

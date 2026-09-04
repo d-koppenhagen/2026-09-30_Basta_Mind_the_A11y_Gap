@@ -9,9 +9,8 @@ class: text-white
 Barrierefreiheit verifizieren
 
 <!--
-- Was man nicht misst, kann man nicht verbessern
-- Die wichtigsten Tools zum Testen von Barrierefreiheit
-- → Überleitung: Automatisiert vs Manuell
+- „Was man nicht misst, kann man nicht verbessern"
+- → Überleitung: automatisiert vs. manuell
 -->
 
 ---
@@ -67,24 +66,12 @@ layout: default
 </div>
 
 <!--
-- [KLICK] Browser DevTools: Eingebaut und sofort nutzbar
-  - Accessibility Tree: Was Screen Reader tatsächlich sehen
-  - Contrast Checker, Lighthouse für schnelle Audits
-- [KLICK] Automatisierte Tools: Guter Einstieg, aber begrenzt
-  - axe DevTools: Beste Browser-Erweiterung
-  - Lighthouse: Score als Orientierung
-  - WAVE: Visuelles Overlay direkt auf der Seite
-  - Wichtig: Finden nur 30–40 % der echten Probleme!
-- [KLICK] Manuelles Testen: Hier wird's ernst
-  - Maus abstöpseln, App nur mit Tastatur bedienen
-  - Screen Reader ausprobieren (VoiceOver / NVDA)
-  - 200 % Zoom – bricht euer Layout?
-- .NET-Bezug: Testing-Tools für euren Stack
-  - Playwright for .NET (Microsoft.Playwright) – axe-core Integration in C#-Tests möglich
-  - bUnit für Blazor-Komponenten: aria-Attribute im gerenderten Markup prüfen
-  - Deque.AxeCore.Playwright NuGet-Paket für automatisierte A11y-Tests in der CI/CD-Pipeline
-  - Auch ASP.NET Integration Tests können gerenderten HTML auf A11y prüfen
-- Fazit: Automatisiert anfangen, manuell vertiefen
+- WAVE = Web Accessibility Evaluation Tool (visuelles Overlay), axe von Deque
+- Kernaussage: automatisiert findet nur 30–40 % → manuell unverzichtbar
+- Manuell konkret: Maus abstöpseln, SR (VoiceOver/NVDA), 200 % Zoom
+- .NET: Playwright for .NET + axe-core, bUnit prüft gerendertes Markup, Deque.AxeCore.Playwright für CI
+- CI/CD = Continuous Integration / Continuous Delivery
+- Fazit: automatisiert anfangen, manuell vertiefen
 - → Überleitung: Demo – 100 % Score, 0 % Barrierefreiheit
 -->
 
@@ -108,11 +95,9 @@ Trotzdem ist sie **nicht barrierefrei**.
 </a>
 
 <!--
-- Demo öffnen: http://localhost:3200
-- Seite sieht gut aus, Lighthouse gibt 100 %
-- Aber: Keine echten Überschriften, keine Landmarks, div statt button, keine echten Links
-- Screen Reader sieht quasi nichts Sinnvolles
-- Lektion: Automatisierte Tests sind notwendig, aber nicht hinreichend!
+- Demo öffnen: http://localhost:3200 (Slide versteckt)
+- Trotz 100 %: keine echten Überschriften/Landmarks, div statt button, keine echten Links
+- Lektion: automatisierte Tests notwendig, aber nicht hinreichend
 -->
 
 ---
@@ -156,10 +141,7 @@ layout: default
 
 
 <!--
-- Vereinfachtes Beispiel: Lighthouse & axe melden 0 Fehler
-- Aber: span statt a, div statt h1, div statt button, div statt label
-- aria-label befriedigt axe – aber kein echtes Label-Element vorhanden
-- Tastatur-Nutzende können Navigation und Button nicht erreichen
-- Screen Reader sieht keine Überschrift, keine Landmarks
-- → Überleitung: AI Agents und Barrierefreiheit
+- Warum 100 %: `aria-label` befriedigt axe, aber kein echtes Label/keine Semantik
+- span statt a, div statt h1/button → Tastatur erreicht Nav & Button nicht
+- → Überleitung: AI Agents & A11y
 -->

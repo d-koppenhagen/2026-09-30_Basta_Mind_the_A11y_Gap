@@ -7,9 +7,8 @@ layout: section
 Die richtigen Elemente für den Job verwenden
 
 <!--
-- HTML5 gibt uns mächtige Elemente mit eingebauten A11y-Features
-- Wir müssen sie nur verwenden!
-- → Überleitung: Gleiches Beispiel, aber richtig umgesetzt
+- HTML5-Elemente bringen A11y-Features eingebaut mit – wir müssen sie nur nutzen
+- → Überleitung: gleiches Beispiel, richtig umgesetzt
 -->
 
 ---
@@ -41,23 +40,10 @@ layout: default
 </div>
 
 <!--
-- Gleiche Funktionalität, richtig umgesetzt:
-  - header-Landmark, h1 für Hauptüberschrift
-  - nav-Landmark mit echten Links
-  - main-Landmark, h2 für Abschnittsüberschrift
-  - Label korrekt mit Input verknüpft
-  - Echter Button statt div
-- [KLICK] Ergebnis:
-  - Klare Struktur für Screen Reader
-  - Volle Tastatur-Unterstützung
-  - Richtige Semantik für Suchmaschinen
-  - Keine ARIA-Attribute nötig!
-- Blazor-Bezug: In Blazor-Komponenten exakt genauso!
-  - <button @onclick="Submit"> statt <div @onclick="Submit">
-  - Blazor rendert am Ende HTML – der Browser kennt kein „Blazor-Element"
-  - Wer aus WPF/MAUI kommt: Dort haben Controls eingebaute Semantik
-  - Im Web seid IHR verantwortlich, die richtigen HTML-Elemente zu wählen
-- → Überleitung: Tiefer in spezifische Patterns
+- Gleiche Funktion, richtige Elemente – Betonung: KEINE ARIA-Attribute nötig
+- Blazor rendert am Ende HTML – Browser kennt kein „Blazor-Element"
+- WPF/MAUI-Umsteiger: dort Semantik eingebaut, im Web seid IHR verantwortlich
+- → Überleitung: tiefer in spezifische Patterns
 -->
 
 
@@ -72,9 +58,8 @@ layout: default
 </div>
 
 <!--
-- Typische Seitenstruktur mit Landmarks: header, nav, main, aside, footer
-- Screen-Reader-Nutzende springen per Shortcut zwischen Landmarks
-- Wie ein Inhaltsverzeichnis für die Seite
+- Landmarks = wie ein Inhaltsverzeichnis der Seite
+- SR springt per Shortcut zwischen ihnen
 -->
 
 ---
@@ -128,11 +113,8 @@ layout: default
 </div>
 
 <!--
-- LINKS: Alles divs mit Klassen – Screen Reader sehen keine Struktur
-- RECHTS: Richtige Landmarks (header, aside, main, footer) + Überschriften-Hierarchie
-- [KLICK] Screen-Reader-Nutzende springen per Taste zwischen Landmarks/Überschriften
-- Ohne Landmarks: Alles linear durchhören
-- Wichtig: Überschriften-Hierarchie nie überspringen!
+- Ohne Landmarks: alles linear durchhören
+- Wichtig: Überschriften-Hierarchie nie überspringen (h1 → h2 → h3)
 - → Überleitung: Skip Links als Ergänzung
 -->
 
@@ -193,11 +175,7 @@ layout: default
 </v-click>
 
 <!--
-- Skip Links: Tastatur-Nutzende springen direkt zum Hauptinhalt
-- Ergänzung zu Landmarks, kein Ersatz!
-- Screen-Reader-Nutzende haben bereits Landmark-Navigation
-- Primär für sehende Tastatur-Nutzende
-- Sinnvoll bei vielen Nav-Items oder komplexem Header
+- Primär für sehende Tastatur-Nutzende (SR haben schon Landmark-Navigation)
 - → Überleitung: Wie funktioniert das visuelle Verstecken?
 -->
 
@@ -258,15 +236,8 @@ clicks: 7
 
 
 <!--
-- Animation zeigt Schritt für Schritt wie der Skip Link visuell versteckt wird
-- Reihenfolge so gewählt, dass jeder Schritt sichtbare Veränderung zeigt
-- white-space: nowrap — Text wird einzeilig
-- padding: 0 — Box schrumpft sichtbar
-- border: 0 — Rahmen verschwindet
-- overflow: hidden — Vorbereitung: Überlauf wird abgeschnitten
-- width/height: 1px — Element wird winzig, Text wird geclippt
-- clip-path + margin: Letzter Rest verschwindet
-- WICHTIG: display:none oder visibility:hidden würden es AUCH für Screen Reader verstecken!
+- Reihenfolge so gewählt, dass jeder Schritt sichtbar etwas verändert
+- WICHTIG: display:none / visibility:hidden würden es AUCH für SR verstecken – deshalb der Umweg
 - → Überleitung: Buttons vs Links
 -->
 
@@ -330,21 +301,10 @@ layout: default
 </div>
 
 <!--
-- Häufigster Fehler: Buttons und Links verwechseln
-- LINKS:
-  - Div mit onclick: Nicht tastatur-zugänglich, keine Semantik
-  - Button für Navigation: Falsches Element
-- [KLICK] Screen Reader wissen nicht was die Elemente tun
-- RECHTS:
-  - [KLICK] Einfache Regel: Button = Aktion, Anchor = Navigation
-  - Löst viele Probleme auf einmal!
-- Grauzone: Was ist mit "Speichern" das danach navigiert?
-  - Die PRIMÄRE Aktion entscheidet → Speichern = Aktion = Button
-  - Navigation danach ist nur Nebeneffekt (programmatischer Redirect)
-  - Andersrum: "Zurück zur Übersicht" = primär Navigation = Link
-- Blazor-Bezug: NavigationManager.NavigateTo() → trotzdem <a> verwenden mit href!
-  - <NavLink> Komponente von Blazor rendert korrekt ein <a>-Element
-  - Für Aktionen: <button @onclick="..."> – nie ein <a> ohne href
+- Grauzone „Speichern, dann navigieren": primäre Aktion entscheidet → Button; Redirect ist nur Nebeneffekt
+- Umgekehrt „Zurück zur Übersicht" = primär Navigation = Link
+- Blazor: `NavigationManager.NavigateTo()` trotzdem mit `<a href>`; `<NavLink>` rendert korrekt `<a>`
+- Für Aktionen `<button @onclick>` – nie `<a>` ohne href
 - → Überleitung: Ausprobieren auf practica11y.dev
 -->
 
@@ -362,10 +322,7 @@ class: text-center
 ]" />
 
 <!--
-- Passende Challenges auf practica11y.dev zum Ausprobieren
-- Button vs Link: Richtiges Element für den Job wählen
-- No Skip Link: Skip Links selbst implementieren
-- Heading Chaos: Überschriften-Hierarchie reparieren
+- Challenges auf practica11y.dev, Themen: richtiges Element, Skip Links, Überschriften-Hierarchie
 -->
 
 ---
@@ -375,6 +332,5 @@ title: "Challenge: Button vs Link"
 ---
 
 <!--
-- Live-Demo: Richtiges Element für den Job wählen
-- Button = Aktion, Link = Navigation
+- Live-Demo: Button = Aktion, Link = Navigation
 -->

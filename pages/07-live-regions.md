@@ -7,11 +7,9 @@ layout: section
 Änderungen für Screen-Reader-Nutzende ankündigen
 
 <!--
-- Moderne Apps: Inhalte ändern sich ohne Seitenneuladen
-- Screen Reader kündigen Änderungen nicht automatisch an
-- ARIA Live Regions lösen dieses Problem
-- Aber: Hier wird es knifflig...
-- → Überleitung: Das Live-Region-Problem
+- Inhalte ändern sich ohne Reload; SR kündigt das nicht automatisch an
+- ARIA Live Regions lösen das – aber knifflig in der Umsetzung
+- → Überleitung: das Live-Region-Problem
 -->
 
 ---
@@ -77,16 +75,10 @@ function announce(msg) { // Inhalt aktualisieren
 </div>
 
 <!--
-- Kniffligstes A11y-Problem in SPAs
-- LINKS: Element erstellen UND gleichzeitig aria-live setzen
-  - Sieht korrekt aus, funktioniert aber nicht!
-  - [KLICK] Screen Reader brauchen aria-live BEVOR sich Inhalt ändert
-  - Stiller Fehler – keine Ankündigung
-- RECHTS:
-  - [KLICK] Globales Live-Region-Pattern: Persistente leere Region im HTML
-  - Zum Ankündigen nur textContent aktualisieren
-  - Zuverlässig in allen Screen Readern
-- → Überleitung: Globale vs lokale Patterns
+- Kernregel: `aria-live` muss existieren, BEVOR sich der Inhalt ändert
+- Element + aria-live gleichzeitig anlegen → stiller Fehler, keine Ankündigung
+- Lösung: persistente leere Region im HTML, nur `textContent` aktualisieren
+- → Überleitung: globale vs lokale Patterns
 -->
 
 ---
@@ -98,14 +90,9 @@ layout: default
 <LiveRegionDemo />
 
 <!--
-- Zwei Patterns nebeneinander als Demo:
-  - LINKS – Global: Notification-Banner oben in der Seite (Toasts, Status-Meldungen)
-    - Augen schauen nach oben wenn Notification erscheint
-    - Ein einzelner Announcer für die gesamte App
-  - RECHTS – Lokal: Chat-Widget unten rechts (Live-Feeds, Chat-Nachrichten)
-    - Chat öffnet sich, Nachrichten kommen rein, Chat schließt sich
-    - Augen schauen zum Chat wenn neue Nachrichten kommen
-- Entscheidende Regel: Live Region muss im DOM existieren BEVOR Inhalt aktualisiert wird
+- Global: ein Announcer für die ganze App (Toasts, Status-Meldungen)
+- Lokal: eigene Region am Ort (Chat, Live-Feed) – Fokus/Blick ist schon dort
+- Beide: Region muss im DOM sein, BEVOR aktualisiert wird
 - → Überleitung: Attribute im Detail
 -->
 
@@ -137,14 +124,9 @@ hide: true
 </v-click>
 
 <!--
-- Kurzreferenz ARIA Live Attribute:
-- [KLICK] polite: Warten bis Nutzende fertig sind → 99% der Fälle
-- [KLICK] assertive: Sofort unterbrechen → nur kritische Alerts!
-- [KLICK] atomic="true": Gesamte Region vorlesen (Status-Meldungen)
-- [KLICK] atomic="false": Nur Änderungen vorlesen (Chat, Listen)
-- [KLICK] aria-relevant: Steuert was Ankündigungen auslöst
-- [KLICK] Warnung: assertive sparsam verwenden! Sehr störend.
-- → Überleitung: Visuelle Barrierefreiheit
+- Kurzreferenz (Slide versteckt)
+- Merksatz: polite ≈ 99 % der Fälle, assertive nur für kritische Alerts (unterbricht)
+- → Überleitung: visuelle Barrierefreiheit
 -->
 
 ---
@@ -159,6 +141,6 @@ class: text-center
 ]" />
 
 <!--
-- Challenge: Dynamische Live Region korrekt implementieren
-- → Überleitung: Visuelle Barrierefreiheit
+- Challenge: dynamische Live Region korrekt implementieren
+- → Überleitung: visuelle Barrierefreiheit
 -->

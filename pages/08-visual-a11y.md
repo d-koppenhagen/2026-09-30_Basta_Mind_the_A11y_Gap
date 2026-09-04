@@ -7,8 +7,7 @@ layout: section
 Farbkontrast und Medien-Alternativen
 
 <!--
-- Bisher Fokus auf Screen Reader und Tastatur
-- Visuelle Barrierefreiheit ist ebenso wichtig
+- Bisher SR & Tastatur – visuelle A11y ist ebenso wichtig
 - → Überleitung: Farbkontrast
 -->
 
@@ -68,14 +67,9 @@ Dieser Text ist gut lesbar
 **Tools:** Chrome DevTools, WebAIM Contrast Checker
 
 <!--
-- Farbkontrast kritisch für Sehbehinderung und Farbenblindheit
-- LINKS: Hellgrau auf Weiß – sieht modern aus, aber nur 2,85:1 Kontrast
-- RECHTS: Dunkleres Grau – immer noch gut aussehend, 7:1 Kontrast (AAA!)
-- [KLICK] WCAG-Anforderungen:
-  - AA (Minimum): 4,5:1 normaler Text, 3:1 großer Text
-  - AAA (erweitert): 7:1 normaler Text
-- Tools: Chrome DevTools, WebAIM
-- Tipp: Design-System-Farben früh prüfen!
+- Kritisch für Sehbehinderung & Farbenblindheit; „modernes" Hellgrau reißt AA oft
+- AA = Level AA (Minimum), AAA = strengste Stufe
+- Tipp: Design-System-Farben früh prüfen (spart teure Nacharbeit)
 - → Überleitung: Medien-Alternativen
 -->
 
@@ -196,13 +190,11 @@ layout: default
 </v-switch>
 
 <!--
-- Frage ans Publikum: Was sehen Sie? Genau — nichts.
-- So fühlt es sich für blinde Nutzer an, wenn alt fehlt
-- [KLICK] Alt gesetzt → Screen Reader kann vorlesen, auch bei gebrochenem Bild
-- [KLICK] Bild korrekt geladen → jetzt haben alle was davon
-- [KLICK] aria-describedby für komplexere Bilder (Diagramme, Infografiken)
-- Faustregel: Wenn Entfernen = Informationsverlust → braucht Alternativtext
-- → Überleitung: Dekorative Bilder & SVG
+- Publikum aktivieren: „Was seht ihr?" → nichts = Erlebnis ohne alt
+- `alt` hilft auch bei gebrochenem Bild
+- `aria-describedby` für komplexe Bilder (Diagramme, Infografiken)
+- Faustregel: Entfernen = Infoverlust → braucht Alternativtext
+- → Überleitung: dekorative Bilder & SVG
 -->
 
 ---
@@ -266,12 +258,8 @@ Wenn man das Bild entfernt und kein Informationsverlust entsteht → `alt=""`
 </v-click>
 
 <!--
-- [KLICK] Dekorative Bilder: Leerer alt-Text, damit Screen Reader sie überspringt
-- Nicht jedes Bild ist informativ — Hintergründe, Trennlinien, Ornamente
-- Faustregel: Entfernen = kein Infoverlust → dekorativ
-- [KLICK] SVG: Zwei Kategorien — informativ vs. dekorativ
-- Informativ: role="img" + aria-label (oder aria-labelledby)
-- Dekorativ: aria-hidden + focusable="false"
+- Dekorativ = Entfernen ohne Infoverlust (Hintergründe, Trennlinien, Ornamente)
+- SVG = Scalable Vector Graphics; `focusable="false"` gegen IE/Edge-Legacy-Bug
 - → Überleitung: Video & Audio
 -->
 
@@ -319,11 +307,9 @@ layout: default
 - **Transkripte** – für reine Audio-Inhalte (Podcasts) oft ausreichend
 
 <!--
-- Video: track-Element mit WebVTT für Captions und Descriptions
-- Audio: Transkript verlinken – reicht für reine Audio-Inhalte
-- [KLICK] Captions: Untertitel inkl. Geräusche, Musik-Hinweise
-- [KLICK] Audio-Descriptions: Beschreibung visueller Inhalte im Video
-- [KLICK] Transkripte: Text-Version, durchsuchbar und flexibel
+- `track`-Element nutzt WebVTT = Web Video Text Tracks
+- Captions = Untertitel inkl. Geräusche/Musik (gehörlos), nicht nur Dialog
+- Audio-Description = beschreibt visuelle Inhalte (blind)
 - → Überleitung: Präferenzen respektieren
 -->
 
@@ -369,14 +355,10 @@ layout: default
 </div>
 
 <!--
-- Vier wichtige User-Präferenzen die wir per CSS Media Query respektieren können
-- Reduced Motion: Schwindel, Übelkeit, Epilepsie → Animationen deaktivieren
-- Color Scheme: Manche brauchen dunklen Hintergrund (Lichtempfindlichkeit), andere hellen
-- Prefers Contrast: Mehr Kontrast gewünscht → dickere Borders, stärkere Farben, klarere Trennung
-- Forced Colors: Windows High Contrast – alle Farben werden überschrieben, Hintergründe verschwinden
-- Unterschied prefers-contrast vs. forced-colors: prefers-contrast ist ein Wunsch, forced-colors ein Zwang
-- Tipp: DevTools → Rendering → Emulationen zum Testen
-- → Überleitung: Challenges zum Ausprobieren
+- Alle vier per CSS Media Query abfragbar
+- Kernunterschied: `prefers-contrast` = Wunsch, `forced-colors` = Zwang (System überschreibt alles)
+- Testen: DevTools → Rendering → Emulationen
+- → Überleitung: Challenges
 -->
 
 ---
@@ -393,9 +375,6 @@ class: text-center
 ]" />
 
 <!--
-- Challenges zum Kapitel visuelle Barrierefreiheit
-- Color Contrast: Kontrastverhältnisse reparieren
-- Missing Alt Text: Alt-Texte ergänzen
-- Reduced Motion: prefers-reduced-motion umsetzen
-- → Überleitung: Testen und Tools
+- Challenges: Kontrast reparieren, Alt-Texte ergänzen, prefers-reduced-motion umsetzen
+- → Überleitung: Testen & Tools
 -->

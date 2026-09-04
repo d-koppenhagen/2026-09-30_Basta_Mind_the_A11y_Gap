@@ -7,10 +7,8 @@ layout: section
 Die App ohne Maus benutzbar machen
 
 <!--
-- Nicht alle benutzen eine Maus
-- Manche navigieren ausschließlich mit der Tastatur
-- Hier scheitern viele moderne Web-Apps
-- → Überleitung: Häufigste Probleme bei Tastatur-Navigation
+- Viele navigieren nur mit Tastatur – hier scheitern viele moderne Apps
+- → Überleitung: häufigste Probleme
 -->
 
 
@@ -73,14 +71,9 @@ button:focus-visible { /* Alternative */
 </div>
 
 <!--
-- Eins der schlimmsten Dinge für A11y: Focus-Outlines entfernen
-- LINKS: outline:none überall – sieht man leider ständig
-- [KLICK] Tastatur-Nutzende wissen nicht, wo sie auf der Seite sind
-- RECHTS:
-  - [KLICK] Outline behalten oder passend zum Design stylen
-  - :focus-visible → nur für Tastatur-Nutzende, nicht bei Mausklick
-  - box-shadow als Alternative für mehr Design-Flexibilität
-- Niemals Focus-Indikatoren komplett entfernen!
+- `outline: none` sieht man leider ständig – Todsünde
+- `:focus-visible` = nur bei Tastatur-Fokus, nicht bei Mausklick (Design bleibt clean)
+- box-shadow als Alternative für mehr Design-Flexibilität
 - → Überleitung: Ausprobieren
 -->
 
@@ -97,9 +90,9 @@ class: text-center
 ]" />
 
 <!--
-- Div and Conquer: Klickbare Divs durch richtige Buttons ersetzen
-- Lost Without a Map: Fehlende Landmarks ergänzen
-- → Überleitung: Verlorener Focus in SPAs
+- Challenges: klickbare Divs → Buttons; fehlende Landmarks ergänzen
+- → Überleitung: verlorener Focus in SPAs
+- SPA = Single Page Application
 -->
 
 ---
@@ -112,12 +105,8 @@ clicks: 5
 <SpaFocusDemo />
 
 <!--
-- [Initial] SPA-Router lädt den Home-View (lila Rahmen um Router-Outlet)
-- [KLICK 1] Home-View fertig geladen
-- [KLICK 2] Focus liegt auf <main> – orange Umrandung
-- [KLICK 3] Per Tab zum „Kontakt"-Button, Enter
-- [KLICK 4] SPA-Router tauscht NUR den Router-View aus – kein Full Reload
-- [KLICK 5] Neuer Inhalt da – Focus landet im 2. Formularfeld statt am Seitenanfang!
+- Demo-Ablauf: Router tauscht nur den View, kein Full Reload
+- Pointe: Focus landet danach willkürlich (2. Feld) statt am Seitenanfang
 - → Überleitung: Wie löst man das?
 -->
 
@@ -176,19 +165,9 @@ main.focus();
 </div>
 
 <!--
-- Riesiges Problem in Single Page Applications
-- LINKS: Klick auf Link, Inhalt ändert sich, Focus bleibt auf altem Link
-  - [KLICK] Screen-Reader-Nutzende hören nichts, müssen gesamtes Formular erneut durchtabben
-- RECHTS:
-  - [KLICK] Nach Navigation Focus auf main-Element setzen
-  - tabindex="-1" macht es fokussierbar, dann focus() aufrufen
-  - Screen Reader kündigt neuen Inhalt sofort an
-- SPA-spezifisches Problem – leicht zu übersehen!
-- Blazor-Bezug: Betrifft Blazor Server UND WebAssembly genauso!
-  - Blazor Router tauscht DOM aus, kümmert sich aber NICHT um Focus
-  - Lösung: NavigationManager.LocationChanged-Event + JSInterop für Focus
-  - Oder: FocusOnNavigate-Komponente von Blazor (seit .NET 7) nutzen!
-  - Ohne eigenes Zutun bleibt Focus verloren nach NavigationManager.NavigateTo()
+- `tabindex="-1"` macht `main` fokussierbar (nicht per Tab erreichbar), dann `focus()`
+- Blazor: betrifft Server UND WebAssembly (WASM); Router tauscht DOM, kümmert sich NICHT um Focus
+- Lösung: `FocusOnNavigate`-Komponente (seit .NET 7) oder LocationChanged + JSInterop
 - → Überleitung: Seitentitel
 -->
 
@@ -202,14 +181,9 @@ clicks: 1
 <PageTitleDemo />
 
 <!--
-- Weiteres häufiges SPA-Problem: Statische Seitentitel
-- LINKS: Jede Seite heißt nur "My App" — Tabs nicht unterscheidbar
-- Screen Reader kündigt bei jedem Seitenwechsel denselben Titel an
-- [KLICK] RECHTS: Eindeutige Titel → sofort erkennbar in Tabs
-- Muster: „Seitenname – App-Name" per document.title setzen
-- Einfacher Fix, große Wirkung: Screen Reader, Tabs, SEO
-- Blazor-Bezug: <PageTitle>Seitenname – App</PageTitle> Komponente (seit .NET 6)
-  - Einfach in jeder Seiten-Komponente setzen – kein JS nötig
-  - Trotzdem vergessen es viele → statischer Titel aus index.html bleibt
+- Häufiges SPA-Problem: statischer Titel, SR kündigt bei jedem Wechsel denselben an
+- Muster „Seitenname – App-Name" per `document.title`
+- Wirkung auf SR, Tabs und SEO
+- Blazor: `<PageTitle>`-Komponente (seit .NET 6), kein JS nötig – wird oft vergessen
 - → Überleitung: Formulare
 -->

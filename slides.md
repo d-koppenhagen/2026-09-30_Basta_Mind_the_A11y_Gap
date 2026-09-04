@@ -46,14 +46,9 @@ lang: de
 </div>
 
 <!--
-Willkommen alle zu „Mind the A11y Gap"!
-
-Heute erkunden wir die häufigsten Barrierefreiheits-Fallen in modernen Web-Applikationen und lernen, wie man sie vermeidet.
-
-Dieser Talk behandelt praktische, Framework-agnostische Lösungen, die ihr sofort anwenden könnt.
-
-Egal ob Blazor, Razor Pages, ASP.NET MVC oder ein JS-Framework – alles hier ist direkt umsetzbar.
-An passenden Stellen gibt's Bezüge zu Blazor und dem .NET-Ökosystem.
+- A11y = Accessibility (a + 11 Buchstaben + y)
+- Framework-agnostisch: HTML/CSS/JS, sofort anwendbar
+- Bezüge zu Blazor / .NET-Ökosystem an passenden Stellen
 -->
 
 ---

@@ -7,10 +7,9 @@ layout: section
 Was schiefgeht und warum
 
 <!--
-- „The Gap" – die Lücke zwischen Intention und tatsächlicher Barrierefreiheit
-- Praxisbeispiele häufiger Fehler
-- Bei jedem Beispiel: „Kann ich das Problem erkennen?"
-- → Überleitung: Machen wir ein Code Review
+- „The Gap" = Lücke zwischen Intention und echter Barrierefreiheit
+- Publikum aktivieren: „Erkennt ihr das Problem?"
+- → Überleitung: gemeinsames Code Review
 -->
 
 ---
@@ -61,18 +60,10 @@ layout: default
 
 
 <!--
-- Echter Code aus der Produktion – Code Review zusammen
-- Probleme erkennen lassen:
-  - „headline" als div – keine semantische Überschrift
-  - „nav" ist ein div, kein nav-Element
-  - Klickbare divs statt Buttons oder Links
-  - Formular komplett aus divs
-- [KLICK] Mindestens 6 schwerwiegende A11y-Probleme!
-- Blazor-Bezug: <div @onclick="Submit"> ist genauso kaputt wie vanilla JS!
-  - Blazor schützt euch NICHT vor Div-Suppe
-  - Razor-Syntax verführt sogar dazu: @onclick auf beliebige Elemente setzen
-- Publikum fragen: Welche Probleme fallen euch auf?
-- → Überleitung: Schauen wir im Detail, was falsch ist
+- Echter Produktionscode – Publikum fragen: welche Probleme fallen auf?
+- Kandidaten: div statt Überschrift/nav, klickbare divs, Formular nur aus divs
+- Blazor-Bezug: `<div @onclick>` genauso kaputt; Razor verführt dazu, schützt nicht vor Div-Suppe
+- → Überleitung: Probleme im Detail
 -->
 
 
@@ -82,9 +73,9 @@ image: /soup_div.png
 ---
 
 <!--
-- „Div-Suppe" – ein Klassiker
-- Bild generiert mit ChatGPT
-- → Überleitung: Die konkreten Probleme im Detail
+- „Div-Suppe" = alles nur `<div>`, ein Klassiker
+- Bild mit ChatGPT generiert
+- → Überleitung: konkrete Probleme im Detail
 -->
 
 ---
@@ -111,15 +102,9 @@ layout: default
 </v-click>
 
 <!--
-- [DURCH JEDEN PUNKT KLICKEN]
-- Kein semantisches HTML, keine Landmarks, klickbare Divs, etc.
-- Ergebnis:
-  - Screen Reader: Flache Textliste, keine Struktur
-  - Tastatur-Nutzende: Können nicht durch die Seite tabben
-  - Suchmaschinen & AI Agents: Können Wichtigkeit nicht erkennen
-- Das ist „div-Suppe" – überraschend häufig in Produktion
-- .NET-Bezug: Wer aus WPF/WinForms kommt, kennt semantische Controls (Button ist Button)
-  - Im Web (Blazor/Razor) gibt es diesen Schutz nicht – ihr seid selbst verantwortlich
-  - <div @onclick="..."> kompiliert fehlerfrei, ist aber nicht tastatur-zugänglich
-- → Überleitung: Wie macht man es richtig?
+- Folge: SR hört flache Textliste, Tastatur kann nicht tabben, Crawler/Agents erkennen Wichtigkeit nicht
+- Überraschend häufig in Produktion
+- .NET-Bezug: WPF/WinForms haben semantische Controls (Button = Button); im Web fehlt dieser Schutz
+- `<div @onclick>` kompiliert, ist aber nicht tastatur-zugänglich
+- → Überleitung: Wie macht man's richtig?
 -->

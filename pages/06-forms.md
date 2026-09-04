@@ -7,9 +7,8 @@ layout: section
 Fehlerbehandlung und Validierung barrierefrei umsetzen
 
 <!--
-- Formulare: Bereich wo A11y oft komplett zusammenbricht
-- Fehlerbehandlung besonders problematisch
-- → Überleitung: Patterns die ihr kennen müsst
+- Formulare: hier bricht A11y oft komplett zusammen, v. a. Fehlerbehandlung
+- → Überleitung: Patterns, die man kennen muss
 -->
 
 ---
@@ -72,18 +71,11 @@ dragPos:
 </div>
 
 <!--
-- LINKS: Nutzen Placeholder als Label – sehr häufiger Fehler!
-  - Checkbox mit Text daneben ohne Verknüpfung
-  - [KLICK] Placeholder verschwindet beim Tippen, Screen Reader sagt nur „Textfeld, leer"
-- RECHTS:
-  - [KLICK] label mit for/id-Verknüpfung oder Input im Label umschließen
-  - Screen Reader kündigt Label an
-  - Klick auf Label fokussiert das Feld
-  - `autocomplete` hilft bei kognitiven Einschränkungen
-- Blazor-Bezug: EditForm + InputText rendern korrekt <input>, aber Label müsst ihr SELBST setzen!
-  - Blazor generiert KEIN <label>-Element automatisch
-  - Auch FluentUI/MudBlazor-Komponenten: Prüfen ob Label korrekt verknüpft wird
-- → Überleitung: Ungültige Felder markieren
+- Placeholder verschwindet beim Tippen → als Label unbrauchbar
+- Verknüpfung: `label` mit `for`/`id` ODER Input im Label umschließen; Klick aufs Label fokussiert
+- Blazor: EditForm + InputText rendern `<input>`, aber KEIN `<label>` – selbst setzen
+- FluentUI/MudBlazor: prüfen, ob Label korrekt verknüpft wird
+- → Überleitung: ungültige Felder markieren
 -->
 
 ---
@@ -145,19 +137,11 @@ layout: default
 </div>
 
 <!--
-- LINKS: Nur visueller Hinweis (roter Rahmen) – Screen Reader merken nichts!
-  - [KLICK] Fehlermeldung ist nur Text in der Nähe, nicht verknüpft
-- RECHTS:
-  - [KLICK] aria-invalid="true" markiert Feld als ungültig
-  - aria-errormessage/aria-describedby verknüpft die Fehlermeldung
-  - role="alert" → sofortige Ankündigung
-  - Screen Reader sagt: „Email, ungültig. Es wurde keine gültige E-Mail eingegeben"
-- [KLICK] Hinweis: aria-errormessage hat eingeschränkten Support → aria-describedby als Fallback
-- Blazor-Bezug: DataAnnotations + <ValidationMessage> reichen NICHT!
-  - ValidationMessage rendert nur einen <div class="validation-message">
-  - Kein aria-invalid, kein aria-describedby, kein role="alert"
-  - Ihr müsst zusätzliche Attribute selbst setzen oder Custom-Komponenten bauen
-  - Tipp: AdditionalAttributes-Dictionary in InputBase nutzen für aria-*
+- Nur Farbe = SR merkt nichts; `aria-invalid` + verknüpfte Meldung nötig
+- `role="alert"` → sofortige Ankündigung
+- `aria-errormessage` hat schwachen Support → `aria-describedby` als Fallback
+- Blazor: DataAnnotations + `<ValidationMessage>` reichen NICHT (nur ein div, keine aria-Attribute/role)
+- Tipp: `AdditionalAttributes`-Dictionary in InputBase für aria-*
 - → Überleitung: Was passiert beim Absenden?
 -->
 
@@ -171,12 +155,10 @@ clicks: 2
 <FormSubmitDisabledDemo />
 
 <!--
-- Wie mit ungültigen Formularen umgehen? Häufiges Pattern: Button deaktivieren
-- [Initial] Formular nicht komplett ausgefüllt, Button ist disabled
-- [KLICK 1] User versucht zu klicken – nichts passiert, kein Hinweis warum
-- [KLICK 2] Per Tab nicht fokussierbar – disabled entfernt aus Tab-Reihenfolge
-- Absolut inakzeptabel: Keinerlei Feedback!
-- → Überleitung: Besser mit Hinweistext?
+- Anti-Pattern: Button `disabled` → Klick tut nichts, kein Hinweis warum
+- `disabled` fliegt aus der Tab-Reihenfolge → gar nicht erreichbar
+- Kein Feedback = inakzeptabel
+- → Überleitung: besser mit Hinweistext?
 -->
 
 ---
@@ -189,14 +171,10 @@ clicks: 2
 <FormSubmitHintDemo />
 
 <!--
-- Nächster Versuch: Hinweistext per aria-describedby
-- [Initial] Disabled Button, noch kein Hinweis
-- [KLICK 1] Hinweis erscheint – „Bitte alle Pflichtfelder ausfüllen"
-- [KLICK 2] Aber: Button nicht fokussierbar, aria-describedby wird nicht vorgelesen bei disabled
-  - Hinweis zu generisch – welche Felder fehlen genau?
-  - Nutzende müssen selbst raten
-- Besser als vorher – aber immer noch keine gute UX
-- → Überleitung: Die richtige Lösung
+- Versuch: Hinweis per `aria-describedby`
+- Problem bleibt: disabled Button nicht fokussierbar → describedby wird nicht vorgelesen
+- Hinweis zu generisch – welche Felder fehlen genau?
+- → Überleitung: die richtige Lösung
 -->
 
 ---
@@ -209,15 +187,10 @@ clicks: 2
 <FormSubmitValidationDemo />
 
 <!--
-- Die richtige Lösung: Button NICHT deaktivieren!
-- [Initial] Button ist immer aktiv und fokussierbar
-- [KLICK 1] User klickt auf Submit – Validierung startet
-- [KLICK 2] Erstes ungültiges Feld wird fokussiert + rot markiert
-  - aria-invalid="true" kennzeichnet das Feld
-  - Fehlermeldung per aria-describedby verknüpft
-  - role="alert" → Screen Reader liest Fehler sofort vor
-- Einfache Verbesserung, riesiger Effekt für alle Nutzenden
-- → Überleitung: Dynamische Inhalte und Live Regions
+- Lösung: Button NIE deaktivieren – immer aktiv & fokussierbar
+- Bei Submit: erstes ungültiges Feld fokussieren + `aria-invalid`, Meldung per `aria-describedby`, `role="alert"`
+- Einfach umzusetzen, große Wirkung für alle
+- → Überleitung: dynamische Inhalte & Live Regions
 -->
 
 ---
@@ -233,8 +206,6 @@ class: text-center
 ]" />
 
 <!--
-- Demo: Alles zusammen in Aktion – Labels, Validierung, Fehlerbehandlung, Focus-Management
-- Silent Treatment: Formular-Fehler ohne Feedback
-- Name That Field: Fehlende Labels ergänzen
-- → Überleitung: Live Regions und dynamische Inhalte
+- Challenges: Formular-Fehler ohne Feedback; fehlende Labels ergänzen
+- → Überleitung: Live Regions & dynamische Inhalte
 -->

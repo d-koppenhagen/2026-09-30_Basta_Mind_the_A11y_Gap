@@ -33,14 +33,10 @@ layout: center
 </div>
 
 <!--
-- Kurze Vorstellung: Danny, Frontend Architect bei DB Systel
-- Arbeite an großen Web-Apps für die Deutsche Bahn
-- Leidenschaftlich dafür, das Web für alle zugänglich zu machen
+- Frontend Architect bei DB Systel, große Web-Apps für die DB
 - Gute Software = robust, skalierbar UND inklusiv
-- Hinweis: Alles heute ist framework-agnostisch – HTML/CSS/JS
-- Aber: Wer Blazor, Razor Pages oder ASP.NET nutzt → alles 1:1 relevant
-- Werde an passenden Stellen Blazor/.NET-Bezüge herstellen
-- → Überleitung: Erst kurz ein Projekt von mir vorstellen
+- Alles framework-agnostisch, aber 1:1 relevant für Blazor / ASP.NET
+- → Überleitung: kurz ein eigenes Projekt vorstellen
 -->
 
 ---
@@ -62,10 +58,9 @@ Eine gamifizierte Lernplattform für Web-Barrierefreiheit – interaktive Challe
 </div>
 
 <!--
-- Practica11y: Gamifizierte Lernplattform für Web-Barrierefreiheit
-- Interaktive Challenges direkt im Browser lösen
-- Ziel: WCAG praktisch verstehen statt nur Theorie lesen
-- Komplett clientseitig, kein Backend nötig
-- Einige Challenges davon werden wir heute in den Demos sehen
-- → Überleitung: Aber warum ist Barrierefreiheit überhaupt wichtig?
+- Ziel: WCAG praktisch üben statt nur Theorie
+- WCAG = Web Content Accessibility Guidelines
+- Komplett clientseitig, kein Backend
+- Einige Challenges kommen heute in den Demos vor
+- → Überleitung: Warum ist A11y überhaupt wichtig?
 -->
