@@ -18,60 +18,12 @@ layout: default
 
 # Focus Outlines: Niemals entfernen!
 
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-## ❌ Problem
-
-```css
-* {
-  outline: none;
-}
-
-
-button:focus {
-  outline: 0;
-}
-```
-
-**Ergebnis:**
-- Kein sichtbarer Focus-Indikator
-- Tastatur-Nutzende sind verloren
-- Wo bin ich auf der Seite?
-
-</div>
-
-<div>
-
-<v-click>
-
-## ✅ Lösung
-
-```css
-button:focus-visible { /* anpassen */
-  outline: 2px solid blue;
-  outline-offset: 2px;
-}
-
-button:focus-visible { /* Alternative */
-  box-shadow: 0 0 0 3px rgba(0, 30, 50, 0.5);
-}
-```
-
-**Vorteile:**
-- Klare Focus-Anzeige
-- Tastatur-Navigation möglich
-- `:focus-visible` nur bei Tastatur-Nutzung
-
-</v-click>
-
-</div>
-
-</div>
+<FocusOutlineDemo class="mt-3" />
 
 <!--
 - `outline: none` sieht man leider ständig – Todsünde
+- Live: einmal durchtabben – Button 1 verschwindet optisch, Button 2 & 3 zeigen klaren Ring
+- `:focus-visible` greift nur bei Tastatur, per Maus bleibt alles clean
 - `:focus-visible` = nur bei Tastatur-Fokus, nicht bei Mausklick (Design bleibt clean)
 - box-shadow als Alternative für mehr Design-Flexibilität
 - → Überleitung: Ausprobieren
