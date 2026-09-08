@@ -2,17 +2,18 @@
   <div class="image-with-source" :class="wrapperClass">
     <img v-bind="imgAttrs" :src="src" :alt="alt" />
     <a
-      v-if="source && isLink"
+      v-if="resolvedHref"
       class="image-source image-source-link"
-      :href="source"
+      :href="resolvedHref"
       target="_blank"
       rel="noopener noreferrer"
-      :title="source"
+      :title="resolvedTitle"
     >
-      {{ sourceLabel }}
+      <span v-if="resolvedLabel">{{ resolvedLabel }}</span>
+      <span v-if="showUrl" class="image-source-url">{{ displayUrl }}</span>
     </a>
-    <span v-else-if="source" class="image-source" :title="source">
-      {{ sourceLabel }}
+    <span v-else-if="resolvedLabel" class="image-source" :title="resolvedTitle">
+      {{ resolvedLabel }}
     </span>
   </div>
 </template>
@@ -29,16 +30,40 @@ const props = defineProps({
   source: { type: String, default: '' },
   // Optionales Label; fällt auf `source` zurück.
   sourceLabel: { type: String, default: '' },
+  // Optionale Ziel-URL. Wenn gesetzt, wird das Overlay zu einem Link
+  // (öffnet in neuem Tab). Ist `sourceHref` leer, aber `source` selbst eine
+  // URL, wird `source` als Ziel verwendet.
+  sourceHref: { type: String, default: '' },
+  // Ziel-URL zusätzlich zum Label sichtbar anzeigen (Default: true).
+  showUrl: { type: Boolean, default: true },
   // Optionale Klasse für den Wrapper (Positionierung/Layout).
   wrapperClass: { type: [String, Object, Array], default: '' },
 });
 
 const attrs = useAttrs();
 
-const sourceLabel = computed(() => props.sourceLabel || props.source);
+const isUrl = (value) => /^(https?:\/\/|\/\/|mailto:|\/)/i.test(value);
 
-// Quelle als Link rendern, wenn sie wie eine URL aussieht.
-const isLink = computed(() => /^(https?:\/\/|\/\/|mailto:|\/)/i.test(props.source));
+// Sichtbares Label (Text). Fällt von sourceLabel auf source zurück.
+const resolvedLabel = computed(() => props.sourceLabel || props.source);
+
+// Ziel-Link: bevorzugt sourceHref, sonst source (falls es eine URL ist).
+const resolvedHref = computed(() => {
+  if (props.sourceHref) return props.sourceHref;
+  if (props.source && isUrl(props.source)) return props.source;
+  return '';
+});
+
+// URL inklusive Schema anzeigen, nur ein evtl. trailing slash entfernen.
+const displayUrl = computed(() => resolvedHref.value.replace(/\/$/, ''));
+
+// URL nur zusätzlich zeigen, wenn sie sich vom Label unterscheidet.
+const showUrl = computed(
+  () => props.showUrl && !!resolvedHref.value && displayUrl.value !== resolvedLabel.value,
+);
+
+// Tooltip: die Ziel-URL, sonst das Label.
+const resolvedTitle = computed(() => resolvedHref.value || resolvedLabel.value);
 
 // Alle übrigen Attribute (class, title, aria-*, ...) auf das <img> durchreichen.
 const imgAttrs = computed(() => attrs);
@@ -76,11 +101,25 @@ const imgAttrs = computed(() => attrs);
 /* Klickbare Variante */
 .image-with-source a.image-source-link {
   pointer-events: auto;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
   color: rgba(255, 255, 255, 0.85);
   /* Theme-Link-Styles (dashed border + underline) neutralisieren */
   border: none;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Zusätzliche URL neben dem Label, dezent abgesetzt */
+.image-with-source a.image-source-link .image-source-url {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.image-with-source a.image-source-link .image-source-url::before {
+  content: '·';
+  margin-right: 4px;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .image-with-source a.image-source-link:hover,

@@ -293,7 +293,7 @@ layout: default
 </div>
 
 <div class="w-95% ml-5 text-right">
-  <ImageWithSource src="https://i.imgflip.com/ahxldt.jpg" alt="Meme: Button oder Link? – Die ewige Frage der Webentwicklung" source="https://i.imgflip.com/ahxldt.jpg" title="made at imgflip.com" class="mt--6 max-h-85"/>
+  <ImageWithSource src="https://i.imgflip.com/ahxldt.jpg" alt="Meme: Button oder Link? – Die ewige Frage der Webentwicklung" source="via Imgflip" source-href="https://imgflip.com/i/ahxldt" class="mt--6 max-h-85"/>
 </div>
 
 </div>
