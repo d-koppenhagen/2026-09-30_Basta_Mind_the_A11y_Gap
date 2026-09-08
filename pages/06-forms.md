@@ -101,10 +101,7 @@ layout: default
 </span>
 ```
 
-**Probleme:**
-- Nur visuelle Anzeige (Farbe)
-- Screen Reader weiß nicht, dass es ungültig ist
-- Fehlermeldung nicht verknüpft
+<InvalidFieldDemo variant="problem" />
 
 </div>
 
@@ -125,10 +122,7 @@ layout: default
 </span>
 ```
 
-**Vorteile:**
-- Screen Reader kündigt „ungültig" an
-- Fehlermeldung wird vorgelesen
-- Programmatische Verknüpfung
+<InvalidFieldDemo variant="solution" />
 
 </v-click>
 
