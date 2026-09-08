@@ -1,7 +1,5 @@
 ---
-layout: image
-image: /testing.jpg
-class: text-white
+layout: section
 ---
 
 # Testen & Tools {.!text-white}

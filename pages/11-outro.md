@@ -47,9 +47,9 @@ class: text-center
 <div class="mt-8 flex items-start justify-center gap-16">
   <div>
     <a href="https://github.com/d-koppenhagen/2026-09-30_Basta_Mind_the_A11y_Gap" target="_blank">
-      <img src="/qr-github.png" alt="QR-Code zum GitHub-Repository" class="w-56 h-56 border-4 border-color-white" />
+      <img src="/qr-1024.svg" alt="QR-Code zum GitHub-Repository" class="w-72 h-72" />
+      <div class="text-sm mt--2">Slides & Code</div>
     </a>
-    <p class="text-sm mt-2">Slides & Code</p>
   </div>
   <div class="text-left">
     <p class="text-lg font-bold">Danny Koppenhagen</p>
@@ -99,7 +99,7 @@ layout: default
 
 ## Dieser Talk
 
-- 📊 Slides: [github.com/d-koppenhagen/...](https://github.com/d-koppenhagen)
+- 📊 Slides: [github.com/d-koppenhagen/...](https://github.com/d-koppenhagen/2026-09-30_Basta_Mind_the_A11y_Gap)
 - 💬 Fragen? Sprecht mich an!
 
 </div>

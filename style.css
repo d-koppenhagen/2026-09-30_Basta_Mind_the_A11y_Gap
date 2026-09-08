@@ -238,3 +238,28 @@
   /* leichter Schatten, damit die weiße Wortmarke auf hellen Bildbereichen sichtbar bleibt */
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
 }
+
+/* ------------------------------------------------------------------ */
+/* Globales Link-Styling                                               */
+/*   Das DB-Systel-Theme gibt jedem Link im Slide-Content eine         */
+/*   gestrichelte Unterlinie (border-bottom: 1px dashed) PLUS eine     */
+/*   durchgezogene text-decoration: underline. Das sieht doppelt/      */
+/*   unruhig aus. Hier vereinheitlicht: im Ruhezustand keine Linie,    */
+/*   Unterstreichung nur bei :hover / :focus-visible. Barrierefrei     */
+/*   bleibt es durch den sichtbaren Fokus-Ring (:focus-visible).       */
+/*                                                                     */
+/*   Ausgenommen sind Links, die sich per Utility-Klasse bewusst       */
+/*   abmelden (.no-underline / !border-none) oder als Button/Icon      */
+/*   gestylt sind (.slidev-icon-btn).                                  */
+/* ------------------------------------------------------------------ */
+.slidev-layout a:not(.no-underline):not(.slidev-icon-btn) {
+  border-bottom: none;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.slidev-layout a:not(.no-underline):not(.slidev-icon-btn):hover,
+.slidev-layout a:not(.no-underline):not(.slidev-icon-btn):focus-visible {
+  border-bottom: none;
+  text-decoration: underline;
+}
