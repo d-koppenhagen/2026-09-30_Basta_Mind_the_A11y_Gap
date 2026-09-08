@@ -560,16 +560,6 @@ const step = computed(() => Math.min($clicks.value, 4));
   position: relative;
 }
 
-.sr-bubble::before {
-  content: '';
-  position: absolute;
-  left: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 5px solid transparent;
-  border-right-color: rgba(249, 115, 22, 0.3);
-}
-
 .sr-text {
   font-size: 0.72rem;
   font-weight: 600;

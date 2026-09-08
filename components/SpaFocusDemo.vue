@@ -537,7 +537,7 @@ const displayUrl = computed(() => {
 
 .explanation-step ul {
   margin: 6px 0;
-  padding-left: 16px;
+  padding-left: 0;
   font-size: 0.75rem;
   color: var(--k9n-text-secondary, #334155);
   line-height: 1.6;

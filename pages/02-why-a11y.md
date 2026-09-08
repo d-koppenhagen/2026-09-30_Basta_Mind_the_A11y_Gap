@@ -89,7 +89,7 @@ layout: default
 
 <div class="absolute right-0 top-0 h-full">
   <img src="/ux_fail.jpeg" alt="Verwirrendes Aufzugpanel in einem Hotel: Zwischen zwei Aufzügen sind die Ruftasten rechts am linken Aufzug montiert – unklar welchen Aufzug sie rufen" class="h-full object-cover rounded-l shadow" />
-  <div class="absolute top-10 right-8 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
+  <div class="absolute top-10 right-42 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
     Wo muss ich drücken? 🤔
   </div>
 </div>

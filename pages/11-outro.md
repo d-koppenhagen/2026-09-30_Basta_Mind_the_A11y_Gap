@@ -53,8 +53,11 @@ class: text-center
   </div>
   <div class="text-left">
     <p class="text-lg font-bold">Danny Koppenhagen</p>
-    <p class="opacity-80">Frontend Architect @ DB Systel GmbH</p>
-    <div class="flex flex-col gap-2 mt-4">
+    <p class="opacity-80">
+      Frontend Architect @ DB Systel GmbH<br>
+      <a href="mailto:Danny.Koppenhagen@deutschebahn.com" class="text-xs pt-5">Danny.Koppenhagen@deutschebahn.com</a>
+    </p>
+    <div class="flex flex-col gap-2 mt-8">
       <a href="https://k9n.dev" target="_blank" class="flex items-center gap-2 !border-none no-underline">
         <carbon-earth /> k9n.dev
       </a>
