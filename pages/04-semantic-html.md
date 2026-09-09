@@ -126,7 +126,7 @@ layout: default
 
 # Skip Links
 
-<div class="grid grid-cols-[2fr_3fr] gap-4 pb-4">
+<div class="grid grid-cols-2 gap-4 pb-4">
 
 <div>
 
@@ -148,7 +148,7 @@ layout: default
 <div>
 
 ```css
-.skip-link:not(:focus):not(:active):not(:focus-within) {
+.skip-link:not(:focus, :active, :focus-within) {
   width: 1px;
   height: 1px;
   padding: 0;
