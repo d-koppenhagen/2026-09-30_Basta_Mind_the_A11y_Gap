@@ -5,7 +5,7 @@
       :key="challenge.slug"
       :href="getUrl(challenge.slug)"
       target="_blank"
-      :class="['challenge-tile', { highlighted: challenge.highlighted }]"
+      :class="['challenge-tile', 'no-underline', { highlighted: challenge.highlighted }]"
     >
       <span class="challenge-icon">🎮</span>
       <span class="challenge-title">{{ challenge.title }}</span>
@@ -72,7 +72,7 @@ function getUrl(slug) {
   transform: scale(1.05);
 }
 
-:global(.dark) .challenge-tile.highlighted {
+:global(.dark .challenge-tile.highlighted) {
   background: rgba(250, 204, 21, 0.12);
   border-color: rgba(250, 204, 21, 0.5);
   box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2), 0 4px 12px rgba(250, 204, 21, 0.15);

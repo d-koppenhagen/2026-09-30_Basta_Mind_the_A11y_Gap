@@ -233,14 +233,14 @@ const currentStep = computed(() => {
 }
 
 .active-btn {
-  background: #3b82f6;
+  background: #2563eb;
   color: #fff;
   cursor: pointer;
 }
 
 .active-btn.clicking {
   transform: scale(0.95);
-  background: #2563eb;
+  background: #1d4ed8;
 }
 
 .click-ripple {

@@ -40,7 +40,7 @@
           <span class="panel-icon">📄</span> DOM
         </div>
         <div class="code-content">
-          <pre><code><span class="tag">&lt;button</span> <span v-if="step >= 1" class="aria-attr">role="button"<span class="implicit-badge">implizit</span></span><span v-if="step >= 1" class="aria-attr">aria-pressed="false"</span><span class="tag">&gt;</span>
+          <pre><code><span class="tag">&lt;button</span><span v-if="step >= 1" class="aria-attr"> role="button"<span class="implicit-badge">implizit</span></span><span v-if="step >= 1" class="aria-attr">aria-pressed="false"</span><span class="tag">&gt;</span>
   Speichern
 <span class="tag">&lt;/button&gt;</span></code></pre>
         </div>
@@ -351,8 +351,8 @@ const step = computed(() => Math.min($clicks.value, 4));
   color: var(--k9n-text-primary);
 }
 
-.tag { color: #2563eb; }
-:global(.dark) .tag { color: #7dd3fc; }
+.tag { color: #1d4ed8; }
+:global(.dark .tag) { color: #7dd3fc; }
 
 .aria-attr {
   display: inline;
@@ -361,7 +361,7 @@ const step = computed(() => Math.min($clicks.value, 4));
   position: relative;
   margin: 0 2px;
 }
-:global(.dark) .aria-attr { color: #86efac; }
+:global(.dark .aria-attr) { color: #86efac; }
 
 .implicit-badge {
   font-size: 0.5rem;
@@ -372,7 +372,7 @@ const step = computed(() => Math.min($clicks.value, 4));
   margin-left: 4px;
   vertical-align: middle;
 }
-:global(.dark) .implicit-badge { color: #6ee7b7; }
+:global(.dark .implicit-badge) { color: #6ee7b7; }
 
 @keyframes highlight-in {
   from { opacity: 0; background: rgba(16, 185, 129, 0.2); }
@@ -401,7 +401,7 @@ const step = computed(() => Math.min($clicks.value, 4));
 }
 
 .transform-label.at-label { color: #c2410c; }
-:global(.dark) .transform-label.at-label { color: #fdba74; }
+:global(.dark .transform-label.at-label) { color: #fdba74; }
 
 .transform-icon {
   font-size: 1.2rem;
@@ -445,13 +445,13 @@ const step = computed(() => Math.min($clicks.value, 4));
   color: #7c3aed;
   font-family: monospace;
 }
-:global(.dark) .node-role { color: #c084fc; }
+:global(.dark .node-role) { color: #c084fc; }
 
 .node-name {
   font-size: 0.68rem;
   color: #1d4ed8;
 }
-:global(.dark) .node-name { color: #a5d6ff; }
+:global(.dark .node-name) { color: #a5d6ff; }
 
 .tree-props {
   padding-left: 16px;
@@ -471,7 +471,7 @@ const step = computed(() => Math.min($clicks.value, 4));
   color: #b45309;
   font-weight: 600;
 }
-:global(.dark) .prop-key { color: #fbbf24; }
+:global(.dark .prop-key) { color: #fbbf24; }
 
 /* Platform API content */
 .platform-content {
@@ -497,7 +497,7 @@ const step = computed(() => Math.min($clicks.value, 4));
   color: #0e7490;
   min-width: 55px;
 }
-:global(.dark) .platform-os { color: #67e8f9; }
+:global(.dark .platform-os) { color: #67e8f9; }
 
 .platform-api {
   font-size: 0.6rem;
@@ -566,7 +566,7 @@ const step = computed(() => Math.min($clicks.value, 4));
   color: #c2410c;
   font-style: italic;
 }
-:global(.dark) .sr-text { color: #fdba74; }
+:global(.dark .sr-text) { color: #fdba74; }
 
 .sr-actions {
   display: flex;
@@ -584,7 +584,7 @@ const step = computed(() => Math.min($clicks.value, 4));
   color: #c2410c;
   font-size: 0.58rem;
 }
-:global(.dark) .at-type { color: #fdba74; }
+:global(.dark .at-type) { color: #fdba74; }
 
 /* Transitions */
 .fade-enter-active {
