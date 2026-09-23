@@ -65,17 +65,28 @@ function getUrl(slug) {
   text-decoration: none;
 }
 
+.challenge-tile:visited {
+  color: black;
+}
+
+:global(.dark .challenge-tile:visited) {
+  color: white;
+}
+
+
 .challenge-tile.highlighted {
   background: rgba(234, 179, 8, 0.15);
   border-color: rgba(234, 179, 8, 0.6);
   box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.25), 0 4px 12px rgba(234, 179, 8, 0.2);
   transform: scale(1.05);
+  color: black;
 }
 
 :global(.dark .challenge-tile.highlighted) {
   background: rgba(250, 204, 21, 0.12);
   border-color: rgba(250, 204, 21, 0.5);
   box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2), 0 4px 12px rgba(250, 204, 21, 0.15);
+  color: white;
 }
 
 .challenge-icon {

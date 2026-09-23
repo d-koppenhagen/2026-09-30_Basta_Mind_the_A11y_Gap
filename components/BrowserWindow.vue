@@ -92,7 +92,7 @@ defineProps({
   padding: 4px 12px;
   background: #1a1a1a;
   border-radius: 4px 4px 0 0;
-  color: #777;
+  color: #8a8a8a;
   font-size: 0.68rem;
   max-width: 150px;
   min-width: 0;

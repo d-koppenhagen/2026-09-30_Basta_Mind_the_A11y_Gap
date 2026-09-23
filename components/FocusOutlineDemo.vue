@@ -117,9 +117,13 @@ function onBlur(key) {
   --danger: var(--db-red-500, #dc2626);
   --danger-soft: color-mix(in srgb, var(--danger) 12%, transparent);
   --danger-border: color-mix(in srgb, var(--danger) 35%, transparent);
+  /* Hellere Text-Variante: DB-Rot/-Grün liegen als Text auf dunklem Grund
+     knapp unter AA (4.1:1). Diese Werte erreichen >= 4.5:1 fuer Label-Text. */
+  --danger-text: #ff6b6b;
   --success: var(--db-green-500, #16a34a);
   --success-soft: color-mix(in srgb, var(--success) 12%, transparent);
   --success-border: color-mix(in srgb, var(--success) 35%, transparent);
+  --success-text: #5cae4d;
   /* Button-Farbe: DB-Theme = Lilac (Design-Token, dunkler Ton für
      ausreichenden Kontrast zu weißem Text), sonst k9n-Accent / Blau. */
   --primary: var(--db-lilac-600, var(--k9n-accent, #3b82f6));
@@ -196,12 +200,12 @@ function onBlur(key) {
 
 .card-badge.danger {
   background: var(--danger-soft);
-  color: var(--danger);
+  color: var(--danger-text);
 }
 
 .card-badge.ok {
   background: var(--success-soft);
-  color: var(--success);
+  color: var(--success-text);
 }
 
 /* Basis-Button */
@@ -280,16 +284,16 @@ function onBlur(key) {
   border-radius: 5px;
 }
 
-.focus-pointer.danger .pointer-arrow { color: var(--danger); }
+.focus-pointer.danger .pointer-arrow { color: var(--danger-text); }
 .focus-pointer.danger .pointer-label {
-  color: var(--danger);
+  color: var(--danger-text);
   background: var(--danger-soft);
   border: 1px solid var(--danger-border);
 }
 
-.focus-pointer.ok .pointer-arrow { color: var(--success); }
+.focus-pointer.ok .pointer-arrow { color: var(--success-text); }
 .focus-pointer.ok .pointer-label {
-  color: var(--success);
+  color: var(--success-text);
   background: var(--success-soft);
   border: 1px solid var(--success-border);
 }

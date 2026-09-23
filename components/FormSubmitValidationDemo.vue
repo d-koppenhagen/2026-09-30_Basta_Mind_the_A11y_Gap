@@ -134,7 +134,7 @@ const currentStep = computed(() => {
 }
 
 .required {
-  color: #ef4444;
+  color: #f87171;
 }
 
 .fake-input {
@@ -158,7 +158,7 @@ const currentStep = computed(() => {
 }
 
 .placeholder-text {
-  color: #4a5568;
+  color: #8792a8;
   font-style: italic;
 }
 

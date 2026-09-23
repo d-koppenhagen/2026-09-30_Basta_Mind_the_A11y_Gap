@@ -118,7 +118,7 @@ const currentStep = computed(() => {
 }
 
 .required {
-  color: #ef4444;
+  color: #f87171;
 }
 
 .fake-input {
@@ -141,7 +141,7 @@ const currentStep = computed(() => {
 }
 
 .placeholder-text {
-  color: #4a5568;
+  color: #8792a8;
   font-style: italic;
 }
 
@@ -199,7 +199,7 @@ const currentStep = computed(() => {
   right: -30px;
   font-size: 0.65rem;
   font-weight: 600;
-  color: #ef4444;
+  color: #f87171;
   background: rgba(239, 68, 68, 0.15);
   padding: 2px 6px;
   border-radius: 3px;
@@ -278,12 +278,12 @@ const currentStep = computed(() => {
 
 .step-badge.danger {
   background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
+  color: #f87171;
 }
 
 .takeaway {
   font-weight: 600;
-  color: #ef4444 !important;
+  color: #f87171 !important;
   margin-top: 10px !important;
 }
 

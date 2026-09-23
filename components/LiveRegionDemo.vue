@@ -330,8 +330,10 @@ onUnmounted(() => {
 }
 
 .chat-header {
-  background: var(--k9n-accent);
-  color: var(--k9n-text-on-accent);
+  /* Darkened from theme accent so white text meets AA (6.34:1 vs #c2001f).
+     The raw --k9n-accent (#ff002b in the DB theme) only reaches 3.97:1. */
+  background: #c2001f;
+  color: #ffffff;
   padding: 5px 10px;
   font-size: 0.65rem;
   font-weight: 600;

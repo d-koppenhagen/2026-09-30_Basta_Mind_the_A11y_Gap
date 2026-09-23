@@ -280,7 +280,7 @@ const displayUrl = computed(() => {
   right: 10px;
   font-size: 0.65rem;
   font-weight: 600;
-  color: #a855f7;
+  color: #c084fc;
   background: rgba(168, 85, 247, 0.15);
   padding: 2px 8px;
   border-radius: 4px;
@@ -434,7 +434,7 @@ const displayUrl = computed(() => {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 4px;
   padding: 5px 9px;
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.74rem;
   height: 26px;
   display: flex;
@@ -483,13 +483,13 @@ const displayUrl = computed(() => {
 .submit-btn {
   margin-top: 8px;
   padding: 5px 14px;
-  background: #3b82f6;
+  background: #2563eb;
   color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 0.74rem;
   cursor: default;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 /* Transition */
@@ -580,17 +580,17 @@ const displayUrl = computed(() => {
 
 .step-badge.danger {
   background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
+  color: #f87171;
 }
 
 .step-badge.swap-badge {
   background: rgba(168, 85, 247, 0.15);
-  color: #a855f7;
+  color: #c084fc;
 }
 
 .takeaway {
   font-weight: 600;
-  color: #ef4444 !important;
+  color: #f87171 !important;
   margin-top: 10px !important;
 }
 

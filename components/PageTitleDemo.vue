@@ -115,7 +115,7 @@ h1.page-headline {
 }
 
 .code-comment {
-  color: #64748b;
+  color: #8b99ac;
   font-style: italic;
 }
 

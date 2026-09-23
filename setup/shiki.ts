@@ -2,19 +2,27 @@ import { defineShikiSetup } from '@slidev/types'
 import vitesseDark from '@shikijs/themes/vitesse-dark'
 
 /**
- * Accessible dark token overrides, appended to vitesse-dark.
- * The default vitesse-dark has several tokens failing WCAG AA (4.5:1)
- * on the rendered code background (#262c38). Later tokenColors win in
- * TextMate, so these entries override the base theme while all other
- * (already passing) colors are preserved.
+ * Project-level Shiki setup with accessible token colors.
+ *
+ * A project-root setup/shiki.ts takes precedence over any theme's shiki
+ * setup, so this applies for BOTH `pnpm dev` (theme k9n) and
+ * `pnpm dev:db` (theme @db-tt-web/slidev-theme-dbsystel).
+ *
+ * The stock vitesse-light and vitesse-dark themes have several syntax
+ * tokens that fail WCAG AA (4.5:1) on the rendered code background
+ * (dark: #262c38, light: #f4f2f9). These overrides lift the failing
+ * tokens to >= 4.5:1 while keeping the vitesse look.
  */
+
+// Dark: appended to vitesse-dark; later tokenColors win for the same scope,
+// so all other (already passing) colors are preserved.
 const darkA11yOverrides = [
-  // Comments: #758575dd (3.58:1) → #95a595 (5.40:1)
+  // Comments: #758575dd (3.58:1) -> #95a595 (5.40:1)
   {
     scope: ['comment', 'punctuation.definition.comment', 'string.comment'],
     settings: { foreground: '#95a595' },
   },
-  // Punctuation / brackets / operators: #666666 (2.44:1) → #9a9a9a (4.98:1)
+  // Punctuation / brackets / operators: #666666 (2.44:1) -> #9a9a9a (4.98:1)
   // Covers every scope vitesse-dark colours with #666666.
   {
     scope: [
@@ -40,7 +48,7 @@ const darkA11yOverrides = [
     ],
     settings: { foreground: '#9a9a9a' },
   },
-  // Tags / keywords / booleans: #4d9375 (3.83:1) → #6bbf98 (6.35:1)
+  // Tags / keywords / booleans: #4d9375 (3.83:1) -> #6bbf98 (6.35:1)
   {
     scope: [
       'entity.name.tag',
@@ -54,12 +62,12 @@ const darkA11yOverrides = [
     ],
     settings: { foreground: '#6bbf98' },
   },
-  // Numerics / units: #4C9A91 (4.23:1) → #5cb8ae (5.95:1)
+  // Numerics / units: #4C9A91 (4.23:1) -> #5cb8ae (5.95:1)
   {
     scope: ['constant.numeric', 'number', 'keyword.other.unit'],
     settings: { foreground: '#5cb8ae' },
   },
-  // Faint string-quote punctuation: #c98a7d77 (2.17:1) → #c98a7d (4.94:1)
+  // Faint string-quote punctuation: #c98a7d77 (2.17:1) -> #c98a7d (4.94:1)
   {
     scope: [
       'punctuation.definition.string',
@@ -69,7 +77,7 @@ const darkA11yOverrides = [
     ],
     settings: { foreground: '#c98a7d' },
   },
-  // Keyword operators / storage: #cb7676 (4.26:1) → #d98a8a (5.30:1)
+  // Keyword operators / storage: #cb7676 (4.26:1) -> #d98a8a (5.30:1)
   {
     scope: [
       'keyword.operator',
@@ -82,12 +90,6 @@ const darkA11yOverrides = [
   },
 ]
 
-/**
- * Custom Shiki setup with accessible token colors.
- * Both the default vitesse-light and vitesse-dark themes have several token
- * colors that fail WCAG AA (4.5:1) on the theme's code background.
- * These overrides ensure all syntax tokens meet at least 4.5:1 contrast ratio.
- */
 export default defineShikiSetup(() => {
   return {
     themes: {
@@ -107,12 +109,12 @@ export default defineShikiSetup(() => {
           'editor.foreground': '#393a34',
         },
         tokenColors: [
-          // Comments: #a0ada0 → #5a6d5a (5.02:1)
+          // Comments: #a0ada0 -> #5a6d5a (5.02:1)
           {
             scope: ['comment', 'punctuation.definition.comment', 'string.comment'],
             settings: { foreground: '#5a6d5a' },
           },
-          // Punctuation/Closing tags: #999999 → #6e6e6e (4.59:1)
+          // Punctuation/Closing tags: #999999 -> #6e6e6e (4.59:1)
           {
             scope: [
               'punctuation',
@@ -123,7 +125,7 @@ export default defineShikiSetup(() => {
             ],
             settings: { foreground: '#6e6e6e' },
           },
-          // Attributes: #b07d48 → #8b5e2b (5.07:1)
+          // Attributes: #b07d48 -> #8b5e2b (5.07:1)
           {
             scope: [
               'entity.other.attribute-name',
@@ -133,7 +135,7 @@ export default defineShikiSetup(() => {
             ],
             settings: { foreground: '#8b5e2b' },
           },
-          // Keywords/CSS properties: #998418 → #7a6600 (5.07:1)
+          // Keywords/CSS properties: #998418 -> #7a6600 (5.07:1)
           {
             scope: [
               'keyword',
@@ -145,7 +147,7 @@ export default defineShikiSetup(() => {
             ],
             settings: { foreground: '#7a6600' },
           },
-          // Strings: #b5695a → #9b4a3a (5.51:1)
+          // Strings: #b5695a -> #9b4a3a (5.51:1)
           {
             scope: [
               'string',
@@ -154,7 +156,7 @@ export default defineShikiSetup(() => {
             ],
             settings: { foreground: '#9b4a3a' },
           },
-          // Functions: #59873a → #3d7525 (5.02:1)
+          // Functions: #59873a -> #3d7525 (5.02:1)
           {
             scope: [
               'entity.name.function',
@@ -163,7 +165,7 @@ export default defineShikiSetup(() => {
             ],
             settings: { foreground: '#3d7525' },
           },
-          // Units/Numeric: #ab5959 → #9b3a3a (6.18:1)
+          // Units/Numeric: #ab5959 -> #9b3a3a (6.18:1)
           {
             scope: [
               'constant.numeric',
