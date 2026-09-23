@@ -137,5 +137,6 @@ defineProps({
 .browser-body {
   background: #1e1e2e;
   overflow: hidden;
+  --db-fg: white;
 }
 </style>
