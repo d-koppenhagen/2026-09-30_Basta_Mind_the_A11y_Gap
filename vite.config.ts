@@ -1,11 +1,11 @@
 // TEMPORARY: everything DB-theme-specific in this file exists only because the
-// theme is currently wired in via `link:` (a symlink outside node_modules),
-// whose public/ assets Slidev/Vite neither serve nor copy automatically.
-// Once the theme is installed as a published version from the corporate
-// Artifactory, its assets are handled by the standard Slidev/Vite flow. Then
-// remove: the `serveLinkedThemePublic` plugin, the `hasDbTheme` block, the
-// `public/db` entry in .gitignore, and switch the link: dependency to the
-// real version.
+// theme is vendored as a local tarball (dependency -> file:vendor/…tgz)
+// so it can be bundled/committed to GitHub. Slidev/Vite do not serve or copy a
+// theme's public/ assets automatically. Once the theme is installed as a
+// published version from the corporate Artifactory, its assets are handled by
+// the standard Slidev/Vite flow. Then remove: the `serveLinkedThemePublic`
+// plugin, the `hasDbTheme` block, the `public/db` entry in .gitignore, the
+// vendored tarball, and switch the file: dependency to the real version.
 import {
   cpSync,
   createReadStream,
@@ -16,13 +16,23 @@ import { extname, join, normalize, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Plugin } from 'vite'
 
-// Root of the locally linked theme (link:../../tt-web/slidev-theme-db-systel).
-const themeRoot = fileURLToPath(
-  new URL('../../tt-web/slidev-theme-db-systel', import.meta.url),
-)
+// Root of the DB theme as installed into node_modules from the vendored
+// tarball. This resolves both locally and on GitHub CI (the tarball is
+// committed under vendor/), unlike the previous external link: path.
+let themeRoot = ''
+try {
+  themeRoot = fileURLToPath(
+    new URL(
+      './node_modules/@db-tt-web/slidev-theme-dbsystel/',
+      import.meta.url,
+    ),
+  )
+}
+catch {
+  themeRoot = ''
+}
 // The theme's public/ directory. Slidev does not automatically serve public/
-// assets from themes linked via `link:`, so we forward those requests here
-// ourselves.
+// assets from a theme, so we forward those requests here ourselves.
 const themePublicDir = join(themeRoot, 'public')
 
 const MIME: Record<string, string> = {
@@ -81,10 +91,10 @@ function serveLinkedThemePublic(): Plugin {
   }
 }
 
-// Is the locally linked DB theme present at all? Outside the corporate network
-// (e.g. on GitHub) the link: path does not exist – in that case the k9n theme
-// is used and the DB-specific Vite configuration is skipped.
-const hasDbTheme = existsSync(themeRoot)
+// Is the DB theme installed (from the vendored tarball) at all? When building
+// without it (default k9n theme, e.g. `build`/`dev`) the DB-specific Vite
+// configuration is skipped.
+const hasDbTheme = themeRoot !== '' && existsSync(themeRoot)
 
 export default {
   server: {

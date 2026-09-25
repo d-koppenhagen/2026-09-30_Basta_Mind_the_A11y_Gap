@@ -1,5 +1,5 @@
 ---
-theme: ./slidev-theme-k9n
+theme: '@db-tt-web/slidev-theme-dbsystel'
 title: Mind the A11y Gap - Die häufigsten Fallstricke bei der Umsetzung barrierefreier Webanwendungen
 titleTemplate: '%s | DB Systel GmbH'
 colorSchema: both

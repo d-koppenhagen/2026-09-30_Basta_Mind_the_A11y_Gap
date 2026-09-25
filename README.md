@@ -21,59 +21,11 @@ Erkunde eine Vielzahl interaktiver Demos und Challenges in Practica11y:
 
 ```bash
 pnpm install
-pnpm run dev
+pnpm run dev    # Dev-Server
+pnpm run build  # Build
+pnpm run export # PDF-Export
+pnpm run start  # Dev-Server + Demos + KeyCastr mit DB-Theme
 ```
-
-## 🎨 Themes
-
-Die Präsentation nutzt standardmäßig das lokale Theme `slidev-theme-k9n`. Dieses
-ist immer verfügbar und wird auch beim Build für GitHub Pages sowie beim
-Veröffentlichen verwendet.
-
-Für doe DB branded slides kann das Theme `@db-tt-web/slidev-theme-dbsystel`
-genutzt werden. Es ist als `optionalDependency` eingebunden.
-
-Um mit dem DB-Theme zu arbeiten, gibt es eigene Scripts (Suffix `:db`), die das
-Theme per `--theme`-Flag überschreiben:
-
-```bash
-pnpm run dev:db      # Dev-Server mit DB-Theme
-pnpm run build:db    # Build mit DB-Theme
-pnpm run export:db   # PDF-Export mit DB-Theme
-pnpm run start:db    # Dev-Server + Demos + KeyCastr mit DB-Theme
-```
-
-### DB-Theme (lokaler Link)
-
-> **Hinweis:** Dieser Abschnitt ist nur relevant, wenn du das DB-Theme lokal
-> vorliegen hast. Externe Nutzer können ihn ignorieren – für sie wird das Theme
-> beim `pnpm install` automatisch übersprungen (es ist eine `optionalDependency`).
-
-Das Theme `@db-tt-web/slidev-theme-dbsystel` wird **nicht** ins Repo eingecheckt
-und **nicht** aus einer Registry installiert. Stattdessen wird es per lokalem
-`link:` aus einem benachbarten Verzeichnis eingebunden:
-
-```json
-"optionalDependencies": {
-  "@db-tt-web/slidev-theme-dbsystel": "link:../../tt-web/slidev-theme-db-systel"
-}
-```
-
-So gelangt weder eine interne Registry-URL noch interner Theme-Code ins
-(öffentliche) Repo. Das Lockfile enthält lediglich die `link:`-Referenz.
-
-**Voraussetzung:** Der Theme-Ordner muss relativ zu diesem Repo unter
-`../../tt-web/slidev-theme-db-systel` liegen. Ist das der Fall, reicht ein
-normaler Install:
-
-```bash
-pnpm install
-pnpm run dev:db
-```
-
-Liegt der Ordner nicht dort, wird das Theme beim Install übersprungen und die
-`:db`-Scripts funktionieren nicht – die Standard-Scripts (mit `slidev-theme-k9n`)
-laufen aber weiterhin.
 
 > **Falls `pnpm install` mit einem Supply-Chain-Policy-Fehler abbricht**
 > (kann nach einem Wechsel der Theme-Quelle passieren, weil ein veralteter

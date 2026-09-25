@@ -5,8 +5,7 @@ import vitesseDark from '@shikijs/themes/vitesse-dark'
  * Project-level Shiki setup with accessible token colors.
  *
  * A project-root setup/shiki.ts takes precedence over any theme's shiki
- * setup, so this applies for BOTH `pnpm dev` (theme k9n) and
- * `pnpm dev:db` (theme @db-tt-web/slidev-theme-dbsystel).
+ * setup
  *
  * The stock vitesse-light and vitesse-dark themes have several syntax
  * tokens that fail WCAG AA (4.5:1) on the rendered code background
