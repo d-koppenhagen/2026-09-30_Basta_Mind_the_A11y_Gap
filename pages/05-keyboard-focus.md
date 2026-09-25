@@ -14,17 +14,22 @@ Die App ohne Maus benutzbar machen
 
 ---
 layout: default
+clicks: 3
 ---
 
 # Focus Outlines: Niemals entfernen!
 
 <FocusOutlineDemo class="mt-3" />
 
+<div class="mt-5">
+
+`:focus-visible` zeigt den Ring nur bei Tastatur-Fokus &ndash; per Maus bleibt das Design clean.
+
+</div>
+
 <!--
 - `outline: none` sieht man leider ständig – Todsünde
-- Live: einmal durchtabben – Button 1 verschwindet optisch, Button 2 & 3 zeigen klaren Ring
-- `:focus-visible` greift nur bei Tastatur, per Maus bleibt alles clean
-- `:focus-visible` = nur bei Tastatur-Fokus, nicht bei Mausklick (Design bleibt clean)
+- Buttons nacheinander durchgehen: Button 1 verschwindet optisch, Button 2 & 3 zeigen klaren Ring
 - box-shadow als Alternative für mehr Design-Flexibilität
 - → Überleitung: Ausprobieren
 -->

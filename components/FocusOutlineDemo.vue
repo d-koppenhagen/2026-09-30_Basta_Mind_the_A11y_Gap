@@ -1,21 +1,20 @@
 <template>
   <div class="focus-outline-demo">
-    <p class="demo-hint">
-      <kbd>Tab</kbd> drücken und die drei Buttons durchsteppen &ndash; auf den Focus-Ring achten
-    </p>
-
     <div class="button-row">
       <!-- ❌ Kein Outline -->
       <div class="demo-card bad" :class="{ 'is-focused': focused === 'none' }">
         <div class="card-badge danger">❌ outline: none</div>
         <button
           class="demo-btn btn-none"
-          @focus="focused = 'none'"
+          :class="{ 'show-focus': focused === 'none' }"
+          @focus="keyboardFocus = 'none'"
           @blur="onBlur('none')"
         >
           Button
         </button>
-        <code class="card-code">outline: none;</code>
+        <pre class="card-code">button<span class="fv">:focus-visible</span> {
+  outline: none;
+}</pre>
         <span class="card-note">Kein sichtbarer Focus</span>
 
         <!-- Pfeil von unten auf die Box mit fokussiertem Button -->
@@ -34,12 +33,16 @@
         <div class="card-badge ok">✅ outline</div>
         <button
           class="demo-btn btn-outline"
-          @focus="focused = 'outline'"
+          :class="{ 'show-focus': focused === 'outline' }"
+          @focus="keyboardFocus = 'outline'"
           @blur="onBlur('outline')"
         >
           Button
         </button>
-        <code class="card-code">outline: 2px solid;<br />outline-offset: 2px;</code>
+        <pre class="card-code">button<span class="fv">:focus-visible</span> {
+  outline: 2px solid;
+  outline-offset: 2px;
+}</pre>
         <span class="card-note">Klarer Focus-Ring</span>
 
         <Transition name="pointer-fade">
@@ -57,12 +60,17 @@
         <div class="card-badge ok">✅ box-shadow</div>
         <button
           class="demo-btn btn-shadow"
-          @focus="focused = 'shadow'"
+          :class="{ 'show-focus': focused === 'shadow' }"
+          @focus="keyboardFocus = 'shadow'"
           @blur="onBlur('shadow')"
         >
           Button
         </button>
-        <code class="card-code">box-shadow: 0 0 0 3px<br />rgba(59,130,246,.5);</code>
+        <pre class="card-code">button<span class="fv">:focus-visible</span> {
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 5px #7c6fce;
+}</pre>
         <span class="card-note">Design-flexibel</span>
 
         <Transition name="pointer-fade">
@@ -79,14 +87,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useNav } from '@slidev/client';
 
-// Welcher Button ist gerade fokussiert? 'none' | 'outline' | 'shadow' | null
-const focused = ref(null);
+// Klick-Steuerung: mit dem Clicker durch die drei Zustaende steppen.
+// clicks 0 = nichts, 1 = none, 2 = outline, 3 = shadow
+const { clicks } = useNav();
+const steps = ['none', 'outline', 'shadow'];
+const clickedFocus = computed(() => steps[clicks.value - 1] ?? null);
 
-// Nur zurücksetzen, wenn der Fokus wirklich diese Card verlassen hat
+// Echter Tastatur-Fokus (Fallback, falls doch getabbt wird)
+const keyboardFocus = ref(null);
+
+// Klick-Steuerung hat Vorrang; sonst der echte Fokus
+const focused = computed(() => clickedFocus.value ?? keyboardFocus.value);
+
+// Nur zuruecksetzen, wenn der Fokus wirklich diese Card verlassen hat
 function onBlur(key) {
-  if (focused.value === key) focused.value = null;
+  if (keyboardFocus.value === key) keyboardFocus.value = null;
 }
 </script>
 
@@ -127,23 +145,33 @@ function onBlur(key) {
   /* Button-Farbe: DB-Theme = Lilac (Design-Token, dunkler Ton für
      ausreichenden Kontrast zu weißem Text), sonst k9n-Accent / Blau. */
   --primary: var(--db-lilac-600, var(--k9n-accent, #3b82f6));
+
+  /* Akzentfarbe fuer :focus-visible IM Code-Snippet.
+     Anders als --primary steht diese Farbe als Text auf dem Code-Hintergrund,
+     nicht als weisser Text auf lila Button. Deshalb ein separater Wert:
+     Light-Mode nutzt Lilac-600 (Kontrast ~5.8:1 auf hellem Code-BG),
+     Dark-Mode wird unten via .dark auf Lilac-200 hochgezogen (~5.8:1 auf
+     dunklem Code-BG). Beide erfuellen WCAG AA (>= 4.5:1). */
+  --fv-color: var(--db-lilac-600, var(--k9n-accent, #3b82f6));
+
+  /* Farbe des box-shadow-Focus-Rings der dritten Karte.
+     --primary (Lilac-600) ist zu dunkel und sitzt direkt auf dem lila
+     Button -> kaum sichtbar. Deshalb ein kraeftigerer, mittlerer Ton mit
+     voller Deckkraft. Dark-Mode wird unten aufgehellt. */
+  --ring-color: var(--db-lilac-400, var(--k9n-accent, #3b82f6));
+  /* Gap-Farbe zwischen Button und Ring = Kartenhintergrund, damit sich der
+     Ring klar vom Button absetzt (Button | Luecke | Ring). */
+  --ring-gap: var(--surface);
 }
 
-.demo-hint {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--fg-muted);
-  text-align: center;
-}
-
-.demo-hint kbd {
-  background: var(--code-bg);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  padding: 2px 9px;
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.88rem;
-  color: var(--fg);
+/* Dark-Mode: hellere Lilac-Toene fuer :focus-visible-Text UND Focus-Ring,
+   damit beide auf dem dunklen Hintergrund gut erkennbar sind.
+   Der Selektor muss auf .focus-outline-demo selbst zielen (gleiche
+   Spezifitaet wie die Basis-Definition oben), sonst gewinnt die lokale
+   Regel gegen eine nur auf html gesetzte Variable. */
+html.dark .focus-outline-demo {
+  --fv-color: var(--db-lilac-200, var(--k9n-accent, #93c5fd));
+  --ring-color: var(--db-lilac-200, var(--k9n-accent, #93c5fd));
 }
 
 .button-row {
@@ -220,33 +248,49 @@ function onBlur(key) {
   cursor: pointer;
 }
 
-/* ❌ Kein Focus-Indikator */
-.btn-none:focus-visible {
+/* ❌ Kein Focus-Indikator (Tastatur ODER Klick-Steuerung) */
+.btn-none:focus-visible,
+.btn-none.show-focus {
   outline: none;
 }
 
-/* ✅ Standard-Outline nur bei Tastatur */
-.btn-outline:focus-visible {
+/* ✅ Standard-Outline (Tastatur ODER Klick-Steuerung) */
+.btn-outline:focus-visible,
+.btn-outline.show-focus {
   outline: 2px solid var(--fg);
   outline-offset: 2px;
 }
 
-/* ✅ Custom box-shadow nur bei Tastatur */
-.btn-shadow:focus-visible {
+/* ✅ Custom box-shadow (Tastatur ODER Klick-Steuerung)
+   Zweistufig: schmale Luecke in Kartenfarbe, dann farbiger Ring mit voller
+   Deckkraft. So hebt sich der Ring klar vom lila Button ab. */
+.btn-shadow:focus-visible,
+.btn-shadow.show-focus {
   outline: none;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 55%, transparent);
+  box-shadow:
+    0 0 0 2px var(--ring-gap),
+    0 0 0 5px var(--ring-color);
 }
 
 .card-code {
+  margin: 0;
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--fg);
   background: var(--code-bg);
   border: 1px solid var(--border);
-  padding: 7px 12px;
+  padding: 9px 14px;
   border-radius: 6px;
-  text-align: center;
+  text-align: left;
   line-height: 1.55;
+  white-space: pre;
+  align-self: stretch;
+}
+
+/* :focus-visible dezent hervorheben, damit der Kern-Selektor auffaellt */
+.card-code .fv {
+  color: var(--fv-color);
+  font-weight: 600;
 }
 
 .card-note {
