@@ -287,49 +287,81 @@ Info allein → `role="img"` + `aria-label` &nbsp;·&nbsp; neben Text → `aria-
 layout: default
 ---
 
-# Video & Audio
+# Video: Captions & Audio-Descriptions
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-4 items-center">
 
 <div>
 
-## Video
+<VideoCaptionsDemo />
+
+</div>
+
+<div>
 
 ```html
 <video controls>
   <source src="tutorial.mp4" type="video/mp4" />
   <track kind="captions" src="captions.vtt"
-         srclang="en" label="English" />
+         srclang="de" label="Deutsch" />
   <track kind="descriptions" src="desc.vtt"
-         srclang="en" />
+         srclang="de" />
 </video>
 ```
+
+- **Captions** – Untertitel **inkl. Geräusche & Musik** (`[Applaus]`) für gehörlose Menschen
+- **Audio-Descriptions** – beschreiben **visuelle Inhalte** für blinde Menschen
+
+</div>
+
+</div>
+
+<!--
+- `track`-Element lädt WebVTT-Dateien (Web Video Text Tracks)
+- Wichtig: Captions ≠ Subtitles → Captions enthalten auch Geräusche/Musik, nicht nur Dialog (gelb in der Demo)
+- Audio-Description = eigener Track, der die Bildebene beschreibt (was Sehende sehen)
+- Demo läuft live: Untertitel + AD laufen synchron zum "Video" mit
+- → Überleitung: reine Audio-Inhalte brauchen was anderes → Transkripte
+-->
+
+---
+layout: default
+---
+
+# Audio: Transkripte
+
+<div class="grid grid-cols-2 gap-4 items-center">
+
+<div>
+
+<AudioTranscriptDemo />
 
 </div>
 
 <div>
 
-## Audio
-
 ```html
 <audio controls>
   <source src="podcast.mp3" type="audio/mpeg" />
-  <a href="transcript.html">Transkript</a>
 </audio>
+
+<!-- Transkript direkt daneben verlinken -->
+<a href="transcript.html">Transkript lesen</a>
 ```
 
-</div>
+- **Transkript** – der komplette Inhalt als Text
+- Für **reine Audio-Inhalte** (Podcasts) oft schon ausreichend
+- Bonus: **durchsuchbar**, gut für SEO und zum Nachlesen
 
 </div>
 
-- **Captions** – Untertitel inkl. Geräusche / Musik für gehörlose Menschen
-- **Audio-Descriptions** – visuelle Inhalte für blinde Menschen beschreiben
-- **Transkripte** – für reine Audio-Inhalte (Podcasts) oft ausreichend
+</div>
 
 <!--
-- `track`-Element nutzt WebVTT = Web Video Text Tracks
-- Captions = Untertitel inkl. Geräusche/Musik (gehörlos), nicht nur Dialog
-- Audio-Description = beschreibt visuelle Inhalte (blind)
+- Kein track-Element bei reinem Audio → stattdessen Volltext-Transkript
+- Deckt gehörlose Menschen ab, hilft aber allen: nachlesen, überfliegen, suchen
+- Wichtig: reiner Textblock reicht völlig aus für Barrierefreiheit
+- Das synchrone Wort-für-Wort-Highlighting in der Demo ist Bonus (nice-to-have), kein Muss
 - → Überleitung: Präferenzen respektieren
 -->
 
