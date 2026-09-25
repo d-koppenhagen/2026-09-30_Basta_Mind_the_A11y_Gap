@@ -29,16 +29,16 @@ layout: default
 function showNotification(msg) {
   const div = document.createElement('div');
   div.setAttribute('aria-live', 'polite');
-  div.textContent = msg;
-  // Live Region wird NACH dem
-  // initialen Laden hinzugefügt
+  div.textContent = msg; // Region + Inhalt
+  // im selben Schritt erzeugt
+  // → SR registriert keine Änderung
   document.body.appendChild(div);
 }
 ```
 
 **Probleme:**
-- Element NACH aria-live erstellt
-- Screen Reader verpassen es!
+- Region + Inhalt gleichzeitig erzeugt
+- SR registriert keine Änderung
 - Stiller Fehler – keine Ankündigung
 
 </div>
@@ -75,9 +75,11 @@ function announce(msg) { // Inhalt aktualisieren
 </div>
 
 <!--
-- Kernregel: `aria-live` muss existieren, BEVOR sich der Inhalt ändert
-- Element + aria-live gleichzeitig anlegen → stiller Fehler, keine Ankündigung
-- Lösung: persistente leere Region im HTML, nur `textContent` aktualisieren
+- Kernregel: Region muss im DOM + vom SR registriert sein, BEVOR Inhalt reinkommt – nicht zwingend beim initialen Laden
+- Faustregel: erst leere Region einfügen → kurz warten (1 Frame) → dann Text setzen
+- Fehler: Region + Inhalt im selben Schritt → SR sieht keine Änderung → still
+- Chat: Widget darf später in den DOM, aber leere Region vor der ersten Nachricht anlegen
+- SR = Screen Reader
 - → Überleitung: globale vs lokale Patterns
 -->
 
