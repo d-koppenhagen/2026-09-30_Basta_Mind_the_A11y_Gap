@@ -24,16 +24,8 @@ layout: default
 
 ## ❌ Problem
 
-```css
-/* Hellgrau auf Weiß */
-.text {
-  color: #999999;
-  background: #FFFFFF;
-}
-/* Kontrastverhältnis: 2.85:1 */
-```
 
-<div class="mt-4 p-4" style="color: #999999; background: #FFFFFF; border: 1px solid #ccc;">
+<div class="mt-3 p-3" style="color: #999999; background: #FFFFFF; border: 1px solid #ccc;">
 Dieser Text ist schwer lesbar
 </div>
 
@@ -43,16 +35,8 @@ Dieser Text ist schwer lesbar
 
 ## ✅ Lösung
 
-```css
-/* Dunkelgrau auf Weiß */
-.text {
-  color: #000000;
-  background: #FFFFFF;
-}
-/* Kontrastverhältnis: 7:1 */
-```
 
-<div class="mt-4 p-4" style="color: #000000; background: #FFFFFF; border: 1px solid #ccc;">
+<div class="mt-3 p-3" style="color: #000000; background: #FFFFFF; border: 1px solid #ccc;">
 Dieser Text ist gut lesbar
 </div>
 
@@ -64,12 +48,23 @@ Dieser Text ist gut lesbar
 - **Level AA:** 4,5:1 für normalen Text, 3:1 für großen Text
 - **Level AAA:** 7:1 für normalen Text, 4,5:1 für großen Text
 
-**Tools:** Chrome DevTools, WebAIM Contrast Checker
+<FutureFeature title="contrast-color()" status="baseline" badge="Baseline 04/2026" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/contrast-color">
+
+Der Browser wählt automatisch <code>black</code> oder <code>white</code> — je nachdem, was gegen die Hintergrundfarbe besser kontrastiert. Kein manuelles Nachrechnen mehr.
+
+```css
+.badge { background: var(--brand); color: contrast-color(var(--brand)); }
+```
+
+</FutureFeature>
 
 <!--
 - Kritisch für Sehbehinderung & Farbenblindheit; „modernes" Hellgrau reißt AA oft
 - AA = Level AA (Minimum), AAA = strengste Stufe
 - Tipp: Design-System-Farben früh prüfen (spart teure Nacharbeit)
+- contrast-color(): Browser wählt schwarz/weiß mit bestem Kontrast, garantiert i. d. R. AA
+- Baseline Newly Available seit April 2026 (Firefox, Chrome, Safari) — schon einsetzbar
+- Grenze: liefert nur schwarz/weiß, keine beliebige Marken-Farbe
 - → Überleitung: Medien-Alternativen
 -->
 

@@ -87,7 +87,7 @@ function announce(msg) { // Inhalt aktualisieren
 layout: default
 ---
 
-# Globale vs Lokale Live Regions
+# Globale vs Lokale Live Regionen
 
 <LiveRegionDemo />
 
@@ -95,6 +95,53 @@ layout: default
 - Global: ein Announcer für die ganze App (Toasts, Status-Meldungen)
 - Lokal: eigene Region am Ort (Chat, Live-Feed) – Fokus/Blick ist schon dort
 - Beide: Region muss im DOM sein, BEVOR aktualisiert wird
+- → Überleitung: Ausblick auf ariaNotify()
+-->
+
+---
+layout: default
+---
+
+# NEW: ariaNotify()
+
+<div class="grid grid-cols-2 gap-8 mt-2 mb-15">
+
+<div>
+
+Screen-Reader-Ansage **direkt per JavaScript** auslösen, ohne vorab existierende Live Region und unabhängig von DOM-Änderungen.
+
+```js
+document.body.ariaNotify(
+  "Warenkorb aktualisiert: 3 Artikel"
+);
+```
+
+</div>
+
+<div>
+
+**Vorteile gegenüber Live Regions:**
+- Keine vorab angelegte Region nötig
+- Ansage jederzeit, nicht an DOM-Update gebunden
+- Löst die Timing-Falle zuverlässig
+
+</div>
+
+</div>
+
+<FutureFeature title="ariaNotify()" status="baseline" badge="Baseline 09/2026" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaNotify">
+
+Eigenständige JS-Web-API, inzwischen Teil von <a href="https://www.w3.org/TR/wai-aria-1.3/" target="_blank" rel="noopener noreferrer">WAI-ARIA</a> (<code>ARIANotifyMixin</code>). <strong>Baseline seit September 2026</strong> — in allen aktuellen Browsern verfügbar. Für ältere Browser bleiben Live Regions der Fallback.
+
+</FutureFeature>
+
+<!--
+- ariaNotify() = imperative JS-Methode (element/document.ariaNotify), KEIN ARIA-1.3-Attribut
+- Wichtig zur Einordnung: eigener Spec-Draft (ursprünglich Microsoft Edge), nicht Teil der WAI-ARIA-1.3-Spec
+- ARIA-WG diskutiert sogar, es allgemeiner in HTML/DOM zu verorten statt in ARIA
+- Gehört aber zur selben „neuen Generation" Ankündigungs-/Beschreibungs-Features wie ARIA 1.3 (aria-description etc.)
+- Funktion: Ansage per Methodenaufruf, keine vorab-Live-Region, nicht an DOM-Update gebunden → löst die Timing-Falle
+- Stand Sept 2026: experimentell, Support v. a. Windows & Android; Live Regions bleiben der robuste Fallback
 - → Überleitung: Attribute im Detail
 -->
 

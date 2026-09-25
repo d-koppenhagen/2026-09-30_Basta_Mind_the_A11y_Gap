@@ -53,7 +53,7 @@ layout: default
 layout: default
 ---
 
-# Landmarks & Überschriften
+# Landmarks
 
 <div class="flex justify-center items-center">
   <img src="/structure.png" alt="Visualisierung einer typischen Seitenstruktur mit Landmarks: header, nav, main, aside und footer" class="max-h-100" />
@@ -68,7 +68,7 @@ layout: default
 layout: default
 ---
 
-# Landmarks & Überschriften
+# Landmarks
 
 <div class="grid grid-cols-8 gap-4">
 
@@ -116,130 +116,88 @@ layout: default
 
 <!--
 - Ohne Landmarks: alles linear durchhören
-- Wichtig: Überschriften-Hierarchie nie überspringen (h1 → h2 → h3)
+- Landmarks (header/nav/main/aside/footer) = navigierbare Struktur, SR springt per Shortcut
 - → Überleitung: Skip Links als Ergänzung
 -->
 
 ---
 layout: default
+clicks: 8
 ---
 
 # Skip Links
 
-<div class="grid grid-cols-2 gap-4 pb-4">
+<SkipLinkDemo class="mt-2" />
 
-<div>
-
-```html
-<body>
-  <a href="#main" class="skip-link">
-    Zum Hauptinhalt springen
-  </a>
-  <header>...</header>
-  <nav>...</nav>
-  <main id="main" tabindex="-1">
-    <!-- Hauptinhalt -->
-  </main>
-</body>
-```
-
+<div class="mt-7">
+<strong>Ergänzung zu Landmarks</strong>, kein Ersatz &middot; hilft <strong>sehenden Tastatur-Nutzenden</strong>, lange Navigation zu überspringen
 </div>
-
-<div>
-
-```css
-.skip-link:not(:focus, :active, :focus-within) {
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-```
-
-</div>
-
-</div>
-
-- **Ergänzung zu Landmarks** – kein Ersatz (Screen Reader haben bereits Landmark-Navigation)!
-- Nützlich für **Tastatur-Nutzende** um lange Navigation zu überspringen
-- Sinnvoll wenn **viele Nav-Items** vor dem Hauptinhalt stehen
-
-<v-click>
-
-<div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
-⚠️ Mit Bedacht einsetzen: Bei richtigen Landmarks sind Skip Links eine UX-Verbesserung, keine Pflicht.
-</div>
-
-</v-click>
 
 <!--
-- Primär für sehende Tastatur-Nutzende (SR haben schon Landmark-Navigation)
-- → Überleitung: Wie funktioniert das visuelle Verstecken?
+- Skip Link = Sprung an den Hauptinhalt, primär für sehende Tastatur-Nutzende (SR haben schon Landmark-Navigation)
+- Sinnvoll v. a. wenn viele Nav-Items vor dem Hauptinhalt stehen; bei sauberen Landmarks UX-Plus, keine Pflicht
+- Demo links: Skip-Link startet voll sichtbar über der langen Hauptnavigation
+- Rechts wächst die CSS-Klasse Zeile für Zeile – links schrumpft der Link synchron mit
+- WICHTIG: display:none / visibility:hidden würden ihn AUCH für SR verstecken – deshalb dieser Umweg (im DOM bleiben!)
+- Letzter Klick: :focus setzt alles zurück → Link wird sichtbar & klickbar, Sprung ins <main>
+- `main` braucht `tabindex="-1"`, damit der Sprung den Fokus wirklich dorthin setzt
+- → Überleitung: Überschriften-Hierarchie
 -->
 
 ---
 layout: default
-clicks: 7
 ---
 
-# Visuell versteckte Inhalte – Schritt für Schritt
+# Überschriften-Hierarchie
 
-<div class="grid grid-cols-2 gap-8 mt-2">
+<div class="grid grid-cols-2 gap-8">
 
-<div class="text-sm">
+<div>
 
-| #                                                                                        | Property               | Effekt                                                                                            |
-| ---------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------- |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 1 }">1</span> | `white-space: nowrap`  | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 1 }">Text einzeilig</span>       |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 2 }">2</span> | `padding: 0`           | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 2 }">Innenabstand weg</span>     |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 3 }">3</span> | `border: 0`            | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 3 }">Rahmen weg</span>           |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 4 }">4</span> | `overflow: hidden`     | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 4 }">Überlauf abschneiden</span> |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 5 }">5</span> | `width: 1px`           | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 5 }">Breite minimieren</span>    |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 6 }">6</span> | `height: 1px`          | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 6 }">Höhe minimieren</span>      |
-| <span :class="{ 'dark:text-green-400 text-green-700 font-bold': $clicks >= 7 }">7</span> | `clip-path` + `margin` | <span :class="{ 'dark:text-green-400 text-green-700': $clicks >= 7 }">Final unsichtbar</span>     |
+## ❌ Problem
+
+```html
+<h1>Shop</h1>
+<h4>Angebote</h4>   <!-- Ebene übersprungen -->
+<h2>Kategorie</h2>
+<div class="title">Neu</div>  <!-- gar keine Überschrift -->
+```
 
 </div>
 
-<div class="mt-10">
-  <div class="relative rounded-lg p-4 w-full h-60 flex items-center justify-center bg-gray-200 dark:bg-gray-800">
-    <a
-      href="#main"
-      class="skip-link-demo font-bold text-center rounded no-underline inline-block !text-[#1a1a2e] dark:!text-white"
-      :style="{
-        whiteSpace: $clicks >= 1 ? 'nowrap' : 'normal',
-        padding: $clicks >= 2 ? '0' : '2.5rem 3rem',
-        border: $clicks >= 3 ? 'none' : '8px solid #f59e0b',
-        overflow: $clicks >= 4 ? 'hidden' : 'visible',
-        width: $clicks >= 5 ? '1px' : '200px',
-        height: $clicks >= 6 ? '1px' : '80px',
-        clipPath: $clicks >= 7 ? 'inset(50%)' : 'none',
-        margin: $clicks >= 7 ? '-1px' : '0',
-        transition: 'all 0.5s ease',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: '1.7rem',
-        backgroundColor: '#10b981',
-      }"
-    >Zum Hauptinhalt springen</a>
-  </div>
+<div>
 
+## ✅ Lösung
 
-<div v-if="$clicks >= 7" class="mt-4 p-3 bg-green-500 bg-opacity-10 rounded text-sm">
-✅ Visuell unsichtbar — aber im DOM & für Screen Reader vorhanden. Bei <code>:focus</code> werden alle Properties zurückgesetzt!
-</div>
+```html
+<h1>Shop</h1>
+  <h2>Kategorie</h2>
+    <h3>Angebote</h3>
+    <h3>Neu</h3>
+```
+
 </div>
 
 </div>
 
+<div class="mt-5 mb-10 p-2 bg-blue-500 bg-opacity-10 rounded text-sm">
+💡 Nie Ebenen überspringen (h1 → h2 → h3). Die Hierarchie ist das Inhaltsverzeichnis für Screen Reader.
+</div>
+
+<FutureFeature title="headingoffset & headingreset" status="experimental" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/headingoffset">
+
+<code>headingoffset</code> verschiebt die Ebene von Nachfahren (kumulativ), <code>headingreset</code> stoppt die Vererbung von oben — ideal für <strong>eingebettete Widgets</strong> oder User-Generated-Content, die intern bei <code>h1</code> starten.
+
+</FutureFeature>
 
 <!--
-- Reihenfolge so gewählt, dass jeder Schritt sichtbar etwas verändert
-- WICHTIG: display:none / visibility:hidden würden es AUCH für SR verstecken – deshalb der Umweg
+- Kernregel: Ebenen NIE überspringen (h1 → h2 → h3), genau eine h1 pro Seite/Dokument
+- Screen Reader baut daraus die Gliederung (Überschriften-Navigation per Shortcut)
+- Häufiger Fehler: Ebene nach Optik statt nach Struktur wählen → stattdessen per CSS stylen
+- headingoffset: verschiebt Nachfahren-Ebene, ohne die Elemente zu ändern; Offsets über verschachtelte Container summieren sich
+- headingreset: stoppt genau diese Vererbung von oben – ab hier zählt nur der eigene Offset (verhindert ungewolltes Aufsummieren)
+- Idealfall: eingebettete/wiederverwendbare Inhalte (Widgets, UGC), die intern bei h1 starten – Kontext hebt sie auf die richtige Ebene, headingreset koppelt sie sauber ab
+- Löst „welche Ebene hat meine Komponente?" ohne aria-level-Gefrickel; nie über h6 hinaus; noch experimentell
 - → Überleitung: Buttons vs Links
 -->
 
