@@ -198,22 +198,23 @@ layout: default
 
 # Dekorative Bilder & SVG
 
-<div class="grid grid-cols-[1fr_1fr] gap-8 items-center">
+## Dekoratives Bild → `alt=""`
+
+<div class="grid grid-cols-[auto_1fr] gap-6 items-center">
+
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-lg font-medium shadow shrink-0">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4Zm-5 16a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm3-10H5V5h10v4Z" />
+  </svg>
+  Speichern
+</button>
 
 <div>
 
 ```html
-<!-- Leerer alt → Screen Reader überspringt -->
-<img src="decoration.png" alt="" />
+<!-- Bild rein dekorativ → Label "Speichern" trägt die Info -->
+<button><img src="disk.png" alt="" />Speichern</button>
 ```
-
-</div>
-
-<div>
-
-**Dekorative Bilder**
-
-Wenn man das Bild entfernt und kein Informationsverlust entsteht → `alt=""`
 
 </div>
 
@@ -221,39 +222,63 @@ Wenn man das Bild entfernt und kein Informationsverlust entsteht → `alt=""`
 
 <v-click>
 
-<div class="grid grid-cols-[1fr_1fr] gap-8 items-center mt-4">
+<h2 class="mt-8">SVG → informativ oder dekorativ?</h2>
 
-<div>
+<div class="grid grid-cols-2 gap-6 items-start [&_.slidev-code]:!my-0">
+
+<div class="flex flex-col gap-2">
+
+<div class="flex items-center justify-center h-14">
+  <span class="flex items-center gap-2 px-3 py-2 rounded-lg border border-amber-500/60 bg-amber-500/10 text-amber-500 font-medium" role="img" aria-label="Warnung">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M12 2 1 21h22L12 2Zm0 5 7.5 13h-15L12 7Zm-1 4v4h2v-4h-2Zm0 6v2h2v-2h-2Z" />
+    </svg>
+    Warnung
+  </span>
+</div>
 
 ```html
-<!-- Informatives SVG -->
-<svg role="img" aria-label="Warnung: Fehler">
-  <path d="..." />
-</svg>
-
-<!-- Dekoratives SVG -->
-<svg aria-hidden="true" focusable="false">
-  <circle cx="50" cy="50" r="40" />
+<!-- Info allein -> role + Label -->
+<svg role="img" aria-label="Warnung">
+  …
 </svg>
 ```
 
 </div>
 
-<div>
+<div class="flex flex-col gap-2">
 
-**SVG-Regeln:**
-- Informativ → `role="img"` + `aria-label`
-- Dekorativ → `aria-hidden="true"`
-- Inline-SVG: Immer `focusable="false"` (IE/Edge Legacy)
+<div class="flex items-center justify-center h-14">
+  <button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-red-600 text-white font-medium shadow">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12 19 6.4Z" />
+    </svg>
+    Löschen
+  </button>
+</div>
+
+```html
+<!-- Deko neben Text -->
+<button>
+  <svg aria-hidden="true">…</svg> Löschen
+</button>
+```
 
 </div>
+
+</div>
+
+<div class="mt-3">
+
+Info allein → `role="img"` + `aria-label` &nbsp;·&nbsp; neben Text → `aria-hidden="true"` &nbsp;·&nbsp; Inline-SVG immer `focusable="false"`
 
 </div>
 
 </v-click>
 
 <!--
-- Dekorativ = Entfernen ohne Infoverlust (Hintergründe, Trennlinien, Ornamente)
+- Deko-Icon = Entfernen ohne Infoverlust, weil sichtbares Label die Info trägt
+- Warn-Icon ohne Text trägt die Info allein → braucht `role="img"` + `aria-label`
 - SVG = Scalable Vector Graphics; `focusable="false"` gegen IE/Edge-Legacy-Bug
 - → Überleitung: Video & Audio
 -->
