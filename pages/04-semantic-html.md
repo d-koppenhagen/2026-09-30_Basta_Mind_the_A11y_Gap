@@ -17,6 +17,10 @@ layout: default
 
 # Die Lösung: Semantisches HTML
 
+<div class="flex gap-8 items-start">
+
+<div class="w-70%">
+
 ```html
 <header>
   <h1>My App</h1>
@@ -39,6 +43,15 @@ layout: default
 
 <div class="mt-2 p-4 bg-green-500 bg-opacity-10 rounded">
 ✅ Semantische Struktur, tastatur-zugänglich, Screen-Reader-freundlich!
+</div>
+</div>
+
+<div class="flex-1">
+
+<SemanticTreeDemo />
+
+</div>
+
 </div>
 
 <!--

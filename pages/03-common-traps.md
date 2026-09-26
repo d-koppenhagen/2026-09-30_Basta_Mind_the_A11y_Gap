@@ -84,6 +84,10 @@ layout: default
 
 # Was ist falsch?
 
+<div class="flex gap-8 items-start">
+
+<div class="w-70%">
+
 1. ❌ Kein semantisches HTML – alles ist ein `<div>`
 2. ❌ Keine Landmarks (`<header>`, `<nav>`, `<main>`)
 3. ❌ Klickbare divs statt `<button>` oder `<a>` (Fehlende Tastaturunterstützung)
@@ -93,7 +97,7 @@ layout: default
 
 <v-click>
 
-<div class="mt-15 p-4 bg-yellow-500 bg-opacity-10 rounded">
+<div class="mt-6 p-4 bg-yellow-500 bg-opacity-10 rounded">
 ⚠️ Screen Reader können diese Struktur nicht verstehen<br>
 ⚠️ Tastatur-Nutzende können nicht navigieren<br>
 ⚠️ Suchmaschinen & AI Agents können sie nur schlecht den Inhalt entnehmen
@@ -101,8 +105,20 @@ layout: default
 
 </v-click>
 
+</div>
+
+<div class="flex-1" v-click>
+
+<DivSoupTreeDemo />
+
+</div>
+
+</div>
+
 <!--
-- Folge: SR hört flache Textliste, Tastatur kann nicht tabben, Crawler/Agents erkennen Wichtigkeit nicht
+- Rechts: der a11y-Tree, den AT aus genau diesem Code bekommen (AT = Assistive Technology)
+- Tree zeigt konkret was die Liste behauptet: nur generic/text-Knoten, textbox ohne Namen
+- Keine Landmarks, keine Rollen, keine Struktur zum Navigieren
 - Überraschend häufig in Produktion
 - .NET-Bezug: WPF/WinForms haben semantische Controls (Button = Button); im Web fehlt dieser Schutz
 - `<div @onclick>` kompiliert, ist aber nicht tastatur-zugänglich

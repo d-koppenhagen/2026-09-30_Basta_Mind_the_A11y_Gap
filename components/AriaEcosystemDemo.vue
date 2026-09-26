@@ -77,22 +77,8 @@
       <div class="panel output-panel">
         <Transition name="fade" mode="out-in">
           <!-- Step 0-1: A11y Tree -->
-          <div v-if="step <= 1" key="tree" class="panel-inner">
-            <div class="panel-header">
-              <span class="panel-icon">🌳</span> Accessibility Tree
-            </div>
-            <div class="tree-content" :class="{ dimmed: step === 0 }">
-              <div class="tree-node root">
-                <span class="node-role">button</span>
-                <span class="node-name">"Speichern"</span>
-              </div>
-              <div class="tree-props">
-                <div class="tree-prop"><span class="prop-key">role:</span> button</div>
-                <div class="tree-prop"><span class="prop-key">name:</span> "Speichern"</div>
-                <div class="tree-prop"><span class="prop-key">pressed:</span> false</div>
-                <div class="tree-prop"><span class="prop-key">focusable:</span> true</div>
-              </div>
-            </div>
+          <div v-if="step <= 1" key="tree" class="panel-inner tree-panel" :class="{ dimmed: step === 0 }">
+            <A11yTree :nodes="treeNodes" />
           </div>
 
           <!-- Step 2: Platform API mapping -->
@@ -164,10 +150,25 @@
 <script setup>
 import { computed } from 'vue';
 import { useSlideContext } from '@slidev/client';
+import A11yTree from './A11yTree.vue';
 
 const { $clicks } = useSlideContext();
 
 const step = computed(() => Math.min($clicks.value, 4));
+
+const treeNodes = [
+  {
+    role: 'button',
+    name: 'Speichern',
+    boxed: true,
+    props: [
+      { key: 'role', value: 'button' },
+      { key: 'name', value: '"Speichern"' },
+      { key: 'pressed', value: 'false' },
+      { key: 'focusable', value: 'true' },
+    ],
+  },
+];
 </script>
 
 <style scoped>
@@ -418,60 +419,21 @@ const step = computed(() => Math.min($clicks.value, 4));
   min-height: 170px;
 }
 
-/* A11y Tree content */
-.tree-content {
-  padding: 10px 14px;
+/* A11y Tree panel */
+.tree-panel {
   transition: opacity 0.3s;
 }
 
-.tree-content.dimmed {
+.tree-panel.dimmed {
   opacity: 0.3;
 }
 
-.tree-node {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  padding: 6px 10px;
-  background: rgba(168, 85, 247, 0.1);
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  border-radius: 6px;
+/* Der A11yTree bringt seinen eigenen Rahmen/Header mit – hier nur einbetten */
+.tree-panel :deep(.a11y-tree) {
+  border: none;
+  border-radius: 0;
+  background: transparent;
 }
-
-.node-role {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #7c3aed;
-  font-family: monospace;
-}
-:global(.dark .node-role) { color: #c084fc; }
-
-.node-name {
-  font-size: 0.68rem;
-  color: #1d4ed8;
-}
-:global(.dark .node-name) { color: #a5d6ff; }
-
-.tree-props {
-  padding-left: 16px;
-  border-left: 2px solid rgba(168, 85, 247, 0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.tree-prop {
-  font-size: 0.62rem;
-  color: var(--k9n-text-secondary);
-  font-family: monospace;
-}
-
-.prop-key {
-  color: #b45309;
-  font-weight: 600;
-}
-:global(.dark .prop-key) { color: #fbbf24; }
 
 /* Platform API content */
 .platform-content {
