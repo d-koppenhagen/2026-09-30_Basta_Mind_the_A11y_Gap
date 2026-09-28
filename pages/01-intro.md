@@ -5,7 +5,7 @@ layout: center
 # Über mich
 
 <div class="flex items-center gap-8 m-t-12">
-  <div class="flex flex-col gap-8 content-center items-center justify-center m-t--30 mr-6">
+  <div class="flex flex-col gap-8 m-t--30 mr-6">
     <img src="/danny.jpeg" class="w-50 h-50 rounded-full" alt="Danny Koppenhagen" />
     <div class="flex flex-col gap-2 mt-4">
       <a href="https://k9n.dev" target="_blank" class="flex items-center gap-2 !border-none no-underline">
@@ -22,20 +22,23 @@ layout: center
       </a>
     </div>
   </div>
-  <div class="leading-8 opacity-80">
+  <div class="leading-8 opacity-80 text-left">
     <b>Danny Koppenhagen</b><br>
-    Frontend Architect @ DB Systel GmbH<br>
+    DevOps Engineer · Frontend Architecture · Accessibility<br>
+    DB Systel GmbH<br>
     <br>
-    ♿ Leidenschaftlich für Barrierefreiheit & inklusives Design<br>
-    🌐 Open-Source-Enthusiast & Creator von practica11y.dev<br>
+    ♿ Leidenschaftlich für Barrierefreiheit<br>
+    🌐 Open-Source-Enthusiast<br>
+    🎮 Creator von practica11y.dev<br>
     📚 Co-Autor des deutschen Angular-Buchs<br>
   </div>
+  <img src="/book-cover-v1m.png" alt="Buchcover: Angular – Das Praxisbuch, von Malcher, Koppenhagen, Hoppe" class="max-h-50 rounded shadow-xl mr--5 mt--10" />
 </div>
 
 <!--
-- Frontend Architect bei DB Systel, große Web-Apps für die DB
+- DevOps Engineer mit Fokus Frontend-Architektur & A11y bei DB Systel, große Web-Apps für die DB
 - Gute Software = robust, skalierbar UND inklusiv
-- Alles framework-agnostisch, aber 1:1 relevant für Blazor / ASP.NET
+- Buch nur kurz antippen: als Co-Autor tief im Angular-Ökosystem, aber heute framework-agnostisch – 1:1 relevant für Blazor / ASP.NET
 - → Überleitung: kurz ein eigenes Projekt vorstellen
 -->
 
