@@ -39,6 +39,7 @@ layout: default
     <li><carbon-bot class="inline text-green-600 dark:text-green-300" /> axe DevTools</li>
     <li><carbon-meter class="inline text-green-600 dark:text-green-300" /> Lighthouse</li>
     <li><carbon-view class="inline text-green-600 dark:text-green-300" /> WAVE (WebAIM)</li>
+    <li><carbon-edit class="inline text-green-600 dark:text-green-300" /> Sa11y</li>
   </ul>
   <div class="mt-3 px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-500/20 text-yellow-900 dark:text-yellow-300 text-xs text-center font-medium">
     ⚠️ Findet nur 30–40 % der Probleme!
@@ -65,6 +66,7 @@ layout: default
 
 <!--
 - WAVE = Web Accessibility Evaluation Tool (visuelles Overlay), axe von Deque
+- Sa11y = Tool für Content-Autoren, prüft im echten Kontext (Überschriften, Alt-Texte, Sprache) direkt auf der Seite
 - Kernaussage: automatisiert findet nur 30–40 % → manuell unverzichtbar
 - Manuell konkret: Maus abstöpseln, SR (VoiceOver/NVDA), 200 % Zoom
 - .NET: Playwright for .NET + axe-core, bUnit prüft gerendertes Markup, Deque.AxeCore.Playwright für CI
