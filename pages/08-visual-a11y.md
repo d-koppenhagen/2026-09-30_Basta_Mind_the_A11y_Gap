@@ -367,50 +367,19 @@ layout: default
 
 ---
 layout: default
+clicks: 3
 ---
 
 # Präferenzen Respektieren
 
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-```css
-@media (prefers-reduced-motion: no-preference) {
-  .card { transition: transform 0.3s; }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #1a1a2e; --text: #eee; }
-}
-
-@media (prefers-contrast: more) {
-  :root { --border: 2px solid #000; }
-}
-
-@media (forced-colors: active) {
-  .card { border: 1px solid CanvasText; }
-}
-```
-
-</div>
-
-<div>
-
-- **Reduced Motion**: Animationen können vestibuläre Beschwerden oder epileptische Anfälle auslösen – per `no-preference` Animationen nur additiv aktivieren (Progressive Enhancement)
-- **Dark / Light Mode**: Farbschema je nach Umgebung und Sehfähigkeit wählbar
-- **Prefers Contrast**: Mehr (oder weniger) Kontrast gewünscht – Borders, Schriftgewicht, Farben anpassen
-- **Forced Colors** (Windows High Contrast): System überschreibt alle Farben – Borders statt Hintergrund nutzen
-
-</div>
-
-</div>
+<PreferencesDemo />
 
 <!--
-- Alle vier per CSS Media Query abfragbar
-- Reduced Motion: zwei Ansätze — global mit `reduce` + `!important` überschreiben ODER (hier gezeigt) Animationen nur in `no-preference` setzen = Progressive Enhancement, Bewegung ist Opt-in statt Opt-out
-- Vorteil `no-preference`: kein `!important`-Krieg, Standard ist ruhig, jede Transition wird bewusst nur ohne Präferenz aktiviert
-- Kernunterschied: `prefers-contrast` = Wunsch, `forced-colors` = Zwang (System überschreibt alles)
+- Vier CSS-Präferenzen — pro Klick eine, Card links reagiert live
+- Reduced Motion: Bewegung nur bei `no-preference` = Progressive Enhancement (Opt-in), kein `!important`-Krieg
+- `light-dark()`: braucht `color-scheme: light dark`, dann beide Farben inline — spart die Farb-Media-Query; die bleibt frei für Schatten/Bilder/Icons
+- Kernunterschied am Ende betonen: `prefers-contrast` = Wunsch, `forced-colors` = Zwang (System überschreibt alles)
+- Forced Colors: Struktur über Borders sichern, nicht über Hintergrundflächen
 - Testen: DevTools → Rendering → Emulationen
 - → Überleitung: Challenges
 -->
