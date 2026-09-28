@@ -376,8 +376,8 @@ layout: default
 <div>
 
 ```css
-@media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; }
+@media (prefers-reduced-motion: no-preference) {
+  .card { transition: transform 0.3s; }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -397,7 +397,7 @@ layout: default
 
 <div>
 
-- **Reduced Motion**: Animationen können vestibuläre Beschwerden oder epileptische Anfälle auslösen
+- **Reduced Motion**: Animationen können vestibuläre Beschwerden oder epileptische Anfälle auslösen – per `no-preference` Animationen nur additiv aktivieren (Progressive Enhancement)
 - **Dark / Light Mode**: Farbschema je nach Umgebung und Sehfähigkeit wählbar
 - **Prefers Contrast**: Mehr (oder weniger) Kontrast gewünscht – Borders, Schriftgewicht, Farben anpassen
 - **Forced Colors** (Windows High Contrast): System überschreibt alle Farben – Borders statt Hintergrund nutzen
@@ -408,6 +408,8 @@ layout: default
 
 <!--
 - Alle vier per CSS Media Query abfragbar
+- Reduced Motion: zwei Ansätze — global mit `reduce` + `!important` überschreiben ODER (hier gezeigt) Animationen nur in `no-preference` setzen = Progressive Enhancement, Bewegung ist Opt-in statt Opt-out
+- Vorteil `no-preference`: kein `!important`-Krieg, Standard ist ruhig, jede Transition wird bewusst nur ohne Präferenz aktiviert
 - Kernunterschied: `prefers-contrast` = Wunsch, `forced-colors` = Zwang (System überschreibt alles)
 - Testen: DevTools → Rendering → Emulationen
 - → Überleitung: Challenges

@@ -17,6 +17,16 @@ layout: default
 
 # Wichtige Test-Tools
 
+<style>
+ul > li {
+  padding: 0;
+  margin-left: 0;
+}
+ul > li::before {
+  content: none !important;
+}
+</style>
+
 <div class="grid grid-cols-3 gap-6 mt-4">
 
 <v-click>
