@@ -42,7 +42,7 @@ layout: default
 <v-click>
 
 <div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded">
-❌ Dieser Code hat mindestens 6 Barrierefreiheits-Probleme!
+❌ Dieser Code hat mindestens 8 Barrierefreiheits-Probleme!
 </div>
 
 </v-click>
@@ -94,13 +94,15 @@ layout: default
 4. ❌ Keine Überschriften-Struktur (`<h1>`, `<h2>`, etc.)
 5. ❌ Fehlende Formular-Labels
 6. ❌ Placeholder als Label (schlechte Praxis!)
+7. ❌ Fehlendes `autocomplete`-Attribut (z. B. `autocomplete="name"`)
+8. ❌ Kein `<form>`-Element – kein Absenden per ENTER-Taste
 
 <v-click>
 
 <div class="mt-6 p-4 bg-yellow-500 bg-opacity-10 rounded">
 ⚠️ Screen Reader können diese Struktur nicht verstehen<br>
 ⚠️ Tastatur-Nutzende können nicht navigieren<br>
-⚠️ Suchmaschinen & AI Agents können sie nur schlecht den Inhalt entnehmen
+⚠️ Suchmaschinen & AI Agents können den Inhalt nur schlecht erfassen
 </div>
 
 </v-click>

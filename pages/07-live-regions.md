@@ -51,9 +51,8 @@ function showNotification(msg) {
 
 ```html
 <!-- Im HTML, immer vorhanden -->
-<div class="sr-only" id="announcer"
-  aria-live="polite" aria-atomic="true"
-></div>
+<!-- role="status" bündelt aria-live="polite" + aria-atomic="true" -->
+<div class="sr-only" id="announcer" role="status"></div>
 ```
 
 ```js
@@ -65,8 +64,8 @@ function announce(msg) { // Inhalt aktualisieren
 
 **Vorteile:**
 - Live Region existiert vor dem Update
-- Zuverlässige Ankündigungen
-- Funktioniert in allen Screen Readern
+- `role="status"` bündelt die `aria-*`-Attribute korrekt
+- Zuverlässige Ankündigungen in allen Screen Readern
 
 </v-click>
 
@@ -79,6 +78,7 @@ function announce(msg) { // Inhalt aktualisieren
 - Faustregel: erst leere Region einfügen → kurz warten (1 Frame) → dann Text setzen
 - Fehler: Region + Inhalt im selben Schritt → SR sieht keine Änderung → still
 - Chat: Widget darf später in den DOM, aber leere Region vor der ersten Nachricht anlegen
+- `role="status"` bündelt `aria-live="polite"` + `aria-atomic="true"`; `role="alert"` = assertiv. Rolle statt Einzel-Attribute vermeidet Fehlerquellen (Bündelung kann man trotzdem erwähnen)
 - SR = Screen Reader
 - → Überleitung: globale vs lokale Patterns
 -->

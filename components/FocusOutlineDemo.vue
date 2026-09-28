@@ -67,11 +67,13 @@
           Button
         </button>
         <pre class="card-code">button<span class="fv">:focus-visible</span> {
+  <span class="cmt">/* Fallback für forced-colors */</span>
+  outline: 2px solid transparent;
   box-shadow:
     0 0 0 2px #fff,
     0 0 0 5px #7c6fce;
 }</pre>
-        <span class="card-note">Design-flexibel</span>
+        <span class="card-note">Design-flexibel + HCM-sicher</span>
 
         <Transition name="pointer-fade">
           <div v-if="focused === 'shadow'" class="focus-pointer ok">
@@ -266,7 +268,11 @@ html.dark .focus-outline-demo {
    Deckkraft. So hebt sich der Ring klar vom lila Button ab. */
 .btn-shadow:focus-visible,
 .btn-shadow.show-focus {
-  outline: none;
+  /* Transparente Outline als Fallback: box-shadow wird bei
+     forced-colors: active (High Contrast Mode) entfernt – die Outline
+     wird dort dann sichtbar erzwungen und ersetzt den Ring. */
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   box-shadow:
     0 0 0 2px var(--ring-gap),
     0 0 0 5px var(--ring-color);
@@ -291,6 +297,13 @@ html.dark .focus-outline-demo {
 .card-code .fv {
   color: var(--fv-color);
   font-weight: 600;
+}
+
+/* Kommentar im Code-Snippet dezent (gedämpft), damit der Fokus auf dem
+   Code bleibt. */
+.card-code .cmt {
+  color: var(--fg-muted);
+  font-style: italic;
 }
 
 .card-note {

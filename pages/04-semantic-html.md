@@ -26,7 +26,7 @@ layout: default
   <h1>My App</h1>
   <nav>
     <ul>
-      <li><a href="/">Home</a></li>
+      <li><a href="/" aria-current="page">Home</a></li>
       <li><a href="/products">Products</a></li>
     </ul>
   </nav>
@@ -35,7 +35,7 @@ layout: default
   <h2>Welcome</h2>
   <form>
     <label for="name">Enter your name</label>
-    <input type="text" id="name" placeholder="e. g. John Doe" />
+    <input type="text" id="name" placeholder="e. g. John Doe" autocomplete="name" />
     <button type="submit">Submit</button>
   </form>
 </main>
@@ -152,7 +152,7 @@ clicks: 8
 - Demo links: Skip-Link startet voll sichtbar über der langen Hauptnavigation
 - Rechts wächst die CSS-Klasse Zeile für Zeile – links schrumpft der Link synchron mit
 - WICHTIG: display:none / visibility:hidden würden ihn AUCH für SR verstecken – deshalb dieser Umweg (im DOM bleiben!)
-- Letzter Klick: :focus setzt alles zurück → Link wird sichtbar & klickbar, Sprung ins <main>
+- Letzter Klick: :focus setzt alles zurück → Link wird sichtbar & interaktiv, Sprung ins <main>
 - `main` braucht `tabindex="-1"`, damit der Sprung den Fokus wirklich dorthin setzt
 - → Überleitung: Überschriften-Hierarchie
 -->
@@ -248,7 +248,7 @@ layout: default
 ## ✅ Lösung
 
 ```html
-<button onclick="save()">
+<button onclick="save()" type="button">
   Save
 </button>
 

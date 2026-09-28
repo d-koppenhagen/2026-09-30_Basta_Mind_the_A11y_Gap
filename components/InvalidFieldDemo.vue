@@ -20,7 +20,7 @@
     </div>
     <div v-else class="ifd-sr ifd-sr-danger">
       <div class="ifd-sr-head"><span aria-hidden="true">🔇</span> Screen Reader</div>
-      <span class="ifd-sr-text">„Email, Textfeld." <em>— Fehler nicht angekündigt</em></span>
+      <span class="ifd-sr-text">„Email, Textfeld." <em>— Fehler wird nicht angekündigt</em></span>
     </div>
   </div>
 </template>

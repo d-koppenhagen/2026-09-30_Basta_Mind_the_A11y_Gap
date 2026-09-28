@@ -117,7 +117,8 @@
               </div>
               <div class="browser-note">
                 Der Browser nutzt den DOM für die <strong>visuelle</strong> Darstellung.
-                AT nutzen den A11y Tree für die <strong>nicht-visuelle</strong> Darstellung.
+                AT nutzen den A11y Tree für <strong>Ausgabe & Interaktion</strong>
+                (z.&nbsp;B. Sprachsteuerung zum Zuordnen von Befehlen).
               </div>
             </div>
           </div>

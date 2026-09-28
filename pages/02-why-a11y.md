@@ -10,7 +10,7 @@ layout: default
 
 <div class="p-5 rounded-lg bg-gradient-to-br from-green-500/15 to-green-500/5 border border-green-500/20">
   <div class="text-4xl font-bold text-green-700 dark:text-green-400">1,3 Mrd.</div>
-  <div class="text-lg mt-1 opacity-90">Menschen weltweit mit Beeinträchtigung</div>
+  <div class="text-lg mt-1 opacity-90">Menschen weltweit mit Behinderung</div>
   <div class="text-sm mt-2 opacity-70">~ 16 % der Weltbevölkerung</div>
 </div>
 
@@ -31,7 +31,7 @@ layout: default
 <div class="p-5 rounded-lg bg-gradient-to-br from-amber-500/15 to-amber-500/5 border border-amber-500/20">
   <div class="text-4xl font-bold text-amber-700 dark:text-amber-400">Gesetz</div>
   <div class="text-lg mt-1 opacity-90">EAA & BFSG seit Juni 2025</div>
-  <div class="text-sm mt-2 opacity-70">WCAG-Konformität verpflichtend</div>
+  <div class="text-sm mt-2 opacity-70">EN 301 549 verpflichtend (basiert auf WCAG)</div>
 </div>
 
 </v-click>
@@ -40,7 +40,7 @@ layout: default
 
 <div class="p-5 rounded-lg bg-gradient-to-br from-purple-500/15 to-purple-500/5 border border-purple-500/20">
   <div class="text-4xl font-bold text-purple-700 dark:text-purple-400">ROI</div>
-  <div class="text-lg mt-1 opacity-90">Mehr Reichweite, besseres SEO</div>
+  <div class="text-lg mt-1 opacity-90">Mehr Reichweite, besseres SEO & GEO</div>
   <div class="text-sm mt-2 opacity-70">Bessere UX für alle = Business Value</div>
 </div>
 
@@ -62,6 +62,8 @@ layout: default
 - EAA = European Accessibility Act
 - BFSG = Barrierefreiheitsstärkungsgesetz (dt. Umsetzung des EAA)
 - SEO = Search Engine Optimization, ROI = Return on Investment
+- GEO = Generative Engine Optimization (Sichtbarkeit in KI-/LLM-Antworten); semantisches HTML hilft beiden
+- EN 301 549 = harmonisierte EU-Norm, auf die das Gesetz abstellt; Superset der WCAG
 - → Überleitung: gute A11y ist auch gute UX – und umgekehrt
 -->
 
@@ -77,7 +79,7 @@ layout: default
 
 - **Gute UX und A11y gehen Hand in Hand**
 - Verwirrende Interfaces schaden **allen** – nicht nur Menschen mit Behinderungen
-- Barrierefreies Design ist einfach **besseres Design**
+- Barrierefreiheit ist **Teil unserer Qualität** – kein Extra
 - A11y-Probleme sind oft **UX-Probleme**
 - UX fixen verbessert A11y (und umgekehrt)
 
@@ -87,9 +89,9 @@ layout: default
 
 </div>
 
-<div class="absolute right-0 top-0 h-full">
-  <img src="/ux_fail.jpeg" alt="Verwirrendes Aufzugpanel in einem Hotel: Zwischen zwei Aufzügen sind die Ruftasten rechts am linken Aufzug montiert – unklar welchen Aufzug sie rufen" class="h-full object-cover rounded-l shadow" />
-  <div class="absolute top-10 right-42 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
+<div class="absolute right-8 top-16 bottom-8">
+  <img src="/ux_fail.jpeg" alt="Verwirrendes Aufzugpanel in einem Hotel: Zwischen zwei Aufzügen sind die Ruftasten rechts am linken Aufzug montiert – unklar welchen Aufzug sie rufen" class="h-full object-cover rounded shadow" />
+  <div class="absolute top-6 right-38 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
     Wo muss ich drücken? 🤔
   </div>
 </div>
@@ -108,7 +110,7 @@ layout: default
 layout: default
 ---
 
-# Assistive Technologies im Überblick
+# Hilfsmittel im Überblick
 
 <div class="at-grid">
   <div class="at-card">

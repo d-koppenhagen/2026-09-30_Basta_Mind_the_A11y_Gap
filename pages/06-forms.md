@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Formulare richtig machen
+# Formulare richtig gestalten
 
 Fehlerbehandlung und Validierung barrierefrei umsetzen
 
@@ -52,17 +52,17 @@ dragPos:
 <label for="email">Enter your email</label>
 <input type="email" id="email" autocomplete="email" />
 
-<label>
-  <input type="checkbox" />
+<label for="terms">
+  <input type="checkbox" id="terms" />
   Accept terms
 </label>
 ```
 
 **Vorteile:**
-- Richtige Verknüpfung
+- Richtige Verknüpfung – auch bei Verschachtelung `for`/`id` setzen
 - Klickbares Label
 - Screen Reader: „Enter your email, Textfeld"
-- `autocomplete` hilft Nutzenden mit kognitiven Einschränkungen
+- `autocomplete` hilft Nutzenden mit kognitiven Einschränkungen oder Nicht-Tastatur-Nutzenden (z. B. Smartphone, Sprachsteuerung)
 
 </v-click>
 
@@ -72,7 +72,9 @@ dragPos:
 
 <!--
 - Placeholder verschwindet beim Tippen → als Label unbrauchbar
-- Verknüpfung: `label` mit `for`/`id` ODER Input im Label umschließen; Klick aufs Label fokussiert
+- Verknüpfung: `label` mit `for`/`id`; Klick aufs Label fokussiert
+- Auch bei Verschachtelung (Input im Label) zusätzlich `for`/`id` setzen – manche assistive Technologien verlassen sich auf die explizite Verknüpfung
+- `autocomplete` hilft nicht nur kognitiv, sondern auch Nicht-Tastatur-Nutzenden (Smartphone) und Sprachsteuerung
 - Blazor: EditForm + InputText rendern `<input>`, aber KEIN `<label>` – selbst setzen
 - FluentUI/MudBlazor: prüfen, ob Label korrekt verknüpft wird
 - → Überleitung: ungültige Felder markieren

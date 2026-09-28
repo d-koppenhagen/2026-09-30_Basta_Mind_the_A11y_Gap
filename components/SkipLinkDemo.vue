@@ -59,7 +59,7 @@
       <Transition name="note-fade">
         <div v-if="step > cssLines.length" class="focus-note">
           <div class="focus-badge">✅ :focus</div>
-          <p>Bei Tastatur-Fokus werden alle Properties zurückgesetzt — der Skip-Link ist <strong>sichtbar &amp; klickbar</strong>.</p>
+          <p>Bei Tastatur-Fokus werden alle Properties zurückgesetzt — der Skip-Link ist <strong>sichtbar &amp; interaktiv</strong>.</p>
         </div>
       </Transition>
     </div>
