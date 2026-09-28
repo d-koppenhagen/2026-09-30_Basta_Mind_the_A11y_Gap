@@ -80,6 +80,15 @@ class: text-center
 -->
 
 ---
+layout: image
+image: /feedback_entwickler.png
+---
+
+<!--
+- Gebt gern Feedback in der App
+-->
+
+---
 layout: default
 ---
 
