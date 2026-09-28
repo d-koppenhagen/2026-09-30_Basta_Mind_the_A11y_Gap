@@ -23,7 +23,7 @@ class: text-center
 <v-click>
 
 <div class="mt-8 p-4 bg-green-500 bg-opacity-10 rounded">
-💚 Barrierefreiheit ist kein Feature – sie ist eine grundlegende Anforderung
+💚 Barrierefreiheit ist kein Feature – sie ist ein grundlegendes Qualitätskriterium
 </div>
 
 </v-click>
