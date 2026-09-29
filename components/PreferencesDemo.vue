@@ -16,7 +16,11 @@
 
       <div
         class="preview-frame"
-        :class="[active.key, { 'is-dark': active.key === 'scheme' && schemeMode === 'dark' }]"
+        :class="[
+          active.key,
+          step.variant ? `variant-${step.variant}` : null,
+          { 'is-dark': active.key === 'scheme' && schemeMode === 'dark' },
+        ]"
       >
         <!-- Switch oben in der Box: nur im Dark/Light-Zustand, visualisiert das
              aktuell (automatisch) gewählte Schema. -->
@@ -28,6 +32,16 @@
           <span class="switch-label" :class="{ on: schemeMode === 'dark' }">🌙 Dark</span>
         </div>
 
+        <!-- Zeigt, welche Technik den gleichen Effekt erzeugt -->
+        <div
+          v-if="active.key === 'scheme'"
+          class="scheme-badge"
+          :class="step.variant"
+          aria-hidden="true"
+        >
+          {{ step.variant === 'media' ? '@media prefers-color-scheme' : 'light-dark() · contrast-color() · contrast()' }}
+        </div>
+
         <!-- Beispiel-Card, auf die alle Präferenzen wirken -->
         <div class="sample-card" :class="{ animate: active.key === 'motion' }">
           <div class="sample-avatar" aria-hidden="true">🎧</div>
@@ -36,7 +50,7 @@
             <div class="sample-text">Präferenzen respektieren</div>
           </div>
         </div>
-        <div class="preview-note">{{ active.preview }}</div>
+        <div class="preview-note">{{ previewText }}</div>
       </div>
     </div>
 
@@ -46,8 +60,8 @@
         <span class="explain-icon" aria-hidden="true">{{ active.icon }}</span>
         <span class="explain-title">{{ active.title }}</span>
       </div>
-      <pre class="explain-code"><code v-html="active.code" /></pre>
-      <p class="explain-desc" v-html="active.desc" />
+      <pre class="explain-code"><code v-html="activeCode" /></pre>
+      <p class="explain-desc" v-html="activeDesc" />
     </div>
   </div>
 </template>
@@ -72,19 +86,12 @@ const prefs = [
       'Animationen können Übelkeit oder Anfälle auslösen. Bewegung <strong>additiv</strong> aktivieren (Progressive Enhancement) statt global abschalten.',
   },
   {
+    // preview/code/desc kommen für diesen Schritt aus schemeVariants
+    // (modern vs. media), weil er in zwei Sub-Steps aufgeteilt ist.
     key: 'scheme',
     icon: '🌗',
     tab: 'Dark / Light',
     title: 'Dark / Light Mode',
-    preview: 'Farben folgen dem System — via light-dark().',
-    code:
-      '<span class="c-sel">:root</span> {\n' +
-      '  <span class="c-prop">color-scheme</span>: light dark;\n' +
-      '  <span class="c-prop">--bg</span>: <span class="c-fn">light-dark</span>(#fff, #1a1a2e);\n' +
-      '  <span class="c-prop">--text</span>: <span class="c-fn">light-dark</span>(#222, #eee);\n' +
-      '}',
-    desc:
-      '<code>light-dark()</code> liefert die passende Farbe — <strong>ohne</strong> Media Query. Die bleibt frei für das, was sie nicht kann (Schatten, Bilder, Icons).',
   },
   {
     key: 'contrast',
@@ -114,9 +121,75 @@ const prefs = [
   },
 ];
 
+// Der Dark/Light-Schritt zeigt zwei Sub-Steps: erst die moderne Variante
+// (light-dark + contrast-color + contrast), dann derselbe Effekt klassisch
+// per @media (prefers-color-scheme). Deshalb wird 'scheme' auf zwei Steps
+// abgebildet; alle anderen Präferenzen bleiben ein Step.
+const schemeVariants = {
+  modern: {
+    preview: 'Eine Card, drei moderne Funktionen — ganz ohne Media Query.',
+    code:
+      '<span class="c-sel">:root</span> { <span class="c-prop">color-scheme</span>: light dark; }\n' +
+      '<span class="c-sel">.card</span> {\n' +
+      '  <span class="c-cmt">/* Fläche folgt dem Schema */</span>\n' +
+      '  <span class="c-prop">--surface</span>: <span class="c-fn">light-dark</span>(#fff, #1a1a2e);\n' +
+      '  <span class="c-prop">background</span>: var(--surface);\n' +
+      '  <span class="c-cmt">/* Text automatisch lesbar */</span>\n' +
+      '  <span class="c-prop">color</span>: <span class="c-fn">contrast-color</span>(var(--surface));\n' +
+      '  <span class="c-cmt">/* on top nachgeschärft */</span>\n' +
+      '  <span class="c-prop">filter</span>: <span class="c-fn">contrast</span>(1.25);\n' +
+      '}',
+    desc:
+      'Alle drei greifen an <strong>einer</strong> Card: <code>light-dark()</code> wählt die Fläche, <code>contrast-color()</code> setzt automatisch lesbaren Text (schwarz/weiß) und der Filter <code>contrast()</code> schärft das Ergebnis nach — komplett ohne Media Query.',
+  },
+  media: {
+    preview: 'Gleiches Ergebnis — klassisch per Media Query.',
+    code:
+      '<span class="c-sel">.card</span> {\n' +
+      '  <span class="c-prop">--surface</span>: #fff;\n' +
+      '  <span class="c-prop">background</span>: var(--surface);\n' +
+      '  <span class="c-prop">color</span>: #222;\n' +
+      '}\n' +
+      '<span class="c-at">@media</span> (<span class="c-prop">prefers-color-scheme</span>: dark) {\n' +
+      '  <span class="c-sel">.card</span> {\n' +
+      '    <span class="c-prop">--surface</span>: #1a1a2e;\n' +
+      '    <span class="c-prop">color</span>: #eee;\n' +
+      '  }\n' +
+      '}',
+    desc:
+      'Der klassische Weg: eine <code>@media (prefers-color-scheme)</code>-Query und <strong>jedes</strong> Farbpaar doppelt gepflegt. Funktioniert überall, ist aber mehr Code — und der Kontrast wird nicht automatisch garantiert.',
+  },
+};
+
+// Reihenfolge der Steps: motion, scheme(modern), scheme(media), contrast, forced.
+const steps = prefs.flatMap((p) =>
+  p.key === 'scheme'
+    ? [
+        { pref: p, variant: 'modern' },
+        { pref: p, variant: 'media' },
+      ]
+    : [{ pref: p, variant: null }],
+);
+
 const { clicks } = useNav();
-// clicks 0 -> erste Präferenz, danach durchsteppen; am Ende clampen.
-const active = computed(() => prefs[Math.min(clicks.value, prefs.length - 1)]);
+// clicks 0 -> erster Step, danach durchsteppen; am Ende clampen.
+const step = computed(() => steps[Math.min(clicks.value, steps.length - 1)]);
+const active = computed(() => step.value.pref);
+
+// Für den Scheme-Schritt: moderne vs. klassische Variante. Preview/Code/Desc
+// kommen dann aus schemeVariants statt aus dem prefs-Eintrag.
+const schemeVariant = computed(() =>
+  active.value.key === 'scheme' ? schemeVariants[step.value.variant] : null,
+);
+const previewText = computed(() =>
+  schemeVariant.value ? schemeVariant.value.preview : active.value.preview,
+);
+const activeCode = computed(() =>
+  schemeVariant.value ? schemeVariant.value.code : active.value.code,
+);
+const activeDesc = computed(() =>
+  schemeVariant.value ? schemeVariant.value.desc : active.value.desc,
+);
 
 // Auto-Umschaltung Light <-> Dark, nur solange der Dark/Light-Zustand aktiv ist.
 const schemeMode = ref('light');
@@ -163,7 +236,11 @@ onUnmounted(stopSchemeTimer);
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: stretch;
-  min-height: 42vh;
+  /* Feste Höhe + feste Row, damit die linke Stage beim Durchklicken nicht
+     springt. grid-template-rows fixiert die Zeilenhöhe, sodass die Zellen
+     nicht am Inhalt wachsen. */
+  height: 40vh;
+  grid-template-rows: minmax(0, 1fr);
 }
 
 html.dark .pref-demo {
@@ -175,6 +252,9 @@ html.dark .pref-demo {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  /* min-height:0 lässt den preview-frame (flex:1) den Resthöhe füllen,
+     statt am Inhalt zu wachsen -> konstante Höhe über alle Klicks. */
+  min-height: 0;
 }
 
 .pref-tabs {
@@ -211,6 +291,10 @@ html.dark .pref-demo {
 
 .preview-frame {
   flex: 1;
+  /* min-height:0 + overflow verhindern, dass unterschiedlich viel Inhalt
+     (Badge/Switch/längere Note) die feste Höhe sprengt. */
+  min-height: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,35 +307,49 @@ html.dark .pref-demo {
   transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-/* Dark/Light: Frame startet hell und kippt per Auto-Timer (.is-dark) ins Dunkle */
+/* Dark/Light: color-scheme startet hell und kippt per Auto-Timer (.is-dark)
+   ins Dunkle. Alle Farben leiten sich daraus ab — light-dark() reagiert
+   direkt auf diesen Wert. */
 .preview-frame.scheme {
-  background: #f4f4f8;
-  border-color: #d7d7e0;
+  color-scheme: light;
+  background: light-dark(#f4f4f8, #1a1a2e);
+  border-color: light-dark(#d7d7e0, #33334d);
 }
-/* Light-Box: feste dunkle Textfarben, damit der Kontrast unabhängig vom
-   Präsentations-Theme stimmt (die Box ist immer hell). */
-.preview-frame.scheme .sample-card {
-  background: #fff;
-  color: #222;
-  border-color: #d7d7e0;
-}
-.preview-frame.scheme .sample-title { color: #1a1a2e; }
-.preview-frame.scheme .sample-text { color: #4a4a5a; opacity: 1; }
-.preview-frame.scheme .preview-note { color: #5a5a6b; }
-
-/* Dark-Box: feste helle Textfarben. */
 .preview-frame.scheme.is-dark {
-  background: #1a1a2e;
-  border-color: #33334d;
+  color-scheme: dark;
 }
-.preview-frame.scheme.is-dark .sample-card {
-  background: #24243e;
-  color: #eee;
-  border-color: #3a3a55;
+
+/* Ein einziges Beispiel, drei Funktionen zusammen:
+   1. light-dark()      -> Fläche folgt dem (simulierten) Schema
+   2. contrast-color()  -> Text automatisch lesbar auf dieser Fläche
+   3. contrast()        -> schärft die ganze Card on top nach
+   Der zweite color:-Wert ist ein Fallback via light-dark(), falls der
+   Browser contrast-color() noch nicht unterstützt. */
+.preview-frame.scheme .sample-card {
+  --card-surface: light-dark(#fff, #24243e);
+  background: var(--card-surface);
+  border-color: light-dark(#d7d7e0, #3a3a55);
 }
-.preview-frame.scheme.is-dark .sample-title { color: #fff; }
-.preview-frame.scheme.is-dark .sample-text { color: #c4c4d4; opacity: 1; }
-.preview-frame.scheme.is-dark .preview-note { color: #a0a0b5; }
+/* Moderne Variante: Text via contrast-color(), Card via contrast() geschärft. */
+.preview-frame.scheme.variant-modern .sample-card {
+  color: light-dark(#222, #eee); /* Fallback, falls contrast-color() fehlt */
+  color: contrast-color(var(--card-surface));
+  filter: contrast(1.25);
+}
+/* Klassische Variante: feste Farbpaare, wie sie die Media Query setzt. */
+.preview-frame.scheme.variant-media .sample-card {
+  color: light-dark(#222, #eee);
+}
+/* Titel/Text erben die contrast-color()-Farbe der Card, statt eigene
+   feste Werte zu setzen — so bleibt das Beispiel EINE Quelle der Wahrheit. */
+.preview-frame.scheme .sample-title,
+.preview-frame.scheme .sample-text {
+  color: inherit;
+  opacity: 1;
+}
+.preview-frame.scheme .preview-note {
+  color: light-dark(#5a5a6b, #a0a0b5);
+}
 
 /* Switch oben in der Box */
 .scheme-switch {
@@ -262,19 +360,13 @@ html.dark .pref-demo {
   font-weight: 600;
 }
 .preview-frame.scheme .switch-label {
-  color: #6b6b7b;
+  color: light-dark(#6b6b7b, #9a9ab0);
   opacity: 0.5;
   transition: opacity 0.3s ease, color 0.3s ease;
 }
 .preview-frame.scheme .switch-label.on {
   opacity: 1;
-  color: #222;
-}
-.preview-frame.scheme.is-dark .switch-label {
-  color: #9a9ab0;
-}
-.preview-frame.scheme.is-dark .switch-label.on {
-  color: #fff;
+  color: light-dark(#222, #fff);
 }
 .switch-track {
   position: relative;
@@ -300,6 +392,39 @@ html.dark .pref-demo {
 }
 .switch-track.dark .switch-thumb {
   transform: translateX(22px);
+}
+
+/* Technik-Badge: macht sichtbar, ob gerade der moderne oder der klassische
+   (Media-Query-)Weg gezeigt wird. */
+.scheme-badge {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.scheme-badge.modern {
+  color: #1f7a4d;
+  background: #d8f3e3;
+  border-color: #9fdcbd;
+}
+.scheme-badge.media {
+  color: #8a5a1a;
+  background: #fbe6cf;
+  border-color: #e6c68a;
+}
+.preview-frame.scheme.is-dark .scheme-badge.modern {
+  color: #7ee6ac;
+  background: #123726;
+  border-color: #1f5c3d;
+}
+.preview-frame.scheme.is-dark .scheme-badge.media {
+  color: #f0c078;
+  background: #3a2a12;
+  border-color: #5c451f;
 }
 
 /* Contrast: kräftige Rahmen + fetter Text */
@@ -412,6 +537,7 @@ html.dark .pref-demo {
 .explain-code :deep(.c-sel) { color: var(--accent-text); font-weight: 600; }
 .explain-code :deep(.c-prop) { color: var(--accent-text); }
 .explain-code :deep(.c-fn) { color: var(--accent-text); font-weight: 600; }
+.explain-code :deep(.c-cmt) { color: var(--fg-muted); font-style: italic; }
 
 .explain-desc {
   margin: 0;

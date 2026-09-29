@@ -73,6 +73,9 @@ function getUrl(slug) {
   color: white;
 }
 
+:global(.slidev-layout a:hover) {
+  color: rgb(175, 217, 245);
+}
 
 .challenge-tile.highlighted {
   background: rgba(234, 179, 8, 0.15);

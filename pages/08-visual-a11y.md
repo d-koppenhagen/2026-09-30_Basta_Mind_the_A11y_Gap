@@ -367,7 +367,7 @@ layout: default
 
 ---
 layout: default
-clicks: 3
+clicks: 4
 ---
 
 # Präferenzen Respektieren
@@ -375,9 +375,11 @@ clicks: 3
 <PreferencesDemo />
 
 <!--
-- Vier CSS-Präferenzen — pro Klick eine, Card links reagiert live
+- Vier Präferenzen — Dark/Light hat zwei Sub-Steps (modern vs. klassisch)
 - Reduced Motion: Bewegung nur bei `no-preference` = Progressive Enhancement (Opt-in), kein `!important`-Krieg
-- `light-dark()`: braucht `color-scheme: light dark`, dann beide Farben inline — spart die Farb-Media-Query; die bleibt frei für Schatten/Bilder/Icons
+- Dark/Light 1. Klick (modern): eine Card, drei Funktionen — `light-dark()` wählt Fläche, `contrast-color()` garantiert lesbaren Text, `contrast()` schärft nach; keine Media Query
+- Dark/Light 2. Klick (klassisch): gleicher Effekt per `@media (prefers-color-scheme)` — mehr Code, jedes Farbpaar doppelt, Kontrast nicht automatisch garantiert
+- `light-dark()` braucht `color-scheme: light dark`; spart die Farb-Media-Query, die frei bleibt für Schatten/Bilder/Icons
 - Kernunterschied am Ende betonen: `prefers-contrast` = Wunsch, `forced-colors` = Zwang (System überschreibt alles)
 - Forced Colors: Struktur über Borders sichern, nicht über Hintergrundflächen
 - Testen: DevTools → Rendering → Emulationen
