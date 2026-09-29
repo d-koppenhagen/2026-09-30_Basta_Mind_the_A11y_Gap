@@ -121,6 +121,8 @@ const skipLinkStyle = computed(() => {
   if (focused.value) {
     return {
       whiteSpace: 'nowrap',
+      maxWidth: 'none',
+      textAlign: 'center',
       padding: '0.2rem 1rem',
       border: '2px solid transparent',
       overflow: 'visible',
@@ -132,13 +134,16 @@ const skipLinkStyle = computed(() => {
   }
   const s = step.value;
   return {
-    // Initial: normal breiter, flacher Button. Erst width:1px erzeugt den
-    // Überlauf, den overflow:hidden danach sichtbar abschneidet.
-    whiteSpace: 'nowrap',
+    // Initial (s === 0): schmaler Button → Text bricht auf ZWEI Zeilen um.
+    // Schritt 1 (white-space: nowrap) zwingt ihn sichtbar auf EINE Zeile.
+    // Danach schrumpfen width/height, overflow schneidet ab.
+    whiteSpace: s >= 1 ? 'nowrap' : 'normal',
+    maxWidth: s >= 1 ? 'none' : '18ch',
+    textAlign: 'center',
     padding: s >= 2 ? '0' : '0.35rem 1rem',
     border: s >= 3 ? '0' : '2px solid #f59e0b',
     width: s >= 4 ? '1px' : 'auto',
-    height: s >= 5 ? '1px' : 'auto',
+    height: s >= 5 ? '1px' : '25px',
     overflow: s >= 6 ? 'hidden' : 'visible',
     clipPath: s >= 7 ? 'inset(50%)' : 'none',
     margin: s >= 7 ? '-1px' : '0',
@@ -177,11 +182,18 @@ const skipLinkStyle = computed(() => {
    Layout beim Ein-/Ausblenden des Skip-Links nicht springt. */
 .topbar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
-  height: 40px;
+  /* min-height statt fester Höhe: der Button darf initial zweizeilig sein
+     (Text umgebrochen), ohne dass das Layout hart springt. */
+  min-height: 56px;
   flex-shrink: 0;
+}
+
+/* Logo an der Button-Textzeile ausrichten (Top-Alignment der Top-Bar). */
+.logo {
+  padding-top: 0.35rem;
 }
 
 .skip-link {
@@ -197,6 +209,14 @@ const skipLinkStyle = computed(() => {
   border-radius: 6px;
   text-decoration: none;
   z-index: 20;
+  /* Sanfter Übergang, damit der Umbruch von zwei → eine Zeile
+     (white-space: nowrap) als Effekt wahrnehmbar ist. */
+  transition: max-width 0.4s ease, width 0.35s ease, height 0.35s ease,
+    padding 0.3s ease;
+
+  &:visited {
+    color: #ffffff;
+  }
 }
 
 .skip-link.is-focused {
