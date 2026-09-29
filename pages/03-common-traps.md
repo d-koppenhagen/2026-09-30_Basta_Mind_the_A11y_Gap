@@ -99,7 +99,7 @@ layout: default
 
 <v-click>
 
-<div class="mt-6 p-4 bg-yellow-500 bg-opacity-10 rounded">
+<div class="mt-4 p-4 bg-yellow-500 bg-opacity-10 rounded">
 ⚠️ Screen Reader können diese Struktur nicht verstehen<br>
 ⚠️ Tastatur-Nutzende können nicht navigieren<br>
 ⚠️ Suchmaschinen & AI Agents können den Inhalt nur schlecht erfassen
