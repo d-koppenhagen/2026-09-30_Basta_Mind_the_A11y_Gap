@@ -183,7 +183,7 @@ html.dark .focus-outline-demo {
   align-items: stretch;
   flex-wrap: nowrap;
   /* Platz unter den Karten für die Pfeile reservieren */
-  padding-bottom: 80px;
+  padding-bottom: 25px;
 }
 
 .demo-card {

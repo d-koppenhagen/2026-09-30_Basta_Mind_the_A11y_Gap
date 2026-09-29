@@ -90,7 +90,7 @@ layout: default
 
 1. ❌ Kein semantisches HTML – alles ist ein `<div>`
 2. ❌ Keine Landmarks (`<header>`, `<nav>`, `<main>`)
-3. ❌ Klickbare divs statt `<button>` oder `<a>` (Fehlende Tastaturunterstützung)
+3. ❌ Klickbare divs statt `<button>` oder `<a>`<br/>(Fehlende Tastaturunterstützung)
 4. ❌ Keine Überschriften-Struktur (`<h1>`, `<h2>`, etc.)
 5. ❌ Fehlende Formular-Labels
 6. ❌ Placeholder als Label (schlechte Praxis!)

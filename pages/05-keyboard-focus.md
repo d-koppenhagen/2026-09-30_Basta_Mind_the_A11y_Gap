@@ -21,13 +21,8 @@ clicks: 3
 
 <FocusOutlineDemo class="mt-3" />
 
-<div class="mt-5">
-
-`:focus-visible` zeigt den Ring nur bei Tastatur-Fokus &ndash; per Maus bleibt das Design clean.
-
-</div>
-
 <!--
+- `:focus-visible` zeigt den Ring nur bei Tastatur-Fokus &ndash; per Maus bleibt das Design clean.
 - `outline: none` sieht man leider ständig – Todsünde
 - Buttons nacheinander durchgehen: Button 1 verschwindet optisch, Button 2 & 3 zeigen klaren Ring
 - box-shadow als Alternative für mehr Design-Flexibilität

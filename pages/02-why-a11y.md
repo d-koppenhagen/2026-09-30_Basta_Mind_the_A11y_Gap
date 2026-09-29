@@ -78,8 +78,8 @@ layout: default
 <div>
 
 - **Gute UX und A11y gehen Hand in Hand**
-- Verwirrende Interfaces schaden **allen** – nicht nur Menschen mit Behinderungen
-- Barrierefreiheit ist **Teil unserer Qualität** – kein Extra
+- Verwirrende Interfaces schaden **allen**, nicht nur Menschen mit Behinderungen
+- Barrierefreiheit ist **Teil unserer Qualität**, kein Extra
 - A11y-Probleme sind oft **UX-Probleme**
 - UX fixen verbessert A11y (und umgekehrt)
 
@@ -91,7 +91,7 @@ layout: default
 
 <div class="absolute right-8 top-16 bottom-8">
   <img src="/ux_fail.jpeg" alt="Verwirrendes Aufzugpanel in einem Hotel: Zwischen zwei Aufzügen sind die Ruftasten rechts am linken Aufzug montiert – unklar welchen Aufzug sie rufen" class="h-full object-cover rounded shadow" />
-  <div class="absolute top-6 right-38 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
+  <div class="absolute top-8 right-16 text-md opacity-90 text-white bg-black/80 px-2 py-1 rounded">
     Wo muss ich drücken? 🤔
   </div>
 </div>
