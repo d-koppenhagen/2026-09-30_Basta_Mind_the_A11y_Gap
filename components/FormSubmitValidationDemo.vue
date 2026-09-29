@@ -1,7 +1,7 @@
 <template>
   <div class="form-submit-demo">
     <!-- Left: Browser Demo -->
-    <BrowserWindow url="https://my-app.de/register" body-height="340px">
+    <BrowserWindow url="https://my-app.de/register" body-height="320px">
       <div class="form-container">
         <h2 class="form-title">Registrierung</h2>
 
