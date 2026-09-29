@@ -30,43 +30,49 @@ ul > li::before {
 <div class="grid grid-cols-3 gap-6 mt-4">
 
 <v-click>
-<div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/40 hover:bg-blue-500/20 transition-all dark:border-blue-500/30">
+<div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/40 hover:bg-blue-500/20 transition-all dark:border-blue-500/30 flex flex-col h-full">
   <div class="text-3xl mb-2">🔍</div>
   <h3 class="!text-blue-900 dark:!text-blue-400 !text-lg !mb-2">Browser DevTools</h3>
   <ul class="!text-sm !list-none !pl-0 space-y-1">
     <li><carbon-tree-view class="inline text-blue-600 dark:text-blue-300" /> Accessibility Tree</li>
     <li><carbon-color-palette class="inline text-blue-600 dark:text-blue-300" /> Contrast Checker</li>
     <li><carbon-meter class="inline text-blue-600 dark:text-blue-300" /> Lighthouse Audit</li>
+    <li><carbon-bot class="inline text-blue-600 dark:text-blue-300" /> axe DevTools</li>
   </ul>
 </div>
 </v-click>
 
 <v-click>
-<div class="p-4 rounded-xl bg-green-500/10 border border-green-500/40 hover:bg-green-500/20 transition-all dark:border-green-500/30">
+<div class="p-4 rounded-xl bg-green-500/10 border border-green-500/40 hover:bg-green-500/20 transition-all dark:border-green-500/30 flex flex-col h-full">
   <div class="text-3xl mb-2">🤖</div>
   <h3 class="!text-green-900 dark:!text-green-400 !text-lg !mb-2">Automatisiert</h3>
-  <ul class="!text-sm !list-none !pl-0 space-y-1">
-    <li><carbon-bot class="inline text-green-600 dark:text-green-300" /> axe DevTools</li>
+  <ul class="!text-sm !list-none !pl-0 space-y-1 !mb-3">
+    <li><carbon-bot class="inline text-green-600 dark:text-green-300" /> axe core</li>
     <li><carbon-meter class="inline text-green-600 dark:text-green-300" /> Lighthouse</li>
     <li><carbon-view class="inline text-green-600 dark:text-green-300" /> WAVE (WebAIM)</li>
     <li><carbon-edit class="inline text-green-600 dark:text-green-300" /> Sa11y</li>
+    <li><carbon-play class="inline text-green-600 dark:text-green-300" /> Playwright</li>
+    <li><carbon-headphones class="inline text-green-600 dark:text-green-300" /> Guidepup</li>
+    <li><carbon-code class="inline text-green-600 dark:text-green-300" /> ESLint Plugins</li>
   </ul>
-  <div class="mt-3 px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-500/20 text-yellow-900 dark:text-yellow-300 text-xs text-center font-medium">
+  <div class="mt-auto px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-500/20 text-yellow-900 dark:text-yellow-300 text-xs text-center font-medium">
     ⚠️ Findet nur 30–40 % der Probleme!
   </div>
 </div>
 </v-click>
 
 <v-click>
-<div class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/40 hover:bg-purple-500/20 transition-all dark:border-purple-500/30">
+<div class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/40 hover:bg-purple-500/20 transition-all dark:border-purple-500/30 flex flex-col h-full">
   <div class="text-3xl mb-2">🧑</div>
   <h3 class="!text-purple-900 dark:!text-purple-400 !text-lg !mb-2">Manuell</h3>
-  <ul class="!text-sm !list-none !pl-0 space-y-1">
+  <ul class="!text-sm !list-none !pl-0 space-y-1 !mb-3">
     <li><carbon-keyboard class="inline text-purple-600 dark:text-purple-300" /> Nur Tastatur</li>
-    <li><carbon-headphones class="inline text-purple-600 dark:text-purple-300" /> Screen Reader</li>
-    <li><carbon-zoom-in class="inline text-purple-600 dark:text-purple-300" /> 200 % Zoom</li>
+    <li><carbon-headphones class="inline text-purple-600 dark:text-purple-300" /> Screen Reader (NVDA/JAWS/VoiceOver)</li>
+    <li><carbon-zoom-in class="inline text-purple-600 dark:text-purple-300" /> 200 % Zoom & Reflow</li>
+    <li><carbon-devices class="inline text-purple-600 dark:text-purple-300" /> Responsiveness</li>
+    <li><carbon-settings class="inline text-purple-600 dark:text-purple-300" /> User Preferences</li>
   </ul>
-  <div class="mt-3 px-2 py-1 rounded bg-red-100 dark:bg-red-500/20 text-red-900 dark:text-red-300 text-xs text-center font-medium">
+  <div class="mt-auto px-2 py-1 rounded bg-red-100 dark:bg-red-500/20 text-red-900 dark:text-red-300 text-xs text-center font-medium">
     🎯 Unverzichtbar!
   </div>
 </div>
@@ -77,8 +83,15 @@ ul > li::before {
 <!--
 - WAVE = Web Accessibility Evaluation Tool (visuelles Overlay), axe von Deque
 - Sa11y = Tool für Content-Autoren, prüft im echten Kontext (Überschriften, Alt-Texte, Sprache) direkt auf der Seite
+- Playwright = E2E-Framework, mit @axe-core/playwright A11y-Checks direkt im Test/CI
+- Guidepup = steuert echte Screen Reader (VoiceOver/NVDA) automatisiert → prüft, was wirklich vorgelesen wird
+- ESLint Plugins = „shift left", Fehler schon beim Coden: eslint-plugin-jsx-a11y + eslint-plugin-prefer-implicit (nutzt implizite ARIA-Rollen statt redundanter role-Attribute)
+- Browser DevTools: gezeigt für Chrome, gleiche Features in Firefox/Safari (nur anders benannt)
 - Kernaussage: automatisiert findet nur 30–40 % → manuell unverzichtbar
-- Manuell konkret: Maus abstöpseln, SR (VoiceOver/NVDA), 200 % Zoom
+- Manuell konkret: Maus abstöpseln, SR unterschiedlich (NVDA/JAWS = Windows, VoiceOver = Apple), 200 % Zoom
+- Reflow (WCAG 1.4.10): Inhalt darf bei Zoom/schmalem Viewport nicht abschneiden, kein horizontales Scrollen
+- Responsiveness: Mobile, Tablet, Desktop – Touch-Targets & Layout prüfen
+- User Preferences testen: Light/Dark, prefers-reduced-motion, High Contrast / forced-colors
 - .NET: Playwright for .NET + axe-core, bUnit prüft gerendertes Markup, Deque.AxeCore.Playwright für CI
 - CI/CD = Continuous Integration / Continuous Delivery
 - Fazit: automatisiert anfangen, manuell vertiefen
