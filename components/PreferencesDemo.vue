@@ -137,7 +137,7 @@ watch(
       schemeMode.value = 'light';
       schemeTimer = setInterval(() => {
         schemeMode.value = schemeMode.value === 'light' ? 'dark' : 'light';
-      }, 5000);
+      }, 4000);
     }
   },
   { immediate: true },
