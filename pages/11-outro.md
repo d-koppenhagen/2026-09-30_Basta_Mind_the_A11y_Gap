@@ -46,7 +46,7 @@ class: text-center
 
 <div class="mt-8 flex items-start justify-center gap-16">
   <div>
-    <a href="https://github.com/d-koppenhagen/2026-09-30_Basta_Mind_the_A11y_Gap" target="_blank">
+    <a href="https://k9n.dev/talks/2026-09-30-minde-the-a11y-gap" target="_blank">
       <img src="/qr-1024.svg" alt="QR-Code zum GitHub-Repository" class="w-72 h-72" />
       <div class="text-sm mt--2">Slides & Code</div>
     </a>
@@ -108,7 +108,7 @@ layout: default
 
 ## Dieser Talk
 
-- 📊 Slides: [github.com/d-koppenhagen/...](https://github.com/d-koppenhagen/2026-09-30_Basta_Mind_the_A11y_Gap)
+- 📊 Slides: [k9n.dev/talks/2026-09-30-minde-the-a11y-gap](https://k9n.dev/talks/2026-09-30-minde-the-a11y-gap)
 - 💬 Fragen? Sprecht mich an!
 
 </div>
@@ -135,5 +135,4 @@ layout: default
 
 <!--
 - APG = ARIA Authoring Practices Guide, MDN = Mozilla Developer Network
-- Slides landen auf GitHub
 -->
