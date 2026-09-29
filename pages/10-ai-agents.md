@@ -47,7 +47,7 @@ layout: default
   <h3 class="!text-emerald-800 dark:!text-emerald-400 !text-lg !mb-3 flex items-center gap-2"><carbon-tools-alt /> AI-Tools im Dev-Workflow</h3>
 
   <ul class="agent-tree-list space-y-2 text-sm !list-none !pl-0 !my-0">
-    <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> <strong>Chrome DevTools MCP</strong> — Agents steuern Chrome fern</li>
+    <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> <strong>Chrome DevTools MCP & Safari MCP</strong> — Agents steuern Browser fern</li>
     <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> Lighthouse-Audits <strong>automatisch</strong> ausführen & fixen</li>
     <li class="!list-none !ml-0 !pl-0"><span class="text-emerald-400">▸</span> <strong>Modern Web Guidance</strong> — Best Practices im Agent-Kontext</li>
   </ul>

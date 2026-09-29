@@ -121,6 +121,7 @@ layout: default
 - [WAVE](https://wave.webaim.org/)
 - [Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [Chrome DevTools for Agents](https://developer.chrome.com/docs/devtools/agents)
+- [Safari MCP](https://webkit.org/blog/18136/introducing-the-safari-mcp-server-for-web-developers/)
 - [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance)
 
 ## Meine Inhalte
