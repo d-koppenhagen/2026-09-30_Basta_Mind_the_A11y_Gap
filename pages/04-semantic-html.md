@@ -13,6 +13,7 @@ Die richtigen Elemente für den Job verwenden
 
 ---
 layout: default
+audience: [screenreader, keyboard, blind, cognitive, motor, voice]
 ---
 
 # Die Lösung: Semantisches HTML
@@ -61,9 +62,37 @@ layout: default
 - → Überleitung: tiefer in spezifische Patterns
 -->
 
+---
+layout: default
+---
+
+# Wer profitiert? – Legende
+
+<div class="aa-legend-intro">
+  Ab jetzt zeigt oben rechts, neben dem DB-Logo: Auf welche
+  Nutzergruppe(n) zahlt das gerade gezeigte Thema besonders ein.
+</div>
+
+<A11yAudience legend />
+
+<style>
+.aa-legend-intro {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  max-width: 46rem;
+}
+</style>
+
+<!--
+- Wiedererkennbares Hilfsmittel für die Zuschauer: Icons oben rechts
+- Kurz die 8 Gruppen durchgehen (jeweils 1 Satz)
+- Hinweis: viele Slides zahlen auf mehrere Gruppen gleichzeitig ein
+- → Überleitung: Wie kommt unser Code in diesen Tree?
+-->
 
 ---
 layout: default
+audience: [screenreader]
 ---
 
 # Landmarks
@@ -79,6 +108,7 @@ layout: default
 
 ---
 layout: default
+audience: [screenreader]
 ---
 
 # Landmarks
@@ -136,6 +166,7 @@ layout: default
 ---
 layout: default
 clicks: 8
+audience: [keyboard]
 ---
 
 # Skip Links
@@ -159,6 +190,7 @@ clicks: 8
 
 ---
 layout: default
+audience: [screenreader, cognitive]
 ---
 
 # Überschriften-Hierarchie
@@ -216,6 +248,7 @@ layout: default
 
 ---
 layout: default
+audience: [screenreader, keyboard]
 ---
 
 # Buttons vs Links

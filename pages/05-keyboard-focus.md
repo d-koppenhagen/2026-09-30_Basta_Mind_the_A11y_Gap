@@ -15,6 +15,7 @@ Die App ohne Maus benutzbar machen
 ---
 layout: default
 clicks: 3
+audience: [keyboard, lowvision]
 ---
 
 # Focus Outlines: Niemals entfernen!
@@ -50,6 +51,7 @@ class: text-center
 ---
 layout: default
 clicks: 5
+audience: [screenreader, keyboard]
 ---
 
 # Verlorener Focus: Die User Experience
@@ -64,6 +66,7 @@ clicks: 5
 
 ---
 layout: default
+audience: [screenreader, keyboard]
 ---
 
 # SPA-Problem: Verlorener Focus nach Navigation
@@ -126,6 +129,7 @@ main.focus();
 ---
 layout: default
 clicks: 1
+audience: [screenreader]
 ---
 
 # Eindeutige Seitentitel

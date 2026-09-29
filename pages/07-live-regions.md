@@ -14,6 +14,7 @@ layout: section
 
 ---
 layout: default
+audience: [screenreader]
 ---
 
 # Das Live-Region-Problem
@@ -85,6 +86,7 @@ function announce(msg) { // Inhalt aktualisieren
 
 ---
 layout: default
+audience: [screenreader]
 ---
 
 # Globale vs Lokale Live Regionen
@@ -100,6 +102,7 @@ layout: default
 
 ---
 layout: default
+audience: [screenreader]
 ---
 
 # NEW: ariaNotify()
@@ -148,6 +151,7 @@ Eigenständige JS-Web-API, inzwischen Teil von <a href="https://www.w3.org/TR/wa
 ---
 layout: default
 hide: true
+audience: [screenreader]
 ---
 
 # ARIA Live Attribute

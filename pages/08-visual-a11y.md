@@ -14,6 +14,7 @@ Farbkontrast und Medien-Alternativen
 
 ---
 layout: default
+audience: [lowvision]
 ---
 
 # Farbkontrast
@@ -70,6 +71,7 @@ Der Browser wählt automatisch <code>black</code> oder <code>white</code> — je
 
 ---
 layout: default
+audience: [screenreader, blind]
 ---
 
 # Bilder & Alternativtexte
@@ -194,6 +196,7 @@ layout: default
 
 ---
 layout: default
+audience: [screenreader, blind]
 ---
 
 # Dekorative Bilder & SVG
@@ -285,6 +288,7 @@ Info allein → `role="img"` + `aria-label` &nbsp;·&nbsp; neben Text → `aria-
 
 ---
 layout: default
+audience: [deaf, blind]
 ---
 
 # Video: Captions & Audio-Descriptions
@@ -326,6 +330,7 @@ layout: default
 
 ---
 layout: default
+audience: [deaf]
 ---
 
 # Audio: Transkripte
@@ -368,6 +373,7 @@ layout: default
 ---
 layout: default
 clicks: 4
+audience: [lowvision, cognitive, motor]
 ---
 
 # Präferenzen Respektieren

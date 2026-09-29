@@ -15,6 +15,7 @@ Fehlerbehandlung und Validierung barrierefrei umsetzen
 layout: default
 dragPos:
   square: 691,32,167,_,-16
+audience: [screenreader, cognitive, voice]
 ---
 
 # Formular-Labels
@@ -82,6 +83,7 @@ dragPos:
 
 ---
 layout: default
+audience: [screenreader]
 ---
 
 # Ungültige Felder markieren
@@ -144,6 +146,7 @@ layout: default
 ---
 layout: default
 clicks: 2
+audience: [screenreader, keyboard]
 ---
 
 # ❌ Deaktivierter Button ohne Erklärung
@@ -160,6 +163,7 @@ clicks: 2
 ---
 layout: default
 clicks: 2
+audience: [screenreader, keyboard]
 ---
 
 # ⚠️ Deaktivierter Button mit Hinweis
@@ -176,6 +180,7 @@ clicks: 2
 ---
 layout: default
 clicks: 2
+audience: [screenreader, keyboard]
 ---
 
 # ✅ Submit frei: Validierung & Focus-Management
